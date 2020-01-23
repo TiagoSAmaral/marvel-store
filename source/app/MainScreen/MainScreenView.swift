@@ -36,4 +36,3 @@ class MainScreenView: UIViewController {
         alert.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
     }
 }
-
