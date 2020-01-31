@@ -1,0 +1,14 @@
+# Remove the # in front of the line to enable the option
+
+scheme("development")
+devices(["iPhone 8 (13.3)"])
+open_report(true)
+code_coverage(true)
+clean(true)
+
+# Enable skip_build to skip debug builds for faster test performance
+#skip_build(true)
+
+#Ignore Pods Folder
+
+# only_testing(["../source"])

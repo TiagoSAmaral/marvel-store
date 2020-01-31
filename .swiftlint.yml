@@ -51,7 +51,7 @@ whitelist_rules:
   - mark
   - multiple_closures_with_trailing_closure
   - notification_center_detachment
-  - overridden_super_call
+  # - overridden_super_call
   # - private_outlet
   - private_over_fileprivate
   - private_unit_test
