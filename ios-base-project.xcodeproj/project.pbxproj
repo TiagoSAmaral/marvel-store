@@ -142,6 +142,7 @@
 				CF9601AB23DA2A1E00916EF1 /* Frameworks */,
 				CF9601AC23DA2A1E00916EF1 /* Resources */,
 				CFD3A6BF23DA3DC600EB6D4D /* Swiftlint */,
+				CF6414C923E4BB4E009C7A9E /* Carthage */,
 			);
 			buildRules = (
 			);
@@ -200,6 +201,26 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		CF6414C923E4BB4E009C7A9E /* Carthage */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+			);
+			name = Carthage;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n/usr/local/bin/carthage copy-frameworks\n";
+		};
 		CFD3A6BF23DA3DC600EB6D4D /* Swiftlint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
