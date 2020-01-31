@@ -8,15 +8,10 @@
 
 import UIKit
 
-func localizedString(forKey: String) -> String {
-     return Bundle.main.localizedString(forKey: forKey, value: nil, table: "Localizable-pt-BR")
-}
-
 class MainScreenView: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         view.backgroundColor = .white
     }
     
@@ -27,10 +22,11 @@ class MainScreenView: UIViewController {
     
     func createLabelAlert() -> UILabel {
         let labelAlert: UILabel = UILabel()
-        labelAlert.text = localizedString(forKey: LocalizedStaticString.messageReadme)
-            //NSLocalizedString(LocalizedStaticString.messageReadme, comment: "")
+        labelAlert.text = LocalizedText.with(tagName: .messageReadme)
         labelAlert.font.withSize(30.0)
         labelAlert.textColor = .red
+        labelAlert.numberOfLines = 0
+        labelAlert.textAlignment = .center
         return labelAlert
     }
     
