@@ -11,7 +11,7 @@
 		CFD3A6B923DA308A00EB6D4D /* MainScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD3A6AF23DA308A00EB6D4D /* MainScreenView.swift */; };
 		CFD3A6BB23DA308A00EB6D4D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFD3A6B423DA308A00EB6D4D /* Assets.xcassets */; };
 		CFD3A6D723DA41FE00EB6D4D /* Localizable-pt-BR.strings in Resources */ = {isa = PBXBuildFile; fileRef = CFD3A6CF23DA3F9700EB6D4D /* Localizable-pt-BR.strings */; };
-		CFD3A6DA23DA443200EB6D4D /* LocalizedStringsStatic.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD3A6D923DA443200EB6D4D /* LocalizedStringsStatic.swift */; };
+		CFD3A6DA23DA443200EB6D4D /* LocalizedText.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD3A6D923DA443200EB6D4D /* LocalizedText.swift */; };
 		CFD3A6DC23DA462000EB6D4D /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFD3A6DB23DA462000EB6D4D /* Launch Screen.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -22,7 +22,7 @@
 		CFD3A6B223DA308A00EB6D4D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CFD3A6B423DA308A00EB6D4D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CFD3A6CE23DA3F9700EB6D4D /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable-pt-BR.strings"; sourceTree = "<group>"; };
-		CFD3A6D923DA443200EB6D4D /* LocalizedStringsStatic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedStringsStatic.swift; sourceTree = "<group>"; };
+		CFD3A6D923DA443200EB6D4D /* LocalizedText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedText.swift; sourceTree = "<group>"; };
 		CFD3A6DB23DA462000EB6D4D /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -126,7 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				CFD3A6CF23DA3F9700EB6D4D /* Localizable-pt-BR.strings */,
-				CFD3A6D923DA443200EB6D4D /* LocalizedStringsStatic.swift */,
+				CFD3A6D923DA443200EB6D4D /* LocalizedText.swift */,
 			);
 			path = LocalizableStrings;
 			sourceTree = "<group>";
@@ -227,7 +227,7 @@
 			files = (
 				CFD3A6B723DA308A00EB6D4D /* AppDelegate.swift in Sources */,
 				CFD3A6B923DA308A00EB6D4D /* MainScreenView.swift in Sources */,
-				CFD3A6DA23DA443200EB6D4D /* LocalizedStringsStatic.swift in Sources */,
+				CFD3A6DA23DA443200EB6D4D /* LocalizedText.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
