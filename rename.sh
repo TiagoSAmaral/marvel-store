@@ -4,6 +4,7 @@ export LC_CTYPE=C
 export LANG=C
 
 ORIGINAL_NAME="ios-base-project"
+ORIGINAL_NAME_FILE="ios-base-project.xcodeproj"
 ORIGINAL_BUNDLE_ID="com.domain-developer"
 ORIGINAL_ORG_NAME="developer_organization_name"
 
@@ -27,3 +28,7 @@ find . -type f -not -path "*git/*" ! -name 'rename.sh' -print0 | xargs -0 sed -i
 find . -type f -not -path "*git/*" ! -name 'rename.sh' -print0 | xargs -0 sed -i ""  "s/$ORIGINAL_BUNDLE_ID/$NEW_BUNDLE_IDENTIFIER/g"
 
 find . -type f -not -path "*git/*" ! -name 'rename.sh' -print0 | xargs -0 sed -i ""  "s/$ORIGINAL_ORG_NAME/$NEW_ORG_NAME/g"
+
+
+
+mv $ORIGINAL_NAME_FILE "$NEWNAME.xcodeproj"
