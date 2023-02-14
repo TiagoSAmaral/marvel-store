@@ -7,6 +7,7 @@ ORIGINAL_NAME="ios-base-project"
 ORIGINAL_NAME_FILE="ios-base-project.xcodeproj"
 ORIGINAL_BUNDLE_ID="com.domain-developer"
 ORIGINAL_ORG_NAME="developer_organization_name"
+IS_YES="y"
 
 echo "Before any configuration setup the correct name of project."
 echo "You can cancel the process pressioning 'CTRL + C'. If you make a mistake, dont worry, run the command: 'git checkout .' and try again!"
@@ -38,18 +39,27 @@ find . -type f -not -path "*git/*" ! -name 'rename.sh' -print0 | xargs -0 sed -i
 mv $ORIGINAL_NAME_FILE "$NEWNAME.xcodeproj"
 
 # Update git remote URL
-echo "This is the current ORIGIN URL of folder: \n"
-git remote -v
 
-echo "\n"
+# Show list of current URL remote repository
+function show_current_git_remote_url() {
+    printf "This is the current ORIGIN URL of folder: \n\n"
+    git remote -v
+}
+
+show_current_git_remote_url
+
+printf "\n"
 echo "Do you want update this URL?"
-echo -p "Update url? (y/n)" IS_TO_UPDATE_GIT_REMOTE_URL
+read -p "Update url? (y/n)" IS_TO_UPDATE_GIT_REMOTE_URL
 
-if [[$IS_TO_UPDATE_GIT_REMOTE_URL -eq "y"]]
+# Dialog to update remote repository URL
+if [ $IS_TO_UPDATE_GIT_REMOTE_URL = $IS_YES ]
 then
-    echo -p "Enter the new valid URL: " URL_GIT_REMOTE
-    git remote set-url $URL_GIT_REMOTE
-    echo "Done! After finish setup, commit the changes and push!."
+    read -p "Enter the new valid URL: " URL_GIT_REMOTE
+    git remote set-url origin $URL_GIT_REMOTE
+
+    show_current_git_remote_url
+    printf "\n\nDone! After finish setup, commit the changes and push!."
 fi
  
-echo "Congratulations! Finish the inital setup. Go ahead to Readme file."
+printf "\n\nCongratulations! Finish the inital setup. Go ahead to Readme file."
