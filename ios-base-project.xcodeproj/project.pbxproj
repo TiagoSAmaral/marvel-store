@@ -29,8 +29,6 @@
 /* Begin PBXFileReference section */
 		CF24569923E4C55B00A1968D /* BaseProjectTarget-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "BaseProjectTarget-Info.plist"; sourceTree = "<group>"; };
 		CF6414DF23E4C1CF009C7A9E /* BaseProjectTargetTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BaseProjectTargetTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		CF6414E123E4C1CF009C7A9E /* BaseProjectTargetTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseProjectTargetTests.swift; sourceTree = "<group>"; };
-		CF6414E323E4C1CF009C7A9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CF6414E923E4C210009C7A9E /* TemplateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateTests.swift; sourceTree = "<group>"; };
 		CF9601AE23DA2A1E00916EF1 /* BaseProjectTarget.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BaseProjectTarget.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFD3A6AC23DA308900EB6D4D /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -60,20 +58,10 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		CF6414E023E4C1CF009C7A9E /* BaseProjectTargetTests */ = {
-			isa = PBXGroup;
-			children = (
-				CF6414E123E4C1CF009C7A9E /* BaseProjectTargetTests.swift */,
-				CF6414E323E4C1CF009C7A9E /* Info.plist */,
-			);
-			path = BaseProjectTargetTests;
-			sourceTree = "<group>";
-		};
 		CF9601A523DA2A1E00916EF1 = {
 			isa = PBXGroup;
 			children = (
 				CFD3A6A323DA302E00EB6D4D /* source */,
-				CF6414E023E4C1CF009C7A9E /* BaseProjectTargetTests */,
 				CF9601AF23DA2A1E00916EF1 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -215,7 +203,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 1130;
 				LastUpgradeCheck = 1130;
-				ORGANIZATIONNAME = "developer_organization_name";
+				ORGANIZATIONNAME = developer_organization_name;
 				TargetAttributes = {
 					CF6414DE23E4C1CF009C7A9E = {
 						CreatedOnToolsVersion = 11.3.1;
