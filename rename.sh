@@ -22,8 +22,8 @@ echo "Type the organization name (Not use space or special characters or accente
 echo "example: My business"
 read -p "New organization name: " NEW_ORG_NAME
 
-find . -type f -not -path "*git/*" -print0 | xargs -0 sed -i ""  "s/$ORIGINAL_NAME/$NEWNAME/g"
+find . -type f -not -path "*git/*" ! -name 'rename.sh' -print0 | xargs -0 sed -i ""  "s/$ORIGINAL_NAME/$NEWNAME/g"
 
-find . -type f -not -path "*git/*" -print0 | xargs -0 sed -i ""  "s/$ORIGINAL_BUNDLE_ID/$NEW_BUNDLE_IDENTIFIER/g"
+find . -type f -not -path "*git/*" ! -name 'rename.sh' -print0 | xargs -0 sed -i ""  "s/$ORIGINAL_BUNDLE_ID/$NEW_BUNDLE_IDENTIFIER/g"
 
-find . -type f -not -path "*git/*" -print0 | xargs -0 sed -i ""  "s/$ORIGINAL_ORG_NAME/$NEW_ORG_NAME/g"
+find . -type f -not -path "*git/*" ! -name 'rename.sh' -print0 | xargs -0 sed -i ""  "s/$ORIGINAL_ORG_NAME/$NEW_ORG_NAME/g"
