@@ -24,7 +24,7 @@ Ferramentas de Gestão e Qualidade de Código<br>
 - Swiftlint
 
 Gerenciador de Dependências<br>
-- Carthage
+- Swift Package Manager
 
 ## Instruções para Execução de Projeto
 
@@ -69,9 +69,7 @@ Após a conclusão das instalaçoes feitas com brew, execute o comando a baixo p
 
 ### Instalação de Dependências do Projeto
 
-Execute o comando abaixo para instalar as dependências do projeto:<br>
-
-```carthage update```
+No Xcode atualize as dependencias usando o Swift Package Manager
 
 ---
 
