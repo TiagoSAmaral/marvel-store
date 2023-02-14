@@ -3,22 +3,24 @@
 export LC_CTYPE=C
 export LANG=C
 
-ORIGINAL_NAME="mvvm-c"
-ORIGINAL_BUNDLE_ID="com.outlook@amaral"
-ORIGINAL_ORG_NAME="Caseiro"
+ORIGINAL_NAME="ios-base-project"
+ORIGINAL_BUNDLE_ID="com.domain-developer"
+ORIGINAL_ORG_NAME="developer_organization_name"
 
 echo "Before any configuration setup the correct name of project."
 echo "You can cancel the process pressioning 'CTRL + C'. If you make a mistake, dont worry, run the command: 'git checkout .' and try again!"
 
 echo "Type new name to project (Not use space, special characters, character '@' and accented letters!!!):"
-echo "example: com.mydomain-my.name"
-read NEWNAME
+# read NEWNAME
+read -p "New name: " NEWNAME
 
-echo "Type new bundle identifier (Not use space or special characters or accented letters!!!):"
-read NEW_BUNDLE_IDENTIFIER
+echo "Type new bundle identifier. This is like your e-mail, but inverted. (Not use space or special characters or accented letters!!!):"
+echo "example: com.mydomain-my.name"
+read -p "New bundle identifier: " NEW_BUNDLE_IDENTIFIER
 
 echo "Type the organization name (Not use space or special characters or accented letters!!!):"
-read NEW_ORG_NAME
+echo "example: My business"
+read -p "New organization name: " NEW_ORG_NAME
 
 find . -type f -not -path "*git/*" -print0 | xargs -0 sed -i ""  "s/$ORIGINAL_NAME/$NEWNAME/g"
 
