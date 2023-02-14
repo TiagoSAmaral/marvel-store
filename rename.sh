@@ -47,9 +47,9 @@ echo -p "Update url? (y/n)" IS_TO_UPDATE_GIT_REMOTE_URL
 
 if [$IS_TO_UPDATE_GIT_REMOTE_URL -eq "y"]
 then
-
     echo -p "Enter the new valid URL: " URL_GIT_REMOTE
     git remote set-url $URL_GIT_REMOTE
+    echo "Done! After finish setup, commit the changes and push!."
 fi
  
 echo "Congratulations! Finish the inital setup. Go ahead to Readme file."
