@@ -2,8 +2,7 @@
 //  ViewController.swift
 //  ios-base-project
 //
-//  Created by Tiago Amaral on 23/01/20.
-//  Copyright © 2020 Tiago Amaral. All rights reserved.
+//  Created on 23/01/20.
 //
 
 import UIKit
