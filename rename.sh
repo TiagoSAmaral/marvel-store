@@ -38,9 +38,12 @@ find . -type f -not -path "*git/*" ! -name 'rename.sh' -print0 | xargs -0 sed -i
 # Rename file of project with new name.
 mv $ORIGINAL_NAME_FILE "$NEWNAME.xcodeproj"
 
+#Rename root folder of project 
+find . -depth -type d -name <$ORIGINAL_NAME> -execdir mv {} <$NEWNAME> \;
+
 # Update git remote URL
 
-# Show list of current URL remote repository
+Show list of current URL remote repository
 function show_current_git_remote_url() {
     printf "This is the current ORIGIN URL of folder: \n\n"
     git remote -v
@@ -62,4 +65,10 @@ then
     printf "\n\nDone! After finish setup, commit the changes and push!."
 fi
  
+mv ../{$ORIGINAL_NAME,$NEWNAME}
+
+cd ../$NEWNAME
+echo $PWD
+
 printf "\n\nCongratulations! Finish the inital setup. Go ahead to Readme file."
+printf "THIS IS IMPORTANT!!! CLOSE THE CURRENT TERMINAL AND OPEN THE NEW FOLDER OF PROJECT!"
