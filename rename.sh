@@ -37,8 +37,19 @@ find . -type f -not -path "*git/*" ! -name 'rename.sh' -print0 | xargs -0 sed -i
 # Rename file of project with new name.
 mv $ORIGINAL_NAME_FILE "$NEWNAME.xcodeproj"
 
-# Start other setup project process!
+# Update git remote URL
+echo "This is the current ORIGIN URL of folder: \n"
+git remote -v
 
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" &
-brew bundle &
-bundle install
+echo "\n"
+echo "Do you want update this URL?"
+echo -p "Update url? (y/n)" IS_TO_UPDATE_GIT_REMOTE_URL
+
+if [$IS_TO_UPDATE_GIT_REMOTE_URL -eq "y"]
+then
+
+    echo -p "Enter the new valid URL: " URL_GIT_REMOTE
+    git remote set-url $URL_GIT_REMOTE
+fi
+ 
+echo "Congratulations! Finish the inital setup. Go ahead to Readme file."
