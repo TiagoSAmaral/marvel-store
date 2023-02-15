@@ -1,4 +1,5 @@
 #!/bin/bash
+
 #Support to SED
 export LC_CTYPE=C
 export LANG=C
@@ -65,10 +66,8 @@ then
     printf "\n\nDone! After finish setup, commit the changes and push!."
 fi
  
+# Rename the current directory.
 mv ../{$ORIGINAL_NAME,$NEWNAME}
 
-cd ../$NEWNAME
-echo $PWD
-
-printf "\n\nCongratulations! Finish the inital setup. Go ahead to Readme file."
 printf "THIS IS IMPORTANT!!! CLOSE THE CURRENT TERMINAL AND OPEN THE NEW FOLDER OF PROJECT!"
+printf "\n\nCongratulations! Finish the inital setup. Go ahead to Readme file.\n\m"
