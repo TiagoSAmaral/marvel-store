@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  ios-base-project
+//  github-person
 //
 //  Created on 23/01/20.
 //  Copyright © 2020. All rights reserved.
@@ -18,6 +18,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		self.window = UIWindow(frame: UIScreen.main.bounds)
 		self.window?.rootViewController = MainScreenView()
 		self.window?.makeKeyAndVisible()
+        
+        #if release
+        print("RELEASE")
+        #endif
+        
+        #if DEBUG
+        print("DEBUB")
+        #endif
+        
         return true
     }
 }

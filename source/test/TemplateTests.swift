@@ -6,7 +6,7 @@
 //
 
 import XCTest
-@testable import BaseProjectTarget
+@testable import github_person
 
 class TemplateTests: XCTestCase {
 

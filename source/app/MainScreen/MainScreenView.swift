@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  ios-base-project
+//  github-person
 //
 //  Created on 23/01/20.
 //

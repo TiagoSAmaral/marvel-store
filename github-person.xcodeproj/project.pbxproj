@@ -28,9 +28,9 @@
 
 /* Begin PBXFileReference section */
 		CF24569923E4C55B00A1968D /* BaseProjectTarget-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "BaseProjectTarget-Info.plist"; sourceTree = "<group>"; };
-		CF6414DF23E4C1CF009C7A9E /* BaseProjectTargetTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BaseProjectTargetTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF6414DF23E4C1CF009C7A9E /* github-personTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "github-personTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF6414E923E4C210009C7A9E /* TemplateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateTests.swift; sourceTree = "<group>"; };
-		CF9601AE23DA2A1E00916EF1 /* BaseProjectTarget.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BaseProjectTarget.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF9601AE23DA2A1E00916EF1 /* github-person.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "github-person.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFD3A6AC23DA308900EB6D4D /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CFD3A6AF23DA308A00EB6D4D /* MainScreenView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainScreenView.swift; sourceTree = "<group>"; };
 		CFD3A6B223DA308A00EB6D4D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -69,8 +69,8 @@
 		CF9601AF23DA2A1E00916EF1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CF9601AE23DA2A1E00916EF1 /* BaseProjectTarget.app */,
-				CF6414DF23E4C1CF009C7A9E /* BaseProjectTargetTests.xctest */,
+				CF9601AE23DA2A1E00916EF1 /* github-person.app */,
+				CF6414DF23E4C1CF009C7A9E /* github-personTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -158,9 +158,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		CF6414DE23E4C1CF009C7A9E /* BaseProjectTargetTests */ = {
+		CF6414DE23E4C1CF009C7A9E /* github-personTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CF6414E623E4C1CF009C7A9E /* Build configuration list for PBXNativeTarget "BaseProjectTargetTests" */;
+			buildConfigurationList = CF6414E623E4C1CF009C7A9E /* Build configuration list for PBXNativeTarget "github-personTests" */;
 			buildPhases = (
 				CF6414DB23E4C1CF009C7A9E /* Sources */,
 				CF6414DC23E4C1CF009C7A9E /* Frameworks */,
@@ -171,28 +171,27 @@
 			dependencies = (
 				CF6414E523E4C1CF009C7A9E /* PBXTargetDependency */,
 			);
-			name = BaseProjectTargetTests;
+			name = "github-personTests";
 			productName = BaseProjectTargetTests;
-			productReference = CF6414DF23E4C1CF009C7A9E /* BaseProjectTargetTests.xctest */;
+			productReference = CF6414DF23E4C1CF009C7A9E /* github-personTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		CF9601AD23DA2A1E00916EF1 /* BaseProjectTarget */ = {
+		CF9601AD23DA2A1E00916EF1 /* github-person */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CF9601C223DA2A2200916EF1 /* Build configuration list for PBXNativeTarget "BaseProjectTarget" */;
+			buildConfigurationList = CF9601C223DA2A2200916EF1 /* Build configuration list for PBXNativeTarget "github-person" */;
 			buildPhases = (
 				CF9601AA23DA2A1E00916EF1 /* Sources */,
 				CF9601AB23DA2A1E00916EF1 /* Frameworks */,
 				CF9601AC23DA2A1E00916EF1 /* Resources */,
 				CFD3A6BF23DA3DC600EB6D4D /* Swiftlint */,
-				CF6414C923E4BB4E009C7A9E /* Carthage */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = BaseProjectTarget;
-			productName = "ios-base-project";
-			productReference = CF9601AE23DA2A1E00916EF1 /* BaseProjectTarget.app */;
+			name = "github-person";
+			productName = "github-person";
+			productReference = CF9601AE23DA2A1E00916EF1 /* github-person.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -202,7 +201,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1130;
-				LastUpgradeCheck = 1130;
+				LastUpgradeCheck = 1420;
 				ORGANIZATIONNAME = developer_organization_name;
 				TargetAttributes = {
 					CF6414DE23E4C1CF009C7A9E = {
@@ -214,7 +213,7 @@
 					};
 				};
 			};
-			buildConfigurationList = CF9601A923DA2A1E00916EF1 /* Build configuration list for PBXProject "ios-base-project" */;
+			buildConfigurationList = CF9601A923DA2A1E00916EF1 /* Build configuration list for PBXProject "github-person" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -228,8 +227,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				CF9601AD23DA2A1E00916EF1 /* BaseProjectTarget */,
-				CF6414DE23E4C1CF009C7A9E /* BaseProjectTargetTests */,
+				CF9601AD23DA2A1E00916EF1 /* github-person */,
+				CF6414DE23E4C1CF009C7A9E /* github-personTests */,
 			);
 		};
 /* End PBXProject section */
@@ -255,26 +254,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		CF6414C923E4BB4E009C7A9E /* Carthage */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
-			);
-			name = Carthage;
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Alamofire.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n/usr/local/bin/carthage copy-frameworks\n";
-		};
 		CFD3A6BF23DA3DC600EB6D4D /* Swiftlint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -319,7 +298,7 @@
 /* Begin PBXTargetDependency section */
 		CF6414E523E4C1CF009C7A9E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = CF9601AD23DA2A1E00916EF1 /* BaseProjectTarget */;
+			target = CF9601AD23DA2A1E00916EF1 /* github-person */;
 			targetProxy = CF6414E423E4C1CF009C7A9E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -403,6 +382,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -464,6 +444,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -503,7 +484,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.domain-developer.ios-base-project";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.domain-developer.github-person";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -521,7 +502,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.domain-developer.ios-base-project";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.domain-developer.github-person";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -531,7 +512,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		CF6414E623E4C1CF009C7A9E /* Build configuration list for PBXNativeTarget "BaseProjectTargetTests" */ = {
+		CF6414E623E4C1CF009C7A9E /* Build configuration list for PBXNativeTarget "github-personTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CF6414E723E4C1CF009C7A9E /* Debug */,
@@ -540,7 +521,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CF9601A923DA2A1E00916EF1 /* Build configuration list for PBXProject "ios-base-project" */ = {
+		CF9601A923DA2A1E00916EF1 /* Build configuration list for PBXProject "github-person" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CF9601C023DA2A2200916EF1 /* Debug */,
@@ -549,7 +530,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CF9601C223DA2A2200916EF1 /* Build configuration list for PBXNativeTarget "BaseProjectTarget" */ = {
+		CF9601C223DA2A2200916EF1 /* Build configuration list for PBXNativeTarget "github-person" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CF9601C323DA2A2200916EF1 /* Debug */,

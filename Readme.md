@@ -13,8 +13,8 @@ Ver:  [git set-url remote](https://git-scm.com/docs/git-remote#Documentation/git
 Para instalar e utilizar os recursos deste projeto, siga os passos abaixo.
 
 Sobre o projeto: <br>
-- Xcode Version 11.3.1 (11C504) (ou superior)<br>
-- Suporte mínimo ao iOS 10<br>
+- Xcode Version 14.2 ou superior<br>
+- Suporte mínimo ao iOS 14<br>
 - Swift 5<br>
 
 Ferramentas de Gestão e Qualidade de Código<br>
@@ -29,6 +29,40 @@ Gerenciador de Dependências<br>
 ## Instruções para Execução de Projeto
 
 Foi utilizado a versão do Ruby 2.7.0 no uso das ferramentas de gestão e qualidade.
+
+---
+
+## Configurando o Projeto
+
+ Antes de iniciar qualquer instalação de dependencias, é necessário nomear adequadamente o projeto. Para isso, execute o bash `rename.sh` em seu terminal. Você será perguntado sobre o nome do projeto, bundle identifier e organização. Após finalizar esse processo, será você terá a opção de atualizar a `URL` do repositório remoto do projeto, o que não é obrigatório, podendo ser alterado posteriormente. Mas é altamente recomendado realizar a troca nesse momento.
+  
+  Primeiro, abra seu terminal e navegue até a pasta do projeto. Execute o seguinte comando para dar permissão de execução ao bash:
+
+  ```bash
+   $ chmod +x rename.sh
+  ```
+ 
+  Após dada a permissão, execute o comando: 
+
+  ```bash
+  $ ./rename.sh
+  ```
+
+  E siga as instruções.
+  
+---
+
+### [XcodeGen](https://github.com/yonaskolb/XcodeGen)
+
+<p>XcodeGen é uma ferramenta de linha de comando escrita em Swift que gera seu arquivo de projeto Xcode (project.pbxproj) usando sua estrutura de pastas e uma especificação de projeto.</p>
+
+<p>A especificação do projeto é feita com um arquivo YAML ou JSON que define seus targets, configurações, schemes,  configurações de builds personalizadas e muitas outras opções. Todos os seus diretórios de origem são automaticamente analisados e referenciados de forma apropriada, preservando sua estrutura de pastas. Configurações finas são usados em muitos lugares, portanto, você só precisa personalizar o que for necessário. Projetos muito complexos também podem ser definidos usando recursos mais avançados.</p>
+
+ <p>Após renomear o projeto, execute o e instalar as dependencias, execute o comando em seu terminal:</p>
+
+ ```bash
+ xcodegen generate
+ ```
 
 ---
 
