@@ -1,6 +1,4 @@
-# iOS Base Project
-
-Este projeto serve de base para criação de novos projetos para iOS (iPhone/iPad/AppleWatch).
+# Github Person
 
 Após clonar o repositório, deve-se alterar a URL de origin do seu repositório local.
 
@@ -17,14 +15,23 @@ Sobre o projeto: <br>
 - Suporte mínimo ao iOS 14<br>
 - Swift 5<br>
 
-Ferramentas de Gestão e Qualidade de Código<br>
+#### Ferramentas de Gestão e Qualidade de Código<br>
 - Fastlane
 - Slather
 - Jazzy
 - Swiftlint
 
-Gerenciador de Dependências<br>
-- Swift Package Manager
+#### Gerenciador de Dependências<br>
+
+Gerenciadores usados: 
+ - Swift Package Manager
+ - Carthage
+
+Dependências:
+- [Kingfisher](https://github.com/onevcat/Kingfisher). Usando SPM (Download e cache de imagens).
+- [Alamofire](https://github.com/Alamofire/Alamofire) Usando SPM (Realizaão de requisioes assincronas).
+- [SwiftIconfont](https://github.com/segecey/SwiftIconFont) Usando Carthage (Ícones nos textos).
+
 
 ## Instruções para Execução de Projeto
 
@@ -34,39 +41,7 @@ Foi utilizado a versão do Ruby 2.7.0 no uso das ferramentas de gestão e qualid
 
 ## Configurando o Projeto
 
- Antes de iniciar qualquer instalação de dependencias, é necessário nomear adequadamente o projeto. Para isso, execute o bash `rename.sh` em seu terminal. Você será perguntado sobre o nome do projeto, bundle identifier e organização. Após finalizar esse processo, será você terá a opção de atualizar a `URL` do repositório remoto do projeto, o que não é obrigatório, podendo ser alterado posteriormente. Mas é altamente recomendado realizar a troca nesse momento.
-  
-  Primeiro, abra seu terminal e navegue até a pasta do projeto. Execute o seguinte comando para dar permissão de execução ao bash:
-
-  ```bash
-   $ chmod +x rename.sh
-  ```
- 
-  Após dada a permissão, execute o comando: 
-
-  ```bash
-  $ ./rename.sh
-  ```
-
-  E siga as instruções.
-  
----
-
-### [XcodeGen](https://github.com/yonaskolb/XcodeGen)
-
-<p>XcodeGen é uma ferramenta de linha de comando escrita em Swift que gera seu arquivo de projeto Xcode (project.pbxproj) usando sua estrutura de pastas e uma especificação de projeto.</p>
-
-<p>A especificação do projeto é feita com um arquivo YAML ou JSON que define seus targets, configurações, schemes,  configurações de builds personalizadas e muitas outras opções. Todos os seus diretórios de origem são automaticamente analisados e referenciados de forma apropriada, preservando sua estrutura de pastas. Configurações finas são usados em muitos lugares, portanto, você só precisa personalizar o que for necessário. Projetos muito complexos também podem ser definidos usando recursos mais avançados.</p>
-
- <p>Após renomear o projeto, execute o e instalar as dependencias, execute o comando em seu terminal:</p>
-
- ```bash
- xcodegen generate
- ```
-
----
-
-### [RVM](https://rvm.io/)
+### [RVM](https://rvm.io/) e [BREW](https://brew.sh/)
 
 Instale o RVM com o seguinte comando: <br>
 
@@ -74,17 +49,20 @@ Instale o RVM com o seguinte comando: <br>
 
 Após a instalação, utilize o seguinte comando para usar a versão 2.7.0 do Ruby:
 
-```rvm install 2.7.0```
+```
+rvm install 2.7.0
+```
 
 Depois use o comando: <br>
-```rvm use 2.7.0```
-
----
-
-### [BREW](https://brew.sh/)
+```
+rvm use 2.7.0
+```
 
 Instale o brew com o seguinte comando: <br>
-```/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"```
+
+```
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+```
 
 ---
 ### Instalando dependencias de Gestão
@@ -101,11 +79,33 @@ Após a conclusão das instalaçoes feitas com brew, execute o comando a baixo p
 
 ---
 
+### [XcodeGen](https://github.com/yonaskolb/XcodeGen)
+
+<p>XcodeGen é uma ferramenta de linha de comando escrita em Swift que gera seu arquivo de projeto Xcode (project.pbxproj) usando sua estrutura de pastas e uma especificação de projeto.</p>
+
+<p>A especificação do projeto é feita com um arquivo YAML ou JSON que define seus targets, configurações, schemes, configurações de builds personalizadas e muitas outras opções. Todos os seus diretórios de origem são automaticamente analisados e referenciados de forma apropriada, preservando sua estrutura de pastas. Configurações finas são usados em muitos lugares, portanto, você só precisa personalizar o que for necessário. Projetos muito complexos também podem ser definidos usando recursos mais avançados.</p>
+
+ <p>Após renomear o projeto, execute o e instalar as dependencias, execute o comando em seu terminal:</p>
+
+ ```bash
+ xcodegen generate
+ ```
+
+---
+
 ### Instalação de Dependências do Projeto
 
 No Xcode atualize as dependencias usando o Swift Package Manager
 
 ---
+
+### Carthage
+
+ Uma das dependencias do projeto está sendo gerenciada pelo Carthage. É possível gerar o build através do comando:
+
+```
+carthage update --cache-builds --platform ios
+```
 
 ## Ferramentas
 
