@@ -3,3 +3,4 @@
 "networkErrorNotDefined" = "Algo deu errado, favor tentar novamente. Caso o erro persista, entre em contato com o suporte.";
 "networkOffline" = "Verifique sua conexão com a internet";
 "serverNotResponse" = "Entre em contato com suporte.";
+"pullToRefreshText" = "Atualizando...";
