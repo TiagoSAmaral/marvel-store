@@ -6,4 +6,24 @@
 //  Copyright © 2023 developer_organization_name. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+protocol GenericCell where Self: UIView {
+    var contentView: UIView { get }
+    var reuseIdentifier: String? { get }
+    func prepareForReuse()
+}
+
+extension GenericCell {
+    
+    var reuseIdentifier: String? {
+        Self.identifier
+    }
+        
+    func customPrepareForReuse() {
+        contentView.backgroundColor = nil
+        contentView.subviews.forEach {
+            $0.removeFromSuperview()
+        }
+    }
+}

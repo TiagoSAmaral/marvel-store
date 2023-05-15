@@ -6,4 +6,8 @@
 //  Copyright © 2023 developer_organization_name. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+protocol FactoryPage: AnyObject {
+    static func makePage(coordinator: Coordinator?) -> UIViewController?
+}

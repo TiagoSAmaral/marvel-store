@@ -6,4 +6,18 @@
 //  Copyright © 2023 developer_organization_name. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+class CardUserProfileView: UIView, Card {
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+    }
+    
+    func load(model: Model?) {
+    }
+}

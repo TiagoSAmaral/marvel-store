@@ -7,3 +7,13 @@
 //
 
 import Foundation
+
+protocol Identifier {}
+
+extension Identifier where Self: NSObject {
+    static var identifier: String {
+        String(describing: self)
+    }
+}
+
+extension NSObject: Identifier {}

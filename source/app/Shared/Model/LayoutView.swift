@@ -7,3 +7,9 @@
 //
 
 import Foundation
+
+enum LayoutView: Codable {
+    case userListItem
+    case repoListItem
+    case userInfo
+}

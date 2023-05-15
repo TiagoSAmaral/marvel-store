@@ -6,4 +6,24 @@
 //  Copyright © 2023 developer_organization_name. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+class AppCoordinator: Coordinator {
+    
+    var parentCoordinator: Coordinator?
+    var childCoordinators: [Coordinator]?
+    var navigationController: UINavigationController?
+    var rootViewControler: UIViewController?
+    
+    required init(navigation: UINavigationController?) {
+        self.navigationController = navigation
+    }
+    
+    func start() {
+        
+        let coordinatorChild = ListUsersPageCoordinator(navigation: navigationController)
+        coordinatorChild.parentCoordinator = self
+        childCoordinators?.append(coordinatorChild)
+        coordinatorChild.start()
+    }
+}

@@ -8,6 +8,16 @@
 
 import UIKit
 
-class CardRepoListItemView: UIView {
+class CardRepoListItemView: UIView, Card {
     
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+    }
+    
+    func load(model: Model?) {
+    }
 }

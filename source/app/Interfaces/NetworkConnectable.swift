@@ -7,3 +7,29 @@
 //
 
 import Foundation
+import Alamofire
+
+protocol NetworkConectable: AnyObject {
+    func networkRequest<T: Codable>(data: RequestApi?, resultType: T.Type, handler: ((Result<T, NetworkError>) -> Void)?)
+}
+
+extension NetworkConectable {
+    
+    func networkRequest<T: Decodable>(data: RequestApi?, resultType: T.Type, handler: ((Result<T, NetworkError>) -> Void)?) {
+        
+        guard let data = data else {
+            handler?(.failure(NetworkError.notDefined(text: LocalizedText.with(tagName: .networkErrorNotDefined))))
+            return
+        }
+        
+        AF.request(data.urlPath, method: data.method, headers: data.headers).responseDecodable(of: resultType.self) { response in
+// Erro no parse, mas o conteudo vem correto em response.data. Basta fazer um decode aqui mesmo.
+            switch response.result {
+            case .success(let result):
+                handler?(.success(result))
+            case .failure(let error):
+                handler?(.failure(NetworkError.makeError(with: error.responseCode, description: error.errorDescription)))
+            }
+        }
+    }
+}

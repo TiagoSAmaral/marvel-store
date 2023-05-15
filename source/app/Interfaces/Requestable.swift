@@ -9,8 +9,9 @@
 import Foundation
 import Alamofire
 
-protocol Request {
-    var urlPath: URL { get }
-    var method: HTTPMethod { get }
-    var params: String { get }
+protocol Requestable {
+    var urlPath: String { get }
+    var method: Alamofire.HTTPMethod { get }
+    var params: Parameters { get }
+    var headers: HTTPHeaders { get }
 }

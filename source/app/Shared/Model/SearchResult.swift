@@ -7,3 +7,7 @@
 //
 
 import Foundation
+
+struct SearchResult: Codable {
+    let items: [UserInfoListItem]?
+}

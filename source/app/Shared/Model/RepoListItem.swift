@@ -7,3 +7,26 @@
 //
 
 import Foundation
+
+struct RepoListemItem: Codable, Model {
+    let identifier: Int?
+    let name: String?
+    let owner: UserInfo?
+    let description: String?
+    let startsCount: Int?
+    let forksCount: Int?
+    let watchersCount: Int?
+    let htmlUrl: String?
+    
+    var layout: LayoutView? = .repoListItem
+    var action: ((Model) -> Void)?
+    
+    enum CodingKeys: String, CodingKey {
+        case name, owner, description
+        case identifier = "id"
+        case startsCount = "stargazers_count"
+        case forksCount = "forks_count"
+        case watchersCount = "watchers_count"
+        case htmlUrl = "html_url"
+    }
+}

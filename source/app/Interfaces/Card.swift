@@ -6,7 +6,20 @@
 //  Copyright © 2023 developer_organization_name. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
-protocol CardAction { 
+protocol Card where Self: UIView {
+    func load(model: Model?)
+}
+
+extension Card {
+    func defineLayout(with view: UIView?) {
+        
+        guard let view = view else {
+            return
+        }
+        view.addSubview(self)
+        
+        edgeToSuperView()
+    }
 }

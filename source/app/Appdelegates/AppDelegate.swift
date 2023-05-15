@@ -12,21 +12,29 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var appViewManager: Coordinator!
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        appViewManager = startApplication()
+        appViewManager.start()
 		self.window = UIWindow(frame: UIScreen.main.bounds)
-		self.window?.rootViewController = MainScreenView()
+        self.window?.rootViewController = appViewManager.navigationController
 		self.window?.makeKeyAndVisible()
-        
-        #if release
-        print("RELEASE")
-        #endif
-        
+
         #if DEBUG
         print("DEBUB")
+        #else
+        print("RELEASE")
         #endif
-        
+
         return true
+    }
+    
+    private func startApplication() -> Coordinator {
+        let navigation = UINavigationController()
+        navigation.navigationBar.isTranslucent = false
+        return AppCoordinator(navigation: navigation)
     }
 }

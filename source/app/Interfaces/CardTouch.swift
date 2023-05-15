@@ -6,4 +6,10 @@
 //  Copyright © 2023 developer_organization_name. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+
+protocol CardTouch where Self: UIView {
+    var action: ((Model) -> Void)? { set get }
+    func defineAction()
+}

@@ -7,3 +7,9 @@
 //
 
 import Foundation
+
+protocol Model {
+    var identifier: Int? { get }
+    var layout: LayoutView? { get }
+    var action: ((Model) -> Void)? { set get }
+}

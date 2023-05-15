@@ -7,3 +7,7 @@
 //
 
 import Foundation
+
+protocol CardModelHandler {
+    func load(data: Model)
+}
