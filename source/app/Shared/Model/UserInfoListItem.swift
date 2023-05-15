@@ -29,7 +29,7 @@ struct UserInfoListItem: Codable, Model {
     let siteAdmin: Bool
     
     var layout: LayoutView? = .userListItem
-    var action: ((Model) -> Void)?
+    var action: ((Model?) -> Void)?
 
     enum CodingKeys: String, CodingKey {
         case login, type

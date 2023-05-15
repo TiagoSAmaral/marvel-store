@@ -18,6 +18,7 @@ struct LocalizedText {
         case searchPlaceholder = "Buscar usuário por nome"
         case searchButtonLabel = "Buscar"
         case pullToRefreshText = "pullToRefreshText"
+        case showRepos = "showRepos"
     }
     
     static func with(tagName: LocalizeTags) -> String {

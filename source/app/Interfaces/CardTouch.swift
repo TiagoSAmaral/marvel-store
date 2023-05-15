@@ -8,8 +8,11 @@
 
 import UIKit
 
-
 protocol CardTouch where Self: UIView {
-    var action: ((Model) -> Void)? { set get }
+    var action: ((Model?) -> Void)? { get set }
     func defineAction()
+}
+
+extension CardTouch {
+    func defineAction() {}
 }

@@ -10,7 +10,7 @@ import UIKit
 
 class CardUserListItemView: UIView, Card, CardTouch {
     
-    var action: ((Model) -> Void)?
+    var action: ((Model?) -> Void)?
     var model: UserInfoListItem?
     
     lazy var nameLabel: UILabel = {
@@ -44,7 +44,6 @@ class CardUserListItemView: UIView, Card, CardTouch {
     func makeNameLabelConstraint() {
         addSubviews([nameLabel])
         nameLabel.height(60).edgeToSuperView()
-            
     }
     
 // MARK: - Card Touch action

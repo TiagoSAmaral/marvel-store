@@ -8,29 +8,29 @@
 
 import UIKit
 
-protocol ViewFactory {
-    var controller: ListUserController? { get }
+protocol Controller: AnyObject {
+    var view: UIView! { get set }
+    var dataHandler: ListDataHandler? { get }
+}
+
+protocol ListFactory {
     func reloadView()
+    func defineViewInController()
 }
 
-protocol ListDataHandler {
-    func updateContent()
-    func numberOfItemsBy(section: Int?) -> Int
-    func numberOfSections() -> Int
-    func dataBy(indexPath: IndexPath) -> Model?
-}
-
-class ListUserPageViewFactory: NSObject, ViewFactory, UITableViewDataSource {
+class ListFactoryView: NSObject, ListFactory, UITableViewDataSource {
         
-    weak var controller: ListUserController?
-    var viewModel: ListDataHandler?
+    weak var controller: Controller?
     var cardFactory: CardFactory?
     var refreshControl: UIRefreshControl?
     private var tableView: UITableView?
     
-    init(controller: ListUserController? = nil) {
+    init(controller: Controller? = nil) {
         super.init()
         self.controller = controller
+    }
+    
+    func defineViewInController() {
         makeTableView()
         setupTableView()
         registerTableViewCell()
@@ -64,7 +64,7 @@ class ListUserPageViewFactory: NSObject, ViewFactory, UITableViewDataSource {
     }
     
     @objc func refresh() {
-        viewModel?.updateContent()
+        controller?.dataHandler?.updateContent()
         refreshControl?.endRefreshing()
     }
     
@@ -88,24 +88,23 @@ class ListUserPageViewFactory: NSObject, ViewFactory, UITableViewDataSource {
 // MARK: - UITableViewDataSource Implementation
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        viewModel?.numberOfSections() ?? 0
+        controller?.dataHandler?.numberOfSections() ?? 0
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        viewModel?.numberOfItemsBy(section: section) ?? 0
+        controller?.dataHandler?.numberOfItemsBy(section: section) ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
         guard let cell = tableView.dequeueReusableCell(withIdentifier: GenericTableViewCell.identifier,
                                                        for: indexPath) as? GenericTableViewCell,
-                let model = viewModel?.dataBy(indexPath: indexPath) else {
+              let model = controller?.dataHandler?.dataBy(indexPath: indexPath) else {
             return UITableViewCell()
         }
         
         let card = cardFactory?.makeCard(from: model)
         card?.defineLayout(with: cell.contentView)
         return cell
-        
     }
 }

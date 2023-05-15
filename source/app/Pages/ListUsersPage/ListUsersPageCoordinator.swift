@@ -9,7 +9,7 @@
 import UIKit
 
 protocol ListUsersCoordinable where Self: Coordinator {
-    func goToUserDetail(with data: Model)
+    func goToUserDetail(with data: Model?)
 }
 
 class ListUsersPageCoordinator: Coordinator, ListUsersCoordinable {
@@ -23,15 +23,18 @@ class ListUsersPageCoordinator: Coordinator, ListUsersCoordinable {
         navigationController = navigation
     }
     
-    func start() {
-        guard let controller = ListUsersPageFactory.makePage(coordinator: self) else {
+    func start(with data: Model?) {
+        guard let controller = ListUsersPageFactory.makePage(coordinator: self, model: nil) else {
             return
         }
         navigationController?.pushViewController(controller, animated: true)
     }
     
-    func goToUserDetail(with data: Model) {
-        
+    func goToUserDetail(with data: Model?) {
+        let userDetailCoordinator = UserDetailPageCoordinator(navigation: navigationController)
+        userDetailCoordinator.parentCoordinator = self
+        childCoordinators?.append(userDetailCoordinator)
+        userDetailCoordinator.start(with: data)
     }
     
     func popToRootViewController() {

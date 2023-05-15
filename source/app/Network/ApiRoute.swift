@@ -13,8 +13,8 @@ struct ApiRoutes {
     enum Paths {
         case getListUser(page: Int?)
         case getSearchUser(text: String?)
-        case getListRepoFromUser(text: String)
-        case getUserProfile(text: String)
+        case getListRepoFromUser(text: String?)
+        case getUserProfile(text: String?)
     }
     
 //    static let shared = ApiRoutes()
@@ -41,7 +41,13 @@ struct ApiRoutes {
             }
             
             return baseUrl + "/search/users?q=\(text)"
+        
+        case .getUserProfile(let text):
+            guard let text = text else {
+                return ""
+            }
             
+            return baseUrl + "/users/\(text)"
         default:
             return ""
         }

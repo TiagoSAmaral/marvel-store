@@ -11,7 +11,7 @@ import Foundation
 struct RepoListemItem: Codable, Model {
     let identifier: Int?
     let name: String?
-    let owner: UserInfo?
+    let owner: UserDetailProfile?
     let description: String?
     let startsCount: Int?
     let forksCount: Int?
@@ -19,7 +19,7 @@ struct RepoListemItem: Codable, Model {
     let htmlUrl: String?
     
     var layout: LayoutView? = .repoListItem
-    var action: ((Model) -> Void)?
+    var action: ((Model?) -> Void)?
     
     enum CodingKeys: String, CodingKey {
         case name, owner, description

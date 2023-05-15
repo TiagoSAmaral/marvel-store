@@ -10,26 +10,24 @@ import UIKit
 
 class ListUsersPageFactory: FactoryPage {
     
-    static func makePage(coordinator: Coordinator?) -> UIViewController? {
+    static func makePage(coordinator: Coordinator?, model: Model?) -> UIViewController? {
 
         let controller = ListUserPageController()
         let searchBarController = SearchBarFactory.makeSearch()
         let headerMaker = NetworkHeaderMaker()
         let network = ListUserPageNetwork(headerFactory: headerMaker)
-        let viewFactory = ListUserPageViewFactory(controller: controller)
+        let viewFactory = ListFactoryView(controller: controller)
         let viewModel = ListUsersPageViewModel(controller: controller,
                                                network: network,
                                                coordinator: coordinator)
-        
-        viewFactory.viewModel = viewModel
         viewFactory.cardFactory = CardMaker()
-        
         coordinator?.rootViewControler = controller
         controller.viewModel = viewModel
         controller.viewFactory = viewFactory
         controller.coordinator = coordinator as? ListUsersCoordinable
         controller.searchController = searchBarController
         controller.searchHandlerEvents = viewModel
+        controller.dataHandler = viewModel
         return controller
     }
 }

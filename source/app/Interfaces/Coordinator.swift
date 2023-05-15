@@ -8,7 +8,7 @@
 
 import UIKit
 
-public protocol Coordinator where Self: AnyObject {
+protocol Coordinator where Self: AnyObject {
     
     var parentCoordinator: Coordinator? { get set }
     var childCoordinators: [Coordinator]? { get set }
@@ -16,7 +16,7 @@ public protocol Coordinator where Self: AnyObject {
     var rootViewControler: UIViewController? { get set }
    
     init(navigation: UINavigationController?)
-    func start()
+    func start(with data: Model?)
     func popToRootViewController()
     func didFinishChild(_ child: Coordinator?)
 }

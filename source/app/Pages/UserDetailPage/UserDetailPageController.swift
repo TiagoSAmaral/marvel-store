@@ -8,19 +8,35 @@
 
 import UIKit
 
-//protocol UserDetailController where Self: UIViewController {
-//    var viewModel: UserDetailVM? { get }
-//    var viewFactory: UserDetailViewFactory? { get }
-//    var coordinator: UserDetailCoordinable? { get }
-//}
-//
-//class UserDetailPageController: UIViewController, UserDetailController {
-//
-//    var viewFactory: UserDetailViewFactory?
-//    var viewModel: UserDetailVM?
-//    var coordinator: UserDetailCoordinable?
-//
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//    }
-//}
+protocol UserDetailController where Self: UIViewController {
+    func updateView()
+}
+
+class UserDetailPageController: UIViewController, UserDetailController, Controller {
+        
+    var dataHandler: ListDataHandler?
+    var viewFactory: ListFactoryView?
+    var viewModel: UserDetailVM?
+    var coordinator: UserDetailCoordinable?
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        viewModel?.viewDidAppear()
+        viewFactory?.defineViewInController()
+    }
+    
+    func updateView() {
+        viewFactory?.reloadView()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        coordinator?.didFinishChild()
+    }
+}

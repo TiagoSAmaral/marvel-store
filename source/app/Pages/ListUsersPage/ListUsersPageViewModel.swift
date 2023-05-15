@@ -33,10 +33,18 @@ class ListUsersPageViewModel: NSObject, ListUserVM, ListDataHandler, SearchHandl
     }
     
     func viewDidAppear() {
-        requestUsers()
+        
+        guard let items = items else {
+            requestUsers()
+            return
+        }
+        
+        if items.isEmpty {
+            requestUsers()
+        }
     }
 
-    lazy var goToUserDetail: (Model) -> Void = { [weak self] user in
+    lazy var goToUserDetail: (Model?) -> Void = { [weak self] user in
         self?.coordinator?.goToUserDetail(with: user)
     }
     

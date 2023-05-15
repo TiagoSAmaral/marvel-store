@@ -29,9 +29,7 @@
 		CFAB5CDD2A105A250091F1FF /* UserDetailPageCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAB5CD82A105A250091F1FF /* UserDetailPageCoordinator.swift */; };
 		CFAB5CDE2A105A250091F1FF /* UserDetailPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAB5CD92A105A250091F1FF /* UserDetailPageController.swift */; };
 		CFAB5CDF2A105A250091F1FF /* UserDetailPageFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAB5CDA2A105A250091F1FF /* UserDetailPageFactory.swift */; };
-		CFAB5CE02A105A250091F1FF /* UserDetailPageViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAB5CDB2A105A250091F1FF /* UserDetailPageViewFactory.swift */; };
 		CFAB5CE12A105A250091F1FF /* UserDetailPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAB5CDC2A105A250091F1FF /* UserDetailPageViewModel.swift */; };
-		CFAB5CE72A105F010091F1FF /* ListUsersPageViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAB5CE22A105F010091F1FF /* ListUsersPageViewFactory.swift */; };
 		CFAB5CE82A105F010091F1FF /* ListUsersPageCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAB5CE32A105F010091F1FF /* ListUsersPageCoordinator.swift */; };
 		CFAB5CE92A105F010091F1FF /* ListUsersPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAB5CE42A105F010091F1FF /* ListUsersPageController.swift */; };
 		CFAB5CEA2A105F010091F1FF /* ListUsersPageFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAB5CE52A105F010091F1FF /* ListUsersPageFactory.swift */; };
@@ -52,6 +50,9 @@
 		CFAB5D0C2A11E1DB0091F1FF /* CardUserProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAB5D0B2A11E1DB0091F1FF /* CardUserProfileView.swift */; };
 		CFAB5D0E2A11EF1B0091F1FF /* CardTouch.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAB5D0D2A11EF1B0091F1FF /* CardTouch.swift */; };
 		CFAB5D162A1208D00091F1FF /* SearchBarFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAB5D152A1208D00091F1FF /* SearchBarFactory.swift */; };
+		CFAB5D182A1217590091F1FF /* ListDataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAB5D172A1217590091F1FF /* ListDataHandler.swift */; };
+		CFAB5D1A2A1218BF0091F1FF /* ListFactoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAB5D192A1218BF0091F1FF /* ListFactoryView.swift */; };
+		CFAB5D1C2A121CFC0091F1FF /* UserDetailPageNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAB5D1B2A121CFC0091F1FF /* UserDetailPageNetwork.swift */; };
 		CFD3A6B723DA308A00EB6D4D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD3A6AC23DA308900EB6D4D /* AppDelegate.swift */; };
 		CFD3A6BB23DA308A00EB6D4D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFD3A6B423DA308A00EB6D4D /* Assets.xcassets */; };
 		CFD3A6D723DA41FE00EB6D4D /* Localizable-pt-BR.strings in Resources */ = {isa = PBXBuildFile; fileRef = CFD3A6CF23DA3F9700EB6D4D /* Localizable-pt-BR.strings */; };
@@ -114,9 +115,7 @@
 		CFAB5CD82A105A250091F1FF /* UserDetailPageCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDetailPageCoordinator.swift; sourceTree = "<group>"; };
 		CFAB5CD92A105A250091F1FF /* UserDetailPageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDetailPageController.swift; sourceTree = "<group>"; };
 		CFAB5CDA2A105A250091F1FF /* UserDetailPageFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDetailPageFactory.swift; sourceTree = "<group>"; };
-		CFAB5CDB2A105A250091F1FF /* UserDetailPageViewFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDetailPageViewFactory.swift; sourceTree = "<group>"; };
 		CFAB5CDC2A105A250091F1FF /* UserDetailPageViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDetailPageViewModel.swift; sourceTree = "<group>"; };
-		CFAB5CE22A105F010091F1FF /* ListUsersPageViewFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListUsersPageViewFactory.swift; sourceTree = "<group>"; };
 		CFAB5CE32A105F010091F1FF /* ListUsersPageCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListUsersPageCoordinator.swift; sourceTree = "<group>"; };
 		CFAB5CE42A105F010091F1FF /* ListUsersPageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListUsersPageController.swift; sourceTree = "<group>"; };
 		CFAB5CE52A105F010091F1FF /* ListUsersPageFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListUsersPageFactory.swift; sourceTree = "<group>"; };
@@ -137,6 +136,9 @@
 		CFAB5D0B2A11E1DB0091F1FF /* CardUserProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardUserProfileView.swift; sourceTree = "<group>"; };
 		CFAB5D0D2A11EF1B0091F1FF /* CardTouch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTouch.swift; sourceTree = "<group>"; };
 		CFAB5D152A1208D00091F1FF /* SearchBarFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarFactory.swift; sourceTree = "<group>"; };
+		CFAB5D172A1217590091F1FF /* ListDataHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDataHandler.swift; sourceTree = "<group>"; };
+		CFAB5D192A1218BF0091F1FF /* ListFactoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListFactoryView.swift; sourceTree = "<group>"; };
+		CFAB5D1B2A121CFC0091F1FF /* UserDetailPageNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailPageNetwork.swift; sourceTree = "<group>"; };
 		CFD3A6AC23DA308900EB6D4D /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CFD3A6B223DA308A00EB6D4D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CFD3A6B423DA308A00EB6D4D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 				CFAB5CAF2A0FFF5A0091F1FF /* NetworkConnectable.swift */,
 				CFAB5CBA2A1006160091F1FF /* NetworkHeader.swift */,
 				CFAB5CB12A0FFFDE0091F1FF /* Requestable.swift */,
+				CFAB5D172A1217590091F1FF /* ListDataHandler.swift */,
 			);
 			path = Interfaces;
 			sourceTree = "<group>";
@@ -253,7 +256,6 @@
 				CFAB5CE42A105F010091F1FF /* ListUsersPageController.swift */,
 				CFAB5CE32A105F010091F1FF /* ListUsersPageCoordinator.swift */,
 				CFAB5CE52A105F010091F1FF /* ListUsersPageFactory.swift */,
-				CFAB5CE22A105F010091F1FF /* ListUsersPageViewFactory.swift */,
 				CFAB5CE62A105F010091F1FF /* ListUsersPageViewModel.swift */,
 				CFAB5CFE2A112D620091F1FF /* ListUserPageNetwork.swift */,
 			);
@@ -276,8 +278,8 @@
 				CFAB5CD92A105A250091F1FF /* UserDetailPageController.swift */,
 				CFAB5CD82A105A250091F1FF /* UserDetailPageCoordinator.swift */,
 				CFAB5CDA2A105A250091F1FF /* UserDetailPageFactory.swift */,
-				CFAB5CDB2A105A250091F1FF /* UserDetailPageViewFactory.swift */,
 				CFAB5CDC2A105A250091F1FF /* UserDetailPageViewModel.swift */,
+				CFAB5D1B2A121CFC0091F1FF /* UserDetailPageNetwork.swift */,
 			);
 			path = UserDetailPage;
 			sourceTree = "<group>";
@@ -332,6 +334,7 @@
 			isa = PBXGroup;
 			children = (
 				CFAB5CFA2A1121270091F1FF /* CardFactory.swift */,
+				CFAB5D192A1218BF0091F1FF /* ListFactoryView.swift */,
 			);
 			path = Factories;
 			sourceTree = "<group>";
@@ -628,18 +631,20 @@
 				CFF2EA112A0F259800709168 /* Constraints.swift in Sources */,
 				CFAB5CDE2A105A250091F1FF /* UserDetailPageController.swift in Sources */,
 				CFAB5CE82A105F010091F1FF /* ListUsersPageCoordinator.swift in Sources */,
+				CFAB5D182A1217590091F1FF /* ListDataHandler.swift in Sources */,
 				CFAB5CB82A1002B30091F1FF /* Request.swift in Sources */,
 				CF4D91482A0FFAEC000BE331 /* ListRepoPageFactory.swift in Sources */,
 				CFAB5CFF2A112D620091F1FF /* ListUserPageNetwork.swift in Sources */,
+				CFAB5D1A2A1218BF0091F1FF /* ListFactoryView.swift in Sources */,
 				CFAB5CBD2A100E430091F1FF /* NetworkError.swift in Sources */,
 				CFAB5CF02A1114ED0091F1FF /* GenericTableViewCell.swift in Sources */,
 				CFAB5CAE2A0FFF110091F1FF /* Card.swift in Sources */,
 				CFAB5CB22A0FFFDE0091F1FF /* Requestable.swift in Sources */,
 				CF4D91522A0FFC07000BE331 /* ListRepoPageViewModel.swift in Sources */,
 				CFAB5D052A11DEE70091F1FF /* LayoutView.swift in Sources */,
+				CFAB5D1C2A121CFC0091F1FF /* UserDetailPageNetwork.swift in Sources */,
 				CFD3A6B723DA308A00EB6D4D /* AppDelegate.swift in Sources */,
 				CFAB5D0A2A11E1BF0091F1FF /* CardRepoListItemView.swift in Sources */,
-				CFAB5CE72A105F010091F1FF /* ListUsersPageViewFactory.swift in Sources */,
 				CFAB5CD72A1059AF0091F1FF /* AppCoordinator.swift in Sources */,
 				CFD3A6DA23DA443200EB6D4D /* LocalizedText.swift in Sources */,
 				CFAB5D032A11D5480091F1FF /* Model.swift in Sources */,
@@ -647,7 +652,6 @@
 				CFAB5CC22A10476D0091F1FF /* UserDetailProfile.swift in Sources */,
 				CFAB5D082A11E1940091F1FF /* CardUserListItemView.swift in Sources */,
 				CFAB5CED2A1060620091F1FF /* FactoryPage.swift in Sources */,
-				CFAB5CE02A105A250091F1FF /* UserDetailPageViewFactory.swift in Sources */,
 				CFAB5CE12A105A250091F1FF /* UserDetailPageViewModel.swift in Sources */,
 				CFAB5CBB2A1006160091F1FF /* NetworkHeader.swift in Sources */,
 				CFAB5CC02A10451D0091F1FF /* UserInfoListItem.swift in Sources */,

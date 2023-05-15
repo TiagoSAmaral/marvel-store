@@ -17,13 +17,14 @@ protocol ListUserNetwork {
 class ListUserPageNetwork: ListUserNetwork, NetworkConectable {
     
     var headerFactory: NetworkHeaderFactory?
+    let apiRoutes: ApiRoutes = ApiRoutes()
     
     init(headerFactory: NetworkHeaderFactory) {
         self.headerFactory = headerFactory
     }
     
     func search(with name: String?, handler: ((Result<SearchResult, NetworkError>) -> Void)?) {
-        let apiRoutes = ApiRoutes()
+        
         let request: RequestApi = RequestApi(
                               urlPath: apiRoutes.path(.getSearchUser(text: name)),
                               method: Alamofire.HTTPMethod.get,
@@ -33,7 +34,6 @@ class ListUserPageNetwork: ListUserNetwork, NetworkConectable {
     }
     
     func requestListUser(page: Int?, params: [String: Any]?, handler: ((Result<[UserInfoListItem], NetworkError>) -> Void)?) {
-        let apiRoutes = ApiRoutes()
         let request: RequestApi = RequestApi(
                               urlPath: apiRoutes.path(.getListUser(page: page)),
                               method: Alamofire.HTTPMethod.get,

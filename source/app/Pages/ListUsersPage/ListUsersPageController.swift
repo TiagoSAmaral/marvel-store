@@ -9,15 +9,16 @@
 import UIKit
 
 protocol ListUserController where Self: UIViewController {
-    var viewModel: ListUserVM? { get }
-    var coordinator: ListUsersCoordinable? { get set }
+//    var viewModel: ListUserVM? { get }
+//    var coordinator: ListUsersCoordinable? { get set }
     func updateView()
 }
 
-class ListUserPageController: UIViewController, ListUserController {
- 
+class ListUserPageController: UIViewController, ListUserController, Controller {
+
     var viewModel: ListUserVM?
-    var viewFactory: ViewFactory?
+    var dataHandler: ListDataHandler?
+    var viewFactory: ListFactory?
     var coordinator: ListUsersCoordinable?
     var searchController: UISearchController?
     var searchHandlerEvents: UISearchBarDelegate?
@@ -28,7 +29,9 @@ class ListUserPageController: UIViewController, ListUserController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+
         showSearchField()
+        viewFactory?.defineViewInController()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -38,13 +41,13 @@ class ListUserPageController: UIViewController, ListUserController {
     
     func updateView() {
         viewFactory?.reloadView()
-        
     }
     
     func showSearchField() {
         guard let searchController = searchController else {
             return
         }
+        navigationController?.view.backgroundColor = .white
         navigationItem.titleView = searchController.searchBar
         navigationItem.hidesSearchBarWhenScrolling = false
         searchController.searchBar.delegate = searchHandlerEvents

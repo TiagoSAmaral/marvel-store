@@ -9,7 +9,7 @@
 import UIKit
 
 class AppCoordinator: Coordinator {
-    
+
     var parentCoordinator: Coordinator?
     var childCoordinators: [Coordinator]?
     var navigationController: UINavigationController?
@@ -19,11 +19,11 @@ class AppCoordinator: Coordinator {
         self.navigationController = navigation
     }
     
-    func start() {
+    func start(with data: Model?) {
         
         let coordinatorChild = ListUsersPageCoordinator(navigation: navigationController)
         coordinatorChild.parentCoordinator = self
         childCoordinators?.append(coordinatorChild)
-        coordinatorChild.start()
+        coordinatorChild.start(with: nil)
     }
 }

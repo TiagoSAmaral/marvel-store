@@ -9,5 +9,5 @@
 import UIKit
 
 protocol FactoryPage: AnyObject {
-    static func makePage(coordinator: Coordinator?) -> UIViewController?
+    static func makePage(coordinator: Coordinator?, model: Model?) -> UIViewController?
 }
