@@ -9,8 +9,6 @@
 import UIKit
 
 protocol ListUserController where Self: UIViewController {
-//    var viewModel: ListUserVM? { get }
-//    var coordinator: ListUsersCoordinable? { get set }
     func updateView()
 }
 
@@ -29,9 +27,8 @@ class ListUserPageController: UIViewController, ListUserController, Controller {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-
-        showSearchField()
         viewFactory?.defineViewInController()
+        showSearchField()
     }
     
     override func viewDidAppear(_ animated: Bool) {

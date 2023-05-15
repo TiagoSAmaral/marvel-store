@@ -8,11 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		CF4D91432A0FF994000BE331 /* ListRepoPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4D91422A0FF994000BE331 /* ListRepoPageController.swift */; };
-		CF4D91452A0FF9A1000BE331 /* ListRepoPageViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4D91442A0FF9A1000BE331 /* ListRepoPageViewFactory.swift */; };
 		CF4D91482A0FFAEC000BE331 /* ListRepoPageFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4D91472A0FFAEC000BE331 /* ListRepoPageFactory.swift */; };
 		CF4D914B2A0FFB3C000BE331 /* ListRepoPageCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4D914A2A0FFB3C000BE331 /* ListRepoPageCoordinator.swift */; };
 		CF4D91502A0FFBAE000BE331 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4D914F2A0FFBAE000BE331 /* Coordinator.swift */; };
-		CF4D91522A0FFC07000BE331 /* ListRepoPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4D91512A0FFC07000BE331 /* ListRepoPageViewModel.swift */; };
+		CF4D91522A0FFC07000BE331 /* ListResposPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4D91512A0FFC07000BE331 /* ListResposPageViewModel.swift */; };
 		CF6414EA23E4C210009C7A9E /* TemplateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6414E923E4C210009C7A9E /* TemplateTests.swift */; };
 		CFAB5CAE2A0FFF110091F1FF /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAB5CAD2A0FFF110091F1FF /* Card.swift */; };
 		CFAB5CB02A0FFF5A0091F1FF /* NetworkConnectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAB5CAF2A0FFF5A0091F1FF /* NetworkConnectable.swift */; };
@@ -91,11 +90,10 @@
 /* Begin PBXFileReference section */
 		CF24569923E4C55B00A1968D /* info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = info.plist; sourceTree = "<group>"; };
 		CF4D91422A0FF994000BE331 /* ListRepoPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRepoPageController.swift; sourceTree = "<group>"; };
-		CF4D91442A0FF9A1000BE331 /* ListRepoPageViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRepoPageViewFactory.swift; sourceTree = "<group>"; };
 		CF4D91472A0FFAEC000BE331 /* ListRepoPageFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRepoPageFactory.swift; sourceTree = "<group>"; };
 		CF4D914A2A0FFB3C000BE331 /* ListRepoPageCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRepoPageCoordinator.swift; sourceTree = "<group>"; };
 		CF4D914F2A0FFBAE000BE331 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
-		CF4D91512A0FFC07000BE331 /* ListRepoPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRepoPageViewModel.swift; sourceTree = "<group>"; };
+		CF4D91512A0FFC07000BE331 /* ListResposPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListResposPageViewModel.swift; sourceTree = "<group>"; };
 		CF6414DF23E4C1CF009C7A9E /* github-personTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "github-personTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF6414E923E4C210009C7A9E /* TemplateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateTests.swift; sourceTree = "<group>"; };
 		CF9601AE23DA2A1E00916EF1 /* github-person.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "github-person.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -286,10 +284,9 @@
 			isa = PBXGroup;
 			children = (
 				CF4D91422A0FF994000BE331 /* ListRepoPageController.swift */,
-				CF4D91442A0FF9A1000BE331 /* ListRepoPageViewFactory.swift */,
 				CF4D91472A0FFAEC000BE331 /* ListRepoPageFactory.swift */,
 				CF4D914A2A0FFB3C000BE331 /* ListRepoPageCoordinator.swift */,
-				CF4D91512A0FFC07000BE331 /* ListRepoPageViewModel.swift */,
+				CF4D91512A0FFC07000BE331 /* ListResposPageViewModel.swift */,
 			);
 			path = ListRepoPage;
 			sourceTree = "<group>";
@@ -622,7 +619,6 @@
 				CFAB5CEA2A105F010091F1FF /* ListUsersPageFactory.swift in Sources */,
 				CFAB5CE92A105F010091F1FF /* ListUsersPageController.swift in Sources */,
 				CFAB5D162A1208D00091F1FF /* SearchBarFactory.swift in Sources */,
-				CF4D91452A0FF9A1000BE331 /* ListRepoPageViewFactory.swift in Sources */,
 				CFAB5CFB2A1121270091F1FF /* CardFactory.swift in Sources */,
 				CFAB5CDD2A105A250091F1FF /* UserDetailPageCoordinator.swift in Sources */,
 				CFAB5D202A127C090091F1FF /* ViewModelHandlerEventsControllerDelegate.swift in Sources */,
@@ -638,7 +634,7 @@
 				CFAB5CF02A1114ED0091F1FF /* GenericTableViewCell.swift in Sources */,
 				CFAB5CAE2A0FFF110091F1FF /* Card.swift in Sources */,
 				CFAB5CB22A0FFFDE0091F1FF /* Requestable.swift in Sources */,
-				CF4D91522A0FFC07000BE331 /* ListRepoPageViewModel.swift in Sources */,
+				CF4D91522A0FFC07000BE331 /* ListResposPageViewModel.swift in Sources */,
 				CFAB5D052A11DEE70091F1FF /* LayoutView.swift in Sources */,
 				CFD3A6B723DA308A00EB6D4D /* AppDelegate.swift in Sources */,
 				CFAB5D0A2A11E1BF0091F1FF /* CardRepoListItemView.swift in Sources */,

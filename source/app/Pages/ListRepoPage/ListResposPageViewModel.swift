@@ -8,18 +8,23 @@
 
 import UIKit
 
-class ListResposPageViewModel: NSObject, ViewModelHandlerEventsControllerDelegate, ListDataHandler, SearchHandlerEvents {
+protocol ListResposVM {
+    func viewDidAppear()
+}
+
+class ListReposPageViewModel: NSObject, ViewModelHandlerEventsControllerDelegate, ListDataHandler {
     
-    weak var controller: ListUserController?
+    weak var controller: ListReposController?
     var network: NetworkUserInfoOperation?
-    var coordinator: ListUsersCoordinable?
-    var items: [UserDetailProfile]?
+    var coordinator: ListReposCoordinable?
+    var valueToRequest: Model?
+    var items: [RepoListemItem]?
     let numberOfSection: Int = 1
     
-    init(controller: ListUserController, network: NetworkUserInfoOperation, coordinator: Coordinator?) {
+    init(controller: ListReposController, network: NetworkUserInfoOperation, coordinator: Coordinator?) {
         self.controller = controller
         self.network = network
-        self.coordinator = coordinator as? ListUsersCoordinable
+        self.coordinator = coordinator as? ListReposCoordinable
     }
     
     func viewDidAppear() {
@@ -30,12 +35,18 @@ class ListResposPageViewModel: NSObject, ViewModelHandlerEventsControllerDelegat
         }
     }
 
-    lazy var goToUserDetail: (Model?) -> Void = { [weak self] user in
-        self?.coordinator?.goToUserDetail(with: user)
+    lazy var goToUserDetail: (Model?) -> Void = { [weak self] data in
+        self?.coordinator?.goToRepo(with: data)
     }
     
     func requestRepos() {
-        network?.requestListUser(page: 0, params: nil, handler: { result in
+        
+        guard let valueToRequest = valueToRequest as? UserDetailProfile, let login = valueToRequest.login  else {
+            return
+        }
+        
+        network?.requestUserRepos(name: login, page: 0, params: nil) { result in
+            
             switch result {
             case .success(let users):
                 DispatchQueue.main.async { [weak self] in
@@ -44,7 +55,7 @@ class ListResposPageViewModel: NSObject, ViewModelHandlerEventsControllerDelegat
             case .failure(let error):
                 debugPrint(error.message)
             }
-        })
+        }
     }
     
     func updateView(with value: [Model]?) {
@@ -53,7 +64,7 @@ class ListResposPageViewModel: NSObject, ViewModelHandlerEventsControllerDelegat
             return
         }
         
-        items = value as? [UserDetailProfile]
+        items = value as? [RepoListemItem]
         controller?.updateView()
     }
     
@@ -78,15 +89,5 @@ class ListResposPageViewModel: NSObject, ViewModelHandlerEventsControllerDelegat
         var item = items[indexPath.row]
         item.action = goToUserDetail
         return item
-    }
-    
-    // MARK: - SearchHandlerEvents
-    
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-//        searchUser(by: searchBar.text)
-    }
-
-    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-//        requestUsers()
     }
 }

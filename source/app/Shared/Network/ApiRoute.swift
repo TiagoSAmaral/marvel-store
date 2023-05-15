@@ -50,7 +50,7 @@ struct ApiRoutes {
             guard let text = text else {
                 return ""
             }
-            return baseUrl + "/users/\(text)/repos?since=\(page ?? 0)"
+            return baseUrl + "/users/\(text)/repos"
         }
     }
 }

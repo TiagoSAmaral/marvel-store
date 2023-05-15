@@ -19,7 +19,8 @@ class UserDetailPageFactory: FactoryPage {
         let network = NetworkUserInfo(headerFactory: headerFactory)
         
         viewModel.userDetailNetwork = network
-        viewModel.dataToSearch = model
+        viewModel.valueToRequest = model
+        viewModel.coordinator = coordinator as? UserDetailCoordinable
         viewFactory.cardFactory = CardMaker()
         coordinator?.rootViewControler = controller
         controller.viewModel = viewModel

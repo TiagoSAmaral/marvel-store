@@ -34,8 +34,8 @@ class ListUsersPageViewModel: NSObject, ViewModelHandlerEventsControllerDelegate
         }
     }
 
-    lazy var goToUserDetail: (Model?) -> Void = { [weak self] user in
-        self?.coordinator?.goToUserDetail(with: user)
+    lazy var goToUserDetail: (Model?) -> Void = { [weak self] data in
+        self?.coordinator?.goToUserDetail(with: data)
     }
     
     func requestUsers() {

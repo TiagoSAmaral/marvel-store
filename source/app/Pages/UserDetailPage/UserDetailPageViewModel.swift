@@ -13,7 +13,7 @@ class UserDetailPageViewModel: ViewModelHandlerEventsControllerDelegate, ListDat
     weak var controller: UserDetailController?
     var userDetailNetwork: NetworkUserInfoOperation?
     var coordinator: UserDetailCoordinable?
-    var dataToSearch: Model?
+    var valueToRequest: Model?
     var items: [Model]?
     var numberOfSection: Int = 1
     
@@ -27,7 +27,7 @@ class UserDetailPageViewModel: ViewModelHandlerEventsControllerDelegate, ListDat
     }
     
     func requestUserInfo() {
-        guard let dataToSearch = dataToSearch as? UserDetailProfile else {
+        guard let dataToSearch = valueToRequest as? UserDetailProfile else {
             return
         }
         
@@ -48,8 +48,8 @@ class UserDetailPageViewModel: ViewModelHandlerEventsControllerDelegate, ListDat
         controller?.updateView()
     }
     
-    lazy var showReposWith: ((Model?) -> Void) = { [weak self] model in
-        self?.coordinator?.goToRepos(with: model)
+    lazy var showReposWith: ((Model?) -> Void) = { [weak self] data in
+        self?.coordinator?.goToRepos(with: data)
     }
     
     func numberOfItemsBy(section: Int?) -> Int {

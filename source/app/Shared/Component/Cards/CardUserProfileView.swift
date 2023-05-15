@@ -12,8 +12,6 @@ class CardUserProfileView: UIView, Card, CardTouch {
     
     var action: ((Model?) -> Void)?
     var model: UserDetailProfile?
-    let heightButtonRepositories: CGFloat = 44.0
-    let widthButtonRepositories: CGFloat = 160.0
     
     lazy var vStackView: UIStackView = {
         let stackView = UIStackView()
@@ -29,13 +27,11 @@ class CardUserProfileView: UIView, Card, CardTouch {
     }()
     
     lazy var reposButton: UIButton = {
-        let button = UIButton() //(frame: CGRect(x: .zero, y: .zero, width: heightButtonRepositories, height: widthButtonRepositories))
+        let button = UIButton()
         button.setTitle(LocalizedText.with(tagName: .showRepos), for: .normal)
         button.addTarget(self, action: #selector(bindAction), for: .touchUpInside)
         button.setTitleColor(.systemBlue, for: .normal)
         button.backgroundColor = .cyan
-//        button.height(heightButtonRepositories)
-//        button.width(widthButtonRepositories)
         return button
     }()
         

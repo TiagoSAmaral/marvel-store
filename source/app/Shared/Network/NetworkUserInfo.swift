@@ -15,6 +15,7 @@ protocol NetworkUserInfoOperation {
     func search(with name: String?, handler: ((Result<[UserDetailProfile], NetworkError>) -> Void)?)
     func requestListUser(page: Int?, params: [String: Any]?, handler: ((Result<[UserDetailProfile], NetworkError>) -> Void)?)
     func requestUser(with name: String?, handler: ((ResultUsersItemOrError) -> Void)?)
+    func requestUserRepos(name: String?, page: Int?, params: [String: Any]?, handler: ((Result<[RepoListemItem], NetworkError>) -> Void)?)
 }
 
 class NetworkUserInfo: NetworkUserInfoOperation, NetworkConectable {
@@ -34,9 +35,9 @@ class NetworkUserInfo: NetworkUserInfoOperation, NetworkConectable {
                               headers: headerFactory?.makeHeader())
         networkRequest(data: request, resultType: SearchResult.self) { response in
             switch response {
-            case .success(var result):
+            case .success(let result):
                 
-                guard var item = result.items else {
+                guard let item = result.items else {
                     handler?(.failure(NetworkError.makeError(with: nil, description: nil)))
                     return
                 }
@@ -59,16 +60,15 @@ class NetworkUserInfo: NetworkUserInfoOperation, NetworkConectable {
                               method: Alamofire.HTTPMethod.get,
                               params: params,
                               headers: headerFactory?.makeHeader())
-        networkRequest(data: request, resultType: [UserDetailProfile].self) { [weak self] result in
+        networkRequest(data: request, resultType: [UserDetailProfile].self) { result in
 
             var itemsWithLayout: [UserDetailProfile] = []
             switch result {
             case .success(let items):
                 
                 itemsWithLayout = items.compactMap { item in
-                    var mutableItem = item
                     item.layout = .userListItem
-                    return mutableItem
+                    return item
                 }
                 
                 handler?(.success(itemsWithLayout))
@@ -88,7 +88,7 @@ class NetworkUserInfo: NetworkUserInfoOperation, NetworkConectable {
                               headers: headerFactory?.makeHeader())
         networkRequest(data: request, resultType: UserDetailProfile.self) { response in
             switch response {
-            case .success(var user):
+            case .success(let user):
                 user.layout = .userInfo
                 handler?(.success([user]))
             case .failure(let error):
@@ -106,8 +106,7 @@ class NetworkUserInfo: NetworkUserInfoOperation, NetworkConectable {
         networkRequest(data: request, resultType: [RepoListemItem].self) { result in
             
             switch result {
-            case .success(var items):
-                
+            case .success(let items):
                 let itemsLayoutMaped: [RepoListemItem] = items.compactMap { item in
                     var mutableItem = item
                     mutableItem.layout = .repoListItem
@@ -117,7 +116,6 @@ class NetworkUserInfo: NetworkUserInfoOperation, NetworkConectable {
             case .failure(let error):
                 handler?(.failure(error) )
             }
-            
         }
     }
 }

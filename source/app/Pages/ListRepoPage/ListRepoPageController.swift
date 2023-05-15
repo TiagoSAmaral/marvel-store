@@ -6,4 +6,30 @@
 //  Copyright © 2023 developer_organization_name. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+protocol ListReposController where Self: UIViewController {
+    func updateView()
+}
+
+class ListReposPageController: UIViewController, ListReposController, Controller {
+
+    var viewModel: ViewModelHandlerEventsControllerDelegate?
+    var dataHandler: ListDataHandler?
+    var viewFactory: ListFactory?
+    var coordinator: ListReposCoordinable?
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+       
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        viewFactory?.defineViewInController()
+        viewModel?.viewDidAppear()
+    }
+    
+    func updateView() {
+        viewFactory?.reloadView()
+    }
+}
