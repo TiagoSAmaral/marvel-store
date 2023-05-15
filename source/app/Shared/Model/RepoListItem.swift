@@ -1,5 +1,5 @@
 //
-//  List.swift
+//  RepoListItem.swift
 //  github-person
 //
 //  Created by Tiago Amaral on 13/05/23.
