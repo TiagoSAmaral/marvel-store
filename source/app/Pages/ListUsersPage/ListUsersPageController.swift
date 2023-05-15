@@ -16,7 +16,7 @@ protocol ListUserController where Self: UIViewController {
 
 class ListUserPageController: UIViewController, ListUserController, Controller {
 
-    var viewModel: ListUserVM?
+    var viewModel: ViewModelHandlerEventsControllerDelegate?
     var dataHandler: ListDataHandler?
     var viewFactory: ListFactory?
     var coordinator: ListUsersCoordinable?

@@ -10,6 +10,7 @@ import Foundation
 
 protocol Model {
     var identifier: Int? { get }
-    var layout: LayoutView? { get }
-    var action: ((Model?) -> Void)? { set get }
+//  Allow seter becouse not exist in API and, need adapter into CardFactory
+    var layout: LayoutView? { get set}
+    var action: ((Model?) -> Void)? { get set}
 }

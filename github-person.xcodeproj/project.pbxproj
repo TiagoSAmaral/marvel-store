@@ -17,11 +17,9 @@
 		CFAB5CAE2A0FFF110091F1FF /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAB5CAD2A0FFF110091F1FF /* Card.swift */; };
 		CFAB5CB02A0FFF5A0091F1FF /* NetworkConnectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAB5CAF2A0FFF5A0091F1FF /* NetworkConnectable.swift */; };
 		CFAB5CB22A0FFFDE0091F1FF /* Requestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAB5CB12A0FFFDE0091F1FF /* Requestable.swift */; };
-		CFAB5CB62A10021B0091F1FF /* NetworkRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAB5CB52A10021B0091F1FF /* NetworkRequestFactory.swift */; };
 		CFAB5CB82A1002B30091F1FF /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAB5CB72A1002B30091F1FF /* Request.swift */; };
-		CFAB5CBB2A1006160091F1FF /* NetworkHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAB5CBA2A1006160091F1FF /* NetworkHeader.swift */; };
+		CFAB5CBB2A1006160091F1FF /* NetworkHeaderFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAB5CBA2A1006160091F1FF /* NetworkHeaderFactory.swift */; };
 		CFAB5CBD2A100E430091F1FF /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAB5CBC2A100E430091F1FF /* NetworkError.swift */; };
-		CFAB5CC02A10451D0091F1FF /* UserInfoListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAB5CBF2A10451D0091F1FF /* UserInfoListItem.swift */; };
 		CFAB5CC22A10476D0091F1FF /* UserDetailProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAB5CC12A10476D0091F1FF /* UserDetailProfile.swift */; };
 		CFAB5CC42A1048C30091F1FF /* RepoListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAB5CC32A1048C30091F1FF /* RepoListItem.swift */; };
 		CFAB5CCA2A1053D30091F1FF /* ApiRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAB5CC92A1053D30091F1FF /* ApiRoute.swift */; };
@@ -40,8 +38,8 @@
 		CFAB5CF52A111A3B0091F1FF /* CardModelHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAB5CF42A111A3B0091F1FF /* CardModelHandler.swift */; };
 		CFAB5CF72A111A840091F1FF /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAB5CF62A111A840091F1FF /* CustomCell.swift */; };
 		CFAB5CFB2A1121270091F1FF /* CardFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAB5CFA2A1121270091F1FF /* CardFactory.swift */; };
-		CFAB5CFD2A1124830091F1FF /* NetworkHeaderFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAB5CFC2A1124830091F1FF /* NetworkHeaderFactory.swift */; };
-		CFAB5CFF2A112D620091F1FF /* ListUserPageNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAB5CFE2A112D620091F1FF /* ListUserPageNetwork.swift */; };
+		CFAB5CFD2A1124830091F1FF /* NetworkHeaderMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAB5CFC2A1124830091F1FF /* NetworkHeaderMaker.swift */; };
+		CFAB5CFF2A112D620091F1FF /* NetworkUserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAB5CFE2A112D620091F1FF /* NetworkUserInfo.swift */; };
 		CFAB5D012A11CF6F0091F1FF /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAB5D002A11CF6F0091F1FF /* SearchResult.swift */; };
 		CFAB5D032A11D5480091F1FF /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAB5D022A11D5480091F1FF /* Model.swift */; };
 		CFAB5D052A11DEE70091F1FF /* LayoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAB5D042A11DEE70091F1FF /* LayoutView.swift */; };
@@ -52,7 +50,8 @@
 		CFAB5D162A1208D00091F1FF /* SearchBarFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAB5D152A1208D00091F1FF /* SearchBarFactory.swift */; };
 		CFAB5D182A1217590091F1FF /* ListDataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAB5D172A1217590091F1FF /* ListDataHandler.swift */; };
 		CFAB5D1A2A1218BF0091F1FF /* ListFactoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAB5D192A1218BF0091F1FF /* ListFactoryView.swift */; };
-		CFAB5D1C2A121CFC0091F1FF /* UserDetailPageNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAB5D1B2A121CFC0091F1FF /* UserDetailPageNetwork.swift */; };
+		CFAB5D1E2A127B770091F1FF /* SearchHandlerEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAB5D1D2A127B770091F1FF /* SearchHandlerEvents.swift */; };
+		CFAB5D202A127C090091F1FF /* ViewModelHandlerEventsControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAB5D1F2A127C090091F1FF /* ViewModelHandlerEventsControllerDelegate.swift */; };
 		CFD3A6B723DA308A00EB6D4D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD3A6AC23DA308900EB6D4D /* AppDelegate.swift */; };
 		CFD3A6BB23DA308A00EB6D4D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFD3A6B423DA308A00EB6D4D /* Assets.xcassets */; };
 		CFD3A6D723DA41FE00EB6D4D /* Localizable-pt-BR.strings in Resources */ = {isa = PBXBuildFile; fileRef = CFD3A6CF23DA3F9700EB6D4D /* Localizable-pt-BR.strings */; };
@@ -103,11 +102,9 @@
 		CFAB5CAD2A0FFF110091F1FF /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		CFAB5CAF2A0FFF5A0091F1FF /* NetworkConnectable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConnectable.swift; sourceTree = "<group>"; };
 		CFAB5CB12A0FFFDE0091F1FF /* Requestable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requestable.swift; sourceTree = "<group>"; };
-		CFAB5CB52A10021B0091F1FF /* NetworkRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequestFactory.swift; sourceTree = "<group>"; };
 		CFAB5CB72A1002B30091F1FF /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
-		CFAB5CBA2A1006160091F1FF /* NetworkHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHeader.swift; sourceTree = "<group>"; };
+		CFAB5CBA2A1006160091F1FF /* NetworkHeaderFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHeaderFactory.swift; sourceTree = "<group>"; };
 		CFAB5CBC2A100E430091F1FF /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
-		CFAB5CBF2A10451D0091F1FF /* UserInfoListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoListItem.swift; sourceTree = "<group>"; };
 		CFAB5CC12A10476D0091F1FF /* UserDetailProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailProfile.swift; sourceTree = "<group>"; };
 		CFAB5CC32A1048C30091F1FF /* RepoListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoListItem.swift; sourceTree = "<group>"; };
 		CFAB5CC92A1053D30091F1FF /* ApiRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRoute.swift; sourceTree = "<group>"; };
@@ -126,8 +123,8 @@
 		CFAB5CF42A111A3B0091F1FF /* CardModelHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardModelHandler.swift; sourceTree = "<group>"; };
 		CFAB5CF62A111A840091F1FF /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		CFAB5CFA2A1121270091F1FF /* CardFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardFactory.swift; sourceTree = "<group>"; };
-		CFAB5CFC2A1124830091F1FF /* NetworkHeaderFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHeaderFactory.swift; sourceTree = "<group>"; };
-		CFAB5CFE2A112D620091F1FF /* ListUserPageNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListUserPageNetwork.swift; sourceTree = "<group>"; };
+		CFAB5CFC2A1124830091F1FF /* NetworkHeaderMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHeaderMaker.swift; sourceTree = "<group>"; };
+		CFAB5CFE2A112D620091F1FF /* NetworkUserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkUserInfo.swift; sourceTree = "<group>"; };
 		CFAB5D002A11CF6F0091F1FF /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		CFAB5D022A11D5480091F1FF /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		CFAB5D042A11DEE70091F1FF /* LayoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutView.swift; sourceTree = "<group>"; };
@@ -138,7 +135,8 @@
 		CFAB5D152A1208D00091F1FF /* SearchBarFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarFactory.swift; sourceTree = "<group>"; };
 		CFAB5D172A1217590091F1FF /* ListDataHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDataHandler.swift; sourceTree = "<group>"; };
 		CFAB5D192A1218BF0091F1FF /* ListFactoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListFactoryView.swift; sourceTree = "<group>"; };
-		CFAB5D1B2A121CFC0091F1FF /* UserDetailPageNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailPageNetwork.swift; sourceTree = "<group>"; };
+		CFAB5D1D2A127B770091F1FF /* SearchHandlerEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHandlerEvents.swift; sourceTree = "<group>"; };
+		CFAB5D1F2A127C090091F1FF /* ViewModelHandlerEventsControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelHandlerEventsControllerDelegate.swift; sourceTree = "<group>"; };
 		CFD3A6AC23DA308900EB6D4D /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CFD3A6B223DA308A00EB6D4D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CFD3A6B423DA308A00EB6D4D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -173,11 +171,11 @@
 		CF4D91462A0FFAD8000BE331 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				CFAB5CB52A10021B0091F1FF /* NetworkRequestFactory.swift */,
+				CFAB5CFE2A112D620091F1FF /* NetworkUserInfo.swift */,
 				CFAB5CB72A1002B30091F1FF /* Request.swift */,
 				CFAB5CBC2A100E430091F1FF /* NetworkError.swift */,
 				CFAB5CC92A1053D30091F1FF /* ApiRoute.swift */,
-				CFAB5CFC2A1124830091F1FF /* NetworkHeaderFactory.swift */,
+				CFAB5CFC2A1124830091F1FF /* NetworkHeaderMaker.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -193,9 +191,11 @@
 				CFAB5CEC2A1060620091F1FF /* FactoryPage.swift */,
 				CFAB5D022A11D5480091F1FF /* Model.swift */,
 				CFAB5CAF2A0FFF5A0091F1FF /* NetworkConnectable.swift */,
-				CFAB5CBA2A1006160091F1FF /* NetworkHeader.swift */,
+				CFAB5CBA2A1006160091F1FF /* NetworkHeaderFactory.swift */,
 				CFAB5CB12A0FFFDE0091F1FF /* Requestable.swift */,
 				CFAB5D172A1217590091F1FF /* ListDataHandler.swift */,
+				CFAB5D1D2A127B770091F1FF /* SearchHandlerEvents.swift */,
+				CFAB5D1F2A127C090091F1FF /* ViewModelHandlerEventsControllerDelegate.swift */,
 			);
 			path = Interfaces;
 			sourceTree = "<group>";
@@ -231,6 +231,7 @@
 		CFAB5CB92A1003F80091F1FF /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				CF4D91462A0FFAD8000BE331 /* Network */,
 				CFAB5CF92A1120F10091F1FF /* Factories */,
 				CFAB5CEE2A1114C10091F1FF /* Component */,
 				CFAB5CBE2A101B8F0091F1FF /* Model */,
@@ -241,7 +242,6 @@
 		CFAB5CBE2A101B8F0091F1FF /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				CFAB5CBF2A10451D0091F1FF /* UserInfoListItem.swift */,
 				CFAB5CC12A10476D0091F1FF /* UserDetailProfile.swift */,
 				CFAB5CC32A1048C30091F1FF /* RepoListItem.swift */,
 				CFAB5D002A11CF6F0091F1FF /* SearchResult.swift */,
@@ -257,7 +257,6 @@
 				CFAB5CE32A105F010091F1FF /* ListUsersPageCoordinator.swift */,
 				CFAB5CE52A105F010091F1FF /* ListUsersPageFactory.swift */,
 				CFAB5CE62A105F010091F1FF /* ListUsersPageViewModel.swift */,
-				CFAB5CFE2A112D620091F1FF /* ListUserPageNetwork.swift */,
 			);
 			path = ListUsersPage;
 			sourceTree = "<group>";
@@ -279,7 +278,6 @@
 				CFAB5CD82A105A250091F1FF /* UserDetailPageCoordinator.swift */,
 				CFAB5CDA2A105A250091F1FF /* UserDetailPageFactory.swift */,
 				CFAB5CDC2A105A250091F1FF /* UserDetailPageViewModel.swift */,
-				CFAB5D1B2A121CFC0091F1FF /* UserDetailPageNetwork.swift */,
 			);
 			path = UserDetailPage;
 			sourceTree = "<group>";
@@ -363,7 +361,6 @@
 				CFD3A6AB23DA308900EB6D4D /* Appdelegates */,
 				CFF2EA0E2A0F256D00709168 /* Extensions */,
 				CF4D914C2A0FFB47000BE331 /* Interfaces */,
-				CF4D91462A0FFAD8000BE331 /* Network */,
 				CFAB5CD22A1056E40091F1FF /* Pages */,
 				CFAB5CB92A1003F80091F1FF /* Shared */,
 				CFD3A6B023DA308A00EB6D4D /* supportfiles */,
@@ -611,7 +608,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CFAB5CB62A10021B0091F1FF /* NetworkRequestFactory.swift in Sources */,
 				CFAB5CF52A111A3B0091F1FF /* CardModelHandler.swift in Sources */,
 				CFAB5D012A11CF6F0091F1FF /* SearchResult.swift in Sources */,
 				CF4D914B2A0FFB3C000BE331 /* ListRepoPageCoordinator.swift in Sources */,
@@ -619,6 +615,7 @@
 				CFAB5CCA2A1053D30091F1FF /* ApiRoute.swift in Sources */,
 				CFAB5D0C2A11E1DB0091F1FF /* CardUserProfileView.swift in Sources */,
 				CFAB5CC42A1048C30091F1FF /* RepoListItem.swift in Sources */,
+				CFAB5D1E2A127B770091F1FF /* SearchHandlerEvents.swift in Sources */,
 				CFAB5CB02A0FFF5A0091F1FF /* NetworkConnectable.swift in Sources */,
 				CFAB5CF32A1117C40091F1FF /* Identifier.swift in Sources */,
 				CF4D91432A0FF994000BE331 /* ListRepoPageController.swift in Sources */,
@@ -628,13 +625,14 @@
 				CF4D91452A0FF9A1000BE331 /* ListRepoPageViewFactory.swift in Sources */,
 				CFAB5CFB2A1121270091F1FF /* CardFactory.swift in Sources */,
 				CFAB5CDD2A105A250091F1FF /* UserDetailPageCoordinator.swift in Sources */,
+				CFAB5D202A127C090091F1FF /* ViewModelHandlerEventsControllerDelegate.swift in Sources */,
 				CFF2EA112A0F259800709168 /* Constraints.swift in Sources */,
 				CFAB5CDE2A105A250091F1FF /* UserDetailPageController.swift in Sources */,
 				CFAB5CE82A105F010091F1FF /* ListUsersPageCoordinator.swift in Sources */,
 				CFAB5D182A1217590091F1FF /* ListDataHandler.swift in Sources */,
 				CFAB5CB82A1002B30091F1FF /* Request.swift in Sources */,
 				CF4D91482A0FFAEC000BE331 /* ListRepoPageFactory.swift in Sources */,
-				CFAB5CFF2A112D620091F1FF /* ListUserPageNetwork.swift in Sources */,
+				CFAB5CFF2A112D620091F1FF /* NetworkUserInfo.swift in Sources */,
 				CFAB5D1A2A1218BF0091F1FF /* ListFactoryView.swift in Sources */,
 				CFAB5CBD2A100E430091F1FF /* NetworkError.swift in Sources */,
 				CFAB5CF02A1114ED0091F1FF /* GenericTableViewCell.swift in Sources */,
@@ -642,19 +640,17 @@
 				CFAB5CB22A0FFFDE0091F1FF /* Requestable.swift in Sources */,
 				CF4D91522A0FFC07000BE331 /* ListRepoPageViewModel.swift in Sources */,
 				CFAB5D052A11DEE70091F1FF /* LayoutView.swift in Sources */,
-				CFAB5D1C2A121CFC0091F1FF /* UserDetailPageNetwork.swift in Sources */,
 				CFD3A6B723DA308A00EB6D4D /* AppDelegate.swift in Sources */,
 				CFAB5D0A2A11E1BF0091F1FF /* CardRepoListItemView.swift in Sources */,
 				CFAB5CD72A1059AF0091F1FF /* AppCoordinator.swift in Sources */,
 				CFD3A6DA23DA443200EB6D4D /* LocalizedText.swift in Sources */,
 				CFAB5D032A11D5480091F1FF /* Model.swift in Sources */,
-				CFAB5CFD2A1124830091F1FF /* NetworkHeaderFactory.swift in Sources */,
+				CFAB5CFD2A1124830091F1FF /* NetworkHeaderMaker.swift in Sources */,
 				CFAB5CC22A10476D0091F1FF /* UserDetailProfile.swift in Sources */,
 				CFAB5D082A11E1940091F1FF /* CardUserListItemView.swift in Sources */,
 				CFAB5CED2A1060620091F1FF /* FactoryPage.swift in Sources */,
 				CFAB5CE12A105A250091F1FF /* UserDetailPageViewModel.swift in Sources */,
-				CFAB5CBB2A1006160091F1FF /* NetworkHeader.swift in Sources */,
-				CFAB5CC02A10451D0091F1FF /* UserInfoListItem.swift in Sources */,
+				CFAB5CBB2A1006160091F1FF /* NetworkHeaderFactory.swift in Sources */,
 				CFAB5CDF2A105A250091F1FF /* UserDetailPageFactory.swift in Sources */,
 				CFAB5D0E2A11EF1B0091F1FF /* CardTouch.swift in Sources */,
 				CFAB5CF72A111A840091F1FF /* CustomCell.swift in Sources */,

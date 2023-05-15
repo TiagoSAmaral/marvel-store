@@ -9,10 +9,6 @@
 import Foundation
 import Alamofire
 
-protocol NetworkHeaderFactory {
-    func makeHeader() -> HTTPHeaders
-}
-
 struct NetworkHeaderMaker: NetworkHeaderFactory {
     
     var fakeUserTokenInApp: String? {

@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import Alamofire
 
-protocol NetworkHeader {
+protocol NetworkHeaderFactory {
+    func makeHeader() -> HTTPHeaders
 }

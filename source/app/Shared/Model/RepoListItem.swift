@@ -18,7 +18,7 @@ struct RepoListemItem: Codable, Model {
     let watchersCount: Int?
     let htmlUrl: String?
     
-    var layout: LayoutView? = .repoListItem
+    var layout: LayoutView?
     var action: ((Model?) -> Void)?
     
     enum CodingKeys: String, CodingKey {

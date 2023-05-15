@@ -8,19 +8,14 @@
 
 import Foundation
 
-protocol UserDetailVM: AnyObject {
-    var controller: UserDetailController? { get }
-    
-    func viewDidAppear()
-}
-
-class UserDetailPageViewModel: UserDetailVM, ListDataHandler {
+class UserDetailPageViewModel: ViewModelHandlerEventsControllerDelegate, ListDataHandler {
     
     weak var controller: UserDetailController?
-    var userDetailNetwork: UserDetailNetwork?
+    var userDetailNetwork: NetworkUserInfoOperation?
     var coordinator: UserDetailCoordinable?
     var dataToSearch: Model?
-    var userInfo: Model?
+    var items: [Model]?
+    var numberOfSection: Int = 1
     
     init(controller: UserDetailController? = nil) {
         self.controller = controller
@@ -32,22 +27,21 @@ class UserDetailPageViewModel: UserDetailVM, ListDataHandler {
     }
     
     func requestUserInfo() {
-        guard let dataToSearch = dataToSearch as? UserInfoListItem else {
+        guard let dataToSearch = dataToSearch as? UserDetailProfile else {
             return
         }
         
-        userDetailNetwork?.requestUser(with: dataToSearch.login, handler: {[weak self] result in
-            
+        userDetailNetwork?.requestUser(with: dataToSearch.login) { result in
             DispatchQueue.main.async { [weak self] in
                 switch result {
-                case .success(let userInfo):
-                    self?.userInfo = userInfo
+                case .success(let items):
+                    self?.items = items
                     self?.updateContent()
                 case .failure(let error):
                     debugPrint(error.message)
                 }
             }
-        })
+        }
     }
     
     func updateContent() {
@@ -59,17 +53,16 @@ class UserDetailPageViewModel: UserDetailVM, ListDataHandler {
     }
     
     func numberOfItemsBy(section: Int?) -> Int {
-        1
+        items?.count ?? .zero
     }
     
     func numberOfSections() -> Int {
-        1
+        numberOfSection
     }
     
     func dataBy(indexPath: IndexPath) -> Model? {
+        var userInfo = items?[indexPath.row]
         userInfo?.action = showReposWith
-        
         return userInfo
     }
-    
 }

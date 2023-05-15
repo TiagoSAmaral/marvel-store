@@ -9,5 +9,5 @@
 import Foundation
 
 struct SearchResult: Codable {
-    let items: [UserInfoListItem]?
+    let items: [UserDetailProfile]?
 }

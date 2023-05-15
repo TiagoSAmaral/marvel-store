@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ListUsersPageViewModel: NSObject, ViewModelHandlerEventsControllerDelegate, ListDataHandler, SearchHandlerEvents {
+class ListResposPageViewModel: NSObject, ViewModelHandlerEventsControllerDelegate, ListDataHandler, SearchHandlerEvents {
     
     weak var controller: ListUserController?
     var network: NetworkUserInfoOperation?
@@ -24,13 +24,9 @@ class ListUsersPageViewModel: NSObject, ViewModelHandlerEventsControllerDelegate
     
     func viewDidAppear() {
         
-        guard let items = items else {
-            requestUsers()
+        guard let items = items, !items.isEmpty else {
+            requestRepos()
             return
-        }
-        
-        if items.isEmpty {
-            requestUsers()
         }
     }
 
@@ -38,25 +34,12 @@ class ListUsersPageViewModel: NSObject, ViewModelHandlerEventsControllerDelegate
         self?.coordinator?.goToUserDetail(with: user)
     }
     
-    func requestUsers() {
+    func requestRepos() {
         network?.requestListUser(page: 0, params: nil, handler: { result in
             switch result {
             case .success(let users):
                 DispatchQueue.main.async { [weak self] in
                     self?.updateView(with: users)
-                }
-            case .failure(let error):
-                debugPrint(error.message)
-            }
-        })
-    }
-    
-    func searchUser(by name: String?) {
-        network?.search(with: name, handler: { result in
-            switch result {
-            case .success(let response):
-                DispatchQueue.main.async { [weak self] in
-                    self?.updateView(with: response)
                 }
             case .failure(let error):
                 debugPrint(error.message)
@@ -75,7 +58,7 @@ class ListUsersPageViewModel: NSObject, ViewModelHandlerEventsControllerDelegate
     }
     
     func updateContent() {
-        requestUsers()
+        requestRepos()
     }
     
 // MARK: - ListDataHandler methods
@@ -100,10 +83,10 @@ class ListUsersPageViewModel: NSObject, ViewModelHandlerEventsControllerDelegate
     // MARK: - SearchHandlerEvents
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        searchUser(by: searchBar.text)
+//        searchUser(by: searchBar.text)
     }
 
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        requestUsers()
+//        requestUsers()
     }
 }

@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct UserDetailProfile: Codable, Model {
+class UserDetailProfile: Codable, Model {
     let login: String?
     let identifier: Int?
     let avatarURL: String
@@ -22,7 +22,7 @@ struct UserDetailProfile: Codable, Model {
     let followers: Int?
     let following: Int?
     
-    var layout: LayoutView? = .userInfo
+    var layout: LayoutView?
     var action: ((Model?) -> Void)?
 
     enum CodingKeys: String, CodingKey {

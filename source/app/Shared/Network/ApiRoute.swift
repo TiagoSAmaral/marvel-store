@@ -13,11 +13,12 @@ struct ApiRoutes {
     enum Paths {
         case getListUser(page: Int?)
         case getSearchUser(text: String?)
-        case getListRepoFromUser(text: String?)
+        case getListRepoFromUser(text: String?, page: Int?)
         case getUserProfile(text: String?)
     }
     
-//    static let shared = ApiRoutes()
+    static let shared: ApiRoutes = ApiRoutes()
+    
     private(set) var baseUrl: String
     
     init() {
@@ -28,11 +29,7 @@ struct ApiRoutes {
         switch path {
         case .getListUser(let page):
             
-            guard let page = page else {
-                return baseUrl + "/users"
-            }
-            
-            return baseUrl + "/users?since=\(page)&per_page=100"
+            return baseUrl + "/users?since=\(page ?? 0)&per_page=100"
             
         case .getSearchUser(let text):
             
@@ -41,15 +38,19 @@ struct ApiRoutes {
             }
             
             return baseUrl + "/search/users?q=\(text)"
-        
+            
         case .getUserProfile(let text):
             guard let text = text else {
                 return ""
             }
             
             return baseUrl + "/users/\(text)"
-        default:
-            return ""
+            
+        case .getListRepoFromUser(let text, let page):
+            guard let text = text else {
+                return ""
+            }
+            return baseUrl + "/users/\(text)/repos?since=\(page ?? 0)"
         }
     }
 }

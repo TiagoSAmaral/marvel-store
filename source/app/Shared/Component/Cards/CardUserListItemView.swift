@@ -11,7 +11,7 @@ import UIKit
 class CardUserListItemView: UIView, Card, CardTouch {
     
     var action: ((Model?) -> Void)?
-    var model: UserInfoListItem?
+    var model: UserDetailProfile?
     
     lazy var nameLabel: UILabel = {
         let label: UILabel = UILabel()
@@ -28,7 +28,7 @@ class CardUserListItemView: UIView, Card, CardTouch {
     
     func load(model: Model?) {
         
-        guard let model = model as? UserInfoListItem else {
+        guard let model = model as? UserDetailProfile else {
             return
         }
         self.model = model

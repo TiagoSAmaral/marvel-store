@@ -16,7 +16,7 @@ class UserDetailPageController: UIViewController, UserDetailController, Controll
         
     var dataHandler: ListDataHandler?
     var viewFactory: ListFactoryView?
-    var viewModel: UserDetailVM?
+    var viewModel: ViewModelHandlerEventsControllerDelegate?
     var coordinator: UserDetailCoordinable?
 
     override func viewDidLoad() {
