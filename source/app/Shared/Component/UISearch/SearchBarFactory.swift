@@ -12,9 +12,10 @@ struct SearchBarFactory {
     
     static func makeSearch() -> UISearchController {
         let controller = UISearchController()
-        let searchBar =
         controller.searchBar.sizeToFit()
         controller.searchBar.placeholder = LocalizedText.with(tagName: .searchPlaceholder)
+        controller.hidesNavigationBarDuringPresentation = false
+        controller.obscuresBackgroundDuringPresentation = false
         return controller
     }
 }

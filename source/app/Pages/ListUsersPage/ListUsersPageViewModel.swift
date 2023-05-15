@@ -15,7 +15,6 @@ protocol ListUserVM where Self: AnyObject {
 
 protocol SearchHandlerEvents where Self: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) // called when keyboard search button pressed
-    func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool // return NO to not become first responder
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) // called when cancel button pressed
 }
 
@@ -105,11 +104,7 @@ class ListUsersPageViewModel: NSObject, ListUserVM, ListDataHandler, SearchHandl
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchUser(by: searchBar.text)
     }
-    
-    func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
-        true
-    }
-    
+
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         requestUsers()
     }

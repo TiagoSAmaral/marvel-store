@@ -47,8 +47,6 @@ class ListUserPageController: UIViewController, ListUserController {
         }
         navigationItem.titleView = searchController.searchBar
         navigationItem.hidesSearchBarWhenScrolling = false
-        searchController.hidesNavigationBarDuringPresentation = false
-        searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.delegate = searchHandlerEvents
     }
 }
