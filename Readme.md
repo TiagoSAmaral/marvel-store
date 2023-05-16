@@ -15,11 +15,13 @@ Suporte a Darkmode
 ## Preview
 
 #### Light Mode
-<img src="./readmeresource/list_users_l.png" width="160"/>
-<img src="./readmeresource/busca_result_l.png" width="160"/>
-<img src="./readmeresource/profile_l.png" width="160"/>
-<img src="./readmeresource/list_repo_l.png" width="160"/>
-<img src="./readmeresource/repo_detail_l.png" width="160"/>
+<p float="left">
+    <img src="./readmeresource/list_users_l.png" width="160"/>
+    <img src="./readmeresource/busca_result_l.png" width="160"/>
+    <img src="./readmeresource/profile_l.png" width="160"/>
+    <img src="./readmeresource/list_repo_l.png" width="160"/>
+    <img src="./readmeresource/repo_detail_l.png" width="160"/>
+</p>
 
 #### Dark Mode
 <img src="./readmeresource/list_users_d.png" width="160"/>
