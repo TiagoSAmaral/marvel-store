@@ -16,7 +16,7 @@ class CardUserListItemView: UIView, Card, CardTouch {
     
     lazy var backgrounHStackView: UIView = {
         let view = UIView()
-        view.backgroundColor = .clear
+        view.backgroundColor = ColorAsset.cardBackgroundColor
         view.layer.borderColor = ColorAsset.borderColor?.cgColor
         view.layer.borderWidth = 1.0
         view.layer.cornerRadius = 6.0
@@ -55,7 +55,8 @@ class CardUserListItemView: UIView, Card, CardTouch {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = ColorAsset.cardBackgroundColor
+        backgroundColor = .clear
+        layer.cornerRadius = 6.0
     }
     
     required init?(coder: NSCoder) {
