@@ -30,6 +30,7 @@ class ListReposPageViewModel: NSObject, ViewModelHandlerEventsControllerDelegate
     func viewDidAppear() {
         
         guard let items = items, !items.isEmpty else {
+            controller?.startLoading()
             requestRepos()
             return
         }
@@ -46,14 +47,14 @@ class ListReposPageViewModel: NSObject, ViewModelHandlerEventsControllerDelegate
         }
         
         network?.requestUserRepos(name: login, page: 0, params: nil) { result in
-            
-            switch result {
-            case .success(let users):
-                DispatchQueue.main.async { [weak self] in
+            DispatchQueue.main.async { [weak self] in
+                self?.controller?.stopLoading()
+                switch result {
+                case .success(let users):
                     self?.updateView(with: users)
+                case .failure(let error):
+                    debugPrint(error.message)
                 }
-            case .failure(let error):
-                debugPrint(error.message)
             }
         }
     }

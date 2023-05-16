@@ -52,6 +52,10 @@
 		CFAB5D1E2A127B770091F1FF /* SearchHandlerEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAB5D1D2A127B770091F1FF /* SearchHandlerEvents.swift */; };
 		CFAB5D202A127C090091F1FF /* ViewModelHandlerEventsControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAB5D1F2A127C090091F1FF /* ViewModelHandlerEventsControllerDelegate.swift */; };
 		CFAB5D232A12F2F60091F1FF /* ColorAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAB5D222A12F2F60091F1FF /* ColorAsset.swift */; };
+		CFAB5D262A132D330091F1FF /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAB5D252A132D330091F1FF /* LoadingViewController.swift */; };
+		CFAB5D292A132F200091F1FF /* LoadingPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAB5D282A132F200091F1FF /* LoadingPresentable.swift */; };
+		CFAB5D2C2A1332930091F1FF /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAB5D2B2A1332930091F1FF /* NavigationController.swift */; };
+		CFAB5D2E2A13342E0091F1FF /* LoadingManagers.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAB5D2D2A13342E0091F1FF /* LoadingManagers.swift */; };
 		CFD3A6B723DA308A00EB6D4D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD3A6AC23DA308900EB6D4D /* AppDelegate.swift */; };
 		CFD3A6BB23DA308A00EB6D4D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFD3A6B423DA308A00EB6D4D /* Assets.xcassets */; };
 		CFD3A6D723DA41FE00EB6D4D /* Localizable-pt-BR.strings in Resources */ = {isa = PBXBuildFile; fileRef = CFD3A6CF23DA3F9700EB6D4D /* Localizable-pt-BR.strings */; };
@@ -121,6 +125,10 @@
 		CFAB5D1D2A127B770091F1FF /* SearchHandlerEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHandlerEvents.swift; sourceTree = "<group>"; };
 		CFAB5D1F2A127C090091F1FF /* ViewModelHandlerEventsControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelHandlerEventsControllerDelegate.swift; sourceTree = "<group>"; };
 		CFAB5D222A12F2F60091F1FF /* ColorAsset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorAsset.swift; sourceTree = "<group>"; };
+		CFAB5D252A132D330091F1FF /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
+		CFAB5D282A132F200091F1FF /* LoadingPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingPresentable.swift; sourceTree = "<group>"; };
+		CFAB5D2B2A1332930091F1FF /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		CFAB5D2D2A13342E0091F1FF /* LoadingManagers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingManagers.swift; sourceTree = "<group>"; };
 		CFD3A6AC23DA308900EB6D4D /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CFD3A6B223DA308A00EB6D4D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CFD3A6B423DA308A00EB6D4D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -179,6 +187,8 @@
 				CFAB5D172A1217590091F1FF /* ListDataHandler.swift */,
 				CFAB5D1D2A127B770091F1FF /* SearchHandlerEvents.swift */,
 				CFAB5D1F2A127C090091F1FF /* ViewModelHandlerEventsControllerDelegate.swift */,
+				CFAB5D282A132F200091F1FF /* LoadingPresentable.swift */,
+				CFAB5D2D2A13342E0091F1FF /* LoadingManagers.swift */,
 			);
 			path = Interfaces;
 			sourceTree = "<group>";
@@ -288,6 +298,8 @@
 		CFAB5CEE2A1114C10091F1FF /* Component */ = {
 			isa = PBXGroup;
 			children = (
+				CFAB5D2A2A1332820091F1FF /* NavigationController */,
+				CFAB5D242A132D250091F1FF /* LoadingView */,
 				CFAB5D142A1208A30091F1FF /* UISearch */,
 				CF4D914E2A0FFB8C000BE331 /* Cards */,
 				CFAB5CF82A111D9D0091F1FF /* Cell */,
@@ -334,6 +346,22 @@
 				CFAB5D222A12F2F60091F1FF /* ColorAsset.swift */,
 			);
 			path = AssetsAcessors;
+			sourceTree = "<group>";
+		};
+		CFAB5D242A132D250091F1FF /* LoadingView */ = {
+			isa = PBXGroup;
+			children = (
+				CFAB5D252A132D330091F1FF /* LoadingViewController.swift */,
+			);
+			path = LoadingView;
+			sourceTree = "<group>";
+		};
+		CFAB5D2A2A1332820091F1FF /* NavigationController */ = {
+			isa = PBXGroup;
+			children = (
+				CFAB5D2B2A1332930091F1FF /* NavigationController.swift */,
+			);
+			path = NavigationController;
 			sourceTree = "<group>";
 		};
 		CFD3A6A323DA302E00EB6D4D /* source */ = {
@@ -585,6 +613,7 @@
 				CFAB5CCA2A1053D30091F1FF /* ApiRoute.swift in Sources */,
 				CFAB5D0C2A11E1DB0091F1FF /* CardUserProfileView.swift in Sources */,
 				CFAB5CC42A1048C30091F1FF /* RepoListItem.swift in Sources */,
+				CFAB5D2C2A1332930091F1FF /* NavigationController.swift in Sources */,
 				CFAB5D1E2A127B770091F1FF /* SearchHandlerEvents.swift in Sources */,
 				CFAB5CB02A0FFF5A0091F1FF /* NetworkConnectable.swift in Sources */,
 				CFAB5CF32A1117C40091F1FF /* Identifier.swift in Sources */,
@@ -608,11 +637,14 @@
 				CFAB5CF02A1114ED0091F1FF /* GenericTableViewCell.swift in Sources */,
 				CFAB5CAE2A0FFF110091F1FF /* Card.swift in Sources */,
 				CFAB5CB22A0FFFDE0091F1FF /* Requestable.swift in Sources */,
+				CFAB5D292A132F200091F1FF /* LoadingPresentable.swift in Sources */,
 				CF4D91522A0FFC07000BE331 /* ListResposPageViewModel.swift in Sources */,
 				CFAB5D052A11DEE70091F1FF /* LayoutView.swift in Sources */,
 				CFD3A6B723DA308A00EB6D4D /* AppDelegate.swift in Sources */,
 				CFAB5D0A2A11E1BF0091F1FF /* CardRepoListItemView.swift in Sources */,
 				CFAB5CD72A1059AF0091F1FF /* AppCoordinator.swift in Sources */,
+				CFAB5D262A132D330091F1FF /* LoadingViewController.swift in Sources */,
+				CFAB5D2E2A13342E0091F1FF /* LoadingManagers.swift in Sources */,
 				CFD3A6DA23DA443200EB6D4D /* LocalizedText.swift in Sources */,
 				CFAB5D032A11D5480091F1FF /* Model.swift in Sources */,
 				CFAB5CFD2A1124830091F1FF /* NetworkHeaderMaker.swift in Sources */,

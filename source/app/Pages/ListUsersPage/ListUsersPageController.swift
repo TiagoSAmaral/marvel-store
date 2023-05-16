@@ -10,9 +10,11 @@ import UIKit
 
 protocol ListUserController where Self: UIViewController {
     func updateView()
+    func startLoading()
+    func stopLoading()
 }
 
-class ListUserPageController: UIViewController, ListUserController, Controller {
+class ListUserPageController: UIViewController, ListUserController, Controller, LoadingManagers {
 
     var viewModel: ViewModelHandlerEventsControllerDelegate?
     var dataHandler: ListDataHandler?

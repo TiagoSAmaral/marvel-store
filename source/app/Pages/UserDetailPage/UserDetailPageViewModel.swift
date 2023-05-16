@@ -23,7 +23,10 @@ class UserDetailPageViewModel: ViewModelHandlerEventsControllerDelegate, ListDat
     
     func viewDidAppear() {
         
-        requestUserInfo()
+        guard let items = items, !items.isEmpty else {
+            requestUserInfo()
+            return
+        }
     }
     
     func requestUserInfo() {
@@ -31,8 +34,10 @@ class UserDetailPageViewModel: ViewModelHandlerEventsControllerDelegate, ListDat
             return
         }
         
+        controller?.startLoading()
         userDetailNetwork?.requestUser(with: dataToSearch.login) { result in
             DispatchQueue.main.async { [weak self] in
+                self?.controller?.stopLoading()
                 switch result {
                 case .success(let items):
                     self?.items = items

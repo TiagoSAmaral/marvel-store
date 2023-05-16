@@ -33,8 +33,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     private func startApplication() -> Coordinator {
-        let navigation = UINavigationController()
-        navigation.navigationBar.isTranslucent = false
+        let navigation = NavigationController()
+//        navigation.navigationBar.isTranslucent = false
         return AppCoordinator(navigation: navigation)
     }
 }

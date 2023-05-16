@@ -11,6 +11,7 @@ import SafariServices
 
 protocol ListReposCoordinable where Self: Coordinator {
     func goToRepo(with data: Model?)
+    func didFinishChild()
 }
 
 class ListReposPageCoordinator: Coordinator, ListReposCoordinable {
@@ -52,18 +53,9 @@ class ListReposPageCoordinator: Coordinator, ListReposCoordinable {
         navigationController?.popToViewController(rooViewController, animated: true)
     }
     
-    func didFinishChild(_ child: Coordinator?) {
-        
-        guard let childCoordinators = childCoordinators else {
-            return
-        }
-        
-        let shadowChildCoorinators = childCoordinators
-        
-        for (index, item) in shadowChildCoorinators.enumerated() where item === child {
-            self.childCoordinators?.remove(at: index)
-        }
-        
-        popToRootViewController()
+    func didFinishChild() {
+        parentCoordinator?.didFinishChild(self)
+        parentCoordinator = nil
+        rootViewControler = nil
     }
 }

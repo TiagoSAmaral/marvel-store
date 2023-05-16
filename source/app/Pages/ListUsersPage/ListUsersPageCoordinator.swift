@@ -27,7 +27,8 @@ class ListUsersPageCoordinator: Coordinator, ListUsersCoordinable {
         guard let controller = ListUsersPageFactory.makePage(coordinator: self, model: nil) else {
             return
         }
-        navigationController?.pushViewController(controller, animated: true)
+        navigationController?.viewControllers = [controller]
+        //pushViewController(controller, animated: true)
     }
     
     func goToUserDetail(with data: Model?) {

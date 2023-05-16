@@ -10,10 +10,13 @@ import UIKit
 
 protocol ListReposController where Self: UIViewController {
     func updateView()
+    func startLoading()
+    func stopLoading()
 }
 
-class ListReposPageController: UIViewController, ListReposController, Controller {
-
+class ListReposPageController: UIViewController, ListReposController, Controller, LoadingManagers {
+    
+    var loadingController: LoadingViewController?
     var viewModel: ViewModelHandlerEventsControllerDelegate?
     var dataHandler: ListDataHandler?
     var viewFactory: ListFactory?
@@ -31,5 +34,10 @@ class ListReposPageController: UIViewController, ListReposController, Controller
     
     func updateView() {
         viewFactory?.reloadView()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        coordinator?.didFinishChild(nil)
     }
 }

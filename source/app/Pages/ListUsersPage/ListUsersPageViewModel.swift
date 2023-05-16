@@ -24,13 +24,10 @@ class ListUsersPageViewModel: NSObject, ViewModelHandlerEventsControllerDelegate
     
     func viewDidAppear() {
         
-        guard let items = items else {
+        guard let items = items, !items.isEmpty else {
+            controller?.startLoading()
             requestUsers()
             return
-        }
-        
-        if items.isEmpty {
-            requestUsers()
         }
     }
 
@@ -40,26 +37,29 @@ class ListUsersPageViewModel: NSObject, ViewModelHandlerEventsControllerDelegate
     
     func requestUsers() {
         network?.requestListUser(page: 0, params: nil, handler: { result in
-            switch result {
-            case .success(let users):
-                DispatchQueue.main.async { [weak self] in
+            DispatchQueue.main.async { [weak self] in
+                self?.controller?.stopLoading()
+                switch result {
+                case .success(let users):
                     self?.updateView(with: users)
+                case .failure(let error):
+                    debugPrint(error.message)
                 }
-            case .failure(let error):
-                debugPrint(error.message)
             }
         })
     }
     
     func searchUser(by name: String?) {
+        controller?.startLoading()
         network?.search(with: name, handler: { result in
-            switch result {
-            case .success(let response):
-                DispatchQueue.main.async { [weak self] in
+            DispatchQueue.main.async { [weak self] in
+                self?.controller?.stopLoading()
+                switch result {
+                case .success(let response):
                     self?.updateView(with: response)
+                case .failure(let error):
+                    debugPrint(error.message)
                 }
-            case .failure(let error):
-                debugPrint(error.message)
             }
         })
     }
@@ -100,10 +100,12 @@ class ListUsersPageViewModel: NSObject, ViewModelHandlerEventsControllerDelegate
     // MARK: - SearchHandlerEvents
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        controller?.startLoading()
         searchUser(by: searchBar.text)
     }
 
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        controller?.startLoading()
         requestUsers()
     }
 }

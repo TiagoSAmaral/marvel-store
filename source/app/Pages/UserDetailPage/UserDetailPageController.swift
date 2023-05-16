@@ -10,10 +10,12 @@ import UIKit
 
 protocol UserDetailController where Self: UIViewController {
     func updateView()
+    func startLoading()
+    func stopLoading()
 }
 
-class UserDetailPageController: UIViewController, UserDetailController, Controller {
-        
+class UserDetailPageController: UIViewController, UserDetailController, Controller, LoadingManagers {
+    var loadingController: LoadingViewController?
     var dataHandler: ListDataHandler?
     var viewFactory: ListFactoryView?
     var viewModel: ViewModelHandlerEventsControllerDelegate?
