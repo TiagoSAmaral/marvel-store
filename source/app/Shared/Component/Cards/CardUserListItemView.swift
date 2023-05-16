@@ -101,7 +101,6 @@ class CardUserListItemView: UIView, Card, CardTouch {
     func makeConstraintProfileImageView() {
         
         let baseImageView = UIView()
-        baseImageView.translatesAutoresizingMaskIntoConstraints = false
         baseImageView.addSubviews([profileImageView])
         profileImageView.centerX(of: baseImageView).centerY(of: baseImageView)
         profileImageView.height(50)
@@ -116,7 +115,6 @@ class CardUserListItemView: UIView, Card, CardTouch {
     
     func makeConstraintNameLabel() {
         vStackView.addArrangedSubview(nameLabel)
-        nameLabel.translatesAutoresizingMaskIntoConstraints = false
         nameLabel.height(60)
     }
 

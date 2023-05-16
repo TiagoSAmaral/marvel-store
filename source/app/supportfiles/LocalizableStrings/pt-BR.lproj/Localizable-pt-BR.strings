@@ -5,3 +5,5 @@
 "serverNotResponse" = "Entre em contato com suporte.";
 "pullToRefreshText" = "Atualizando...";
 "showRepos" = "Repositórios";
+"followers" = "Seguidores";
+"following" = "Seguindo";

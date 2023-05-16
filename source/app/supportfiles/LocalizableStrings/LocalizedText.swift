@@ -19,6 +19,8 @@ struct LocalizedText {
         case searchButtonLabel = "Buscar"
         case pullToRefreshText = "pullToRefreshText"
         case showRepos = "showRepos"
+        case followers = "followers"
+        case following = "following"
     }
     
     static func with(tagName: LocalizeTags) -> String {
