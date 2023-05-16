@@ -16,20 +16,19 @@ Suporte a Darkmode
 
 #### Light Mode
 <p float="left">
-    <img src="./readmeresource/list_users_l.png" width="160"/>
-    <img src="./readmeresource/busca_result_l.png" width="160"/>
-    <img src="./readmeresource/profile_l.png" width="160"/>
-    <img src="./readmeresource/list_repo_l.png" width="160"/>
-    <img src="./readmeresource/repo_detail_l.png" width="160"/>
-
+<kbd><img src="./readmeresource/list_users_l.png" width="149"/></kbd>
+<kbd><img src="./readmeresource/busca_result_l.png" width="149"/></kbd>
+<kbd><img src="./readmeresource/profile_l.png" width="149"/></kbd>
+<kbd><img src="./readmeresource/list_repo_l.png" width="149"/></kbd>
+<kbd><img src="./readmeresource/repo_detail_l.png" width="149"/></kbd>
 
 #### Dark Mode
 <p float="left">
-    <img src="./readmeresource/list_users_d.png" width="160"/>
-    <img src="./readmeresource/busca_result_d.png" width="160"/>
-    <img src="./readmeresource/profile_d.png" width="160"/>
-    <img src="./readmeresource/list_repo_d.png" width="160"/>
-    <img src="./readmeresource/repo_detail_d.png" width="160"/>
+<kbd><img src="./readmeresource/list_users_d.png" width="149"/></kbd>
+<kbd><img src="./readmeresource/busca_result_d.png" width="149"/></kbd>
+<kbd><img src="./readmeresource/profile_d.png" width="149"/></kbd>
+<kbd><img src="./readmeresource/list_repo_d.png" width="149"/></kbd>
+<kbd><img src="./readmeresource/repo_detail_d.png" width="149"/></kbd>
 </p>
 
 ## Sobre o projeto: <br>
