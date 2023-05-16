@@ -39,6 +39,10 @@ class ListUserPageController: UIViewController, ListUserController, Controller, 
         viewModel?.viewDidAppear()
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        searchController?.isActive = false
+    }
+    
     func updateView() {
         viewFactory?.reloadView()
     }
