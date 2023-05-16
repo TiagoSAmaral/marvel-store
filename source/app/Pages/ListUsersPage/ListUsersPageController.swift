@@ -11,10 +11,11 @@ import UIKit
 protocol ListUserController where Self: UIViewController {
     func updateView()
     func startLoading()
-    func stopLoading()
+    func stopLoading(onFinish: (() -> Void)?)
+    func presentAlert(with title: String?, and message: String?, handler: ((UIAlertAction) -> Void)? )
 }
 
-class ListUserPageController: UIViewController, ListUserController, Controller, LoadingManagers {
+class ListUserPageController: UIViewController, ListUserController, Controller, LoadingManagers, AlertPresetable {
 
     var viewModel: ViewModelHandlerEventsControllerDelegate?
     var dataHandler: ListDataHandler?

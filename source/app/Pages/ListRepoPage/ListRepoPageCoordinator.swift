@@ -12,6 +12,7 @@ import SafariServices
 protocol ListReposCoordinable where Self: Coordinator {
     func goToRepo(with data: Model?)
     func didFinishChild()
+    func back()
 }
 
 class ListReposPageCoordinator: Coordinator, ListReposCoordinable {
@@ -44,6 +45,10 @@ class ListReposPageCoordinator: Coordinator, ListReposCoordinable {
 
         let safariViewController = SFSafariViewController(url: urlpath, configuration: config)
         navigationController?.present(safariViewController, animated: true)
+    }
+    
+    func back() {
+        navigationController?.popViewController(animated: true)
     }
     
     func popToRootViewController() {

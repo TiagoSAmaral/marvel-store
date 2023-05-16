@@ -56,6 +56,8 @@
 		CFAB5D292A132F200091F1FF /* LoadingPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAB5D282A132F200091F1FF /* LoadingPresentable.swift */; };
 		CFAB5D2C2A1332930091F1FF /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAB5D2B2A1332930091F1FF /* NavigationController.swift */; };
 		CFAB5D2E2A13342E0091F1FF /* LoadingManagers.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAB5D2D2A13342E0091F1FF /* LoadingManagers.swift */; };
+		CFAB5D312A133B660091F1FF /* AlertViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAB5D302A133B660091F1FF /* AlertViewFactory.swift */; };
+		CFAB5D332A133C410091F1FF /* AlertPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAB5D322A133C410091F1FF /* AlertPresentable.swift */; };
 		CFD3A6B723DA308A00EB6D4D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD3A6AC23DA308900EB6D4D /* AppDelegate.swift */; };
 		CFD3A6BB23DA308A00EB6D4D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFD3A6B423DA308A00EB6D4D /* Assets.xcassets */; };
 		CFD3A6D723DA41FE00EB6D4D /* Localizable-pt-BR.strings in Resources */ = {isa = PBXBuildFile; fileRef = CFD3A6CF23DA3F9700EB6D4D /* Localizable-pt-BR.strings */; };
@@ -129,6 +131,8 @@
 		CFAB5D282A132F200091F1FF /* LoadingPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingPresentable.swift; sourceTree = "<group>"; };
 		CFAB5D2B2A1332930091F1FF /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		CFAB5D2D2A13342E0091F1FF /* LoadingManagers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingManagers.swift; sourceTree = "<group>"; };
+		CFAB5D302A133B660091F1FF /* AlertViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewFactory.swift; sourceTree = "<group>"; };
+		CFAB5D322A133C410091F1FF /* AlertPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertPresentable.swift; sourceTree = "<group>"; };
 		CFD3A6AC23DA308900EB6D4D /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CFD3A6B223DA308A00EB6D4D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CFD3A6B423DA308A00EB6D4D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -189,6 +193,7 @@
 				CFAB5D1F2A127C090091F1FF /* ViewModelHandlerEventsControllerDelegate.swift */,
 				CFAB5D282A132F200091F1FF /* LoadingPresentable.swift */,
 				CFAB5D2D2A13342E0091F1FF /* LoadingManagers.swift */,
+				CFAB5D322A133C410091F1FF /* AlertPresentable.swift */,
 			);
 			path = Interfaces;
 			sourceTree = "<group>";
@@ -326,6 +331,7 @@
 		CFAB5CF92A1120F10091F1FF /* Factories */ = {
 			isa = PBXGroup;
 			children = (
+				CFAB5D302A133B660091F1FF /* AlertViewFactory.swift */,
 				CFAB5CFA2A1121270091F1FF /* CardFactory.swift */,
 				CFAB5D192A1218BF0091F1FF /* ListFactoryView.swift */,
 			);
@@ -622,7 +628,9 @@
 				CFAB5CE92A105F010091F1FF /* ListUsersPageController.swift in Sources */,
 				CFAB5D162A1208D00091F1FF /* SearchBarFactory.swift in Sources */,
 				CFAB5CFB2A1121270091F1FF /* CardFactory.swift in Sources */,
+				CFAB5D332A133C410091F1FF /* AlertPresentable.swift in Sources */,
 				CFAB5CDD2A105A250091F1FF /* UserDetailPageCoordinator.swift in Sources */,
+				CFAB5D312A133B660091F1FF /* AlertViewFactory.swift in Sources */,
 				CFAB5D202A127C090091F1FF /* ViewModelHandlerEventsControllerDelegate.swift in Sources */,
 				CFF2EA112A0F259800709168 /* Constraints.swift in Sources */,
 				CFAB5CDE2A105A250091F1FF /* UserDetailPageController.swift in Sources */,

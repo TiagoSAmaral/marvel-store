@@ -11,6 +11,7 @@ import UIKit
 protocol UserDetailCoordinable where Self: Coordinator {
     func goToRepos(with data: Model?)
     func didFinishChild()
+    func back()
 }
 
 class UserDetailPageCoordinator: Coordinator, UserDetailCoordinable {
@@ -36,6 +37,10 @@ class UserDetailPageCoordinator: Coordinator, UserDetailCoordinable {
         reposCoordinator.parentCoordinator = self
         childCoordinators?.append(reposCoordinator)
         reposCoordinator.start(with: data)
+    }
+    
+    func back() {
+        navigationController?.popViewController(animated: true)
     }
     
     func popToRootViewController() {

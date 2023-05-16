@@ -11,10 +11,11 @@ import UIKit
 protocol ListReposController where Self: UIViewController {
     func updateView()
     func startLoading()
-    func stopLoading()
+    func stopLoading(onFinish: (() -> Void)?)
+    func presentAlert(with title: String?, and message: String?, handler: ((UIAlertAction) -> Void)?)
 }
 
-class ListReposPageController: UIViewController, ListReposController, Controller, LoadingManagers {
+class ListReposPageController: UIViewController, ListReposController, Controller, LoadingManagers, AlertPresetable {
     
     var loadingController: LoadingViewController?
     var viewModel: ViewModelHandlerEventsControllerDelegate?

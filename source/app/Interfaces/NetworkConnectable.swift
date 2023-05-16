@@ -22,8 +22,7 @@ extension NetworkConectable {
             return
         }
         
-        AF.request(data.urlPath, method: data.method, headers: data.headers).responseDecodable(of: resultType.self) { response in
-// Erro no parse, mas o conteudo vem correto em response.data. Basta fazer um decode aqui mesmo.
+        AF.request(data.urlPath, method: data.method, headers: data.headers, requestModifier: { $0.timeoutInterval = 15 }).responseDecodable(of: resultType.self) { response in
             switch response.result {
             case .success(let result):
                 handler?(.success(result))

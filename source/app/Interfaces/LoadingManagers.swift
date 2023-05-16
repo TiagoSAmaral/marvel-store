@@ -10,7 +10,7 @@ import UIKit
 
 protocol LoadingManagers where Self: UIViewController {
     func startLoading()
-    func stopLoading()
+    func stopLoading(onFinish: (() -> Void)?)
 }
 
 extension LoadingManagers {
@@ -18,7 +18,7 @@ extension LoadingManagers {
         (navigationController as? LoadingPresentable)?.startLoading()
     }
 
-    func stopLoading() {
-        (navigationController as? LoadingPresentable)?.stopLoading()
+    func stopLoading(onFinish: (() -> Void)?) {
+        (navigationController as? LoadingPresentable)?.stopLoading(onFinish: onFinish)
     }
 }

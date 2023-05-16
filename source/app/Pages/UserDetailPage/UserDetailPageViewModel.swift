@@ -37,13 +37,23 @@ class UserDetailPageViewModel: ViewModelHandlerEventsControllerDelegate, ListDat
         controller?.startLoading()
         userDetailNetwork?.requestUser(with: dataToSearch.login) { result in
             DispatchQueue.main.async { [weak self] in
-                self?.controller?.stopLoading()
+
                 switch result {
                 case .success(let items):
                     self?.items = items
                     self?.updateContent()
+                    self?.controller?.stopLoading(onFinish: nil)
                 case .failure(let error):
-                    debugPrint(error.message)
+                    self?.controller?.stopLoading {
+                        
+                        self?.controller?.presentAlert(with: nil, and: error.message) { _ in
+                            self?.coordinator?.back()
+                        }
+                        
+//                        self?.controller?.presentAlert(with: nil, and: error.message) {_ in
+//                            self?.coordinator?.back()
+//                        }
+                    }
                 }
             }
         }

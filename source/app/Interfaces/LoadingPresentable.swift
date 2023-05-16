@@ -12,7 +12,7 @@ protocol LoadingPresentable where Self: UIViewController {
     
     var loadingController: LoadingViewController? { get set }
     func startLoading()
-    func stopLoading()
+    func stopLoading(onFinish: (() -> Void)?)
 }
 
 extension LoadingPresentable {
@@ -26,12 +26,14 @@ extension LoadingPresentable {
         }
     }
     
-    func stopLoading() {
+    func stopLoading(onFinish: (() -> Void)?) {
         guard let loadingController = loadingController else {
+            onFinish?()
             return
         }
         
         loadingController.dismiss(animated: true) {
+            onFinish?()
             self.loadingController = nil
         }
     }

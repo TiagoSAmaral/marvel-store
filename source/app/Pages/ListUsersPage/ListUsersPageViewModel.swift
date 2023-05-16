@@ -38,12 +38,15 @@ class ListUsersPageViewModel: NSObject, ViewModelHandlerEventsControllerDelegate
     func requestUsers() {
         network?.requestListUser(page: 0, params: nil, handler: { result in
             DispatchQueue.main.async { [weak self] in
-                self?.controller?.stopLoading()
+                
                 switch result {
                 case .success(let users):
                     self?.updateView(with: users)
+                    self?.controller?.stopLoading(onFinish: nil)
                 case .failure(let error):
-                    debugPrint(error.message)
+                    self?.controller?.stopLoading {
+                        self?.controller?.presentAlert(with: nil, and: error.message, handler: nil)
+                    }
                 }
             }
         })
@@ -53,12 +56,15 @@ class ListUsersPageViewModel: NSObject, ViewModelHandlerEventsControllerDelegate
         controller?.startLoading()
         network?.search(with: name, handler: { result in
             DispatchQueue.main.async { [weak self] in
-                self?.controller?.stopLoading()
+                
                 switch result {
                 case .success(let response):
+                    self?.controller?.stopLoading(onFinish: nil)
                     self?.updateView(with: response)
                 case .failure(let error):
-                    debugPrint(error.message)
+                    self?.controller?.stopLoading {
+                        self?.controller?.presentAlert(with: nil, and: error.message, handler: nil)
+                    }
                 }
             }
         })

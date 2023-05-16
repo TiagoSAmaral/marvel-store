@@ -11,10 +11,11 @@ import UIKit
 protocol UserDetailController where Self: UIViewController {
     func updateView()
     func startLoading()
-    func stopLoading()
+    func stopLoading(onFinish: (() -> Void)?)
+    func presentAlert(with title: String?, and message: String?, handler: ((UIAlertAction) -> Void)?)
 }
 
-class UserDetailPageController: UIViewController, UserDetailController, Controller, LoadingManagers {
+class UserDetailPageController: UIViewController, UserDetailController, Controller, LoadingManagers, AlertPresetable {
     var loadingController: LoadingViewController?
     var dataHandler: ListDataHandler?
     var viewFactory: ListFactoryView?

@@ -48,12 +48,16 @@ class ListReposPageViewModel: NSObject, ViewModelHandlerEventsControllerDelegate
         
         network?.requestUserRepos(name: login, page: 0, params: nil) { result in
             DispatchQueue.main.async { [weak self] in
-                self?.controller?.stopLoading()
                 switch result {
                 case .success(let users):
                     self?.updateView(with: users)
+                    self?.controller?.stopLoading(onFinish: nil)
                 case .failure(let error):
-                    debugPrint(error.message)
+                    self?.controller?.stopLoading {
+                        self?.controller?.presentAlert(with: nil, and: error.message) {_ in 
+                            self?.coordinator?.back()
+                        }
+                    }
                 }
             }
         }
