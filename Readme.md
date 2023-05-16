@@ -1,19 +1,32 @@
 # Github Person
 
-Após clonar o repositório, deve-se alterar a URL de origin do seu repositório local.
+Aplicativo de laboratório. Ele consome a API do github para listar, buscar usuários. Também permite buscar dados somente de um usuário selecionado, e listar seus repositório, e também permite ver os dados do repositório.
 
-Ver:  [git set-url remote](https://git-scm.com/docs/git-remote#Documentation/git-remote.txt-emset-urlem).
+Descricão simples:
+- Tela lista usuários: 
+    Permite buscar usuários.
+- Tela dados usuário: 
+    Expões alguns dados públicos do usuário selecionado
+- Tela repositórios: 
+    Lista os dados do repositório e permite veisualiza-lo pelo SafarieService dentro do app.
 
----
+Suporte a Darkmode
 
-## Preparando o Ambiente
+## Preview
 
-Para instalar e utilizar os recursos deste projeto, siga os passos abaixo.
+Light Mode
 
-Sobre o projeto: <br>
+Dark Mode
+
+
+## Sobre o projeto: <br>
 - Xcode Version 14.2 ou superior<br>
 - Suporte mínimo ao iOS 14<br>
 - Swift 5<br>
+
+
+## Preparando o Ambiente
+Para executar o projeto, siga os passos abaixo.
 
 #### Ferramentas de Gestão e Qualidade de Código<br>
 - Fastlane
@@ -25,12 +38,10 @@ Sobre o projeto: <br>
 
 Gerenciadores usados: 
  - Swift Package Manager
- - Carthage
 
 Dependências:
 - [Kingfisher](https://github.com/onevcat/Kingfisher). Usando SPM (Download e cache de imagens).
 - [Alamofire](https://github.com/Alamofire/Alamofire) Usando SPM (Realizaão de requisioes assincronas).
-- [SwiftIconfont](https://github.com/segecey/SwiftIconFont) Usando Carthage (Ícones nos textos).
 
 
 ## Instruções para Execução de Projeto
@@ -79,33 +90,9 @@ Após a conclusão das instalaçoes feitas com brew, execute o comando a baixo p
 
 ---
 
-### [XcodeGen](https://github.com/yonaskolb/XcodeGen)
-
-<p>XcodeGen é uma ferramenta de linha de comando escrita em Swift que gera seu arquivo de projeto Xcode (project.pbxproj) usando sua estrutura de pastas e uma especificação de projeto.</p>
-
-<p>A especificação do projeto é feita com um arquivo YAML ou JSON que define seus targets, configurações, schemes, configurações de builds personalizadas e muitas outras opções. Todos os seus diretórios de origem são automaticamente analisados e referenciados de forma apropriada, preservando sua estrutura de pastas. Configurações finas são usados em muitos lugares, portanto, você só precisa personalizar o que for necessário. Projetos muito complexos também podem ser definidos usando recursos mais avançados.</p>
-
- <p>Após renomear o projeto, execute o e instalar as dependencias, execute o comando em seu terminal:</p>
-
- ```bash
- xcodegen generate
- ```
-
----
-
 ### Instalação de Dependências do Projeto
 
 No Xcode atualize as dependencias usando o Swift Package Manager
-
----
-
-### Carthage
-
- Uma das dependencias do projeto está sendo gerenciada pelo Carthage. É possível gerar o build através do comando:
-
-```
-carthage update --cache-builds --platform ios
-```
 
 ## Ferramentas
 
