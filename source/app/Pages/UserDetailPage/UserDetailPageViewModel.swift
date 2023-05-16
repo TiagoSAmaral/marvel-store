@@ -24,6 +24,7 @@ class UserDetailPageViewModel: ViewModelHandlerEventsControllerDelegate, ListDat
     func viewDidAppear() {
         
         guard let items = items, !items.isEmpty else {
+            controller?.startLoading()
             requestUserInfo()
             return
         }
@@ -34,14 +35,13 @@ class UserDetailPageViewModel: ViewModelHandlerEventsControllerDelegate, ListDat
             return
         }
         
-        controller?.startLoading()
         userDetailNetwork?.requestUser(with: dataToSearch.login) { result in
             DispatchQueue.main.async { [weak self] in
 
                 switch result {
                 case .success(let items):
                     self?.items = items
-                    self?.updateContent()
+                    self?.controller?.updateView()
                     self?.controller?.stopLoading(onFinish: nil)
                 case .failure(let error):
                     self?.controller?.stopLoading {
@@ -49,10 +49,6 @@ class UserDetailPageViewModel: ViewModelHandlerEventsControllerDelegate, ListDat
                         self?.controller?.presentAlert(with: nil, and: error.message) { _ in
                             self?.coordinator?.back()
                         }
-                        
-//                        self?.controller?.presentAlert(with: nil, and: error.message) {_ in
-//                            self?.coordinator?.back()
-//                        }
                     }
                 }
             }
@@ -60,7 +56,8 @@ class UserDetailPageViewModel: ViewModelHandlerEventsControllerDelegate, ListDat
     }
     
     func updateContent() {
-        controller?.updateView()
+//        controller?.updateView()
+        requestUserInfo()
     }
     
     lazy var showReposWith: ((Model?) -> Void) = { [weak self] data in

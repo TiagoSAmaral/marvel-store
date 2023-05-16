@@ -45,6 +45,7 @@ class ListUserPageController: UIViewController, ListUserController, Controller, 
     
     func updateView() {
         viewFactory?.reloadView()
+        searchController?.isActive = false
     }
     
     func showSearchField() {

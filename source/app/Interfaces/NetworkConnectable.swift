@@ -22,7 +22,7 @@ extension NetworkConectable {
             return
         }
         
-        AF.request(data.urlPath, method: data.method, headers: data.headers, requestModifier: { $0.timeoutInterval = 15 }).responseDecodable(of: resultType.self) { response in
+        AF.request(data.urlPath, method: data.method, headers: data.headers, requestModifier: { $0.timeoutInterval = 15; $0.cachePolicy = .reloadRevalidatingCacheData }).responseDecodable(of: resultType.self) { response in
             switch response.result {
             case .success(let result):
                 handler?(.success(result))

@@ -65,7 +65,6 @@ class ListFactoryView: NSObject, ListFactory, UITableViewDataSource {
     
     @objc func refresh() {
         controller?.dataHandler?.updateContent()
-        refreshControl?.endRefreshing()
     }
     
     func setupTableView() {
@@ -83,6 +82,7 @@ class ListFactoryView: NSObject, ListFactory, UITableViewDataSource {
     
     func reloadView() {
         tableView?.reloadData()
+        refreshControl?.endRefreshing()
     }
 
 // MARK: - UITableViewDataSource Implementation
