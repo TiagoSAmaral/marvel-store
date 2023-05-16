@@ -59,8 +59,6 @@
 		CFD3A6DC23DA462000EB6D4D /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFD3A6DB23DA462000EB6D4D /* Launch Screen.storyboard */; };
 		CFE2D5A52A0F4E02001F649F /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = CFE2D5A42A0F4E02001F649F /* Alamofire */; };
 		CFE2D5A82A0F4E17001F649F /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = CFE2D5A72A0F4E17001F649F /* Kingfisher */; };
-		CFE2D5B02A0F572C001F649F /* SwiftIconFont.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFE2D5AF2A0F572C001F649F /* SwiftIconFont.xcframework */; };
-		CFE2D5B12A0F572C001F649F /* SwiftIconFont.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CFE2D5AF2A0F572C001F649F /* SwiftIconFont.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CFF2EA112A0F259800709168 /* Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF2EA102A0F259800709168 /* Constraints.swift */; };
 /* End PBXBuildFile section */
 
@@ -73,20 +71,6 @@
 			remoteInfo = BaseProjectTarget;
 		};
 /* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		CFE2D5B22A0F572C001F649F /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				CFE2D5B12A0F572C001F649F /* SwiftIconFont.xcframework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		CF24569923E4C55B00A1968D /* info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = info.plist; sourceTree = "<group>"; };
@@ -159,7 +143,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CFE2D5B02A0F572C001F649F /* SwiftIconFont.xcframework in Frameworks */,
 				CFE2D5A82A0F4E17001F649F /* Kingfisher in Frameworks */,
 				CFE2D5A52A0F4E02001F649F /* Alamofire in Frameworks */,
 			);
@@ -480,11 +463,9 @@
 			buildConfigurationList = CF9601C223DA2A2200916EF1 /* Build configuration list for PBXNativeTarget "github-person" */;
 			buildPhases = (
 				CFD3A6BF23DA3DC600EB6D4D /* Swiftlint */,
-				CFE2D5AE2A0F56E8001F649F /* Carthage */,
 				CF9601AA23DA2A1E00916EF1 /* Sources */,
 				CF9601AB23DA2A1E00916EF1 /* Frameworks */,
 				CF9601AC23DA2A1E00916EF1 /* Resources */,
-				CFE2D5B22A0F572C001F649F /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -581,25 +562,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
-		};
-		CFE2D5AE2A0F56E8001F649F /* Carthage */ = {
-			isa = PBXShellScriptBuildPhase;
-			alwaysOutOfDate = 1;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = Carthage;
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 

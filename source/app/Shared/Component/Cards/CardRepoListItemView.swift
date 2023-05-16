@@ -135,10 +135,7 @@ class CardRepoListItemView: UIView, Card, CardTouch {
         addSubviews([baseView])
         baseView.edgeToSuperView(margin: 8)
         baseView.addSubviews([vMainStackView])
-        
-        
-//        addSubviews([vMainStackView])
-//        vMainStackView.edgeToSuperView(margin: 8.0)
+
         vMainStackView.edgeToSuperView(margin: 8.0)
         vMainStackView.addArrangedSubview(hStackViewProfileImageViewWithNameLogin)
         
