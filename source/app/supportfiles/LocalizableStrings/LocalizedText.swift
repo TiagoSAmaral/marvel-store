@@ -21,6 +21,7 @@ struct LocalizedText {
         case showRepos = "showRepos"
         case followers = "followers"
         case following = "following"
+        case openRepo = "openRepo"
     }
     
     static func with(tagName: LocalizeTags) -> String {

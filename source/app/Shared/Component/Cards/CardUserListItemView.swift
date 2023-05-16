@@ -16,7 +16,7 @@ class CardUserListItemView: UIView, Card, CardTouch {
     
     lazy var backgrounHStackView: UIView = {
         let view = UIView()
-        view.backgroundColor = ColorAsset.cardBackgroundColor
+        view.backgroundColor = .clear
         view.layer.borderColor = ColorAsset.borderColor?.cgColor
         view.layer.borderWidth = 1.0
         view.layer.cornerRadius = 6.0

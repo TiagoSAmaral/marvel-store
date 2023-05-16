@@ -11,22 +11,21 @@ import Foundation
 struct RepoListemItem: Codable, Model {
     let identifier: Int?
     let name: String?
-    let owner: UserDetailProfile?
     let description: String?
+    let visibility: String?
     let startsCount: Int?
     let forksCount: Int?
-    let watchersCount: Int?
     let htmlUrl: String?
+    let language: String?
     
     var layout: LayoutView?
     var action: ((Model?) -> Void)?
     
     enum CodingKeys: String, CodingKey {
-        case name, owner, description
+        case name, description, language, visibility
         case identifier = "id"
         case startsCount = "stargazers_count"
         case forksCount = "forks_count"
-        case watchersCount = "watchers_count"
         case htmlUrl = "html_url"
     }
 }
