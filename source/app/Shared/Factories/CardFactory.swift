@@ -33,5 +33,4 @@ class CardMaker: CardFactory {
         cardView.load(model: data)
         return cardView
     }
-
 }

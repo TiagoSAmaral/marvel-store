@@ -7,19 +7,55 @@
 //
 
 import UIKit
+import Kingfisher
 
 class CardUserListItemView: UIView, Card, CardTouch {
-    
+
     var action: ((Model?) -> Void)?
     var model: UserDetailProfile?
     
+    lazy var backgrounHStackView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .clear
+        view.layer.borderColor = ColorAsset.borderColor?.cgColor
+        view.layer.borderWidth = 1.0
+        view.layer.cornerRadius = 6.0
+        return view
+    }()
+    
+    lazy var hStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .horizontal
+        return stackView
+    }()
+    
+    lazy var vStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .vertical
+        stackView.distribution = .fillProportionally
+        return stackView
+    }()
+    
+    lazy var profileImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFit
+        imageView.layer.cornerRadius = 25.0
+        imageView.clipsToBounds = true
+        imageView.layer.borderWidth = 1.0
+        imageView.layer.borderColor = ColorAsset.borderColor?.cgColor
+        return imageView
+    }()
+    
     lazy var nameLabel: UILabel = {
-        let label: UILabel = UILabel()
+        var label: UILabel = UILabel()
+        label.font = UIFont.systemFont(ofSize: 20.0, weight: .semibold)
+        label.textColor = ColorAsset.titleColor
         return label
     }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        backgroundColor = ColorAsset.cardBackgroundColor
     }
     
     required init?(coder: NSCoder) {
@@ -32,20 +68,57 @@ class CardUserListItemView: UIView, Card, CardTouch {
             return
         }
         self.model = model
-        nameLabel.text = model.login
+        nameLabel.text =  model.login
+        profileImageView.kf.setImage(with: URL(string: model.avatarURL))
         action = model.action
         
-        makeNameLabelConstraint()
+        addAllSubviews()
         defineAction()
     }
     
 // MARK: - Apply Constraints
     
-    func makeNameLabelConstraint() {
-        addSubviews([nameLabel])
-        nameLabel.height(60).edgeToSuperView()
+    func addAllSubviews() {
+        addSubviews([backgrounHStackView])
+        backgrounHStackView.addSubviews([hStackView])
+        makeConstraintBackgroundHStackView()
+        makeContraintHStackView()
+        makeConstraintProfileImageView()
+        makeConstraintVStackView()
+        makeConstraintNameLabel()
     }
     
+    func makeConstraintBackgroundHStackView() {
+
+        backgrounHStackView.edgeToSuperView(margin: 5)
+    }
+    
+    func makeContraintHStackView() {
+        hStackView.edgeToSuperView()
+    }
+    
+    func makeConstraintProfileImageView() {
+        
+        let baseImageView = UIView()
+        baseImageView.translatesAutoresizingMaskIntoConstraints = false
+        baseImageView.addSubviews([profileImageView])
+        profileImageView.centerX(of: baseImageView).centerY(of: baseImageView)
+        profileImageView.height(50)
+        profileImageView.width(50)
+        baseImageView.width(80)
+        hStackView.addArrangedSubview(baseImageView)
+    }
+    
+    func makeConstraintVStackView() {
+        hStackView.addArrangedSubview(vStackView)
+    }
+    
+    func makeConstraintNameLabel() {
+        vStackView.addArrangedSubview(nameLabel)
+        nameLabel.translatesAutoresizingMaskIntoConstraints = false
+        nameLabel.height(60)
+    }
+
 // MARK: - Card Touch action
     
     func defineAction() {

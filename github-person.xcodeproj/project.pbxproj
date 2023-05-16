@@ -51,6 +51,7 @@
 		CFAB5D1A2A1218BF0091F1FF /* ListFactoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAB5D192A1218BF0091F1FF /* ListFactoryView.swift */; };
 		CFAB5D1E2A127B770091F1FF /* SearchHandlerEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAB5D1D2A127B770091F1FF /* SearchHandlerEvents.swift */; };
 		CFAB5D202A127C090091F1FF /* ViewModelHandlerEventsControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAB5D1F2A127C090091F1FF /* ViewModelHandlerEventsControllerDelegate.swift */; };
+		CFAB5D232A12F2F60091F1FF /* ColorAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAB5D222A12F2F60091F1FF /* ColorAsset.swift */; };
 		CFD3A6B723DA308A00EB6D4D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD3A6AC23DA308900EB6D4D /* AppDelegate.swift */; };
 		CFD3A6BB23DA308A00EB6D4D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFD3A6B423DA308A00EB6D4D /* Assets.xcassets */; };
 		CFD3A6D723DA41FE00EB6D4D /* Localizable-pt-BR.strings in Resources */ = {isa = PBXBuildFile; fileRef = CFD3A6CF23DA3F9700EB6D4D /* Localizable-pt-BR.strings */; };
@@ -135,6 +136,7 @@
 		CFAB5D192A1218BF0091F1FF /* ListFactoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListFactoryView.swift; sourceTree = "<group>"; };
 		CFAB5D1D2A127B770091F1FF /* SearchHandlerEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHandlerEvents.swift; sourceTree = "<group>"; };
 		CFAB5D1F2A127C090091F1FF /* ViewModelHandlerEventsControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelHandlerEventsControllerDelegate.swift; sourceTree = "<group>"; };
+		CFAB5D222A12F2F60091F1FF /* ColorAsset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorAsset.swift; sourceTree = "<group>"; };
 		CFD3A6AC23DA308900EB6D4D /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CFD3A6B223DA308A00EB6D4D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CFD3A6B423DA308A00EB6D4D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -229,6 +231,7 @@
 		CFAB5CB92A1003F80091F1FF /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				CFAB5D212A12F2E60091F1FF /* AssetsAcessors */,
 				CF4D91462A0FFAD8000BE331 /* Network */,
 				CFAB5CF92A1120F10091F1FF /* Factories */,
 				CFAB5CEE2A1114C10091F1FF /* Component */,
@@ -340,6 +343,14 @@
 				CFAB5D152A1208D00091F1FF /* SearchBarFactory.swift */,
 			);
 			path = UISearch;
+			sourceTree = "<group>";
+		};
+		CFAB5D212A12F2E60091F1FF /* AssetsAcessors */ = {
+			isa = PBXGroup;
+			children = (
+				CFAB5D222A12F2F60091F1FF /* ColorAsset.swift */,
+			);
+			path = AssetsAcessors;
 			sourceTree = "<group>";
 		};
 		CFD3A6A323DA302E00EB6D4D /* source */ = {
@@ -631,6 +642,7 @@
 				CFAB5CFF2A112D620091F1FF /* NetworkUserInfo.swift in Sources */,
 				CFAB5D1A2A1218BF0091F1FF /* ListFactoryView.swift in Sources */,
 				CFAB5CBD2A100E430091F1FF /* NetworkError.swift in Sources */,
+				CFAB5D232A12F2F60091F1FF /* ColorAsset.swift in Sources */,
 				CFAB5CF02A1114ED0091F1FF /* GenericTableViewCell.swift in Sources */,
 				CFAB5CAE2A0FFF110091F1FF /* Card.swift in Sources */,
 				CFAB5CB22A0FFFDE0091F1FF /* Requestable.swift in Sources */,
