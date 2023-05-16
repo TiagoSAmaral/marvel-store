@@ -26,11 +26,11 @@ class ListUserPageController: UIViewController, ListUserController, Controller, 
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewFactory?.defineViewInController()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        viewFactory?.defineViewInController()
         showSearchField()
     }
     
@@ -39,7 +39,8 @@ class ListUserPageController: UIViewController, ListUserController, Controller, 
         viewModel?.viewDidAppear()
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
         searchController?.isActive = false
     }
     
@@ -48,10 +49,9 @@ class ListUserPageController: UIViewController, ListUserController, Controller, 
     }
     
     func showSearchField() {
-        guard let searchController = searchController else {
+        guard let searchController = searchController, navigationItem.titleView == nil else {
             return
         }
-        navigationController?.view.backgroundColor = .white
         navigationItem.titleView = searchController.searchBar
         navigationItem.hidesSearchBarWhenScrolling = false
         searchController.searchBar.delegate = searchHandlerEvents

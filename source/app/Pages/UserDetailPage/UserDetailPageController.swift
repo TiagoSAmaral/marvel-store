@@ -29,7 +29,7 @@ class UserDetailPageController: UIViewController, UserDetailController, Controll
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         viewFactory?.defineViewInController()
-        viewModel?.viewDidAppear()  
+        viewModel?.viewDidAppear()
     }
     
     func updateView() {
