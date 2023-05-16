@@ -23,12 +23,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.rootViewController = appViewManager.navigationController
 		self.window?.makeKeyAndVisible()
 
-        #if DEBUG
-        print("DEBUB")
-        #else
-        print("RELEASE")
-        #endif
-
         return true
     }
     

@@ -14,6 +14,17 @@ class NavigationController: UINavigationController, LoadingPresentable {
     init() {
         super.init(nibName: nil, bundle: nil)
         navigationBar.isTranslucent = false
+        fixBartintColoriOS15()
+    }
+    
+    private func fixBartintColoriOS15() {
+        if #available(iOS 15, *) {
+            let appearance = UINavigationBarAppearance()
+            appearance.configureWithOpaqueBackground()
+            appearance.backgroundColor = .systemBackground
+            navigationBar.standardAppearance = appearance
+            navigationBar.scrollEdgeAppearance = navigationBar.standardAppearance
+        }
     }
     
     required init?(coder aDecoder: NSCoder) {

@@ -56,7 +56,6 @@ class UserDetailPageViewModel: ViewModelHandlerEventsControllerDelegate, ListDat
     }
     
     func updateContent() {
-//        controller?.updateView()
         requestUserInfo()
     }
     
