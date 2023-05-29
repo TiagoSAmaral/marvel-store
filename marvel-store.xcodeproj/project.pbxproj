@@ -58,6 +58,8 @@
 		CFAB5D2E2A13342E0091F1FF /* LoadingManagers.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAB5D2D2A13342E0091F1FF /* LoadingManagers.swift */; };
 		CFAB5D312A133B660091F1FF /* AlertViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAB5D302A133B660091F1FF /* AlertViewFactory.swift */; };
 		CFAB5D332A133C410091F1FF /* AlertPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAB5D322A133C410091F1FF /* AlertPresentable.swift */; };
+		CFC2F17F2A2517AD00A25148 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = CFC2F17E2A2517AD00A25148 /* Realm */; };
+		CFC2F1812A2517AD00A25148 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CFC2F1802A2517AD00A25148 /* RealmSwift */; };
 		CFD3A6B723DA308A00EB6D4D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD3A6AC23DA308900EB6D4D /* AppDelegate.swift */; };
 		CFD3A6BB23DA308A00EB6D4D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFD3A6B423DA308A00EB6D4D /* Assets.xcassets */; };
 		CFD3A6D723DA41FE00EB6D4D /* Localizable-pt-BR.strings in Resources */ = {isa = PBXBuildFile; fileRef = CFD3A6CF23DA3F9700EB6D4D /* Localizable-pt-BR.strings */; };
@@ -155,6 +157,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFC2F1812A2517AD00A25148 /* RealmSwift in Frameworks */,
+				CFC2F17F2A2517AD00A25148 /* Realm in Frameworks */,
 				CFE2D5A82A0F4E17001F649F /* Kingfisher in Frameworks */,
 				CFE2D5A52A0F4E02001F649F /* Alamofire in Frameworks */,
 			);
@@ -509,6 +513,8 @@
 			packageProductDependencies = (
 				CFE2D5A42A0F4E02001F649F /* Alamofire */,
 				CFE2D5A72A0F4E17001F649F /* Kingfisher */,
+				CFC2F17E2A2517AD00A25148 /* Realm */,
+				CFC2F1802A2517AD00A25148 /* RealmSwift */,
 			);
 			productName = "marvel-store";
 			productReference = CF9601AE23DA2A1E00916EF1 /* marvel-store.app */;
@@ -546,6 +552,7 @@
 			packageReferences = (
 				CFE2D5A32A0F4E02001F649F /* XCRemoteSwiftPackageReference "Alamofire" */,
 				CFE2D5A62A0F4E17001F649F /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				CFC2F17D2A2517AD00A25148 /* XCRemoteSwiftPackageReference "realm-swift" */,
 			);
 			productRefGroup = CF9601AF23DA2A1E00916EF1 /* Products */;
 			projectDirPath = "";
@@ -945,6 +952,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		CFC2F17D2A2517AD00A25148 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		CFE2D5A32A0F4E02001F649F /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire";
@@ -964,6 +979,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		CFC2F17E2A2517AD00A25148 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CFC2F17D2A2517AD00A25148 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		CFC2F1802A2517AD00A25148 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CFC2F17D2A2517AD00A25148 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
 		CFE2D5A42A0F4E02001F649F /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = CFE2D5A32A0F4E02001F649F /* XCRemoteSwiftPackageReference "Alamofire" */;
