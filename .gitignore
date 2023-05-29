@@ -85,6 +85,7 @@ DerivedData/
 *.moved-aside
 *.xccheckout
 *.xcscmblueprint
+**/dev.info.plist
 
 ## Obj-C/Swift specific
 *.hmap
