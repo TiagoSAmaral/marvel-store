@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "CF9601AD23DA2A1E00916EF1"
-               BuildableName = "github-person.app"
-               BlueprintName = "github-person"
-               ReferencedContainer = "container:github-person.xcodeproj">
+               BuildableName = "marvel-store.app"
+               BlueprintName = "marvel-store"
+               ReferencedContainer = "container:marvel-store.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CF6414DE23E4C1CF009C7A9E"
-            BuildableName = "github-personTests.xctest"
-            BlueprintName = "github-personTests"
-            ReferencedContainer = "container:github-person.xcodeproj">
+            BuildableName = "marvel-storeTests.xctest"
+            BlueprintName = "marvel-storeTests"
+            ReferencedContainer = "container:marvel-store.xcodeproj">
          </BuildableReference>
       </CodeCoverageTargets>
       <Testables>
@@ -44,9 +44,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "CF6414DE23E4C1CF009C7A9E"
-               BuildableName = "github-personTests.xctest"
-               BlueprintName = "github-personTests"
-               ReferencedContainer = "container:github-person.xcodeproj">
+               BuildableName = "marvel-storeTests.xctest"
+               BlueprintName = "marvel-storeTests"
+               ReferencedContainer = "container:marvel-store.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -66,11 +66,20 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CF9601AD23DA2A1E00916EF1"
-            BuildableName = "github-person.app"
-            BlueprintName = "github-person"
-            ReferencedContainer = "container:github-person.xcodeproj">
+            BuildableName = "marvel-store.app"
+            BlueprintName = "marvel-store"
+            ReferencedContainer = "container:marvel-store.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "CF9601AD23DA2A1E00916EF1"
+            BuildableName = "marvel-store.app"
+            BlueprintName = "marvel-store"
+            ReferencedContainer = "container:marvel-store.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Debug"
@@ -83,11 +92,20 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CF9601AD23DA2A1E00916EF1"
-            BuildableName = "github-person.app"
-            BlueprintName = "github-person"
-            ReferencedContainer = "container:github-person.xcodeproj">
+            BuildableName = "marvel-store.app"
+            BlueprintName = "marvel-store"
+            ReferencedContainer = "container:marvel-store.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "CF9601AD23DA2A1E00916EF1"
+            BuildableName = "marvel-store.app"
+            BlueprintName = "marvel-store"
+            ReferencedContainer = "container:marvel-store.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

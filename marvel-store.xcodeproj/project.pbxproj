@@ -85,9 +85,9 @@
 		CF4D914A2A0FFB3C000BE331 /* ListRepoPageCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRepoPageCoordinator.swift; sourceTree = "<group>"; };
 		CF4D914F2A0FFBAE000BE331 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		CF4D91512A0FFC07000BE331 /* ListResposPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListResposPageViewModel.swift; sourceTree = "<group>"; };
-		CF6414DF23E4C1CF009C7A9E /* github-personTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "github-personTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF6414DF23E4C1CF009C7A9E /* marvel-storeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "marvel-storeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF6414E923E4C210009C7A9E /* TemplateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateTests.swift; sourceTree = "<group>"; };
-		CF9601AE23DA2A1E00916EF1 /* github-person.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "github-person.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF9601AE23DA2A1E00916EF1 /* marvel-store.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "marvel-store.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFAB5CAD2A0FFF110091F1FF /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		CFAB5CAF2A0FFF5A0091F1FF /* NetworkConnectable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConnectable.swift; sourceTree = "<group>"; };
 		CFAB5CB12A0FFFDE0091F1FF /* Requestable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requestable.swift; sourceTree = "<group>"; };
@@ -220,8 +220,8 @@
 		CF9601AF23DA2A1E00916EF1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CF9601AE23DA2A1E00916EF1 /* github-person.app */,
-				CF6414DF23E4C1CF009C7A9E /* github-personTests.xctest */,
+				CF9601AE23DA2A1E00916EF1 /* marvel-store.app */,
+				CF6414DF23E4C1CF009C7A9E /* marvel-storeTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -474,9 +474,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		CF6414DE23E4C1CF009C7A9E /* github-personTests */ = {
+		CF6414DE23E4C1CF009C7A9E /* marvel-storeTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CF6414E623E4C1CF009C7A9E /* Build configuration list for PBXNativeTarget "github-personTests" */;
+			buildConfigurationList = CF6414E623E4C1CF009C7A9E /* Build configuration list for PBXNativeTarget "marvel-storeTests" */;
 			buildPhases = (
 				CF6414DB23E4C1CF009C7A9E /* Sources */,
 				CF6414DC23E4C1CF009C7A9E /* Frameworks */,
@@ -487,14 +487,14 @@
 			dependencies = (
 				CF6414E523E4C1CF009C7A9E /* PBXTargetDependency */,
 			);
-			name = "github-personTests";
+			name = "marvel-storeTests";
 			productName = BaseProjectTargetTests;
-			productReference = CF6414DF23E4C1CF009C7A9E /* github-personTests.xctest */;
+			productReference = CF6414DF23E4C1CF009C7A9E /* marvel-storeTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		CF9601AD23DA2A1E00916EF1 /* github-person */ = {
+		CF9601AD23DA2A1E00916EF1 /* marvel-store */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CF9601C223DA2A2200916EF1 /* Build configuration list for PBXNativeTarget "github-person" */;
+			buildConfigurationList = CF9601C223DA2A2200916EF1 /* Build configuration list for PBXNativeTarget "marvel-store" */;
 			buildPhases = (
 				CFD3A6BF23DA3DC600EB6D4D /* Swiftlint */,
 				CF9601AA23DA2A1E00916EF1 /* Sources */,
@@ -505,13 +505,13 @@
 			);
 			dependencies = (
 			);
-			name = "github-person";
+			name = "marvel-store";
 			packageProductDependencies = (
 				CFE2D5A42A0F4E02001F649F /* Alamofire */,
 				CFE2D5A72A0F4E17001F649F /* Kingfisher */,
 			);
-			productName = "github-person";
-			productReference = CF9601AE23DA2A1E00916EF1 /* github-person.app */;
+			productName = "marvel-store";
+			productReference = CF9601AE23DA2A1E00916EF1 /* marvel-store.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -533,7 +533,7 @@
 					};
 				};
 			};
-			buildConfigurationList = CF9601A923DA2A1E00916EF1 /* Build configuration list for PBXProject "github-person" */;
+			buildConfigurationList = CF9601A923DA2A1E00916EF1 /* Build configuration list for PBXProject "marvel-store" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -551,8 +551,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				CF9601AD23DA2A1E00916EF1 /* github-person */,
-				CF6414DE23E4C1CF009C7A9E /* github-personTests */,
+				CF9601AD23DA2A1E00916EF1 /* marvel-store */,
+				CF6414DE23E4C1CF009C7A9E /* marvel-storeTests */,
 			);
 		};
 /* End PBXProject section */
@@ -673,7 +673,7 @@
 /* Begin PBXTargetDependency section */
 		CF6414E523E4C1CF009C7A9E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = CF9601AD23DA2A1E00916EF1 /* github-person */;
+			target = CF9601AD23DA2A1E00916EF1 /* marvel-store */;
 			targetProxy = CF6414E423E4C1CF009C7A9E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -702,7 +702,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.outlook.tiagofly.github-persontests";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.outlook.tiagofly.marvel-storetests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -725,7 +725,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.outlook.tiagofly.github-persontests";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.outlook.tiagofly.marvel-storetests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -872,7 +872,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.outlook.tiagofly.github-person";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.outlook.tiagofly.marvel-store";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -902,7 +902,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.outlook.tiagofly.github-person";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.outlook.tiagofly.marvel-store";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -915,7 +915,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		CF6414E623E4C1CF009C7A9E /* Build configuration list for PBXNativeTarget "github-personTests" */ = {
+		CF6414E623E4C1CF009C7A9E /* Build configuration list for PBXNativeTarget "marvel-storeTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CF6414E723E4C1CF009C7A9E /* Debug */,
@@ -924,7 +924,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CF9601A923DA2A1E00916EF1 /* Build configuration list for PBXProject "github-person" */ = {
+		CF9601A923DA2A1E00916EF1 /* Build configuration list for PBXProject "marvel-store" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CF9601C023DA2A2200916EF1 /* Debug */,
@@ -933,7 +933,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CF9601C223DA2A2200916EF1 /* Build configuration list for PBXNativeTarget "github-person" */ = {
+		CF9601C223DA2A2200916EF1 /* Build configuration list for PBXNativeTarget "marvel-store" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CF9601C323DA2A2200916EF1 /* Debug */,

@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  github-person
+//  marvel-store
 //
 //  Created on 23/01/20.
 //  Copyright © 2020. All rights reserved.

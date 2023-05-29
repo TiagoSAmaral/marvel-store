@@ -1,14 +1,6 @@
-# Github Person
+# Marvel Store
 
-Aplicativo de laboratório. Ele consome a API do github para listar, buscar usuários. Também permite buscar dados somente de um usuário selecionado, e listar seus repositório, e também permite ver os dados do repositório.
-
-Descricão simples:
-- Tela lista usuários: 
-    Permite buscar usuários.
-- Tela dados usuário: 
-    Expões alguns dados públicos do usuário selecionado
-- Tela repositórios: 
-    Lista os dados do repositório e permite veisualiza-lo pelo SafarieService dentro do app.
+ADD Descrição do projeto.
 
 Suporte a Darkmode
 
@@ -17,23 +9,15 @@ Suporte a Darkmode
 #### Light Mode
 <p float="left">
 <kbd><img src="./readmeresource/list_users_l.png" width="149"/></kbd>
-<kbd><img src="./readmeresource/busca_result_l.png" width="149"/></kbd>
-<kbd><img src="./readmeresource/profile_l.png" width="149"/></kbd>
-<kbd><img src="./readmeresource/list_repo_l.png" width="149"/></kbd>
-<kbd><img src="./readmeresource/repo_detail_l.png" width="149"/></kbd>
 
 #### Dark Mode
 <p float="left">
 <kbd><img src="./readmeresource/list_users_d.png" width="149"/></kbd>
-<kbd><img src="./readmeresource/busca_result_d.png" width="149"/></kbd>
-<kbd><img src="./readmeresource/profile_d.png" width="149"/></kbd>
-<kbd><img src="./readmeresource/list_repo_d.png" width="149"/></kbd>
-<kbd><img src="./readmeresource/repo_detail_d.png" width="149"/></kbd>
 </p>
 
 ## Sobre o projeto: <br>
-- Xcode Version 14.2 ou superior<br>
-- Suporte mínimo ao iOS 14<br>
+- Xcode Version 14.3 ou superior<br>
+- Suporte mínimo ao iOS 13<br>
 - Swift 5<br>
 
 ## Preparando o Ambiente

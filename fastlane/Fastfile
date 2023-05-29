@@ -31,7 +31,7 @@ platform :ios do
             show: true,
             output_directory: 'fastlane/codecoverage',
             scheme: "development",
-            proj: "github-person.xcodeproj"
+            proj: "marvel-store.xcodeproj"
             )
   end
 
