@@ -8,45 +8,29 @@
 
 import Foundation
 
-class UserDetailProfile: Codable, Model {
-    let login: String?
+struct Comics: Codable, Model {
     let identifier: Int?
-    let avatarURL: String
-    let reposURL: String?
-    let name: String?
-    let blog: String?
-    let location: String?
-    let email: String?
-    let bioText: String?
-    let twitterUsername: String?
-    let followers: Int?
-    let following: Int?
-    
+    let issueNumber: Int?
+    let thumbnail: ComicImage?
+    let images: [ComicImages]?
+    let title: String?
+    let description: String?
+    let prices: [ComicPrice]?
+
     var layout: LayoutView?
     var action: ((Model?) -> Void)?
 
     enum CodingKeys: String, CodingKey {
-        case login, name, blog, location, email, followers, following
-        case bioText = "bio"
-        case avatarURL = "avatar_url"
         case identifier = "id"
-        case reposURL = "repos_url"
-        case twitterUsername = "twitter_username"
     }
 }
 
-/*
- 
- "id": 929261,
- "login": "tangollama",
- "avatar_url": "https://avatars.githubusercontent.com/u/929261?v=4",
- "name": "Joel Worrall",
- "bio": "Head of product @thebi ...
- "blog": "http://joelworrall.com",
- "email: String?
- "twitter_username": ""
- "followers": 157,
- "following": 55,
- "repos_url": "https://api.github.com/users/tangollama/repos",
- "location": "Harrisburg, PA",
- */
+struct ComicImage: Codable, Model {
+    let path: String?
+    let extension: String?
+}
+
+struct ComicPrice: Codable, Model {
+    let type: String?
+    let price: Double? 
+}
