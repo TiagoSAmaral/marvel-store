@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "CF9601AD23DA2A1E00916EF1"
-               BuildableName = "marvel-store.app"
+               BuildableName = "Marvel Store.app"
                BlueprintName = "marvel-store"
                ReferencedContainer = "container:marvel-store.xcodeproj">
             </BuildableReference>
@@ -45,20 +45,11 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CF9601AD23DA2A1E00916EF1"
-            BuildableName = "marvel-store.app"
+            BuildableName = "Marvel Store.app"
             BlueprintName = "marvel-store"
             ReferencedContainer = "container:marvel-store.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "CF9601AD23DA2A1E00916EF1"
-            BuildableName = "marvel-store.app"
-            BlueprintName = "marvel-store"
-            ReferencedContainer = "container:marvel-store.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -71,20 +62,11 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CF9601AD23DA2A1E00916EF1"
-            BuildableName = "marvel-store.app"
+            BuildableName = "Marvel Store.app"
             BlueprintName = "marvel-store"
             ReferencedContainer = "container:marvel-store.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "CF9601AD23DA2A1E00916EF1"
-            BuildableName = "marvel-store.app"
-            BlueprintName = "marvel-store"
-            ReferencedContainer = "container:marvel-store.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
