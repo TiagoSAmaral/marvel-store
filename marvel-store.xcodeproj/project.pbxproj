@@ -37,7 +37,6 @@
 		CFAB5CFB2A1121270091F1FF /* CardFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAB5CFA2A1121270091F1FF /* CardFactory.swift */; };
 		CFAB5CFD2A1124830091F1FF /* NetworkHeaderMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAB5CFC2A1124830091F1FF /* NetworkHeaderMaker.swift */; };
 		CFAB5CFF2A112D620091F1FF /* NetworkUserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAB5CFE2A112D620091F1FF /* NetworkUserInfo.swift */; };
-		CFAB5D012A11CF6F0091F1FF /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAB5D002A11CF6F0091F1FF /* SearchResult.swift */; };
 		CFAB5D032A11D5480091F1FF /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAB5D022A11D5480091F1FF /* Model.swift */; };
 		CFAB5D052A11DEE70091F1FF /* LayoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAB5D042A11DEE70091F1FF /* LayoutView.swift */; };
 		CFAB5D082A11E1940091F1FF /* CardUserListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAB5D072A11E1940091F1FF /* CardUserListItemView.swift */; };
@@ -56,9 +55,12 @@
 		CFAB5D2E2A13342E0091F1FF /* LoadingManagers.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAB5D2D2A13342E0091F1FF /* LoadingManagers.swift */; };
 		CFAB5D312A133B660091F1FF /* AlertViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAB5D302A133B660091F1FF /* AlertViewFactory.swift */; };
 		CFAB5D332A133C410091F1FF /* AlertPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAB5D322A133C410091F1FF /* AlertPresentable.swift */; };
+		CFB2971A2A26F17000CA95C3 /* Empty.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB297192A26F17000CA95C3 /* Empty.swift */; };
 		CFC2F17F2A2517AD00A25148 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = CFC2F17E2A2517AD00A25148 /* Realm */; };
 		CFC2F1812A2517AD00A25148 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CFC2F1802A2517AD00A25148 /* RealmSwift */; };
 		CFC405AF2A254C1600222F60 /* Comics.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC405AE2A254C1600222F60 /* Comics.swift */; };
+		CFC405B12A2553EC00222F60 /* APISecurity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC405B02A2553EC00222F60 /* APISecurity.swift */; };
+		CFC405B92A25694A00222F60 /* PaginateResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC405B82A25694A00222F60 /* PaginateResponse.swift */; };
 		CFD3A6B723DA308A00EB6D4D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD3A6AC23DA308900EB6D4D /* AppDelegate.swift */; };
 		CFD3A6BB23DA308A00EB6D4D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFD3A6B423DA308A00EB6D4D /* Assets.xcassets */; };
 		CFD3A6D723DA41FE00EB6D4D /* Localizable-pt-BR.strings in Resources */ = {isa = PBXBuildFile; fileRef = CFD3A6CF23DA3F9700EB6D4D /* Localizable-pt-BR.strings */; };
@@ -113,7 +115,6 @@
 		CFAB5CFA2A1121270091F1FF /* CardFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardFactory.swift; sourceTree = "<group>"; };
 		CFAB5CFC2A1124830091F1FF /* NetworkHeaderMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHeaderMaker.swift; sourceTree = "<group>"; };
 		CFAB5CFE2A112D620091F1FF /* NetworkUserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkUserInfo.swift; sourceTree = "<group>"; };
-		CFAB5D002A11CF6F0091F1FF /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		CFAB5D022A11D5480091F1FF /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		CFAB5D042A11DEE70091F1FF /* LayoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutView.swift; sourceTree = "<group>"; };
 		CFAB5D072A11E1940091F1FF /* CardUserListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardUserListItemView.swift; sourceTree = "<group>"; };
@@ -132,8 +133,11 @@
 		CFAB5D2D2A13342E0091F1FF /* LoadingManagers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingManagers.swift; sourceTree = "<group>"; };
 		CFAB5D302A133B660091F1FF /* AlertViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewFactory.swift; sourceTree = "<group>"; };
 		CFAB5D322A133C410091F1FF /* AlertPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertPresentable.swift; sourceTree = "<group>"; };
+		CFB297192A26F17000CA95C3 /* Empty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Empty.swift; sourceTree = "<group>"; };
 		CFC405AD2A254BD700222F60 /* dev-info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "dev-info.plist"; sourceTree = "<group>"; };
 		CFC405AE2A254C1600222F60 /* Comics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comics.swift; sourceTree = "<group>"; };
+		CFC405B02A2553EC00222F60 /* APISecurity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APISecurity.swift; sourceTree = "<group>"; };
+		CFC405B82A25694A00222F60 /* PaginateResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaginateResponse.swift; sourceTree = "<group>"; };
 		CFD3A6AC23DA308900EB6D4D /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CFD3A6B223DA308A00EB6D4D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CFD3A6B423DA308A00EB6D4D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -174,6 +178,7 @@
 				CFAB5CBC2A100E430091F1FF /* NetworkError.swift */,
 				CFAB5CC92A1053D30091F1FF /* ApiRoute.swift */,
 				CFAB5CFC2A1124830091F1FF /* NetworkHeaderMaker.swift */,
+				CFC405B02A2553EC00222F60 /* APISecurity.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -245,8 +250,8 @@
 			isa = PBXGroup;
 			children = (
 				CFC405AE2A254C1600222F60 /* Comics.swift */,
-				CFAB5D002A11CF6F0091F1FF /* SearchResult.swift */,
 				CFAB5D042A11DEE70091F1FF /* LayoutView.swift */,
+				CFC405B82A25694A00222F60 /* PaginateResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -372,6 +377,14 @@
 			path = NavigationController;
 			sourceTree = "<group>";
 		};
+		CFB297162A26F04C00CA95C3 /* String */ = {
+			isa = PBXGroup;
+			children = (
+				CFB297192A26F17000CA95C3 /* Empty.swift */,
+			);
+			path = String;
+			sourceTree = "<group>";
+		};
 		CFD3A6A323DA302E00EB6D4D /* source */ = {
 			isa = PBXGroup;
 			children = (
@@ -460,6 +473,7 @@
 		CFF2EA0E2A0F256D00709168 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				CFB297162A26F04C00CA95C3 /* String */,
 				CFAB5CF12A1117B80091F1FF /* NSObject */,
 				CFF2EA0F2A0F257600709168 /* UIView */,
 			);
@@ -619,13 +633,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				CFAB5CF52A111A3B0091F1FF /* CardModelHandler.swift in Sources */,
-				CFAB5D012A11CF6F0091F1FF /* SearchResult.swift in Sources */,
 				CF4D914B2A0FFB3C000BE331 /* ListRepoPageCoordinator.swift in Sources */,
 				CFAB5CEB2A105F010091F1FF /* ListUsersPageViewModel.swift in Sources */,
 				CFAB5CCA2A1053D30091F1FF /* ApiRoute.swift in Sources */,
 				CFAB5D0C2A11E1DB0091F1FF /* CardUserProfileView.swift in Sources */,
 				CFAB5D2C2A1332930091F1FF /* NavigationController.swift in Sources */,
 				CFAB5D1E2A127B770091F1FF /* SearchHandlerEvents.swift in Sources */,
+				CFB2971A2A26F17000CA95C3 /* Empty.swift in Sources */,
 				CFAB5CB02A0FFF5A0091F1FF /* NetworkConnectable.swift in Sources */,
 				CFAB5CF32A1117C40091F1FF /* Identifier.swift in Sources */,
 				CF4D91432A0FF994000BE331 /* ListRepoPageController.swift in Sources */,
@@ -633,6 +647,7 @@
 				CFAB5CE92A105F010091F1FF /* ListUsersPageController.swift in Sources */,
 				CFC405AF2A254C1600222F60 /* Comics.swift in Sources */,
 				CFAB5D162A1208D00091F1FF /* SearchBarFactory.swift in Sources */,
+				CFC405B92A25694A00222F60 /* PaginateResponse.swift in Sources */,
 				CFAB5CFB2A1121270091F1FF /* CardFactory.swift in Sources */,
 				CFAB5D332A133C410091F1FF /* AlertPresentable.swift in Sources */,
 				CFAB5CDD2A105A250091F1FF /* UserDetailPageCoordinator.swift in Sources */,
@@ -666,6 +681,7 @@
 				CFAB5CED2A1060620091F1FF /* FactoryPage.swift in Sources */,
 				CFAB5CE12A105A250091F1FF /* UserDetailPageViewModel.swift in Sources */,
 				CFAB5CBB2A1006160091F1FF /* NetworkHeaderFactory.swift in Sources */,
+				CFC405B12A2553EC00222F60 /* APISecurity.swift in Sources */,
 				CFAB5CDF2A105A250091F1FF /* UserDetailPageFactory.swift in Sources */,
 				CFAB5D0E2A11EF1B0091F1FF /* CardTouch.swift in Sources */,
 				CFAB5CF72A111A840091F1FF /* CustomCell.swift in Sources */,
@@ -863,13 +879,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				BASE_URL = "https://api.github.com";
+				BASE_URL = "https://gateway.marvel.com:443";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2023.05.13.1.1;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "$(SRCROOT)/source/app/supportfiles/plists/dev-info.plist";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.magazines-and-newspapers";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
@@ -883,6 +896,7 @@
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -892,14 +906,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				BASE_URL = "https://api.github.com";
+				BASE_URL = "https://gateway.marvel.com:443";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2023.05.13.1.1;
 				ENABLE_NS_ASSERTIONS = NO;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PREPROCESSOR_DEFINITIONS = "";
 				INFOPLIST_FILE = "$(SRCROOT)/source/app/supportfiles/plists/Info.plist";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.magazines-and-newspapers";
@@ -914,6 +925,7 @@
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

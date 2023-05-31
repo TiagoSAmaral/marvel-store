@@ -231,7 +231,8 @@ GEM
     nap (1.1.0)
     naturally (2.2.1)
     netrc (0.11.0)
-    nokogiri (1.13.10-arm64-darwin)
+    nokogiri (1.13.10)
+      mini_portile2 (~> 2.8.0)
       racc (~> 1.4)
     nokogiri (1.13.10-x86_64-darwin)
       racc (~> 1.4)
@@ -272,6 +273,7 @@ GEM
       xcodeproj (~> 1.21)
     sqlite3 (1.6.2)
       mini_portile2 (~> 2.8.0)
+    sqlite3 (1.6.2-arm64-darwin)
     terminal-notifier (2.0.0)
     terminal-table (1.8.0)
       unicode-display_width (~> 1.1, >= 1.1.1)
@@ -307,6 +309,7 @@ GEM
     zeitwerk (2.6.8)
 
 PLATFORMS
+  ruby
   universal-darwin-22
 
 DEPENDENCIES
