@@ -8,11 +8,11 @@
 
 import Foundation
 
-struct Comics: Codable, Model {
+struct Comic: Codable, Model {
     let identifier: Int?
     let issueNumber: Int?
     let thumbnail: ComicImage?
-    let images: [ComicImages]?
+    let images: [ComicImage]?
     let title: String?
     let description: String?
     let prices: [ComicPrice]?
@@ -21,16 +21,22 @@ struct Comics: Codable, Model {
     var action: ((Model?) -> Void)?
 
     enum CodingKeys: String, CodingKey {
+        case issueNumber, thumbnail, images, title, description, prices
         case identifier = "id"
     }
 }
 
-struct ComicImage: Codable, Model {
+struct ComicImage: Codable {
     let path: String?
-    let extension: String?
+    let fileExtension: String?
+    
+    enum CodingKeys: String, CodingKey {
+        case path
+        case fileExtension = "extension"
+    }
 }
 
-struct ComicPrice: Codable, Model {
+struct ComicPrice: Codable {
     let type: String?
-    let price: Double? 
+    let price: Double?
 }

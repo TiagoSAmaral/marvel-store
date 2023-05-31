@@ -11,12 +11,12 @@ import UIKit
 class ListUsersPageViewModel: NSObject, ViewModelHandlerEventsControllerDelegate, ListDataHandler, SearchHandlerEvents {
     
     weak var controller: ListUserController?
-    var network: NetworkUserInfoOperation?
+    var network: NetworkContentOperation?
     var coordinator: ListUsersCoordinable?
-    var items: [UserDetailProfile]?
+    var items: [Comic]?
     let numberOfSection: Int = 1
     
-    init(controller: ListUserController, network: NetworkUserInfoOperation, coordinator: Coordinator?) {
+    init(controller: ListUserController, network: NetworkContentOperation, coordinator: Coordinator?) {
         self.controller = controller
         self.network = network
         self.coordinator = coordinator as? ListUsersCoordinable
@@ -36,20 +36,20 @@ class ListUsersPageViewModel: NSObject, ViewModelHandlerEventsControllerDelegate
     }
     
     func requestUsers() {
-        network?.requestListUser(page: 0, params: nil, handler: { result in
-            DispatchQueue.main.async { [weak self] in
-                
-                switch result {
-                case .success(let users):
-                    self?.updateView(with: users)
-                    self?.controller?.stopLoading(onFinish: nil)
+    network?.requestList(page: nil, filter: nil, params: nil) { result in
+        DispatchQueue.main.async { [weak self] in
+            switch result {
+            case .success(let response):
+                print(response)
+//                    self?.updateView(with: users)
+                self?.controller?.stopLoading(onFinish: nil)
                 case .failure(let error):
                     self?.controller?.stopLoading {
                         self?.controller?.presentAlert(with: nil, and: error.message, handler: nil)
                     }
                 }
             }
-        })
+        }
     }
     
     func searchUser(by name: String?) {
@@ -60,7 +60,7 @@ class ListUsersPageViewModel: NSObject, ViewModelHandlerEventsControllerDelegate
                 switch result {
                 case .success(let response):
                     self?.controller?.stopLoading(onFinish: nil)
-                    self?.updateView(with: response)
+//                    self?.updateView(with: response)
                 case .failure(let error):
                     self?.controller?.stopLoading {
                         self?.controller?.presentAlert(with: nil, and: error.message, handler: nil)
@@ -76,7 +76,7 @@ class ListUsersPageViewModel: NSObject, ViewModelHandlerEventsControllerDelegate
             return
         }
         
-        items = value as? [UserDetailProfile]
+//        items = value as? [UserDetailProfile]
         controller?.updateView()
     }
     

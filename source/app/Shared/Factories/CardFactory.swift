@@ -15,17 +15,17 @@ protocol CardFactory {
 class CardMaker: CardFactory {
     
     func makeCard(from item: Model) -> Card? {
-        
-        switch item.layout {
-        case .userListItem:
-            return CardMaker.make(with: item, classType: CardUserListItemView.self)
-        case .repoListItem:
-            return CardMaker.make(with: item, classType: CardRepoListItemView.self)
-        case .userInfo:
-            return CardMaker.make(with: item, classType: CardUserProfileView.self)
-        case .none:
-            return nil
-        }
+        nil
+//        switch item.layout {
+//        case .userListItem:
+//            return CardMaker.make(with: item, classType: CardUserListItemView.self)
+//        case .repoListItem:
+//            return CardMaker.make(with: item, classType: CardRepoListItemView.self)
+//        case .userInfo:
+//            return CardMaker.make(with: item, classType: CardUserProfileView.self)
+//        case .none:
+//            return nil
+//        }
     }
     
     static func make<T: Card>(with data: Model, classType: T.Type) -> T {
