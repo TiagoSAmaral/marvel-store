@@ -33,10 +33,10 @@ class UserDetailPageCoordinator: Coordinator, UserDetailCoordinable {
     }
     
     func goToRepos(with data: Model?) {
-        let reposCoordinator = ListReposPageCoordinator(navigation: navigationController)
-        reposCoordinator.parentCoordinator = self
-        childCoordinators?.append(reposCoordinator)
-        reposCoordinator.start(with: data)
+//        let reposCoordinator = ListReposPageCoordinator(navigation: navigationController)
+//        reposCoordinator.parentCoordinator = self
+//        childCoordinators?.append(reposCoordinator)
+//        reposCoordinator.start(with: data)
     }
     
     func back() {

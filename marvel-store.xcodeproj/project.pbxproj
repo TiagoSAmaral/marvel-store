@@ -7,11 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CF4D91432A0FF994000BE331 /* ListRepoPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4D91422A0FF994000BE331 /* ListRepoPageController.swift */; };
-		CF4D91482A0FFAEC000BE331 /* ListRepoPageFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4D91472A0FFAEC000BE331 /* ListRepoPageFactory.swift */; };
-		CF4D914B2A0FFB3C000BE331 /* ListRepoPageCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4D914A2A0FFB3C000BE331 /* ListRepoPageCoordinator.swift */; };
 		CF4D91502A0FFBAE000BE331 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4D914F2A0FFBAE000BE331 /* Coordinator.swift */; };
-		CF4D91522A0FFC07000BE331 /* ListResposPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4D91512A0FFC07000BE331 /* ListResposPageViewModel.swift */; };
 		CF6414EA23E4C210009C7A9E /* TemplateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6414E923E4C210009C7A9E /* TemplateTests.swift */; };
 		CFAB5CAE2A0FFF110091F1FF /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAB5CAD2A0FFF110091F1FF /* Card.swift */; };
 		CFAB5CB02A0FFF5A0091F1FF /* NetworkConnectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAB5CAF2A0FFF5A0091F1FF /* NetworkConnectable.swift */; };
@@ -83,11 +79,7 @@
 
 /* Begin PBXFileReference section */
 		CF24569923E4C55B00A1968D /* info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = info.plist; sourceTree = "<group>"; };
-		CF4D91422A0FF994000BE331 /* ListRepoPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRepoPageController.swift; sourceTree = "<group>"; };
-		CF4D91472A0FFAEC000BE331 /* ListRepoPageFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRepoPageFactory.swift; sourceTree = "<group>"; };
-		CF4D914A2A0FFB3C000BE331 /* ListRepoPageCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRepoPageCoordinator.swift; sourceTree = "<group>"; };
 		CF4D914F2A0FFBAE000BE331 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
-		CF4D91512A0FFC07000BE331 /* ListResposPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListResposPageViewModel.swift; sourceTree = "<group>"; };
 		CF6414DF23E4C1CF009C7A9E /* marvel-storeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "marvel-storeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF6414E923E4C210009C7A9E /* TemplateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateTests.swift; sourceTree = "<group>"; };
 		CF9601AE23DA2A1E00916EF1 /* Marvel Store Dev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Marvel Store Dev.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -216,6 +208,14 @@
 			path = Cards;
 			sourceTree = "<group>";
 		};
+		CF7EAAA12A27E3B2006F5D12 /* DevResources */ = {
+			isa = PBXGroup;
+			children = (
+				CFC405AD2A254BD700222F60 /* dev-info.plist */,
+			);
+			path = DevResources;
+			sourceTree = "<group>";
+		};
 		CF9601A523DA2A1E00916EF1 = {
 			isa = PBXGroup;
 			children = (
@@ -270,7 +270,6 @@
 		CFAB5CD22A1056E40091F1FF /* Pages */ = {
 			isa = PBXGroup;
 			children = (
-				CFAB5CD42A1057070091F1FF /* ListRepoPage */,
 				CFAB5CD32A1056F00091F1FF /* UserDetailPage */,
 				CFAB5CD12A1056D60091F1FF /* ListUsersPage */,
 			);
@@ -286,17 +285,6 @@
 				CFAB5CDC2A105A250091F1FF /* UserDetailPageViewModel.swift */,
 			);
 			path = UserDetailPage;
-			sourceTree = "<group>";
-		};
-		CFAB5CD42A1057070091F1FF /* ListRepoPage */ = {
-			isa = PBXGroup;
-			children = (
-				CF4D91422A0FF994000BE331 /* ListRepoPageController.swift */,
-				CF4D91472A0FFAEC000BE331 /* ListRepoPageFactory.swift */,
-				CF4D914A2A0FFB3C000BE331 /* ListRepoPageCoordinator.swift */,
-				CF4D91512A0FFC07000BE331 /* ListResposPageViewModel.swift */,
-			);
-			path = ListRepoPage;
 			sourceTree = "<group>";
 		};
 		CFAB5CD52A1059A00091F1FF /* AppCoordinator */ = {
@@ -388,6 +376,7 @@
 		CFD3A6A323DA302E00EB6D4D /* source */ = {
 			isa = PBXGroup;
 			children = (
+				CF7EAAA12A27E3B2006F5D12 /* DevResources */,
 				CFD3A6A423DA304200EB6D4D /* app */,
 				CFD3A6BD23DA30EF00EB6D4D /* test */,
 			);
@@ -429,7 +418,6 @@
 		CFD3A6B123DA308A00EB6D4D /* plists */ = {
 			isa = PBXGroup;
 			children = (
-				CFC405AD2A254BD700222F60 /* dev-info.plist */,
 				CFD3A6B223DA308A00EB6D4D /* Info.plist */,
 			);
 			path = plists;
@@ -633,7 +621,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				CFAB5CF52A111A3B0091F1FF /* CardModelHandler.swift in Sources */,
-				CF4D914B2A0FFB3C000BE331 /* ListRepoPageCoordinator.swift in Sources */,
 				CFAB5CEB2A105F010091F1FF /* ListUsersPageViewModel.swift in Sources */,
 				CFAB5CCA2A1053D30091F1FF /* ApiRoute.swift in Sources */,
 				CFAB5D0C2A11E1DB0091F1FF /* CardUserProfileView.swift in Sources */,
@@ -642,7 +629,6 @@
 				CFB2971A2A26F17000CA95C3 /* Empty.swift in Sources */,
 				CFAB5CB02A0FFF5A0091F1FF /* NetworkConnectable.swift in Sources */,
 				CFAB5CF32A1117C40091F1FF /* Identifier.swift in Sources */,
-				CF4D91432A0FF994000BE331 /* ListRepoPageController.swift in Sources */,
 				CFAB5CEA2A105F010091F1FF /* ListUsersPageFactory.swift in Sources */,
 				CFAB5CE92A105F010091F1FF /* ListUsersPageController.swift in Sources */,
 				CFC405AF2A254C1600222F60 /* Comics.swift in Sources */,
@@ -658,7 +644,6 @@
 				CFAB5CE82A105F010091F1FF /* ListUsersPageCoordinator.swift in Sources */,
 				CFAB5D182A1217590091F1FF /* ListDataHandler.swift in Sources */,
 				CFAB5CB82A1002B30091F1FF /* Request.swift in Sources */,
-				CF4D91482A0FFAEC000BE331 /* ListRepoPageFactory.swift in Sources */,
 				CFAB5CFF2A112D620091F1FF /* NetworkUserInfo.swift in Sources */,
 				CFAB5D1A2A1218BF0091F1FF /* ListFactoryView.swift in Sources */,
 				CFAB5CBD2A100E430091F1FF /* NetworkError.swift in Sources */,
@@ -667,7 +652,6 @@
 				CFAB5CAE2A0FFF110091F1FF /* Card.swift in Sources */,
 				CFAB5CB22A0FFFDE0091F1FF /* Requestable.swift in Sources */,
 				CFAB5D292A132F200091F1FF /* LoadingPresentable.swift in Sources */,
-				CF4D91522A0FFC07000BE331 /* ListResposPageViewModel.swift in Sources */,
 				CFAB5D052A11DEE70091F1FF /* LayoutView.swift in Sources */,
 				CFD3A6B723DA308A00EB6D4D /* AppDelegate.swift in Sources */,
 				CFAB5D0A2A11E1BF0091F1FF /* CardRepoListItemView.swift in Sources */,
@@ -716,7 +700,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "$(SRCROOT)/source/test/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/source/test/info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -739,7 +723,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "$(SRCROOT)/source/test/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/source/test/info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -883,7 +867,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2023.05.13.1.1;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				INFOPLIST_FILE = "$(SRCROOT)/source/app/supportfiles/plists/dev-info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/source/DevResources/dev-info.plist";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.magazines-and-newspapers";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
