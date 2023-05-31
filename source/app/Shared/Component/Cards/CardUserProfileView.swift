@@ -11,7 +11,7 @@ import UIKit
 class CardUserProfileView: UIView, Card, CardTouch {
     
     var action: ((Model?) -> Void)?
-    var model: UserDetailProfile?
+//    var model: UserDetailProfile?
     
     lazy var vMainStackView: UIStackView = {
         let stackView = UIStackView()
@@ -109,16 +109,16 @@ class CardUserProfileView: UIView, Card, CardTouch {
     
     func load(model: Model?) {
         
-        guard let model = model as? UserDetailProfile else {
-            return
-        }
-        self.model = model
-        nameLabel.text = model.name
-        loginLabel.text = model.login
-        bioDescription.text = model.bioText
-        profileImageView.kf.setImage(with: URL(string: model.avatarURL))
-        
-        action = model.action
+//        guard let model = model as? UserDetailProfile else {
+//            return
+//        }
+//        self.model = model
+//        nameLabel.text = model.name
+//        loginLabel.text = model.login
+//        bioDescription.text = model.bioText
+//        profileImageView.kf.setImage(with: URL(string: model.avatarURL))
+//
+//        action = model.action
         
         addAllSubviews()
         defineAction()
@@ -138,9 +138,9 @@ class CardUserProfileView: UIView, Card, CardTouch {
         vMainStackView.edgeToSuperView(margin: 8.0)
         vMainStackView.addArrangedSubview(hStackViewProfileImageViewWithNameLogin)
         
-        if let bioText = model?.bioText, !bioText.isEmpty {
-            vMainStackView.addArrangedSubview(bioDescription)
-        }
+//        if let bioText = model?.bioText, !bioText.isEmpty {
+//            vMainStackView.addArrangedSubview(bioDescription)
+//        }
 
         vMainStackView.addArrangedSubview(vStackViewNetworkLinks)
                 
@@ -175,32 +175,32 @@ class CardUserProfileView: UIView, Card, CardTouch {
     
     func makeVStackViewNetworkLinks() {
         
-        if let emailLabel = makeLabelNetwork(with: model?.email) {
-            vStackViewNetworkLinks.addArrangedSubview(emailLabel)
-        }
-        
-        if let blogLabel = makeLabelNetwork(with: model?.blog) {
-            vStackViewNetworkLinks.addArrangedSubview(blogLabel)
-        }
-        
-        if let twitterUsernameLabel = makeLabelNetwork(with: model?.twitterUsername) {
-            vStackViewNetworkLinks.addArrangedSubview(twitterUsernameLabel)
-        }
-        
-        if let locationLabel = makeLabelNetwork(with: model?.location) {
-            vStackViewNetworkLinks.addArrangedSubview(locationLabel)
-        }
-
-        if let followsLabel = makeLabelNetwork(with: "\(model?.followers ?? 0) \(LocalizedText.with(tagName: .followers)) • \(model?.following ?? 0) \(LocalizedText.with(tagName: .following))") {
-            vStackViewNetworkLinks.addArrangedSubview(followsLabel)
-        }
+//        if let emailLabel = makeLabelNetwork(with: model?.email) {
+//            vStackViewNetworkLinks.addArrangedSubview(emailLabel)
+//        }
+//
+//        if let blogLabel = makeLabelNetwork(with: model?.blog) {
+//            vStackViewNetworkLinks.addArrangedSubview(blogLabel)
+//        }
+//
+//        if let twitterUsernameLabel = makeLabelNetwork(with: model?.twitterUsername) {
+//            vStackViewNetworkLinks.addArrangedSubview(twitterUsernameLabel)
+//        }
+//
+//        if let locationLabel = makeLabelNetwork(with: model?.location) {
+//            vStackViewNetworkLinks.addArrangedSubview(locationLabel)
+//        }
+//
+//        if let followsLabel = makeLabelNetwork(with: "\(model?.followers ?? 0) \(LocalizedText.with(tagName: .followers)) • \(model?.following ?? 0) \(LocalizedText.with(tagName: .following))") {
+//            vStackViewNetworkLinks.addArrangedSubview(followsLabel)
+//        }
     }
 
 // MARK: - Card Touch action
     @objc func bindAction() {
-        guard let model = model else {
-            return
-        }
-        action?(model)
+//        guard let model = model else {
+//            return
+//        }
+//        action?(model)
     }
 }

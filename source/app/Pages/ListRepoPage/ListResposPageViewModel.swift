@@ -15,13 +15,13 @@ protocol ListResposVM {
 class ListReposPageViewModel: NSObject, ViewModelHandlerEventsControllerDelegate, ListDataHandler {
     
     weak var controller: ListReposController?
-    var network: NetworkUserInfoOperation?
+    var network: NetworkContentOperation?
     var coordinator: ListReposCoordinable?
     var valueToRequest: Model?
-    var items: [RepoListemItem]?
+    var items: [Comic]?
     let numberOfSection: Int = 1
     
-    init(controller: ListReposController, network: NetworkUserInfoOperation, coordinator: Coordinator?) {
+    init(controller: ListReposController, network: NetworkContentOperation, coordinator: Coordinator?) {
         self.controller = controller
         self.network = network
         self.coordinator = coordinator as? ListReposCoordinable
@@ -42,19 +42,21 @@ class ListReposPageViewModel: NSObject, ViewModelHandlerEventsControllerDelegate
     
     func requestRepos() {
         
-        guard let valueToRequest = valueToRequest as? UserDetailProfile, let login = valueToRequest.login  else {
-            return
-        }
-        
-        network?.requestUserRepos(name: login, page: 0, params: nil) { result in
+//        guard let valueToRequest = valueToRequest as? UserDetailProfile, let login = valueToRequest.login  else {
+//            return
+//        }
+
+//        network?.requestUserRepos(name: login, page: 0, params: nil) { result in
+        network?.requestList(page: nil, filter: nil, params: nil) { result in
             DispatchQueue.main.async { [weak self] in
                 switch result {
-                case .success(let users):
-                    self?.updateView(with: users)
+                case .success(let response):
+                    print(response)
+//                    self?.updateView(with: users)
                     self?.controller?.stopLoading(onFinish: nil)
                 case .failure(let error):
                     self?.controller?.stopLoading {
-                        self?.controller?.presentAlert(with: nil, and: error.message) {_ in 
+                        self?.controller?.presentAlert(with: nil, and: error.message) {_ in
                             self?.coordinator?.back()
                         }
                     }
@@ -69,7 +71,7 @@ class ListReposPageViewModel: NSObject, ViewModelHandlerEventsControllerDelegate
             return
         }
         
-        items = value as? [RepoListemItem]
+//        items = value as? [RepoListemItem]
         controller?.updateView()
     }
     

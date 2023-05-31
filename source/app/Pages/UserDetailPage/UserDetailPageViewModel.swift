@@ -11,7 +11,7 @@ import Foundation
 class UserDetailPageViewModel: ViewModelHandlerEventsControllerDelegate, ListDataHandler {
     
     weak var controller: UserDetailController?
-    var userDetailNetwork: NetworkUserInfoOperation?
+    var userDetailNetwork: NetworkContentOperation?
     var coordinator: UserDetailCoordinable?
     var valueToRequest: Model?
     var items: [Model]?
@@ -31,28 +31,28 @@ class UserDetailPageViewModel: ViewModelHandlerEventsControllerDelegate, ListDat
     }
     
     func requestUserInfo() {
-        guard let dataToSearch = valueToRequest as? UserDetailProfile else {
-            return
-        }
-        
-        userDetailNetwork?.requestUser(with: dataToSearch.login) { result in
-            DispatchQueue.main.async { [weak self] in
-
-                switch result {
-                case .success(let items):
-                    self?.items = items
-                    self?.controller?.updateView()
-                    self?.controller?.stopLoading(onFinish: nil)
-                case .failure(let error):
-                    self?.controller?.stopLoading {
-                        
-                        self?.controller?.presentAlert(with: nil, and: error.message) { _ in
-                            self?.coordinator?.back()
-                        }
-                    }
-                }
-            }
-        }
+//        guard let dataToSearch = valueToRequest as? UserDetailProfile else {
+//            return
+//        }
+//        
+//        userDetailNetwork?.requestUser(with: dataToSearch.login) { result in
+//            DispatchQueue.main.async { [weak self] in
+//
+//                switch result {
+//                case .success(let items):
+//                    self?.items = items
+//                    self?.controller?.updateView()
+//                    self?.controller?.stopLoading(onFinish: nil)
+//                case .failure(let error):
+//                    self?.controller?.stopLoading {
+//                        
+//                        self?.controller?.presentAlert(with: nil, and: error.message) { _ in
+//                            self?.coordinator?.back()
+//                        }
+//                    }
+//                }
+//            }
+//        }
     }
     
     func updateContent() {

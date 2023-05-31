@@ -12,7 +12,7 @@ import Kingfisher
 class CardUserListItemView: UIView, Card, CardTouch {
 
     var action: ((Model?) -> Void)?
-    var model: UserDetailProfile?
+//    var model: UserDetailProfile?
     
     lazy var backgrounHStackView: UIView = {
         let view = UIView()
@@ -65,13 +65,13 @@ class CardUserListItemView: UIView, Card, CardTouch {
     
     func load(model: Model?) {
         
-        guard let model = model as? UserDetailProfile else {
-            return
-        }
-        self.model = model
-        nameLabel.text =  model.login
-        profileImageView.kf.setImage(with: URL(string: model.avatarURL))
-        action = model.action
+//        guard let model = model as? UserDetailProfile else {
+//            return
+//        }
+//        self.model = model
+//        nameLabel.text =  model.login
+//        profileImageView.kf.setImage(with: URL(string: model.avatarURL))
+//        action = model.action
         
         addAllSubviews()
         defineAction()
@@ -125,9 +125,9 @@ class CardUserListItemView: UIView, Card, CardTouch {
     }
     
     @objc func bindAction() {
-        guard let model = model else {
-            return
-        }
-        action?(model)
+//        guard let model = model else {
+//            return
+//        }
+//        action?(model)
     }
 }

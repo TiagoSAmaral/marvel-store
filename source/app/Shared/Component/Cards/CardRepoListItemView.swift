@@ -11,7 +11,7 @@ import UIKit
 class CardRepoListItemView: UIView, Card, CardTouch {
     
     var action: ((Model?) -> Void)?
-    var model: RepoListemItem?
+//    var model: RepoListemItem?
     
     lazy var baseView: UIView = {
        let view = UIView()
@@ -107,15 +107,15 @@ class CardRepoListItemView: UIView, Card, CardTouch {
     
     func load(model: Model?) {
         
-        guard let model = model as? RepoListemItem else {
-            return
-        }
-        self.model = model
-        nameLabel.text = model.name
-        loginLabel.text = model.language
-        bioDescription.text = model.description
+//        guard let model = model as? RepoListemItem else {
+//            return
+//        }
+//        self.model = model
+//        nameLabel.text = model.name
+//        loginLabel.text = model.language
+//        bioDescription.text = model.description
         
-        action = model.action
+//        action = model.action
         
         addAllSubviews()
         defineAction()
@@ -139,9 +139,9 @@ class CardRepoListItemView: UIView, Card, CardTouch {
         vMainStackView.edgeToSuperView(margin: 8.0)
         vMainStackView.addArrangedSubview(hStackViewProfileImageViewWithNameLogin)
         
-        if let descriptionText = model?.description, !descriptionText.isEmpty {
-            vMainStackView.addArrangedSubview(bioDescription)
-        }
+//        if let descriptionText = model?.description, !descriptionText.isEmpty {
+//            vMainStackView.addArrangedSubview(bioDescription)
+//        }
 
         vMainStackView.addArrangedSubview(vStackViewNetworkLinks)
                 
@@ -168,28 +168,28 @@ class CardRepoListItemView: UIView, Card, CardTouch {
     
     func makeVStackViewNetworkLinks() {
         
-        if let visibilityLabel = makeLabelNetwork(with: "👀    \(model?.visibility?.capitalized ?? "")") {
-            vStackViewNetworkLinks.addArrangedSubview(visibilityLabel)
-        }
-        
-        if let startsCountLabel = makeLabelNetwork(with: "✭     \(model?.startsCount ?? 0)") {
-            vStackViewNetworkLinks.addArrangedSubview(startsCountLabel)
-        }
-        
-        if let forksCountLabel = makeLabelNetwork(with: "⑂      \(model?.forksCount ?? 0)" ) {
-            vStackViewNetworkLinks.addArrangedSubview(forksCountLabel)
-        }
-        
-        if let languageLabel = makeLabelNetwork(with: "📚   \(model?.language?.capitalized ?? "")") {
-            vStackViewNetworkLinks.addArrangedSubview(languageLabel)
-        }
+//        if let visibilityLabel = makeLabelNetwork(with: "👀    \(model?.visibility?.capitalized ?? "")") {
+//            vStackViewNetworkLinks.addArrangedSubview(visibilityLabel)
+//        }
+//
+//        if let startsCountLabel = makeLabelNetwork(with: "✭     \(model?.startsCount ?? 0)") {
+//            vStackViewNetworkLinks.addArrangedSubview(startsCountLabel)
+//        }
+//
+//        if let forksCountLabel = makeLabelNetwork(with: "⑂      \(model?.forksCount ?? 0)" ) {
+//            vStackViewNetworkLinks.addArrangedSubview(forksCountLabel)
+//        }
+//
+//        if let languageLabel = makeLabelNetwork(with: "📚   \(model?.language?.capitalized ?? "")") {
+//            vStackViewNetworkLinks.addArrangedSubview(languageLabel)
+//        }
     }
 
 // MARK: - Card Touch action
     @objc func bindAction() {
-        guard let model = model else {
-            return
-        }
-        action?(model)
+//        guard let model = model else {
+//            return
+//        }
+//        action?(model)
     }
 }

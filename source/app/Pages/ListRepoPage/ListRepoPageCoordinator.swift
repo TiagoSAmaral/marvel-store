@@ -34,17 +34,17 @@ class ListReposPageCoordinator: Coordinator, ListReposCoordinable {
     }
     
     func goToRepo(with data: Model?) {
-        guard let data = data as? RepoListemItem,
-              let urlHtml = data.htmlUrl,
-                let urlpath = URL(string: urlHtml) else {
-            return
-        }
-       
-        let config = SFSafariViewController.Configuration()
-        config.entersReaderIfAvailable = true
-
-        let safariViewController = SFSafariViewController(url: urlpath, configuration: config)
-        navigationController?.present(safariViewController, animated: true)
+//        guard let data = data as? RepoListemItem,
+//              let urlHtml = data.htmlUrl,
+//                let urlpath = URL(string: urlHtml) else {
+//            return
+//        }
+//       
+//        let config = SFSafariViewController.Configuration()
+//        config.entersReaderIfAvailable = true
+//
+//        let safariViewController = SFSafariViewController(url: urlpath, configuration: config)
+//        navigationController?.present(safariViewController, animated: true)
     }
     
     func back() {
