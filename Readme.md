@@ -35,9 +35,9 @@ Gerenciadores usados:
  - Swift Package Manager
 
 Dependências:
-- [Kingfisher](https://github.com/onevcat/Kingfisher). Usando SPM (Download e cache de imagens).
-- [Alamofire](https://github.com/Alamofire/Alamofire) Usando SPM (Realizaão de requisioes assincronas).
-
+- [Kingfisher](https://github.com/onevcat/Kingfisher): Download assincrono e cache de imagens.
+- [Alamofire](https://github.com/Alamofire/Alamofire): Requisição de dados fornecidas por API.
+- [Realm Swift](https://github.com/realm/realm-swift.git): Armazenamento local de dados.
 
 ## Instruções para Execução de Projeto
 
@@ -119,3 +119,10 @@ Ver mais no link: [Realm/jazzy](https://github.com/realm/jazzy)
 Ferramenta para exibir de forma mais amigável informações de cobertura de código do projeto.
 
 Ver mais no link: [Slather](https://github.com/SlatherOrg/slather)
+
+--- 
+### Autor
+
+Tiago Amaral iOS Developer.
+<br>
+- [Linkedin](https://www.linkedin.com/in/tiagoamaralios/)

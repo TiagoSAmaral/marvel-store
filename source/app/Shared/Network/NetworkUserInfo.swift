@@ -9,16 +9,16 @@
 import Alamofire
 import Foundation
 
-typealias ResultUsersItemOrError = Result<[UserDetailProfile], NetworkError>
+// Handler type of decode json here.
+typealias GeneralResultHandler = ((Result<GeneralResult<Comic>, NetworkError>) -> Void)
 
-protocol NetworkUserInfoOperation {
-    func search(with name: String?, handler: ((Result<[UserDetailProfile], NetworkError>) -> Void)?)
-    func requestListUser(page: Int?, params: [String: Any]?, handler: ((Result<[UserDetailProfile], NetworkError>) -> Void)?)
-    func requestUser(with name: String?, handler: ((ResultUsersItemOrError) -> Void)?)
-    func requestUserRepos(name: String?, page: Int?, params: [String: Any]?, handler: ((Result<[RepoListemItem], NetworkError>) -> Void)?)
+protocol NetworkContentOperation {
+    func search(with name: String?, handler: GeneralResultHandler?)
+    func requestList(page: Int?, filter: String?, params: [String : Any]?, handler: GeneralResultHandler?)
+    func requestDetail(identifier: Int?, params: [String: Any]?, handler: GeneralResultHandler?)
 }
 
-class NetworkUserInfo: NetworkUserInfoOperation, NetworkConectable {
+class NetworkUserInfo: NetworkContentOperation, NetworkConectable {
     
     var headerFactory: NetworkHeaderFactory?
     
@@ -26,52 +26,64 @@ class NetworkUserInfo: NetworkUserInfoOperation, NetworkConectable {
         self.headerFactory = headerFactory
     }
     
-    func search(with name: String?, handler: ((Result<[UserDetailProfile], NetworkError>) -> Void)?) {
+    func search(with name: String?, handler: GeneralResultHandler?) {
         
         let request: RequestApi = RequestApi(
-            urlPath: ApiRoutes.shared.path(.getSearchUser(text: name)),
+            urlPath: ApiRoutes.shared.path(.getSearch(text: name)),
                               method: Alamofire.HTTPMethod.get,
                               params: nil,
                               headers: headerFactory?.makeHeader())
-        networkRequest(data: request, resultType: SearchResult.self) { response in
+        networkRequest(data: request, resultType: GeneralResult<Comic>.self) { response in
             switch response {
             case .success(let result):
                 
-                guard let item = result.items else {
+                guard let items = result.data?.results else {
                     handler?(.failure(NetworkError.makeError(with: nil, description: nil)))
                     return
                 }
                 
-                let itemsWithLayout: [UserDetailProfile] = item.compactMap { (item: UserDetailProfile) in
-                    item.layout = .userListItem
-                    return item
+                let itemsWithLayout: [Comic] = items.compactMap { (item: Comic) -> Comic in
+                    var mutableItem = item
+                    mutableItem.layout = .storelist
+                    return mutableItem
                 }
+                
+                var mutableResult = result
+                mutableResult.data?.results = itemsWithLayout
                  
-                handler?(.success(itemsWithLayout))
+                handler?(.success(mutableResult))
             case .failure(let error):
                 handler?(.failure(error))
             }
         }
     }
     
-    func requestListUser(page: Int?, params: [String: Any]?, handler: ((Result<[UserDetailProfile], NetworkError>) -> Void)?) {
+    func requestList(page: Int?, filter: String?, params: [String : Any]?, handler: GeneralResultHandler?) {
         let request: RequestApi = RequestApi(
-                              urlPath: ApiRoutes.shared.path(.getListUser(page: page)),
+            urlPath: ApiRoutes.shared.path(.getListStore(page: page, filter: filter)),
                               method: Alamofire.HTTPMethod.get,
                               params: params,
                               headers: headerFactory?.makeHeader())
-        networkRequest(data: request, resultType: [UserDetailProfile].self) { result in
+        networkRequest(data: request, resultType: GeneralResult<Comic>.self) { result in
 
-            var itemsWithLayout: [UserDetailProfile] = []
             switch result {
-            case .success(let items):
+            case .success(let genericResponse):
                 
-                itemsWithLayout = items.compactMap { item in
-                    item.layout = .userListItem
-                    return item
+                guard let items = genericResponse.data?.results else {
+                    handler?(.failure(NetworkError.makeError(with: nil, description: nil)))
+                    return
                 }
                 
-                handler?(.success(itemsWithLayout))
+                let itemsWithLayout: [Comic] = items.compactMap { (item: Comic) -> Comic in
+                    var mutableItem = item
+                    mutableItem.layout = .storelist
+                    return mutableItem
+                }
+                
+                var mutableResult = genericResponse
+                mutableResult.data?.results = itemsWithLayout
+                
+                handler?(.success(mutableResult))
                 
             case .failure(let error):
                 handler?(.failure(error))
@@ -79,42 +91,36 @@ class NetworkUserInfo: NetworkUserInfoOperation, NetworkConectable {
         }
     }
     
-    func requestUser(with name: String?, handler: ((ResultUsersItemOrError) -> Void)?) {
+    func requestDetail(identifier: Int?, params: [String: Any]?, handler: GeneralResultHandler?) {
         
         let request: RequestApi = RequestApi(
-            urlPath: ApiRoutes.shared.path(.getUserProfile(text: name)),
+            urlPath: ApiRoutes.shared.path(.getDetailWith(identifier)),
                               method: Alamofire.HTTPMethod.get,
                               params: nil,
                               headers: headerFactory?.makeHeader())
-        networkRequest(data: request, resultType: UserDetailProfile.self) { response in
-            switch response {
-            case .success(let user):
-                user.layout = .userInfo
-                handler?(.success([user]))
-            case .failure(let error):
-                handler?(.failure(error))
-            }
-        }
-    }
-    
-    func requestUserRepos(name: String?, page: Int?, params: [String: Any]?, handler: ((Result<[RepoListemItem], NetworkError>) -> Void)?) {
-        let request: RequestApi = RequestApi(
-            urlPath: ApiRoutes.shared.path(.getListRepoFromUser(text: name, page: page)),
-                              method: Alamofire.HTTPMethod.get,
-                              params: params,
-                              headers: headerFactory?.makeHeader())
-        networkRequest(data: request, resultType: [RepoListemItem].self) { result in
-            
+        networkRequest(data: request, resultType: GeneralResult<Comic>.self) { result in
+
             switch result {
-            case .success(let items):
-                let itemsLayoutMaped: [RepoListemItem] = items.compactMap { item in
+            case .success(let genericResponse):
+                
+                guard let items = genericResponse.data?.results else {
+                    handler?(.failure(NetworkError.makeError(with: nil, description: nil)))
+                    return
+                }
+                
+                let itemsWithLayout: [Comic] = items.compactMap { (item: Comic) -> Comic in
                     var mutableItem = item
-                    mutableItem.layout = .repoListItem
+                    mutableItem.layout = .storelist
                     return mutableItem
                 }
-                handler?(.success(itemsLayoutMaped))
+                
+                var mutableResult = genericResponse
+                mutableResult.data?.results = itemsWithLayout
+                
+                handler?(.success(mutableResult))
+                
             case .failure(let error):
-                handler?(.failure(error) )
+                handler?(.failure(error))
             }
         }
     }
