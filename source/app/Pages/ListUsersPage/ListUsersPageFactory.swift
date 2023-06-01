@@ -14,8 +14,8 @@ class ListUsersPageFactory: FactoryPage {
 
         let controller = ListUserPageController()
         let searchBarController = SearchBarFactory.makeSearch()
-        let headerMaker = NetworkHeaderMaker()
-        let network = NetworkUserInfo(headerFactory: headerMaker)
+//        let headerMaker = NetworkHeaderMaker()
+        let network = NetworkUserInfo(headerFactory: nil)
         let viewFactory = ListFactoryView(controller: controller)
         let viewModel = ListUsersPageViewModel(controller: controller,
                                                network: network,
