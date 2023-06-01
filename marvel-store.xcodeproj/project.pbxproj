@@ -10,6 +10,9 @@
 		CF4D91502A0FFBAE000BE331 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4D914F2A0FFBAE000BE331 /* Coordinator.swift */; };
 		CF6414EA23E4C210009C7A9E /* TemplateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6414E923E4C210009C7A9E /* TemplateTests.swift */; };
 		CF7EAAA52A27EA7A006F5D12 /* CardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7EAAA42A27EA7A006F5D12 /* CardTests.swift */; };
+		CF7EAAAF2A282787006F5D12 /* listContent.json in Resources */ = {isa = PBXBuildFile; fileRef = CF7EAAAE2A282787006F5D12 /* listContent.json */; };
+		CF7EAAB12A282864006F5D12 /* oneContent.json in Resources */ = {isa = PBXBuildFile; fileRef = CF7EAAB02A282864006F5D12 /* oneContent.json */; };
+		CF7EAAB32A2828DD006F5D12 /* MockerContentProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7EAAB22A2828DD006F5D12 /* MockerContentProvider.swift */; };
 		CFAB5CAE2A0FFF110091F1FF /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAB5CAD2A0FFF110091F1FF /* Card.swift */; };
 		CFAB5CB02A0FFF5A0091F1FF /* NetworkConnectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAB5CAF2A0FFF5A0091F1FF /* NetworkConnectable.swift */; };
 		CFAB5CB22A0FFFDE0091F1FF /* Requestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAB5CB12A0FFFDE0091F1FF /* Requestable.swift */; };
@@ -32,7 +35,6 @@
 		CFAB5CF52A111A3B0091F1FF /* CardModelHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAB5CF42A111A3B0091F1FF /* CardModelHandler.swift */; };
 		CFAB5CF72A111A840091F1FF /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAB5CF62A111A840091F1FF /* CustomCell.swift */; };
 		CFAB5CFB2A1121270091F1FF /* CardFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAB5CFA2A1121270091F1FF /* CardFactory.swift */; };
-		CFAB5CFD2A1124830091F1FF /* NetworkHeaderMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAB5CFC2A1124830091F1FF /* NetworkHeaderMaker.swift */; };
 		CFAB5CFF2A112D620091F1FF /* NetworkUserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAB5CFE2A112D620091F1FF /* NetworkUserInfo.swift */; };
 		CFAB5D032A11D5480091F1FF /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAB5D022A11D5480091F1FF /* Model.swift */; };
 		CFAB5D052A11DEE70091F1FF /* LayoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAB5D042A11DEE70091F1FF /* LayoutView.swift */; };
@@ -65,6 +67,7 @@
 		CFD3A6DC23DA462000EB6D4D /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFD3A6DB23DA462000EB6D4D /* Launch Screen.storyboard */; };
 		CFE2D5A52A0F4E02001F649F /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = CFE2D5A42A0F4E02001F649F /* Alamofire */; };
 		CFE2D5A82A0F4E17001F649F /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = CFE2D5A72A0F4E17001F649F /* Kingfisher */; };
+		CFE71CEA2A293939009F5E12 /* APISecurityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE71CE92A293939009F5E12 /* APISecurityTests.swift */; };
 		CFF2EA112A0F259800709168 /* Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF2EA102A0F259800709168 /* Constraints.swift */; };
 /* End PBXBuildFile section */
 
@@ -84,6 +87,11 @@
 		CF6414DF23E4C1CF009C7A9E /* marvel-storeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "marvel-storeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF6414E923E4C210009C7A9E /* TemplateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateTests.swift; sourceTree = "<group>"; };
 		CF7EAAA42A27EA7A006F5D12 /* CardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTests.swift; sourceTree = "<group>"; };
+		CF7EAAAE2A282787006F5D12 /* listContent.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = listContent.json; sourceTree = "<group>"; };
+		CF7EAAB02A282864006F5D12 /* oneContent.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = oneContent.json; sourceTree = "<group>"; };
+		CF7EAAB22A2828DD006F5D12 /* MockerContentProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockerContentProvider.swift; sourceTree = "<group>"; };
+		CF7EAABA2A292615006F5D12 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		CF7EAABF2A292979006F5D12 /* TestPlan.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = TestPlan.xctestplan; sourceTree = "<group>"; };
 		CF9601AE23DA2A1E00916EF1 /* Marvel Store Dev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Marvel Store Dev.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFAB5CAD2A0FFF110091F1FF /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		CFAB5CAF2A0FFF5A0091F1FF /* NetworkConnectable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConnectable.swift; sourceTree = "<group>"; };
@@ -107,7 +115,6 @@
 		CFAB5CF42A111A3B0091F1FF /* CardModelHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardModelHandler.swift; sourceTree = "<group>"; };
 		CFAB5CF62A111A840091F1FF /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		CFAB5CFA2A1121270091F1FF /* CardFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardFactory.swift; sourceTree = "<group>"; };
-		CFAB5CFC2A1124830091F1FF /* NetworkHeaderMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHeaderMaker.swift; sourceTree = "<group>"; };
 		CFAB5CFE2A112D620091F1FF /* NetworkUserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkUserInfo.swift; sourceTree = "<group>"; };
 		CFAB5D022A11D5480091F1FF /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		CFAB5D042A11DEE70091F1FF /* LayoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutView.swift; sourceTree = "<group>"; };
@@ -139,6 +146,7 @@
 		CFD3A6D923DA443200EB6D4D /* LocalizedText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedText.swift; sourceTree = "<group>"; };
 		CFD3A6DB23DA462000EB6D4D /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		CFE2D5AF2A0F572C001F649F /* SwiftIconFont.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SwiftIconFont.xcframework; path = Carthage/Build/SwiftIconFont.xcframework; sourceTree = "<group>"; };
+		CFE71CE92A293939009F5E12 /* APISecurityTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APISecurityTests.swift; sourceTree = "<group>"; };
 		CFF2EA102A0F259800709168 /* Constraints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constraints.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -171,7 +179,6 @@
 				CFAB5CB72A1002B30091F1FF /* Request.swift */,
 				CFAB5CBC2A100E430091F1FF /* NetworkError.swift */,
 				CFAB5CC92A1053D30091F1FF /* ApiRoute.swift */,
-				CFAB5CFC2A1124830091F1FF /* NetworkHeaderMaker.swift */,
 				CFC405B02A2553EC00222F60 /* APISecurity.swift */,
 			);
 			path = Network;
@@ -224,6 +231,16 @@
 				CF7EAAA42A27EA7A006F5D12 /* CardTests.swift */,
 			);
 			path = InterfaceTests;
+			sourceTree = "<group>";
+		};
+		CF7EAAAD2A282744006F5D12 /* Request Respose Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				CF7EAAAE2A282787006F5D12 /* listContent.json */,
+				CF7EAAB02A282864006F5D12 /* oneContent.json */,
+				CF7EAAB22A2828DD006F5D12 /* MockerContentProvider.swift */,
+			);
+			path = "Request Respose Mocks";
 			sourceTree = "<group>";
 		};
 		CF9601A523DA2A1E00916EF1 = {
@@ -445,6 +462,9 @@
 		CFD3A6BD23DA30EF00EB6D4D /* test */ = {
 			isa = PBXGroup;
 			children = (
+				CFE71CE72A2938E5009F5E12 /* Shared */,
+				CFE71CE42A292F9E009F5E12 /* TestPlanConfig */,
+				CF7EAAAD2A282744006F5D12 /* Request Respose Mocks */,
 				CF7EAAA32A27E50C006F5D12 /* InterfaceTests */,
 				CF6414E923E4C210009C7A9E /* TemplateTests.swift */,
 				CF24569923E4C55B00A1968D /* info.plist */,
@@ -464,9 +484,34 @@
 		CFE2D5A92A0F56D8001F649F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CF7EAABA2A292615006F5D12 /* XCTest.framework */,
 				CFE2D5AF2A0F572C001F649F /* SwiftIconFont.xcframework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CFE71CE42A292F9E009F5E12 /* TestPlanConfig */ = {
+			isa = PBXGroup;
+			children = (
+				CF7EAABF2A292979006F5D12 /* TestPlan.xctestplan */,
+			);
+			path = TestPlanConfig;
+			sourceTree = "<group>";
+		};
+		CFE71CE72A2938E5009F5E12 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				CFE71CE82A2938F3009F5E12 /* Network */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		CFE71CE82A2938F3009F5E12 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				CFE71CE92A293939009F5E12 /* APISecurityTests.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		CFF2EA0E2A0F256D00709168 /* Extensions */ = {
@@ -504,6 +549,8 @@
 				CF6414E523E4C1CF009C7A9E /* PBXTargetDependency */,
 			);
 			name = "marvel-storeTests";
+			packageProductDependencies = (
+			);
 			productName = BaseProjectTargetTests;
 			productReference = CF6414DF23E4C1CF009C7A9E /* marvel-storeTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -538,8 +585,9 @@
 		CF9601A623DA2A1E00916EF1 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 1130;
-				LastUpgradeCheck = 1420;
+				LastUpgradeCheck = 1430;
 				ORGANIZATIONNAME = developer_organization_name;
 				TargetAttributes = {
 					CF6414DE23E4C1CF009C7A9E = {
@@ -591,6 +639,8 @@
 				CFD3A6D723DA41FE00EB6D4D /* Localizable-pt-BR.strings in Resources */,
 				CFD3A6DC23DA462000EB6D4D /* Launch Screen.storyboard in Resources */,
 				CFD3A6BB23DA308A00EB6D4D /* Assets.xcassets in Resources */,
+				CF7EAAAF2A282787006F5D12 /* listContent.json in Resources */,
+				CF7EAAB12A282864006F5D12 /* oneContent.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -623,6 +673,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFE71CEA2A293939009F5E12 /* APISecurityTests.swift in Sources */,
 				CF6414EA23E4C210009C7A9E /* TemplateTests.swift in Sources */,
 				CF7EAAA52A27EA7A006F5D12 /* CardTests.swift in Sources */,
 			);
@@ -639,6 +690,7 @@
 				CFAB5D2C2A1332930091F1FF /* NavigationController.swift in Sources */,
 				CFAB5D1E2A127B770091F1FF /* SearchHandlerEvents.swift in Sources */,
 				CFB2971A2A26F17000CA95C3 /* Empty.swift in Sources */,
+				CF7EAAB32A2828DD006F5D12 /* MockerContentProvider.swift in Sources */,
 				CFAB5CB02A0FFF5A0091F1FF /* NetworkConnectable.swift in Sources */,
 				CFAB5CF32A1117C40091F1FF /* Identifier.swift in Sources */,
 				CFAB5CEA2A105F010091F1FF /* ListUsersPageFactory.swift in Sources */,
@@ -672,7 +724,6 @@
 				CFAB5D2E2A13342E0091F1FF /* LoadingManagers.swift in Sources */,
 				CFD3A6DA23DA443200EB6D4D /* LocalizedText.swift in Sources */,
 				CFAB5D032A11D5480091F1FF /* Model.swift in Sources */,
-				CFAB5CFD2A1124830091F1FF /* NetworkHeaderMaker.swift in Sources */,
 				CFAB5D082A11E1940091F1FF /* CardUserListItemView.swift in Sources */,
 				CFAB5CED2A1060620091F1FF /* FactoryPage.swift in Sources */,
 				CFAB5CE12A105A250091F1FF /* UserDetailPageViewModel.swift in Sources */,
@@ -719,6 +770,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.outlook.tiagofly.marvel-storetests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -742,6 +794,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.outlook.tiagofly.marvel-storetests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -878,6 +931,7 @@
 				BASE_URL = "https://gateway.marvel.com:443";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2023.05.13.1.1;
+				ENABLE_TESTING_SEARCH_PATHS = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "$(SRCROOT)/source/DevResources/dev-info.plist";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.magazines-and-newspapers";
@@ -906,6 +960,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2023.05.13.1.1;
 				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_TESTING_SEARCH_PATHS = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PREPROCESSOR_DEFINITIONS = "";
 				INFOPLIST_FILE = "$(SRCROOT)/source/app/supportfiles/plists/Info.plist";
