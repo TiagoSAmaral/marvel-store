@@ -32,9 +32,9 @@
       <CodeCoverageTargets>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "CF6414DE23E4C1CF009C7A9E"
-            BuildableName = "marvel-storeTests.xctest"
-            BlueprintName = "marvel-storeTests"
+            BlueprintIdentifier = "CF9601AD23DA2A1E00916EF1"
+            BuildableName = "Marvel Store.app"
+            BlueprintName = "marvel-store"
             ReferencedContainer = "container:marvel-store.xcodeproj">
          </BuildableReference>
       </CodeCoverageTargets>

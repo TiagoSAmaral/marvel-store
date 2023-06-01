@@ -6,7 +6,7 @@
 //
 
 import XCTest
-@testable import github_person
+@testable import Marvel_Store_Dev
 
 class TemplateTests: XCTestCase {
 

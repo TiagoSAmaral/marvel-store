@@ -36,20 +36,20 @@ class ListUsersPageViewModel: NSObject, ViewModelHandlerEventsControllerDelegate
     }
     
     func requestUsers() {
-    network?.requestList(page: nil, filter: nil, params: nil) { result in
-        DispatchQueue.main.async { [weak self] in
-            switch result {
-            case .success(let response):
-                print(response)
-//                    self?.updateView(with: users)
-                self?.controller?.stopLoading(onFinish: nil)
-                case .failure(let error):
-                    self?.controller?.stopLoading {
-                        self?.controller?.presentAlert(with: nil, and: error.message, handler: nil)
-                    }
-                }
-            }
-        }
+//    network?.requestList(page: nil, filter: nil, params: nil) { result in
+//        DispatchQueue.main.async { [weak self] in
+//            switch result {
+//            case .success(let response):
+//                print(response)
+////                    self?.updateView(with: users)
+//                self?.controller?.stopLoading(onFinish: nil)
+//                case .failure(let error):
+//                    self?.controller?.stopLoading {
+//                        self?.controller?.presentAlert(with: nil, and: error.message, handler: nil)
+//                    }
+//                }
+//            }
+//        }
     }
     
     func searchUser(by name: String?) {

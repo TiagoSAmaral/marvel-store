@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		CF4D91502A0FFBAE000BE331 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4D914F2A0FFBAE000BE331 /* Coordinator.swift */; };
 		CF6414EA23E4C210009C7A9E /* TemplateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6414E923E4C210009C7A9E /* TemplateTests.swift */; };
+		CF7EAAA52A27EA7A006F5D12 /* CardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7EAAA42A27EA7A006F5D12 /* CardTests.swift */; };
 		CFAB5CAE2A0FFF110091F1FF /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAB5CAD2A0FFF110091F1FF /* Card.swift */; };
 		CFAB5CB02A0FFF5A0091F1FF /* NetworkConnectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAB5CAF2A0FFF5A0091F1FF /* NetworkConnectable.swift */; };
 		CFAB5CB22A0FFFDE0091F1FF /* Requestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAB5CB12A0FFFDE0091F1FF /* Requestable.swift */; };
@@ -82,6 +83,7 @@
 		CF4D914F2A0FFBAE000BE331 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		CF6414DF23E4C1CF009C7A9E /* marvel-storeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "marvel-storeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF6414E923E4C210009C7A9E /* TemplateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateTests.swift; sourceTree = "<group>"; };
+		CF7EAAA42A27EA7A006F5D12 /* CardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTests.swift; sourceTree = "<group>"; };
 		CF9601AE23DA2A1E00916EF1 /* Marvel Store Dev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Marvel Store Dev.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFAB5CAD2A0FFF110091F1FF /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		CFAB5CAF2A0FFF5A0091F1FF /* NetworkConnectable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConnectable.swift; sourceTree = "<group>"; };
@@ -214,6 +216,14 @@
 				CFC405AD2A254BD700222F60 /* dev-info.plist */,
 			);
 			path = DevResources;
+			sourceTree = "<group>";
+		};
+		CF7EAAA32A27E50C006F5D12 /* InterfaceTests */ = {
+			isa = PBXGroup;
+			children = (
+				CF7EAAA42A27EA7A006F5D12 /* CardTests.swift */,
+			);
+			path = InterfaceTests;
 			sourceTree = "<group>";
 		};
 		CF9601A523DA2A1E00916EF1 = {
@@ -435,6 +445,7 @@
 		CFD3A6BD23DA30EF00EB6D4D /* test */ = {
 			isa = PBXGroup;
 			children = (
+				CF7EAAA32A27E50C006F5D12 /* InterfaceTests */,
 				CF6414E923E4C210009C7A9E /* TemplateTests.swift */,
 				CF24569923E4C55B00A1968D /* info.plist */,
 			);
@@ -613,6 +624,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CF6414EA23E4C210009C7A9E /* TemplateTests.swift in Sources */,
+				CF7EAAA52A27EA7A006F5D12 /* CardTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -701,7 +713,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "$(SRCROOT)/source/test/info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -714,7 +726,7 @@
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BaseProjectTarget.app/BaseProjectTarget";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Marvel Store Dev.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Marvel Store Dev";
 			};
 			name = Debug;
 		};
@@ -724,7 +736,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "$(SRCROOT)/source/test/info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -737,7 +749,7 @@
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BaseProjectTarget.app/BaseProjectTarget";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Marvel Store Dev.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Marvel Store Dev";
 			};
 			name = Release;
 		};
