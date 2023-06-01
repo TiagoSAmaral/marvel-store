@@ -22,7 +22,7 @@ class NetworkUserInfo: NetworkContentOperation, NetworkConectable {
     
     var headerFactory: NetworkHeaderFactory?
     
-    init(headerFactory: NetworkHeaderFactory) {
+    init(headerFactory: NetworkHeaderFactory?) {
         self.headerFactory = headerFactory
     }
     
