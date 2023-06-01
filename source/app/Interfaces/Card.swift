@@ -13,12 +13,12 @@ protocol Card where Self: UIView {
 }
 
 extension Card {
-    func defineLayout(with view: UIView?) {
+    func defineLayout(with cellContentView: UIView?) {
         
-        guard let view = view else {
+        guard let cellContentView = cellContentView else {
             return
         }
-        view.addSubview(self)
+        cellContentView.addSubviews([self])
         
         edgeToSuperView()
     }
