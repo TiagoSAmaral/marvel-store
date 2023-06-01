@@ -1,0 +1,33 @@
+{
+  "configurations" : [
+    {
+      "id" : "C6E650B8-E1A6-4A8E-A474-CAE382A7F2E7",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : {
+      "targets" : [
+        {
+          "containerPath" : "container:marvel-store.xcodeproj",
+          "identifier" : "CF9601AD23DA2A1E00916EF1",
+          "name" : "marvel-store"
+        }
+      ]
+    },
+    "testTimeoutsEnabled" : true
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:marvel-store.xcodeproj",
+        "identifier" : "CF6414DE23E4C1CF009C7A9E",
+        "name" : "marvel-storeTests"
+      }
+    }
+  ],
+  "version" : 1
+}
