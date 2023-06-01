@@ -40,14 +40,14 @@ final class CardTests: XCTestCase {
         modelTest?.layout = .cartlist
     }
     
-    func testLoadModel() {
+    func testLoadModel() throws {
         cardTest?.load(model: modelTest)
         
         XCTAssertEqual(cardTest?.exposedContent?.identifier, valueIdentifierTest, "Expect keep same value of identifier")
         XCTAssertEqual(cardTest?.exposedContent?.layout, valueLayoutTest, "Expect keep same value of layout identifier")
     }
     
-    func testDefineLayout() {
+    func testDefineLayout() throws {
         let subview = UIView()
         
         XCTAssertEqual(cardTest?.subviews.count, 0, "Expected zero subview before define layout")
