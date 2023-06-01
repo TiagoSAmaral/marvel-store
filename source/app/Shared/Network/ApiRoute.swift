@@ -52,7 +52,7 @@ struct ApiRoutes {
     
     func appendAPICredential(into path: String) -> String? {
         let apiSecurer = APISecurity()
-        let credentials = apiSecurer.makeCredential()
+        let credentials = apiSecurer.makeCredential(with: Date().timeIntervalSince1970)
         guard let timeStamp = credentials?.timeStamp,
               let publicKey = credentials?.publicKey,
               let hash = credentials?.hash else {

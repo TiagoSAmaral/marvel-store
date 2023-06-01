@@ -14,7 +14,7 @@ import CryptoKit
  */
 
 protocol APISecurer {
-    func makeCredential() -> APISecurityCredential?
+    func makeCredential(with timestamp: TimeInterval?) -> APISecurityCredential?
 }
 
 protocol APISecurityCredential {
@@ -34,13 +34,12 @@ class APISecurity: APISecurer {
     private var privateKey: String?
     private var publicKey: String?
 
-    func makeCredential() -> APISecurityCredential? {
+    func makeCredential(with timestamp: TimeInterval?) -> APISecurityCredential? {
         
         takeLocalKeys()
-        let timestamp = NSDate().timeIntervalSince1970
-        
         guard let privateKey = privateKey,
               let publicKey = publicKey,
+              let timestamp = timestamp,
               let dataValues = "\(timestamp)\(privateKey)\(publicKey)".data(using: .utf8) else {
             return nil
         }
