@@ -10,13 +10,13 @@ import XCTest
 @testable import Marvel_Store_Dev
 
 class CardViewTest: UIView, Card {
-    var exposedContent: Marvel_Store_Dev.Model?
-    func load(model: Marvel_Store_Dev.Model?) {
+    var exposedContent: Model?
+    func load(model: Model?) {
         exposedContent = model
     }
 }
 
-struct TestModel: Model {
+struct TestModel: Model, ViewModelBehavior {
     var identifier: Int?
     
     var layout: LayoutView?
@@ -27,7 +27,7 @@ struct TestModel: Model {
 final class CardTests: XCTestCase {
     
     let valueIdentifierTest: Int = 125125125
-    let valueLayoutTest: LayoutView = .cartlist
+    let valueLayoutTest: LayoutView = .listContentLayoutCard
 
     var cardTest: CardViewTest?
     var modelTest: TestModel?
@@ -37,14 +37,14 @@ final class CardTests: XCTestCase {
         modelTest = TestModel()
         
         modelTest?.identifier = 125125125
-        modelTest?.layout = .cartlist
+        modelTest?.layout = .listContentLayoutCard
     }
     
     func testLoadModel() throws {
         cardTest?.load(model: modelTest)
-        
-        XCTAssertEqual(cardTest?.exposedContent?.identifier, valueIdentifierTest, "Expect keep same value of identifier")
-        XCTAssertEqual(cardTest?.exposedContent?.layout, valueLayoutTest, "Expect keep same value of layout identifier")
+        let exposed = cardTest?.exposedContent as? ViewModelBehavior
+        XCTAssertEqual(exposed?.identifier, valueIdentifierTest, "Expect keep same value of identifier")
+        XCTAssertEqual(exposed?.layout, valueLayoutTest, "Expect keep same value of layout identifier")
     }
     
     func testDefineLayout() throws {
