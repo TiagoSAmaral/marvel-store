@@ -17,12 +17,12 @@ extension NetworkConectable {
     
     func networkRequest<T: Decodable>(data: RequestApi?, resultType: T.Type, handler: ((Result<T, NetworkError>) -> Void)?) {
         
-        guard let data = data else {
+        guard let data = data, let urlPath = data.urlPath else {
             handler?(.failure(NetworkError.notDefined(text: LocalizedText.with(tagName: .networkErrorNotDefined))))
             return
         }
         
-        AF.request(data.urlPath, method: data.method, headers: data.headers, requestModifier: { $0.timeoutInterval = 15; $0.cachePolicy = .reloadRevalidatingCacheData }).responseDecodable(of: resultType.self) { response in
+        AF.request(urlPath, method: data.method, headers: [:], requestModifier: { $0.timeoutInterval = 15; $0.cachePolicy = .reloadRevalidatingCacheData }).responseDecodable(of: resultType.self) { response in
             switch response.result {
             case .success(let result):
                 handler?(.success(result))
