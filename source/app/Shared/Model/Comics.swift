@@ -8,9 +8,9 @@
 
 import Foundation
 
-struct Comic: Codable, Model {
+struct Comic: Codable, ViewModelBehavior, Model {
     let identifier: Int?
-    let issueNumber: Int?
+    let issueNumber: Double?
     let thumbnail: ComicImage?
     let images: [ComicImage]?
     let title: String?
