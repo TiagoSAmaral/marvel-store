@@ -9,28 +9,32 @@
 import UIKit
 
 protocol CardFactory {
-    func makeCard(from item: Model) -> Card?
+    func makeCard(from item: ViewModelBehavior?) -> Card?
 }
 
 class CardMaker: CardFactory {
     
-    func makeCard(from item: Model) -> Card? {
-        nil
-//        switch item.layout {
-//        case .userListItem:
-//            return CardMaker.make(with: item, classType: CardUserListItemView.self)
+    func makeCard(from item: ViewModelBehavior?) -> Card? {
+        
+        guard let item = item else {
+            return nil
+        }
+        
+        switch item.layout {
+        case .listContentLayoutCard:
+            return CardMaker.make(with: item, classType: CardUserListItemView.self)
 //        case .repoListItem:
 //            return CardMaker.make(with: item, classType: CardRepoListItemView.self)
-//        case .userInfo:
-//            return CardMaker.make(with: item, classType: CardUserProfileView.self)
-//        case .none:
-//            return nil
-//        }
+        case .detailContentLayoutCard:
+            return CardMaker.make(with: item, classType: CardUserProfileView.self)
+        default:
+            return nil
+        }
     }
     
-    static func make<T: Card>(with data: Model, classType: T.Type) -> T {
+    static func make<T: Card>(with data: ViewModelBehavior, classType: T.Type) -> T {
         let cardView = T.init()
-        cardView.load(model: data)
+        cardView.load(model: data as? Model)
         return cardView
     }
 }
