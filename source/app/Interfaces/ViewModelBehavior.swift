@@ -7,3 +7,10 @@
 //
 
 import Foundation
+
+protocol ViewModelBehavior {
+    var identifier: Int? { get }
+//  Allow seter becouse not exist in API and, need adapter into CardFactory
+    var layout: LayoutView? { get set}
+    var action: ((Model?) -> Void)? { get set}
+}
