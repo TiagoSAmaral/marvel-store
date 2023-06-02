@@ -10,8 +10,6 @@ import Alamofire
 import Foundation
 
 struct RequestApi {
-    var urlPath: String
+    var urlPath: String?
     var method: Alamofire.HTTPMethod
-    var params: [String: Any]?
-    var headers: Alamofire.HTTPHeaders?
 }
