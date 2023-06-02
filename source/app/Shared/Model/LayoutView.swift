@@ -9,8 +9,8 @@
 import Foundation
 
 enum LayoutView: Codable {
-    case storelist
-    case favoristlist
-    case cartlist
-    case detailview
+    case listContentLayoutCard
+    case detailContentLayoutCard
+    case favoritContentLayoutCard
+    case cartContentLayoutCard
 }
