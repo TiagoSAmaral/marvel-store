@@ -11,7 +11,7 @@ import UIKit
 class CardUserProfileView: UIView, Card, CardTouch {
     
     var action: ((Model?) -> Void)?
-//    var model: UserDetailProfile?
+    var model: Comic?
     
     lazy var vMainStackView: UIStackView = {
         let stackView = UIStackView()
@@ -109,16 +109,19 @@ class CardUserProfileView: UIView, Card, CardTouch {
     
     func load(model: Model?) {
         
-//        guard let model = model as? UserDetailProfile else {
-//            return
-//        }
-//        self.model = model
-//        nameLabel.text = model.name
-//        loginLabel.text = model.login
-//        bioDescription.text = model.bioText
-//        profileImageView.kf.setImage(with: URL(string: model.avatarURL))
-//
-//        action = model.action
+        guard let model = model as? Comic else {
+            return
+        }
+        self.model = model
+        nameLabel.text = model.title
+        loginLabel.text = "Edition #\(model.issueNumber ?? 0.0)"
+        bioDescription.text = model.description
+        
+        if let path = model.thumbnail?.path, let typeFile = model.thumbnail?.fileExtension {
+            let imagePath = "\(path).\(typeFile)"
+            profileImageView.kf.setImage(with: URL(string: imagePath))
+        }
+        action = model.action
         
         addAllSubviews()
         defineAction()
