@@ -21,7 +21,7 @@ class AppCoordinator: Coordinator {
     
     func start(with data: Model?) {
         
-        let coordinatorChild = ListUsersPageCoordinator(navigation: navigationController)
+        let coordinatorChild = ListContentPageCoordinator(navigation: navigationController)
         coordinatorChild.parentCoordinator = self
         childCoordinators?.append(coordinatorChild)
         coordinatorChild.start(with: nil)
