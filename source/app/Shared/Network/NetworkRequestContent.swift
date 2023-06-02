@@ -30,13 +30,13 @@ class NetworkRequestContent: NetworkContentOperation, NetworkConectable {
         }
  
         let request: RequestApi = RequestApi(urlPath: apiPath, method: Alamofire.HTTPMethod.get)
-        handlerRequest(data: request, resultType: GeneralResult<Comic>.self, layout: .storelist, handler: handler)
+        handlerRequest(data: request, resultType: GeneralResult<Comic>.self, layout: .listContentLayoutCard, handler: handler)
     }
 
     func requestDetail(identifier: Int?, params: [String: Any]?, handler: GeneralResultHandler?) {
         let apiPath = ApiRoutes.shared.path(.getDetailWith(identifier))
         let request: RequestApi = RequestApi(urlPath: apiPath, method: Alamofire.HTTPMethod.get)
-        handlerRequest(data: request, resultType: GeneralResult<Comic>.self, layout: .detailview, handler: handler)
+        handlerRequest(data: request, resultType: GeneralResult<Comic>.self, layout: .detailContentLayoutCard, handler: handler)
     }
     
     func handlerRequest(data: RequestApi, resultType: GeneralResult<Comic>.Type, layout: LayoutView, handler: GeneralResultHandler?) {
