@@ -8,19 +8,20 @@
 
 import UIKit
 
-protocol ListUserController where Self: UIViewController {
+protocol ListContentController where Self: UIViewController {
     func updateView()
     func startLoading()
     func stopLoading(onFinish: (() -> Void)?)
     func presentAlert(with title: String?, and message: String?, handler: ((UIAlertAction) -> Void)? )
+    func removeDisableSearchbar()
 }
 
-class ListUserPageController: UIViewController, ListUserController, Controller, LoadingManagers, AlertPresetable {
+class ListContentPageController: UIViewController, ListContentController, Controller, LoadingManagers, AlertPresetable {
 
     var viewModel: ViewModelHandlerEventsControllerDelegate?
     var dataHandler: ListDataHandler?
     var viewFactory: ListFactory?
-    var coordinator: ListUsersCoordinable?
+    var coordinator: ListContentCoordinable?
     var searchController: UISearchController?
     var searchHandlerEvents: UISearchBarDelegate?
     
@@ -55,5 +56,9 @@ class ListUserPageController: UIViewController, ListUserController, Controller, 
         navigationItem.titleView = searchController.searchBar
         navigationItem.hidesSearchBarWhenScrolling = false
         searchController.searchBar.delegate = searchHandlerEvents
+    }
+    
+    func removeDisableSearchbar() {
+        searchController?.isActive = false
     }
 }

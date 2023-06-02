@@ -8,23 +8,22 @@
 
 import UIKit
 
-class ListUsersPageFactory: FactoryPage {
+class ListContentPageFactory: FactoryPage {
     
     static func makePage(coordinator: Coordinator?, model: Model?) -> UIViewController? {
 
-        let controller = ListUserPageController()
+        let controller = ListContentPageController()
         let searchBarController = SearchBarFactory.makeSearch()
-//        let headerMaker = NetworkHeaderMaker()
-        let network = NetworkUserInfo(headerFactory: nil)
+        let network = NetworkRequestContent()
         let viewFactory = ListFactoryView(controller: controller)
-        let viewModel = ListUsersPageViewModel(controller: controller,
+        let viewModel = ListContentPageViewModel(controller: controller,
                                                network: network,
                                                coordinator: coordinator)
         viewFactory.cardFactory = CardMaker()
         coordinator?.rootViewControler = controller
         controller.viewModel = viewModel
         controller.viewFactory = viewFactory
-        controller.coordinator = coordinator as? ListUsersCoordinable
+        controller.coordinator = coordinator as? ListContentCoordinable
         controller.searchController = searchBarController
         controller.searchHandlerEvents = viewModel
         controller.dataHandler = viewModel

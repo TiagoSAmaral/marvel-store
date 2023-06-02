@@ -8,16 +8,16 @@
 
 import Foundation
 
-class UserDetailPageViewModel: ViewModelHandlerEventsControllerDelegate, ListDataHandler {
+class DetailContentPageViewModel: ViewModelHandlerEventsControllerDelegate, ListDataHandler {
     
-    weak var controller: UserDetailController?
+    weak var controller: DetailContentController?
     var userDetailNetwork: NetworkContentOperation?
-    var coordinator: UserDetailCoordinable?
-    var valueToRequest: Model?
-    var items: [Model]?
+    var coordinator: DetailContentCoordinable?
+    var valueToRequest: ViewModelBehavior?
+    var items: [ViewModelBehavior]?
     var numberOfSection: Int = 1
     
-    init(controller: UserDetailController? = nil) {
+    init(controller: DetailContentController? = nil) {
         self.controller = controller
     }
     
@@ -74,6 +74,6 @@ class UserDetailPageViewModel: ViewModelHandlerEventsControllerDelegate, ListDat
     func dataBy(indexPath: IndexPath) -> Model? {
         var userInfo = items?[indexPath.row]
         userInfo?.action = showReposWith
-        return userInfo
+        return userInfo as? Model
     }
 }

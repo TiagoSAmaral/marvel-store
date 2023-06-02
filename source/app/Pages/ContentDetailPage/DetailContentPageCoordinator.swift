@@ -8,13 +8,13 @@
 
 import UIKit
 
-protocol UserDetailCoordinable where Self: Coordinator {
+protocol DetailContentCoordinable where Self: Coordinator {
     func goToRepos(with data: Model?)
     func didFinishChild()
     func back()
 }
 
-class UserDetailPageCoordinator: Coordinator, UserDetailCoordinable {
+class DetailContentPageCoordinator: Coordinator, DetailContentCoordinable {
     
     var parentCoordinator: Coordinator?
     var childCoordinators: [Coordinator]?
@@ -26,7 +26,7 @@ class UserDetailPageCoordinator: Coordinator, UserDetailCoordinable {
     }
     
     func start(with data: Model?) {
-        guard let controller = UserDetailPageFactory.makePage(coordinator: self, model: data) else {
+        guard let controller = DetailContentPageFactory.makePage(coordinator: self, model: data) else {
             return
         }
         navigationController?.pushViewController(controller, animated: true)

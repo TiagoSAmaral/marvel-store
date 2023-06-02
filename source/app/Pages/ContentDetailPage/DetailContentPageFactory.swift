@@ -8,24 +8,23 @@
 
 import UIKit
 
-class UserDetailPageFactory: FactoryPage {
+class DetailContentPageFactory: FactoryPage {
     
     static func makePage(coordinator: Coordinator?, model: Model?) -> UIViewController? {
 
-        let controller = UserDetailPageController()
-        let viewModel = UserDetailPageViewModel(controller: controller)
+        let controller = DetailContentPageController()
+        let viewModel = DetailContentPageViewModel(controller: controller)
         let viewFactory = ListFactoryView(controller: controller)
-//        let headerFactory = NetworkHeaderMaker()
-        let network = NetworkUserInfo(headerFactory: nil)
+        let network = NetworkRequestContent()
         
         viewModel.userDetailNetwork = network
-        viewModel.valueToRequest = model
-        viewModel.coordinator = coordinator as? UserDetailCoordinable
+        viewModel.valueToRequest = model as? ViewModelBehavior
+        viewModel.coordinator = coordinator as? DetailContentCoordinable
         viewFactory.cardFactory = CardMaker()
         coordinator?.rootViewControler = controller
         controller.viewModel = viewModel
         controller.viewFactory = viewFactory
-        controller.coordinator = coordinator as? UserDetailCoordinable
+        controller.coordinator = coordinator as? DetailContentCoordinable
         controller.dataHandler = viewModel
         return controller
     }

@@ -8,11 +8,11 @@
 
 import UIKit
 
-protocol ListUsersCoordinable where Self: Coordinator {
-    func goToUserDetail(with data: Model?)
+protocol ListContentCoordinable where Self: Coordinator {
+    func goToContentDetail(with data: Model?)
 }
 
-class ListUsersPageCoordinator: Coordinator, ListUsersCoordinable {
+class ListContentPageCoordinator: Coordinator, ListContentCoordinable {
     
     var parentCoordinator: Coordinator?
     var childCoordinators: [Coordinator]?
@@ -24,15 +24,15 @@ class ListUsersPageCoordinator: Coordinator, ListUsersCoordinable {
     }
     
     func start(with data: Model?) {
-        guard let controller = ListUsersPageFactory.makePage(coordinator: self, model: nil) else {
+        guard let controller = ListContentPageFactory.makePage(coordinator: self, model: nil) else {
             return
         }
         navigationController?.viewControllers = [controller]
         //pushViewController(controller, animated: true)
     }
     
-    func goToUserDetail(with data: Model?) {
-        let userDetailCoordinator = UserDetailPageCoordinator(navigation: navigationController)
+    func goToContentDetail(with data: Model?) {
+        let userDetailCoordinator = DetailContentPageCoordinator(navigation: navigationController)
         userDetailCoordinator.parentCoordinator = self
         childCoordinators?.append(userDetailCoordinator)
         userDetailCoordinator.start(with: data)
