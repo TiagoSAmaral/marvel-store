@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CF2C52662A2A4A7400ECEB24 /* NetworkErrorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2C52652A2A4A7400ECEB24 /* NetworkErrorTests.swift */; };
 		CF4D91502A0FFBAE000BE331 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4D914F2A0FFBAE000BE331 /* Coordinator.swift */; };
 		CF7EAAA52A27EA7A006F5D12 /* CardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7EAAA42A27EA7A006F5D12 /* CardTests.swift */; };
 		CF7EAAAF2A282787006F5D12 /* listContent.json in Resources */ = {isa = PBXBuildFile; fileRef = CF7EAAAE2A282787006F5D12 /* listContent.json */; };
@@ -85,6 +86,7 @@
 
 /* Begin PBXFileReference section */
 		CF24569923E4C55B00A1968D /* info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = info.plist; sourceTree = "<group>"; };
+		CF2C52652A2A4A7400ECEB24 /* NetworkErrorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrorTests.swift; sourceTree = "<group>"; };
 		CF4D914F2A0FFBAE000BE331 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		CF6414DF23E4C1CF009C7A9E /* marvel-storeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "marvel-storeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF7EAAA42A27EA7A006F5D12 /* CardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTests.swift; sourceTree = "<group>"; };
@@ -516,6 +518,7 @@
 			isa = PBXGroup;
 			children = (
 				CFE71CE92A293939009F5E12 /* APISecurityTests.swift */,
+				CF2C52652A2A4A7400ECEB24 /* NetworkErrorTests.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -681,6 +684,7 @@
 			files = (
 				CFE71CEA2A293939009F5E12 /* APISecurityTests.swift in Sources */,
 				CF7EAAA52A27EA7A006F5D12 /* CardTests.swift in Sources */,
+				CF2C52662A2A4A7400ECEB24 /* NetworkErrorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
