@@ -103,7 +103,7 @@ class ListFactoryView: NSObject, ListFactory, UITableViewDataSource {
             return UITableViewCell()
         }
         
-        let card = cardFactory?.makeCard(from: model)
+        let card = cardFactory?.makeCard(from: model as? ViewModelBehavior)
         card?.defineLayout(with: cell.contentView)
         return cell
     }
