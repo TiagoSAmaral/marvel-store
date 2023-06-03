@@ -8,33 +8,37 @@
 
 import UIKit
 
-protocol YearSelectorViewDelegate {
-    func receive(value: Int?)
+protocol YearSelectorViewDataHandlerDelegate {
+    var disableFilterOptions: String? { get }
+    var listYearFilter: [String]? { get }
+    func receive(value: String?)
 }
 
 class YearSelectorView: UIView {
     
-    private var delegate: YearSelectorViewDelegate?
+    private var delegate: YearSelectorViewDataHandlerDelegate?
+    private var displayerView: UIView?
     
-    lazy var backgroundViewStackView: UIView = {
+    private lazy var backgroundViewStackView: UIView = {
         let view = UIView()
-        view.backgroundColor = ColorAsset.cardBackgroundColor
+        view.backgroundColor = .clear
         return view
     }()
     
-    lazy var hStackView: UIStackView = {
+    private lazy var hStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .horizontal
         stackView.alignment = .center
         return stackView
     }()
     
-    lazy var selectorButton: UIButton = {
+    private lazy var selectorButton: UIButton = {
         let button = FactoryButton.makeDeafaultButton(with: LocalizedText.with(tagName: .activeFilter))
+        button.addTarget(self, action: #selector(showFilterAction), for: .touchUpInside)
         return button
     }()
     
-    lazy var selectedValueShowerLabel: UILabel = {
+    private lazy var selectedValueShowerLabel: UILabel = {
         let label = UILabel()
         label.textColor = ColorAsset.titleColor
         label.text = "Todos"
@@ -45,29 +49,22 @@ class YearSelectorView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = ColorAsset.cardBackgroundColor
+        setupLayout()
     }
 
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-    }
-    
-    func define(delegate: YearSelectorViewDelegate?) {
-        self.delegate = delegate
-        
-    }
-    
-    func injectAtView(at view: UIView?) {
-        
-        guard let view = view else {
-            return
-        }
-        
-        view.addSubviews([self])
-        self.height(44).leadingToSuperview().trailingToSuperview().topToSuperview()
+        backgroundColor = ColorAsset.cardBackgroundColor
         setupLayout()
     }
     
+    func define(delegate: YearSelectorViewDataHandlerDelegate?, displayerView: UIView) {
+        self.delegate = delegate
+        self.displayerView = displayerView
+    }
+    
     func setupLayout() {
+        self.height(54)
         makeBorder()
         makeConstraintToBackgrounView()
         makeHorizontalStackViewConstraints()
@@ -76,8 +73,8 @@ class YearSelectorView: UIView {
     }
     
     func makeBorder() {
-        layer.borderColor = ColorAsset.borderColor?.cgColor
-        layer.borderWidth = 0.5
+        backgroundViewStackView.layer.borderColor = ColorAsset.borderColor?.cgColor
+        backgroundViewStackView.layer.borderWidth = 0.5
     }
     
     // MARK: - Define constraints
@@ -92,8 +89,9 @@ class YearSelectorView: UIView {
     }
     
     func makeHorizontalStackViewConstraints() {
+        
         backgroundViewStackView.addSubviews([hStackView])
-        hStackView.edgeToSuperView()
+        hStackView.height(34).centerY(of: self).leadingToSuperview().trailingToSuperview()
     }
     
     func makeConstraintsLabel() {
@@ -103,5 +101,33 @@ class YearSelectorView: UIView {
     func makeConstraintButton() {
         selectorButton.width(80)
         hStackView.addArrangedSubview(selectorButton)
+    }
+    
+    @objc func showFilterAction() {
+        guard let displayerView = displayerView,
+                let delegate = delegate,
+                let listYearFilter = delegate.listYearFilter else {
+            return
+        }
+        setupLayout()
+        
+        var options: [OptionsPickerView] = []
+        for value in listYearFilter {
+            options.append(OptionsPickerView(label: value, data: value))
+        }
+        
+        let pickerView = PDPicker(options: options, response: {[weak self]  (picker, data, row)  in
+            print(data.data)
+            self?.selectedValueShowerLabel.text = data.label
+            
+            delegate.receive(value: data.data)
+            
+            if data.data == delegate.disableFilterOptions {
+                picker.onDoneButtonTapped()
+            }
+        })
+        
+        pickerView.showPicker(at: displayerView)
+//        displayerView.bringSubviewToFront(pickerView)
     }
 }
