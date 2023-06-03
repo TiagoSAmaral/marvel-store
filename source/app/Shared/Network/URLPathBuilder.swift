@@ -10,81 +10,127 @@ import Foundation
 
 class URLPathBuilder: URLPathBuildable {
     
-    private var product: String?
+    private var product: URLComponents?
     private var apiSecurer: APISecurer?
-    private let versionAPIuri: String = "/v1"
-    private let accessLevelAPIuri: String = "/public"
-    private let resourceComicAPIuri: String = "/comics"
+    private let comicsPath: String = "/v1/public/comics"
     
     init(apiSecurer: APISecurer?) {
         self.apiSecurer = apiSecurer
+        makeUrlBase()
     }
-    
+
     func makeUrlBase() {
-        product = Bundle.main.object(forInfoDictionaryKey: "BASE_URL") as? String
-        product?.append(versionAPIuri)
-        product?.append(accessLevelAPIuri)
-        product?.append(resourceComicAPIuri)
-        product?.append("?")
+        guard let baseUrl = Bundle.main.object(forInfoDictionaryKey: "BASE_URL") as? String else {
+            return
+        }
+        product = URLComponents(string: baseUrl)
+        product?.path = comicsPath
     }
     
-    func makeURLWithFilterYear(filter value: Int?) {
-        guard let value = value else {
-            return
+    func makeUrlWith(identifier: Int?, search titleValue: String?, filterSince year: Int?, startFrom page: Int?) -> URL? {
+        product?.queryItems = []
+        
+        if let titleValue = titleValue {
+            product?.queryItems?.append(URLQueryItem(name: "title", value: titleValue))
         }
-        putAmpersandIfNecessary()
-        product?.append("startYear=\(value)")
-    }
-
-    func makeURLWithFrom(page value: Int?) {
-        guard let value = value else {
-            return
+        
+        if let year = year {
+            product?.queryItems?.append(URLQueryItem(name: "startYear", value: "\(year)"))
         }
-        putAmpersandIfNecessary()
-        product?.append("offset=\(value)")
-    }
-
-    func makeURLWithSearch(title value: String?) {
-        guard let value = value else {
-            return
+        
+        if let page = page {
+            product?.queryItems?.append(URLQueryItem(name: "offset", value: "\(page)"))
         }
-        putAmpersandIfNecessary()
-        product?.append("title=\(value)")
+        
+        if let identifier = identifier {
+            product?.path.append("/\(identifier)")
+        }
+        
+        applySecurity()
+        let productFinal = product?.url
+        
+        // Reset
+        makeUrlBase()
+        
+        return productFinal
     }
     
-    func makeUrlTakeWith(identifier value: Int?) {
-        guard var product = product, let value = value else {
+    func applySecurity() {
+        
+        guard let queryItems = product?.queryItems,
+              !queryItems.isEmpty else {
             return
         }
-        if product.last == "?" {
-            product.removeLast()
-        }
-        product.append("/\(value)")
-        product.append("?")
-        self.product = product
-    }
-
-    func makeSecurityAPI() {
+        
         let credentials = apiSecurer?.makeCredential(with: Date().timeIntervalSince1970)
         guard let timeStamp = credentials?.timeStamp,
               let publicKey = credentials?.publicKey,
               let hash = credentials?.hash else {
             return
         }
-        putAmpersandIfNecessary()
-        self.product?.append("ts=\(timeStamp)&apikey=\(publicKey)&hash=\(hash)")
-    }
-
-    func takeProduct() -> String? {
-        product
+        product?.queryItems?.append(contentsOf: [
+            URLQueryItem(name: "ts", value: "\(timeStamp)"),
+            URLQueryItem(name: "apikey", value: "\(publicKey)"),
+            URLQueryItem(name: "hash", value: "\(hash)")
+        ])
     }
     
-    private func putAmpersandIfNecessary() {
-        guard var product = product else {
-            return
-        }
-        if product.last != "?" {
-            self.product?.append("&")
-        }
-    }
+//    func makeURLWithFilterYear(filter value: Int?) {
+//        guard let value = value else {
+//            return
+//        }
+////        putAmpersandIfNecessary()
+////        product?.append("startYear=\(value)")
+//        product?.queryItems = [URLQueryItem(name: "startYear", value: "\(value)")]
+//    }
+//
+//    func makeURLWithFrom(page value: Int?) {
+//        guard let value = value else {
+//            return
+//        }
+////        putAmpersandIfNecessary()
+////        product?.append("offset=\(value)")
+//        product?.queryItems = [URLQueryItem(name: "offset", value: "\(value)")]
+//    }
+//
+//    func makeURLWithSearch(title value: String?) {
+//        guard let value = value else {
+//            return
+//        }
+////        putAmpersandIfNecessary()
+////        product?.append("title=\(value)")
+//        product?.queryItems = [URLQueryItem(name: "title", value: "\(value)")]
+//    }
+    
+//    func makeUrlTakeWith(identifier value: Int?) {
+//        guard var product = product, let value = value else {
+//            return
+//        }
+//        if product.last == "?" {
+//            product.removeLast()
+//        }
+//        product.append("/\(value)")
+//        product.append("?")
+//        self.product = product
+//    }
+
+//    func makeSecurityAPI() {
+//        let credentials = apiSecurer?.makeCredential(with: Date().timeIntervalSince1970)
+//        guard let timeStamp = credentials?.timeStamp,
+//              let publicKey = credentials?.publicKey,
+//              let hash = credentials?.hash else {
+//            return
+//        }
+//        putAmpersandIfNecessary()
+//        self.product?.append("ts=\(timeStamp)&apikey=\(publicKey)&hash=\(hash)")
+//    }
+    
+//    private func putAmpersandIfNecessary() {
+//        guard var product = product else {
+//            return
+//        }
+//        if product.last != "?" {
+//            self.product?.append("&")
+//        }
+//    }
 }
