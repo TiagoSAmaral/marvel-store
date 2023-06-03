@@ -14,7 +14,10 @@
 		CF2C526E2A2AE9D500ECEB24 /* TableViewAutomaticPaginate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2C526D2A2AE9D500ECEB24 /* TableViewAutomaticPaginate.swift */; };
 		CF2C52702A2B003900ECEB24 /* YearSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2C526F2A2B003900ECEB24 /* YearSelectorView.swift */; };
 		CF2C52752A2B031400ECEB24 /* ButtonFactoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2C52742A2B031400ECEB24 /* ButtonFactoryView.swift */; };
+		CF2C52782A2B131100ECEB24 /* DatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2C52772A2B131100ECEB24 /* DatePicker.swift */; };
 		CF4D91502A0FFBAE000BE331 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4D914F2A0FFBAE000BE331 /* Coordinator.swift */; };
+		CF760DF22A2B8E7500C6D4B9 /* ViewMosaicComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF760DF12A2B8E7500C6D4B9 /* ViewMosaicComposer.swift */; };
+		CF760DF42A2BAC8200C6D4B9 /* ViewHandlerEventUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF760DF32A2BAC8200C6D4B9 /* ViewHandlerEventUpdate.swift */; };
 		CF7EAAA52A27EA7A006F5D12 /* CardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7EAAA42A27EA7A006F5D12 /* CardTests.swift */; };
 		CF7EAAAF2A282787006F5D12 /* listContent.json in Resources */ = {isa = PBXBuildFile; fileRef = CF7EAAAE2A282787006F5D12 /* listContent.json */; };
 		CF7EAAB12A282864006F5D12 /* oneContent.json in Resources */ = {isa = PBXBuildFile; fileRef = CF7EAAB02A282864006F5D12 /* oneContent.json */; };
@@ -48,7 +51,6 @@
 		CFAB5D0E2A11EF1B0091F1FF /* CardTouch.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAB5D0D2A11EF1B0091F1FF /* CardTouch.swift */; };
 		CFAB5D162A1208D00091F1FF /* SearchBarFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAB5D152A1208D00091F1FF /* SearchBarFactory.swift */; };
 		CFAB5D182A1217590091F1FF /* ListDataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAB5D172A1217590091F1FF /* ListDataHandler.swift */; };
-		CFAB5D1A2A1218BF0091F1FF /* ListFactoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAB5D192A1218BF0091F1FF /* ListFactoryView.swift */; };
 		CFAB5D1E2A127B770091F1FF /* SearchHandlerEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAB5D1D2A127B770091F1FF /* SearchHandlerEvents.swift */; };
 		CFAB5D202A127C090091F1FF /* ViewModelHandlerEventsControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAB5D1F2A127C090091F1FF /* ViewModelHandlerEventsControllerDelegate.swift */; };
 		CFAB5D232A12F2F60091F1FF /* ColorAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAB5D222A12F2F60091F1FF /* ColorAsset.swift */; };
@@ -97,8 +99,11 @@
 		CF2C526D2A2AE9D500ECEB24 /* TableViewAutomaticPaginate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewAutomaticPaginate.swift; sourceTree = "<group>"; };
 		CF2C526F2A2B003900ECEB24 /* YearSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearSelectorView.swift; sourceTree = "<group>"; };
 		CF2C52742A2B031400ECEB24 /* ButtonFactoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonFactoryView.swift; sourceTree = "<group>"; };
+		CF2C52772A2B131100ECEB24 /* DatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePicker.swift; sourceTree = "<group>"; };
 		CF4D914F2A0FFBAE000BE331 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		CF6414DF23E4C1CF009C7A9E /* marvel-storeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "marvel-storeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF760DF12A2B8E7500C6D4B9 /* ViewMosaicComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewMosaicComposer.swift; sourceTree = "<group>"; };
+		CF760DF32A2BAC8200C6D4B9 /* ViewHandlerEventUpdate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewHandlerEventUpdate.swift; sourceTree = "<group>"; };
 		CF7EAAA42A27EA7A006F5D12 /* CardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTests.swift; sourceTree = "<group>"; };
 		CF7EAAAE2A282787006F5D12 /* listContent.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = listContent.json; sourceTree = "<group>"; };
 		CF7EAAB02A282864006F5D12 /* oneContent.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = oneContent.json; sourceTree = "<group>"; };
@@ -135,7 +140,6 @@
 		CFAB5D0D2A11EF1B0091F1FF /* CardTouch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTouch.swift; sourceTree = "<group>"; };
 		CFAB5D152A1208D00091F1FF /* SearchBarFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarFactory.swift; sourceTree = "<group>"; };
 		CFAB5D172A1217590091F1FF /* ListDataHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDataHandler.swift; sourceTree = "<group>"; };
-		CFAB5D192A1218BF0091F1FF /* ListFactoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListFactoryView.swift; sourceTree = "<group>"; };
 		CFAB5D1D2A127B770091F1FF /* SearchHandlerEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHandlerEvents.swift; sourceTree = "<group>"; };
 		CFAB5D1F2A127C090091F1FF /* ViewModelHandlerEventsControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelHandlerEventsControllerDelegate.swift; sourceTree = "<group>"; };
 		CFAB5D222A12F2F60091F1FF /* ColorAsset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorAsset.swift; sourceTree = "<group>"; };
@@ -202,6 +206,14 @@
 			path = TableViewAutomaticPaginate;
 			sourceTree = "<group>";
 		};
+		CF2C52762A2B130300ECEB24 /* DatePicker */ = {
+			isa = PBXGroup;
+			children = (
+				CF2C52772A2B131100ECEB24 /* DatePicker.swift */,
+			);
+			path = DatePicker;
+			sourceTree = "<group>";
+		};
 		CF4D91462A0FFAD8000BE331 /* Network */ = {
 			isa = PBXGroup;
 			children = (
@@ -237,6 +249,7 @@
 				CFE71CED2A295719009F5E12 /* URLPathBuildable.swift */,
 				CFE71CEF2A29913A009F5E12 /* ViewModelBehavior.swift */,
 				CFAB5D1F2A127C090091F1FF /* ViewModelHandlerEventsControllerDelegate.swift */,
+				CF760DF32A2BAC8200C6D4B9 /* ViewHandlerEventUpdate.swift */,
 			);
 			path = Interfaces;
 			sourceTree = "<group>";
@@ -248,6 +261,14 @@
 				CFAB5D0B2A11E1DB0091F1FF /* CardDetailContentView.swift */,
 			);
 			path = Cards;
+			sourceTree = "<group>";
+		};
+		CF760DF02A2B8E6800C6D4B9 /* ViewMosaicComposer */ = {
+			isa = PBXGroup;
+			children = (
+				CF760DF12A2B8E7500C6D4B9 /* ViewMosaicComposer.swift */,
+			);
+			path = ViewMosaicComposer;
 			sourceTree = "<group>";
 		};
 		CF7EAAA12A27E3B2006F5D12 /* DevResources */ = {
@@ -358,6 +379,8 @@
 		CFAB5CEE2A1114C10091F1FF /* Component */ = {
 			isa = PBXGroup;
 			children = (
+				CF760DF02A2B8E6800C6D4B9 /* ViewMosaicComposer */,
+				CF2C52762A2B130300ECEB24 /* DatePicker */,
 				CF2C52722A2B00B000ECEB24 /* TableViewAutomaticPaginate */,
 				CF2C52712A2B004200ECEB24 /* FilterYearSelector */,
 				CFAB5D2A2A1332820091F1FF /* NavigationController */,
@@ -390,7 +413,6 @@
 			children = (
 				CFAB5D302A133B660091F1FF /* AlertViewFactory.swift */,
 				CFAB5CFA2A1121270091F1FF /* CardFactory.swift */,
-				CFAB5D192A1218BF0091F1FF /* ListFactoryView.swift */,
 				CF2C52742A2B031400ECEB24 /* ButtonFactoryView.swift */,
 			);
 			path = Factories;
@@ -729,6 +751,7 @@
 				CFB2971A2A26F17000CA95C3 /* Empty.swift in Sources */,
 				CF7EAAB32A2828DD006F5D12 /* MockerContentProvider.swift in Sources */,
 				CFAB5CB02A0FFF5A0091F1FF /* NetworkConnectable.swift in Sources */,
+				CF2C52782A2B131100ECEB24 /* DatePicker.swift in Sources */,
 				CFAB5CF32A1117C40091F1FF /* Identifier.swift in Sources */,
 				CFAB5CEA2A105F010091F1FF /* ListContentPageFactory.swift in Sources */,
 				CFAB5CE92A105F010091F1FF /* ListContentPageController.swift in Sources */,
@@ -750,7 +773,6 @@
 				CFAB5D182A1217590091F1FF /* ListDataHandler.swift in Sources */,
 				CFAB5CB82A1002B30091F1FF /* Request.swift in Sources */,
 				CFAB5CFF2A112D620091F1FF /* NetworkRequestContent.swift in Sources */,
-				CFAB5D1A2A1218BF0091F1FF /* ListFactoryView.swift in Sources */,
 				CFAB5CBD2A100E430091F1FF /* NetworkError.swift in Sources */,
 				CFAB5D232A12F2F60091F1FF /* ColorAsset.swift in Sources */,
 				CFAB5CF02A1114ED0091F1FF /* GenericTableViewCell.swift in Sources */,
@@ -763,9 +785,11 @@
 				CF2C526A2A2A74B800ECEB24 /* NetworkRequestParameters.swift in Sources */,
 				CFAB5CD72A1059AF0091F1FF /* AppCoordinator.swift in Sources */,
 				CFAB5D262A132D330091F1FF /* LoadingViewController.swift in Sources */,
+				CF760DF42A2BAC8200C6D4B9 /* ViewHandlerEventUpdate.swift in Sources */,
 				CFAB5D2E2A13342E0091F1FF /* LoadingManagers.swift in Sources */,
 				CFD3A6DA23DA443200EB6D4D /* LocalizedText.swift in Sources */,
 				CFAB5D032A11D5480091F1FF /* Model.swift in Sources */,
+				CF760DF22A2B8E7500C6D4B9 /* ViewMosaicComposer.swift in Sources */,
 				CFAB5D082A11E1940091F1FF /* CardListContentView.swift in Sources */,
 				CFAB5CED2A1060620091F1FF /* FactoryPage.swift in Sources */,
 				CFAB5CE12A105A250091F1FF /* DetailContentPageViewModel.swift in Sources */,
