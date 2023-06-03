@@ -8,8 +8,8 @@
 
 import UIKit
 
-class ListContentPageViewModel: NSObject, ViewModelHandlerEventsControllerDelegate, ListDataHandler, SearchHandlerEvents {
-    
+class ListContentPageViewModel: NSObject, ViewModelHandlerEventsControllerDelegate, ListDataHandler, SearchHandlerEvents, YearSelectorViewDataHandlerDelegate {
+
     weak var controller: ListContentController?
     var network: NetworkContentOperation?
     var coordinator: ListContentCoordinable?
@@ -17,18 +17,24 @@ class ListContentPageViewModel: NSObject, ViewModelHandlerEventsControllerDelega
     var items: [Comic] = []
     var currentPage: Int?
     var currentSearchValue: String?
-    var selectedFilterOption: Int?
+    var selectedFilterOption: String?
     var filterOptions: [Int]?
     let numberOfSection: Int = 1
     
+    // ListyearFilter
+    var listYearFilter: [String]?
+    var disableFilterOptions: String?
+    
     init(controller: ListContentController, network: NetworkContentOperation, coordinator: Coordinator?) {
+        super.init()
         self.controller = controller
         self.network = network
         self.coordinator = coordinator as? ListContentCoordinable
+        generateFilterYearList()
+        registerFilterCancelationValue()
     }
     
     func viewDidAppear() {
-        
         guard !items.isEmpty else {
             requestContentInitialState()
             return
@@ -37,6 +43,10 @@ class ListContentPageViewModel: NSObject, ViewModelHandlerEventsControllerDelega
 
     lazy var goToDetailContent: (Model?) -> Void = { [weak self] data in
         self?.coordinator?.goToContentDetail(with: data)
+    }
+    
+    func registerFilterCancelationValue() {
+        self.disableFilterOptions = "Todos"
     }
     
     // Start view
@@ -50,10 +60,12 @@ class ListContentPageViewModel: NSObject, ViewModelHandlerEventsControllerDelega
     
     // Next paginate
     func requestNextPage() {
-        requestContent(params: RequestParams(search: currentSearchValue,
-                                             filterSinceYear: selectedFilterOption,
-                                             sincePage: getNextPage(),
-                                             layoutView: .listContentLayoutCard))
+        if let nextPageValue = getNextPage() {
+            requestContent(params: RequestParams(search: currentSearchValue,
+                                                 filterSinceYear: selectedFilterOption,
+                                                 sincePage: nextPageValue,
+                                                 layoutView: .listContentLayoutCard))
+        }
     }
     
     // Pull to refresh
@@ -111,15 +123,17 @@ class ListContentPageViewModel: NSObject, ViewModelHandlerEventsControllerDelega
     
     func getNextPage() -> Int? {
         guard let currentOffset = lastRequestResult?.data?.offset,
-              let limit = lastRequestResult?.data?.limit else {
+              let totalPages = lastRequestResult?.data?.total,
+              let limitItemPerPage = lastRequestResult?.data?.limit else {
             return nil
         }
         
-        let nextPage = currentOffset + 1
-        let finalLimit = limit + 1
-        if nextPage < finalLimit {
+        let nextPage = currentOffset + limitItemPerPage
+        
+        if nextPage < totalPages {
             return nextPage
         }
+        
         return nil
     }
 
@@ -155,8 +169,30 @@ class ListContentPageViewModel: NSObject, ViewModelHandlerEventsControllerDelega
     }
     
     // MARK: YearFilterDelegate
-    func receiveFilter(value: Int?) {
-        selectedFilterOption = value
-        updateContentFromStartPage()
+     
+     func receive(value: String?) {
+         guard value != disableFilterOptions else {
+             selectedFilterOption = nil
+             requestContentInitialState()
+             return
+         }
+         selectedFilterOption = value
+         updateContentFromStartPage()
+     }
+     
+    func generateFilterYearList() {
+        
+        
+        if listYearFilter == nil {
+            let currentYear: Int = Calendar.current.component(.year, from: Date())
+            listYearFilter = []
+            
+            for yearItem in (1938...currentYear) {
+                listYearFilter?.append("\(yearItem)")
+            }
+            listYearFilter?.insert("Todos", at: 0)
+        }
+        
+       
     }
 }
