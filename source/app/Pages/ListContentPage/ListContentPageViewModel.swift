@@ -124,7 +124,6 @@ class ListContentPageViewModel: NSObject, ViewModelHandlerEventsControllerDelega
     }
 
 // MARK: - ListDataHandler methods
-    
     func numberOfItemsBy(section: Int?) -> Int {
         items.count
     }
@@ -144,7 +143,6 @@ class ListContentPageViewModel: NSObject, ViewModelHandlerEventsControllerDelega
     }
     
     // MARK: - SearchHandlerEvents
-    
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         currentSearchValue = searchBar.text
         updateContentFromStartPage()
@@ -154,5 +152,11 @@ class ListContentPageViewModel: NSObject, ViewModelHandlerEventsControllerDelega
         controller?.disableSearch()
         currentSearchValue = nil
         requestContentInitialState()
+    }
+    
+    // MARK: YearFilterDelegate
+    func receiveFilter(value: Int?) {
+        selectedFilterOption = value
+        updateContentFromStartPage()
     }
 }
