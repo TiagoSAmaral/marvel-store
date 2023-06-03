@@ -15,18 +15,30 @@ class ListContentPageFactory: FactoryPage {
         let controller = ListContentPageController()
         let searchBarController = SearchBarFactory.makeSearch()
         let network = NetworkRequestContent()
-        let viewFactory = ListFactoryView(controller: controller)
         let viewModel = ListContentPageViewModel(controller: controller,
                                                network: network,
                                                coordinator: coordinator)
-        viewFactory.cardFactory = CardMaker()
+        
+        let mosaicComposerView = ViewMosaicComposer()
+        
+        let filterYearView = YearSelectorView()
+        filterYearView.define(delegate: viewModel, displayerView: mosaicComposerView.baseView)
+        mosaicComposerView.insertNew(view: filterYearView)
+
+        let listView = TableViewAutomaticPaginate(frame: .zero, style: .plain)
+        listView.dataHandler = viewModel
+        listView.cardFactory = CardMaker()
+        mosaicComposerView.insertNew(view: listView)
+        controller.listView = listView
+        
         coordinator?.rootViewControler = controller
         controller.viewModel = viewModel
-        controller.viewFactory = viewFactory
         controller.coordinator = coordinator as? ListContentCoordinable
         controller.searchController = searchBarController
         controller.searchHandlerEvents = viewModel
-        controller.dataHandler = viewModel
+        controller.view = mosaicComposerView.baseView
+//        controller.view.addSubviews([mosaicComposerView.baseView])
+//        mosaicComposerView.baseView.edgeToSuperView()
         return controller
     }
 }
