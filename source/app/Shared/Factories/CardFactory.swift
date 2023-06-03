@@ -22,11 +22,9 @@ class CardMaker: CardFactory {
         
         switch item.layout {
         case .listContentLayoutCard:
-            return CardMaker.make(with: item, classType: CardUserListItemView.self)
-//        case .repoListItem:
-//            return CardMaker.make(with: item, classType: CardRepoListItemView.self)
+            return CardMaker.make(with: item, classType: CardListContentView.self)
         case .detailContentLayoutCard:
-            return CardMaker.make(with: item, classType: CardUserProfileView.self)
+            return CardMaker.make(with: item, classType: CardDetailContentView.self)
         default:
             return nil
         }
