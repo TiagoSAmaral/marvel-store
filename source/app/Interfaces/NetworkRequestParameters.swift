@@ -11,7 +11,7 @@ import Foundation
 protocol NetworkRequestParameters {
     var identifier: Int? { get }
     var search: String? { get }
-    var filterSinceYear: Int? { get }
+    var filterSinceYear: String? { get }
     var sincePage: Int? { get }
     var layoutView: LayoutView? { get }
 }

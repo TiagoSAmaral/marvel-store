@@ -9,5 +9,5 @@
 import Foundation
 
 protocol URLPathBuildable {
-    func makeUrlWith(identifier: Int?, search titleValue: String?, filterSince year: Int?, startFrom Page: Int?) -> URL?
+    func makeUrlWith(identifier: Int?, search titleValue: String?, filterSince year: String?, startFrom Page: Int?) -> URL?
 }
