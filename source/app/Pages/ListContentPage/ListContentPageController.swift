@@ -13,7 +13,7 @@ protocol ListContentController where Self: UIViewController {
     func startLoading()
     func stopLoading(onFinish: (() -> Void)?)
     func presentAlert(with title: String?, and message: String?, handler: ((UIAlertAction) -> Void)? )
-    func removeDisableSearchbar()
+    func disableSearch()
 }
 
 class ListContentPageController: UIViewController, ListContentController, Controller, LoadingManagers, AlertPresetable {
@@ -57,8 +57,9 @@ class ListContentPageController: UIViewController, ListContentController, Contro
         navigationItem.hidesSearchBarWhenScrolling = false
         searchController.searchBar.delegate = searchHandlerEvents
     }
+
     
-    func removeDisableSearchbar() {
+    func disableSearch() {
         searchController?.isActive = false
     }
 }
