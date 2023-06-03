@@ -14,8 +14,10 @@ protocol ListDataHandler {
     func numberOfSections() -> Int
     func dataBy(indexPath: IndexPath) -> Model?
     func nextPage()
+    func receiveFilter(value: Int?)
 }
 
 extension ListDataHandler {
     func nextPage() {}
+    func receiveFilter(value: Int?) {}
 }
