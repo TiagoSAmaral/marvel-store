@@ -15,10 +15,8 @@ protocol DetailContentController where Self: UIViewController {
     func presentAlert(with title: String?, and message: String?, handler: ((UIAlertAction) -> Void)?)
 }
 
-class DetailContentPageController: UIViewController, DetailContentController, Controller, LoadingManagers, AlertPresetable {
+class DetailContentPageController: UIViewController, DetailContentController,  LoadingManagers, AlertPresetable {
     var loadingController: LoadingViewController?
-    var dataHandler: ListDataHandler?
-    var viewFactory: ListFactoryView?
     var viewModel: ViewModelHandlerEventsControllerDelegate?
     var coordinator: DetailContentCoordinable?
 
@@ -28,12 +26,11 @@ class DetailContentPageController: UIViewController, DetailContentController, Co
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        viewFactory?.defineViewInController()
         viewModel?.viewDidAppear()
     }
     
     func updateView() {
-        viewFactory?.reloadView()
+
     }
     
     override func viewDidDisappear(_ animated: Bool) {
