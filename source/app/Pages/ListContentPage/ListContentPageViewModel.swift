@@ -30,7 +30,6 @@ class ListContentPageViewModel: NSObject, ViewModelHandlerEventsControllerDelega
     func viewDidAppear() {
         
         guard !items.isEmpty else {
-            controller?.startLoading()
             requestContentInitialState()
             return
         }
@@ -40,16 +39,42 @@ class ListContentPageViewModel: NSObject, ViewModelHandlerEventsControllerDelega
         self?.coordinator?.goToContentDetail(with: data)
     }
     
+    // Start view
     func requestContentInitialState() {
-        requestContent(by: nil, filter: nil, page: nil)
+        controller?.startLoading()
+        currentSearchValue = nil
+        selectedFilterOption = nil
+        currentPage = .zero
+        requestContent(params: RequestParams(sincePage: currentPage, layoutView: .listContentLayoutCard))
     }
     
+    // Next paginate
     func requestNextPage() {
-        requestContent(by: currentSearchValue, filter: selectedFilterOption, page: getNextPage())
+        requestContent(params: RequestParams(search: currentSearchValue,
+                                             filterSinceYear: selectedFilterOption,
+                                             sincePage: getNextPage(),
+                                             layoutView: .listContentLayoutCard))
     }
     
-    func requestContent(by text: String?, filter: Int?, page: Int?) {
-        network?.requestContentWith(search: text, filter: selectedFilterOption, page: currentPage) { response in
+    // Pull to refresh
+    func updateContentFromStartPage() {
+        currentPage = 0
+        requestContent(params: RequestParams(search: currentSearchValue,
+                                             filterSinceYear: selectedFilterOption,
+                                             sincePage: currentPage,
+                                             layoutView: .listContentLayoutCard))
+    }
+    
+    func updateContent() {
+        requestContentInitialState()
+    }
+    
+    func requestContent(params: RequestParams?) {
+        
+        guard let params = params else {
+            return
+        }
+        network?.requestContentWith(param: params) { response in
             DispatchQueue.main.async { [weak self] in
                 
                 switch response {
@@ -74,7 +99,7 @@ class ListContentPageViewModel: NSObject, ViewModelHandlerEventsControllerDelega
             return
         }
         
-        if items.isEmpty {
+        if currentPage == 0 {
             items = results
         } else {
             items.append(contentsOf: results)
@@ -97,11 +122,7 @@ class ListContentPageViewModel: NSObject, ViewModelHandlerEventsControllerDelega
         }
         return nil
     }
-    
-    func updateContent() {
-        requestContent(by: nil, filter: nil, page: nil)
-    }
-    
+
 // MARK: - ListDataHandler methods
     
     func numberOfItemsBy(section: Int?) -> Int {
@@ -118,20 +139,20 @@ class ListContentPageViewModel: NSObject, ViewModelHandlerEventsControllerDelega
         return item
     }
     
+    func nextPage() {
+        requestNextPage()
+    }
+    
     // MARK: - SearchHandlerEvents
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        controller?.removeDisableSearchbar()
-        controller?.startLoading()
-        
         currentSearchValue = searchBar.text
-        requestContent(by: searchBar.text, filter: selectedFilterOption, page: currentPage)
+        updateContentFromStartPage()
     }
 
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        controller?.startLoading()
+        controller?.disableSearch()
         currentSearchValue = nil
-        items.removeAll()
         requestContentInitialState()
     }
 }
