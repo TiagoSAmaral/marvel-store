@@ -18,12 +18,17 @@ protocol ListFactory {
     func defineViewInController()
 }
 
-class ListFactoryView: NSObject, ListFactory, UITableViewDataSource {
+protocol YearFilterDataHandler {
+    func receive(value: Int?)
+}
+
+class ListFactoryView: NSObject, ListFactory, YearSelectorViewDelegate, UITableViewDataSource {
         
     weak var controller: Controller?
     var cardFactory: CardFactory?
     var refreshControl: UIRefreshControl?
     private var tableView: TableViewAutomaticPaginate?
+    private var filterYearView: YearSelectorView?
     
     init(controller: Controller? = nil) {
         super.init()
@@ -35,6 +40,7 @@ class ListFactoryView: NSObject, ListFactory, UITableViewDataSource {
         setupTableView()
         registerTableViewCell()
         makePullToRefresh()
+        makeFilterView()
         makeView()
     }
     
@@ -43,8 +49,9 @@ class ListFactoryView: NSObject, ListFactory, UITableViewDataSource {
               let tableView = tableView else {
             return
         }
-        controller.view.addSubview(tableView)
-        tableView.edgeToSuperView()
+        controller.view.addSubviews([tableView]) //addSubview(tableView)
+//        tableView.edgeToSuperView()
+        tableView.trailingToSuperview().leadingToSuperview().bottomToSuperview().topToSuperview(margin: 44)
     }
     
     func makeTableView() {
@@ -52,6 +59,17 @@ class ListFactoryView: NSObject, ListFactory, UITableViewDataSource {
             return
         }
         tableView = TableViewAutomaticPaginate(frame: .zero, style: .plain)
+    }
+    
+    func makeFilterView() {
+        
+        guard let controller = controller else {
+            return
+        }
+        
+        filterYearView = YearSelectorView()
+        filterYearView?.injectAtView(at: controller.view)
+        filterYearView?.define(delegate: self)
     }
     
     func makePullToRefresh() {
@@ -109,5 +127,11 @@ class ListFactoryView: NSObject, ListFactory, UITableViewDataSource {
         let card = cardFactory?.makeCard(from: model as? ViewModelBehavior)
         card?.defineLayout(with: cell.contentView)
         return cell
+    }
+    
+    // MARK: YearFilterDelegate
+    
+    func receive(value: Int?) {
+        controller?.dataHandler?.receiveFilter(value: value)
     }
 }
