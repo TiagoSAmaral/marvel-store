@@ -23,6 +23,8 @@ struct LocalizedText {
         case following = "following"
         case openRepo = "openRepo"
         case close = "close"
+        case activeFilter = "activeFilter"
+        case clear = "clear"
     }
     
     static func with(tagName: LocalizeTags) -> String {
