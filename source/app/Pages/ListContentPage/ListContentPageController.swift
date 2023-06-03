@@ -16,18 +16,16 @@ protocol ListContentController where Self: UIViewController {
     func disableSearch()
 }
 
-class ListContentPageController: UIViewController, ListContentController, Controller, LoadingManagers, AlertPresetable {
+class ListContentPageController: UIViewController, ListContentController, LoadingManagers, AlertPresetable {
 
     var viewModel: ViewModelHandlerEventsControllerDelegate?
-    var dataHandler: ListDataHandler?
-    var viewFactory: ListFactory?
     var coordinator: ListContentCoordinable?
     var searchController: UISearchController?
     var searchHandlerEvents: UISearchBarDelegate?
+    var listView: ListUpdateEvent?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewFactory?.defineViewInController()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -46,7 +44,7 @@ class ListContentPageController: UIViewController, ListContentController, Contro
     }
     
     func updateView() {
-        viewFactory?.reloadView()
+        listView?.reloadView()
     }
     
     func showSearchField() {
