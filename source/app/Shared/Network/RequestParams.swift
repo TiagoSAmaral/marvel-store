@@ -11,7 +11,7 @@ import Foundation
 struct RequestParams: NetworkRequestParameters {
     var identifier: Int?
     var search: String?
-    var filterSinceYear: Int?
+    var filterSinceYear: String?
     var sincePage: Int?
     var layoutView: LayoutView?
 }
