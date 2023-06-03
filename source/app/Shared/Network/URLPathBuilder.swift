@@ -27,7 +27,7 @@ class URLPathBuilder: URLPathBuildable {
         product?.path = comicsPath
     }
     
-    func makeUrlWith(identifier: Int?, search titleValue: String?, filterSince year: Int?, startFrom page: Int?) -> URL? {
+    func makeUrlWith(identifier: Int?, search titleValue: String?, filterSince year: String?, startFrom page: Int?) -> URL? {
         product?.queryItems = []
         
         if let titleValue = titleValue {
@@ -35,7 +35,7 @@ class URLPathBuilder: URLPathBuildable {
         }
         
         if let year = year {
-            product?.queryItems?.append(URLQueryItem(name: "startYear", value: "\(year)"))
+            product?.queryItems?.append(URLQueryItem(name: "startYear", value: year))
         }
         
         if let page = page {
