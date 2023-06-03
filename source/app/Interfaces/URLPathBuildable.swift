@@ -9,11 +9,5 @@
 import Foundation
 
 protocol URLPathBuildable {
-    func makeUrlBase()
-    func makeURLWithFilterYear(filter value: Int?)
-    func makeURLWithFrom(page value: Int?)
-    func makeURLWithSearch(title value: String?)
-    func makeSecurityAPI()
-    func makeUrlTakeWith(identifier value: Int?)
-    func takeProduct() -> String?
+    func makeUrlWith(identifier: Int?, search titleValue: String?, filterSince year: Int?, startFrom Page: Int?) -> URL?
 }
