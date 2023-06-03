@@ -23,7 +23,7 @@ class ListFactoryView: NSObject, ListFactory, UITableViewDataSource {
     weak var controller: Controller?
     var cardFactory: CardFactory?
     var refreshControl: UIRefreshControl?
-    private var tableView: UITableView?
+    private var tableView: TableViewAutomaticPaginate?
     
     init(controller: Controller? = nil) {
         super.init()
@@ -44,7 +44,6 @@ class ListFactoryView: NSObject, ListFactory, UITableViewDataSource {
             return
         }
         controller.view.addSubview(tableView)
-        
         tableView.edgeToSuperView()
     }
     
@@ -52,7 +51,7 @@ class ListFactoryView: NSObject, ListFactory, UITableViewDataSource {
         guard tableView == nil else {
             return
         }
-        tableView = UITableView(frame: .zero, style: .plain)
+        tableView = TableViewAutomaticPaginate(frame: .zero, style: .plain)
     }
     
     func makePullToRefresh() {
@@ -70,10 +69,7 @@ class ListFactoryView: NSObject, ListFactory, UITableViewDataSource {
     func setupTableView() {
         makeTableView()
         tableView?.dataSource = self
-        tableView?.separatorStyle = .none
-        tableView?.separatorInset = .zero
-        tableView?.allowsSelection = false
-        tableView?.rowHeight = UITableView.automaticDimension
+        registerEventScrollDidEnd()
     }
     
     func registerTableViewCell() {
@@ -83,6 +79,13 @@ class ListFactoryView: NSObject, ListFactory, UITableViewDataSource {
     func reloadView() {
         tableView?.reloadData()
         refreshControl?.endRefreshing()
+        tableView?.allowEmitScrollingHasComeToEnd()
+    }
+    
+    func registerEventScrollDidEnd() {
+        tableView?.register() { [weak self] in
+            self?.controller?.dataHandler?.nextPage()
+        }
     }
 
 // MARK: - UITableViewDataSource Implementation
