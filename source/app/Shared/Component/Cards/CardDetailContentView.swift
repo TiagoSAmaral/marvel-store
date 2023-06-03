@@ -84,14 +84,8 @@ class CardDetailContentView: UIView, Card, CardTouch {
     }()
     
     lazy var reposButton: UIButton = {
-        let button = UIButton()
-        button.setTitle(LocalizedText.with(tagName: .showRepos), for: .normal)
+        let button = FactoryButton.makeDeafaultButton(with: LocalizedText.with(tagName: .showRepos))
         button.addTarget(self, action: #selector(bindAction), for: .touchUpInside)
-        button.setTitleColor(.systemBlue, for: .normal)
-        button.backgroundColor = .clear
-        button.layer.borderColor = ColorAsset.borderColor?.cgColor
-        button.layer.borderWidth = 1.0
-        button.layer.cornerRadius = 6.0
         return button
     }()
     
