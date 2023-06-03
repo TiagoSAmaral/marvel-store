@@ -12,6 +12,8 @@
 		CF2C526A2A2A74B800ECEB24 /* NetworkRequestParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2C52692A2A74B800ECEB24 /* NetworkRequestParameters.swift */; };
 		CF2C526C2A2A8C3C00ECEB24 /* RequestParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2C526B2A2A8C3C00ECEB24 /* RequestParams.swift */; };
 		CF2C526E2A2AE9D500ECEB24 /* TableViewAutomaticPaginate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2C526D2A2AE9D500ECEB24 /* TableViewAutomaticPaginate.swift */; };
+		CF2C52702A2B003900ECEB24 /* YearSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2C526F2A2B003900ECEB24 /* YearSelectorView.swift */; };
+		CF2C52752A2B031400ECEB24 /* ButtonFactoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2C52742A2B031400ECEB24 /* ButtonFactoryView.swift */; };
 		CF4D91502A0FFBAE000BE331 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4D914F2A0FFBAE000BE331 /* Coordinator.swift */; };
 		CF7EAAA52A27EA7A006F5D12 /* CardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7EAAA42A27EA7A006F5D12 /* CardTests.swift */; };
 		CF7EAAAF2A282787006F5D12 /* listContent.json in Resources */ = {isa = PBXBuildFile; fileRef = CF7EAAAE2A282787006F5D12 /* listContent.json */; };
@@ -93,6 +95,8 @@
 		CF2C52692A2A74B800ECEB24 /* NetworkRequestParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequestParameters.swift; sourceTree = "<group>"; };
 		CF2C526B2A2A8C3C00ECEB24 /* RequestParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestParams.swift; sourceTree = "<group>"; };
 		CF2C526D2A2AE9D500ECEB24 /* TableViewAutomaticPaginate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewAutomaticPaginate.swift; sourceTree = "<group>"; };
+		CF2C526F2A2B003900ECEB24 /* YearSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearSelectorView.swift; sourceTree = "<group>"; };
+		CF2C52742A2B031400ECEB24 /* ButtonFactoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonFactoryView.swift; sourceTree = "<group>"; };
 		CF4D914F2A0FFBAE000BE331 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		CF6414DF23E4C1CF009C7A9E /* marvel-storeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "marvel-storeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF7EAAA42A27EA7A006F5D12 /* CardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTests.swift; sourceTree = "<group>"; };
@@ -182,6 +186,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CF2C52712A2B004200ECEB24 /* FilterYearSelector */ = {
+			isa = PBXGroup;
+			children = (
+				CF2C526F2A2B003900ECEB24 /* YearSelectorView.swift */,
+			);
+			path = FilterYearSelector;
+			sourceTree = "<group>";
+		};
+		CF2C52722A2B00B000ECEB24 /* TableViewAutomaticPaginate */ = {
+			isa = PBXGroup;
+			children = (
+				CF2C526D2A2AE9D500ECEB24 /* TableViewAutomaticPaginate.swift */,
+			);
+			path = TableViewAutomaticPaginate;
+			sourceTree = "<group>";
+		};
 		CF4D91462A0FFAD8000BE331 /* Network */ = {
 			isa = PBXGroup;
 			children = (
@@ -338,6 +358,8 @@
 		CFAB5CEE2A1114C10091F1FF /* Component */ = {
 			isa = PBXGroup;
 			children = (
+				CF2C52722A2B00B000ECEB24 /* TableViewAutomaticPaginate */,
+				CF2C52712A2B004200ECEB24 /* FilterYearSelector */,
 				CFAB5D2A2A1332820091F1FF /* NavigationController */,
 				CFAB5D242A132D250091F1FF /* LoadingView */,
 				CFAB5D142A1208A30091F1FF /* UISearch */,
@@ -369,7 +391,7 @@
 				CFAB5D302A133B660091F1FF /* AlertViewFactory.swift */,
 				CFAB5CFA2A1121270091F1FF /* CardFactory.swift */,
 				CFAB5D192A1218BF0091F1FF /* ListFactoryView.swift */,
-				CF2C526D2A2AE9D500ECEB24 /* TableViewAutomaticPaginate.swift */,
+				CF2C52742A2B031400ECEB24 /* ButtonFactoryView.swift */,
 			);
 			path = Factories;
 			sourceTree = "<group>";
@@ -714,6 +736,7 @@
 				CFAB5D162A1208D00091F1FF /* SearchBarFactory.swift in Sources */,
 				CF2C526E2A2AE9D500ECEB24 /* TableViewAutomaticPaginate.swift in Sources */,
 				CFE71CF02A29913A009F5E12 /* ViewModelBehavior.swift in Sources */,
+				CF2C52752A2B031400ECEB24 /* ButtonFactoryView.swift in Sources */,
 				CFC405B92A25694A00222F60 /* PaginateResponse.swift in Sources */,
 				CFAB5CFB2A1121270091F1FF /* CardFactory.swift in Sources */,
 				CFAB5D332A133C410091F1FF /* AlertPresentable.swift in Sources */,
@@ -746,6 +769,7 @@
 				CFAB5D082A11E1940091F1FF /* CardListContentView.swift in Sources */,
 				CFAB5CED2A1060620091F1FF /* FactoryPage.swift in Sources */,
 				CFAB5CE12A105A250091F1FF /* DetailContentPageViewModel.swift in Sources */,
+				CF2C52702A2B003900ECEB24 /* YearSelectorView.swift in Sources */,
 				CFAB5CBB2A1006160091F1FF /* NetworkHeaderFactory.swift in Sources */,
 				CFC405B12A2553EC00222F60 /* APISecurity.swift in Sources */,
 				CFE71CEC2A2956F9009F5E12 /* URLPathBuilder.swift in Sources */,
