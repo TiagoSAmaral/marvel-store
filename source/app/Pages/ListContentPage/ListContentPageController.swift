@@ -56,7 +56,6 @@ class ListContentPageController: UIViewController, ListContentController, Loadin
         searchController.searchBar.delegate = searchHandlerEvents
     }
 
-    
     func disableSearch() {
         searchController?.isActive = false
     }
