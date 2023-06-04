@@ -9,7 +9,6 @@
 import UIKit
 
 protocol DetailContentCoordinable where Self: Coordinator {
-    func goToRepos(with data: Model?)
     func didFinishChild()
     func back()
 }
@@ -32,12 +31,12 @@ class DetailContentPageCoordinator: Coordinator, DetailContentCoordinable {
         navigationController?.pushViewController(controller, animated: true)
     }
     
-    func goToRepos(with data: Model?) {
-//        let reposCoordinator = ListReposPageCoordinator(navigation: navigationController)
-//        reposCoordinator.parentCoordinator = self
-//        childCoordinators?.append(reposCoordinator)
-//        reposCoordinator.start(with: data)
-    }
+//    func goToRepos(with data: Model?) {
+////        let reposCoordinator = ListReposPageCoordinator(navigation: navigationController)
+////        reposCoordinator.parentCoordinator = self
+////        childCoordinators?.append(reposCoordinator)
+////        reposCoordinator.start(with: data)
+//    }
     
     func back() {
         navigationController?.popViewController(animated: true)
