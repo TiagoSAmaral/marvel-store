@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol ViewModelBehavior {
+protocol ViewModelBehavior where Self: Model {
     var identifier: Int? { get }
 //  Allow seter becouse not exist in API and, need adapter into CardFactory
     var layout: LayoutView? { get set}
