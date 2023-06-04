@@ -37,8 +37,6 @@ class ListContentPageFactory: FactoryPage {
         controller.searchController = searchBarController
         controller.searchHandlerEvents = viewModel
         controller.view = mosaicComposerView.baseView
-//        controller.view.addSubviews([mosaicComposerView.baseView])
-//        mosaicComposerView.baseView.edgeToSuperView()
         return controller
     }
 }
