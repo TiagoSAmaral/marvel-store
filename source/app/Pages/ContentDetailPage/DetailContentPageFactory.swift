@@ -11,17 +11,25 @@ import UIKit
 class DetailContentPageFactory: FactoryPage {
     
     static func makePage(coordinator: Coordinator?, model: Model?) -> UIViewController? {
-
-        let controller = DetailContentPageController()
-        let viewModel = DetailContentPageViewModel(controller: controller)
+        let controller = ListContentPageController()
         let network = NetworkRequestContent()
+        let viewModel = ListContentPageViewModel(controller: controller,
+                                               network: network,
+                                               coordinator: coordinator)
+        viewModel.selectedItem = model
+        let mosaicComposerView = ViewMosaicComposer()
         
-        viewModel.userDetailNetwork = network
-        viewModel.valueToRequest = model as? ViewModelBehavior
-        viewModel.coordinator = coordinator as? DetailContentCoordinable
+        let listView = TableViewAutomaticPaginate(frame: .zero, style: .plain)
+        listView.dataHandler = viewModel
+        listView.cardFactory = CardMaker()
+        mosaicComposerView.insertNew(view: listView)
+        controller.listView = listView
+        
         coordinator?.rootViewControler = controller
         controller.viewModel = viewModel
-        controller.coordinator = coordinator as? DetailContentCoordinable
+        controller.coordinator = coordinator as? ListContentCoordinable
+        controller.searchHandlerEvents = viewModel
+        controller.view = mosaicComposerView.baseView
         return controller
     }
 }
