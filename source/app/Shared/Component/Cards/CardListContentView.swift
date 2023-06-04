@@ -128,9 +128,9 @@ class CardListContentView: UIView, Card, CardTouch {
     }
     
     @objc func bindAction() {
-//        guard let model = model else {
-//            return
-//        }
-//        action?(model)
+        guard let model = model else {
+            return
+        }
+        action?(model)
     }
 }
