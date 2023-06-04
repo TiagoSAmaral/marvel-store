@@ -29,10 +29,6 @@
 		CFAB5CBB2A1006160091F1FF /* NetworkHeaderFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAB5CBA2A1006160091F1FF /* NetworkHeaderFactory.swift */; };
 		CFAB5CBD2A100E430091F1FF /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAB5CBC2A100E430091F1FF /* NetworkError.swift */; };
 		CFAB5CD72A1059AF0091F1FF /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAB5CD62A1059AF0091F1FF /* AppCoordinator.swift */; };
-		CFAB5CDD2A105A250091F1FF /* DetailContentPageCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAB5CD82A105A250091F1FF /* DetailContentPageCoordinator.swift */; };
-		CFAB5CDE2A105A250091F1FF /* DetailContentPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAB5CD92A105A250091F1FF /* DetailContentPageController.swift */; };
-		CFAB5CDF2A105A250091F1FF /* DetailContentPageFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAB5CDA2A105A250091F1FF /* DetailContentPageFactory.swift */; };
-		CFAB5CE12A105A250091F1FF /* DetailContentPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAB5CDC2A105A250091F1FF /* DetailContentPageViewModel.swift */; };
 		CFAB5CE82A105F010091F1FF /* ListContentPageCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAB5CE32A105F010091F1FF /* ListContentPageCoordinator.swift */; };
 		CFAB5CE92A105F010091F1FF /* ListContentPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAB5CE42A105F010091F1FF /* ListContentPageController.swift */; };
 		CFAB5CEA2A105F010091F1FF /* ListContentPageFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAB5CE52A105F010091F1FF /* ListContentPageFactory.swift */; };
@@ -71,6 +67,8 @@
 		CFD3A6D723DA41FE00EB6D4D /* Localizable-pt-BR.strings in Resources */ = {isa = PBXBuildFile; fileRef = CFD3A6CF23DA3F9700EB6D4D /* Localizable-pt-BR.strings */; };
 		CFD3A6DA23DA443200EB6D4D /* LocalizedText.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD3A6D923DA443200EB6D4D /* LocalizedText.swift */; };
 		CFD3A6DC23DA462000EB6D4D /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFD3A6DB23DA462000EB6D4D /* Launch Screen.storyboard */; };
+		CFDDAA452A2CE23100B6DAB9 /* DetailContentPageFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAB5CDA2A105A250091F1FF /* DetailContentPageFactory.swift */; };
+		CFDDAA462A2CE2FC00B6DAB9 /* DetailContentPageCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAB5CD82A105A250091F1FF /* DetailContentPageCoordinator.swift */; };
 		CFE2D5A52A0F4E02001F649F /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = CFE2D5A42A0F4E02001F649F /* Alamofire */; };
 		CFE2D5A82A0F4E17001F649F /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = CFE2D5A72A0F4E17001F649F /* Kingfisher */; };
 		CFE71CEA2A293939009F5E12 /* APISecurityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE71CE92A293939009F5E12 /* APISecurityTests.swift */; };
@@ -119,9 +117,7 @@
 		CFAB5CBC2A100E430091F1FF /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		CFAB5CD62A1059AF0091F1FF /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		CFAB5CD82A105A250091F1FF /* DetailContentPageCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailContentPageCoordinator.swift; sourceTree = "<group>"; };
-		CFAB5CD92A105A250091F1FF /* DetailContentPageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailContentPageController.swift; sourceTree = "<group>"; };
 		CFAB5CDA2A105A250091F1FF /* DetailContentPageFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailContentPageFactory.swift; sourceTree = "<group>"; };
-		CFAB5CDC2A105A250091F1FF /* DetailContentPageViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailContentPageViewModel.swift; sourceTree = "<group>"; };
 		CFAB5CE32A105F010091F1FF /* ListContentPageCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListContentPageCoordinator.swift; sourceTree = "<group>"; };
 		CFAB5CE42A105F010091F1FF /* ListContentPageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListContentPageController.swift; sourceTree = "<group>"; };
 		CFAB5CE52A105F010091F1FF /* ListContentPageFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListContentPageFactory.swift; sourceTree = "<group>"; };
@@ -360,10 +356,8 @@
 		CFAB5CD32A1056F00091F1FF /* ContentDetailPage */ = {
 			isa = PBXGroup;
 			children = (
-				CFAB5CD92A105A250091F1FF /* DetailContentPageController.swift */,
 				CFAB5CD82A105A250091F1FF /* DetailContentPageCoordinator.swift */,
 				CFAB5CDA2A105A250091F1FF /* DetailContentPageFactory.swift */,
-				CFAB5CDC2A105A250091F1FF /* DetailContentPageViewModel.swift */,
 			);
 			path = ContentDetailPage;
 			sourceTree = "<group>";
@@ -723,7 +717,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+			shellScript = "if [[ \"$(uname -m)\" == arm64 ]]; then\n    export PATH=\"/opt/homebrew/bin:$PATH\"\nfi\n\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -749,6 +743,7 @@
 				CFAB5D2C2A1332930091F1FF /* NavigationController.swift in Sources */,
 				CFAB5D1E2A127B770091F1FF /* SearchHandlerEvents.swift in Sources */,
 				CFB2971A2A26F17000CA95C3 /* Empty.swift in Sources */,
+				CFDDAA452A2CE23100B6DAB9 /* DetailContentPageFactory.swift in Sources */,
 				CF7EAAB32A2828DD006F5D12 /* MockerContentProvider.swift in Sources */,
 				CFAB5CB02A0FFF5A0091F1FF /* NetworkConnectable.swift in Sources */,
 				CF2C52782A2B131100ECEB24 /* DatePicker.swift in Sources */,
@@ -764,11 +759,9 @@
 				CFAB5CFB2A1121270091F1FF /* CardFactory.swift in Sources */,
 				CFAB5D332A133C410091F1FF /* AlertPresentable.swift in Sources */,
 				CF2C526C2A2A8C3C00ECEB24 /* RequestParams.swift in Sources */,
-				CFAB5CDD2A105A250091F1FF /* DetailContentPageCoordinator.swift in Sources */,
 				CFAB5D312A133B660091F1FF /* AlertViewFactory.swift in Sources */,
 				CFAB5D202A127C090091F1FF /* ViewModelHandlerEventsControllerDelegate.swift in Sources */,
 				CFF2EA112A0F259800709168 /* Constraints.swift in Sources */,
-				CFAB5CDE2A105A250091F1FF /* DetailContentPageController.swift in Sources */,
 				CFAB5CE82A105F010091F1FF /* ListContentPageCoordinator.swift in Sources */,
 				CFAB5D182A1217590091F1FF /* ListDataHandler.swift in Sources */,
 				CFAB5CB82A1002B30091F1FF /* Request.swift in Sources */,
@@ -780,6 +773,7 @@
 				CFAB5CB22A0FFFDE0091F1FF /* Requestable.swift in Sources */,
 				CFAB5D292A132F200091F1FF /* LoadingPresentable.swift in Sources */,
 				CFE71CEE2A295719009F5E12 /* URLPathBuildable.swift in Sources */,
+				CFDDAA462A2CE2FC00B6DAB9 /* DetailContentPageCoordinator.swift in Sources */,
 				CFAB5D052A11DEE70091F1FF /* LayoutView.swift in Sources */,
 				CFD3A6B723DA308A00EB6D4D /* AppDelegate.swift in Sources */,
 				CF2C526A2A2A74B800ECEB24 /* NetworkRequestParameters.swift in Sources */,
@@ -792,12 +786,10 @@
 				CF760DF22A2B8E7500C6D4B9 /* ViewMosaicComposer.swift in Sources */,
 				CFAB5D082A11E1940091F1FF /* CardListContentView.swift in Sources */,
 				CFAB5CED2A1060620091F1FF /* FactoryPage.swift in Sources */,
-				CFAB5CE12A105A250091F1FF /* DetailContentPageViewModel.swift in Sources */,
 				CF2C52702A2B003900ECEB24 /* YearSelectorView.swift in Sources */,
 				CFAB5CBB2A1006160091F1FF /* NetworkHeaderFactory.swift in Sources */,
 				CFC405B12A2553EC00222F60 /* APISecurity.swift in Sources */,
 				CFE71CEC2A2956F9009F5E12 /* URLPathBuilder.swift in Sources */,
-				CFAB5CDF2A105A250091F1FF /* DetailContentPageFactory.swift in Sources */,
 				CFAB5D0E2A11EF1B0091F1FF /* CardTouch.swift in Sources */,
 				CFAB5CF72A111A840091F1FF /* CustomCell.swift in Sources */,
 				CF4D91502A0FFBAE000BE331 /* Coordinator.swift in Sources */,
