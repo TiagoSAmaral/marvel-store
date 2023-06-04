@@ -94,7 +94,7 @@ class ListContentPageViewModel: NSObject, ViewModelHandlerEventsControllerDelega
     
     func requestDetail(with item: Model?) {
         currentPage = 0
-        requestContent(params: RequestParams(identifier: (item as? ViewModelBehavior)?.identifier))
+        requestContent(params: RequestParams(identifier: (item as? ViewModelBehavior)?.identifier, layoutView: .detailContentLayoutCard))
     }
     
     func requestContent(params: RequestParams?) {

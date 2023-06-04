@@ -56,12 +56,6 @@ class URLPathBuilder: URLPathBuildable {
     }
     
     func applySecurity() {
-        
-        guard let queryItems = product?.queryItems,
-              !queryItems.isEmpty else {
-            return
-        }
-        
         let credentials = apiSecurer?.makeCredential(with: Date().timeIntervalSince1970)
         guard let timeStamp = credentials?.timeStamp,
               let publicKey = credentials?.publicKey,
