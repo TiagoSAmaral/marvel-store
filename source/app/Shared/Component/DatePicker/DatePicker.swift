@@ -15,7 +15,7 @@ import Foundation
 
 import UIKit
 
-typealias ResponsePicker = (_ picker: PDPicker, _ data : OptionsPickerView, _ row : Int)->Void
+typealias ResponsePicker = (_ picker: PDPicker, _ data: OptionsPickerView, _ row: Int) -> Void
 
 final class PDPicker: UIPickerView, UIPickerViewDataSource, UIPickerViewDelegate {
     
@@ -82,7 +82,7 @@ final class PDPicker: UIPickerView, UIPickerViewDataSource, UIPickerViewDelegate
         return options.count
     }
     
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String?{
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         
         guard let options = pickerOptions else {
             return String()
@@ -96,7 +96,7 @@ final class PDPicker: UIPickerView, UIPickerViewDataSource, UIPickerViewDelegate
         guard let options = pickerOptions else {
             return
         }
-        response?(self, options[row],row)
+        response?(self, options[row], row)
     }
 }
 

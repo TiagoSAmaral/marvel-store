@@ -163,9 +163,7 @@ class ListContentPageViewModel: NSObject, ViewModelHandlerEventsControllerDelega
     }
     
     func dataBy(indexPath: IndexPath) -> Model? {
-        var item = items[indexPath.row]
-        
-        guard var item = item as? ViewModelBehavior else {
+        guard var item = items[indexPath.row] as? ViewModelBehavior else {
             return nil
         }
         
@@ -206,7 +204,6 @@ class ListContentPageViewModel: NSObject, ViewModelHandlerEventsControllerDelega
      }
      
     func generateFilterYearList() {
-        
         
         if listYearFilter == nil {
             let currentYear: Int = Calendar.current.component(.year, from: Date())

@@ -28,7 +28,6 @@ class ListContentPageCoordinator: Coordinator, ListContentCoordinable {
             return
         }
         navigationController?.viewControllers = [controller]
-        //pushViewController(controller, animated: true)
     }
     
     func goToContentDetail(with data: Model?) {

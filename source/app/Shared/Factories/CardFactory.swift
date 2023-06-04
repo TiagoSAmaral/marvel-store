@@ -32,7 +32,7 @@ class CardMaker: CardFactory {
     
     static func make<T: Card>(with data: ViewModelBehavior, classType: T.Type) -> T {
         let cardView = T.init()
-        cardView.load(model: data as? Model)
+        cardView.load(model: data)
         return cardView
     }
 }

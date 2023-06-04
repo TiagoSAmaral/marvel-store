@@ -20,4 +20,3 @@ struct FactoryButton {
         return button
     }
 }
-

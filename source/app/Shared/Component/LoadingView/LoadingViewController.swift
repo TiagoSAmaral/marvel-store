@@ -19,7 +19,7 @@ class LoadingViewController: UIViewController {
                     .flexibleLeftMargin,
                     .flexibleRightMargin,
                     .flexibleTopMargin,
-                    .flexibleBottomMargin
+                    .flexibleBottomMargin,
                     ]
         return indicator
     }()

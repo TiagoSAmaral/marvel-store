@@ -60,4 +60,3 @@ class APISecurity: APISecurer {
         publicKey = Bundle.main.object(forInfoDictionaryKey: "API_MARVEL_PUBLIC_KEY") as? String ?? ""
     }
 }
-

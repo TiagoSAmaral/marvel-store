@@ -90,7 +90,7 @@ class TableViewAutomaticPaginate: UITableView, UITableViewDelegate, UITableViewD
     }
     
     func registerEventScrollDidEnd() {
-        register() { [weak self] in
+        register { [weak self] in
             self?.dataHandler?.nextPage()
         }
     }

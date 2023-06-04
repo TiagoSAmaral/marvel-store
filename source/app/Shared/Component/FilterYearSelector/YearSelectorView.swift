@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol YearSelectorViewDataHandlerDelegate {
+protocol YearSelectorViewDataHandlerDelegate: AnyObject {
     var disableFilterOptions: String? { get }
     var listYearFilter: [String]? { get }
     func receive(value: String?)
@@ -116,7 +116,7 @@ class YearSelectorView: UIView {
             options.append(OptionsPickerView(label: value, data: value))
         }
         
-        let pickerView = PDPicker(options: options, response: {[weak self]  (picker, data, row)  in
+        let pickerView = PDPicker(options: options, response: {[weak self]  (picker, data, _)  in
             print(data.data)
             self?.selectedValueShowerLabel.text = data.label
             

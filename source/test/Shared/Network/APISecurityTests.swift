@@ -11,7 +11,6 @@ import XCTest
 
 final class APISecurityTests: XCTestCase {
     
-    
     // To make this teste, is necessary to create a dev-info.plist with the hash generated, with the MOCK_MD5_TESTS key.
     // To generate this teste md5 value, use the instantiate a TimeInterval with 1.0 (double) value, your
     

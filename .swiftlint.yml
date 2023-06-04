@@ -50,6 +50,7 @@ excluded: # paths to ignore during linting. Takes precedence over `included`.
   - Carthage
   - Pods
   - source/app/supportfiles
+  - source/test
 analyzer_rules:
   - unused_declaration
   - unused_import
@@ -110,6 +111,7 @@ identifier_name:
     - qa
     - id
     - top
+    - row
 return_arrow_whitespace: error
 legacy_constructor: error
 legacy_constant: error

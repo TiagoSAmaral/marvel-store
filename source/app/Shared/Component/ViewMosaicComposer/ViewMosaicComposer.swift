@@ -12,14 +12,13 @@ class ViewMosaicComposer {
     
     lazy var baseView: UIView = {
         var view = UIView()
-        view.backgroundColor = .red //ColorAsset.cardBackgroundColor
+        view.backgroundColor = ColorAsset.cardBackgroundColor
         return view
     }()
     
     lazy var vStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical
-//        stackView.distribution = .fill
         return stackView
     }()
     

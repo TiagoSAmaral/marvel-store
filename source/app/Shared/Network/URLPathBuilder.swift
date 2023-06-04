@@ -71,7 +71,7 @@ class URLPathBuilder: URLPathBuildable {
         product?.queryItems?.append(contentsOf: [
             URLQueryItem(name: "ts", value: "\(timeStamp)"),
             URLQueryItem(name: "apikey", value: "\(publicKey)"),
-            URLQueryItem(name: "hash", value: "\(hash)")
+            URLQueryItem(name: "hash", value: "\(hash)"),
         ])
     }
     
