@@ -14,7 +14,8 @@ class ListContentPageViewModel: NSObject, ViewModelHandlerEventsControllerDelega
     var network: NetworkContentOperation?
     var coordinator: ListContentCoordinable?
     var lastRequestResult: GeneralResult<Comic>?
-    var items: [Comic] = []
+    var selectedItem: Model?
+    var items: [Model] = []
     var currentPage: Int?
     var currentSearchValue: String?
     var selectedFilterOption: String?
@@ -35,6 +36,12 @@ class ListContentPageViewModel: NSObject, ViewModelHandlerEventsControllerDelega
     }
     
     func viewDidAppear() {
+        
+        guard selectedItem == nil else {
+            requestDetail(with: selectedItem)
+            return
+        }
+        
         guard !items.isEmpty else {
             requestContentInitialState()
             return
@@ -43,6 +50,10 @@ class ListContentPageViewModel: NSObject, ViewModelHandlerEventsControllerDelega
 
     lazy var goToDetailContent: (Model?) -> Void = { [weak self] data in
         self?.coordinator?.goToContentDetail(with: data)
+    }
+    
+    lazy var buyItem: (Model?) -> Void = { [weak self] data in
+        // Save local realm
     }
     
     func registerFilterCancelationValue() {
@@ -79,6 +90,11 @@ class ListContentPageViewModel: NSObject, ViewModelHandlerEventsControllerDelega
     
     func updateContent() {
         requestContentInitialState()
+    }
+    
+    func requestDetail(with item: Model?) {
+        currentPage = 0
+        requestContent(params: RequestParams(identifier: (item as? ViewModelBehavior)?.identifier))
     }
     
     func requestContent(params: RequestParams?) {
@@ -148,7 +164,16 @@ class ListContentPageViewModel: NSObject, ViewModelHandlerEventsControllerDelega
     
     func dataBy(indexPath: IndexPath) -> Model? {
         var item = items[indexPath.row]
-        item.action = goToDetailContent
+        
+        guard var item = item as? ViewModelBehavior else {
+            return nil
+        }
+        
+        if selectedItem == nil {
+            item.action = goToDetailContent
+        } else {
+            item.action = buyItem
+        }
         return item
     }
     
@@ -192,7 +217,5 @@ class ListContentPageViewModel: NSObject, ViewModelHandlerEventsControllerDelega
             }
             listYearFilter?.insert("Todos", at: 0)
         }
-        
-       
     }
 }
