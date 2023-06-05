@@ -19,6 +19,7 @@
 		CF760DF22A2B8E7500C6D4B9 /* ViewMosaicComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF760DF12A2B8E7500C6D4B9 /* ViewMosaicComposer.swift */; };
 		CF760DF42A2BAC8200C6D4B9 /* ViewHandlerEventUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF760DF32A2BAC8200C6D4B9 /* ViewHandlerEventUpdate.swift */; };
 		CF7DC65E2A2DA91A003F455E /* ViewModable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7DC65D2A2DA91A003F455E /* ViewModable.swift */; };
+		CF7DC6602A2DBB0F003F455E /* CurrencyConversor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7DC65F2A2DBB0F003F455E /* CurrencyConversor.swift */; };
 		CF7EAAA52A27EA7A006F5D12 /* CardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7EAAA42A27EA7A006F5D12 /* CardTests.swift */; };
 		CF7EAAAF2A282787006F5D12 /* listContent.json in Resources */ = {isa = PBXBuildFile; fileRef = CF7EAAAE2A282787006F5D12 /* listContent.json */; };
 		CF7EAAB12A282864006F5D12 /* oneContent.json in Resources */ = {isa = PBXBuildFile; fileRef = CF7EAAB02A282864006F5D12 /* oneContent.json */; };
@@ -115,6 +116,7 @@
 		CF760DF12A2B8E7500C6D4B9 /* ViewMosaicComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewMosaicComposer.swift; sourceTree = "<group>"; };
 		CF760DF32A2BAC8200C6D4B9 /* ViewHandlerEventUpdate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewHandlerEventUpdate.swift; sourceTree = "<group>"; };
 		CF7DC65D2A2DA91A003F455E /* ViewModable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModable.swift; sourceTree = "<group>"; };
+		CF7DC65F2A2DBB0F003F455E /* CurrencyConversor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyConversor.swift; sourceTree = "<group>"; };
 		CF7EAAA42A27EA7A006F5D12 /* CardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTests.swift; sourceTree = "<group>"; };
 		CF7EAAAE2A282787006F5D12 /* listContent.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = listContent.json; sourceTree = "<group>"; };
 		CF7EAAB02A282864006F5D12 /* oneContent.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = oneContent.json; sourceTree = "<group>"; };
@@ -431,6 +433,7 @@
 				CFAB5D302A133B660091F1FF /* AlertViewFactory.swift */,
 				CFAB5CFA2A1121270091F1FF /* CardFactory.swift */,
 				CF2C52742A2B031400ECEB24 /* ButtonFactoryView.swift */,
+				CF7DC65F2A2DBB0F003F455E /* CurrencyConversor.swift */,
 			);
 			path = Factories;
 			sourceTree = "<group>";
@@ -807,6 +810,7 @@
 				CF7EAAB32A2828DD006F5D12 /* MockerContentProvider.swift in Sources */,
 				CFAB5CB02A0FFF5A0091F1FF /* NetworkConnectable.swift in Sources */,
 				CF2C52782A2B131100ECEB24 /* DatePicker.swift in Sources */,
+				CF7DC6602A2DBB0F003F455E /* CurrencyConversor.swift in Sources */,
 				CFAB5CF32A1117C40091F1FF /* Identifier.swift in Sources */,
 				CFAB5CEA2A105F010091F1FF /* ListContentPageFactory.swift in Sources */,
 				CFAB5CE92A105F010091F1FF /* ListContentPageController.swift in Sources */,
