@@ -9,3 +9,9 @@
 "favoriteTitle" = "Favoritos";
 "cartTitle" = "Carrinho";
 "searchTitle" = "Buscar título";
+"makeFavorite" = "Favoritar";
+"addToCart" = "Comprar";
+"unMakeFavorite" = "Defavoritar";
+"RemoveToCart" = "Remover";
+"digitalPrice" = "Preço Digital";
+"printPrice" = "Peço Impresso";
