@@ -14,5 +14,9 @@ struct RealmMigrationHandler {
     static func setMigrationVersion() {
         let config = Realm.Configuration(schemaVersion: 1)
         Realm.Configuration.defaultConfiguration = config
+        
+        #if DEBUG
+            print("User Realm User file location: \(RealmInstance.main.realm?.configuration.fileURL?.path ?? "")")
+        #endif
     }
 }
