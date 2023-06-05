@@ -8,7 +8,11 @@
 
 import UIKit
 
-class ListContentPageViewModel: NSObject, ViewModelHandlerEventsControllerDelegate, ListDataHandler, SearchHandlerEvents, YearSelectorViewDataHandlerDelegate {
+class ListContentPageViewModel: NSObject,
+                                    ViewModelHandlerEventsControllerDelegate,
+                                    ListDataHandler,
+                                    SearchHandlerEvents,
+                                    YearSelectorViewDataHandlerDelegate {
 
     weak var controller: ListContentController?
     var network: NetworkContentOperation?
@@ -22,7 +26,7 @@ class ListContentPageViewModel: NSObject, ViewModelHandlerEventsControllerDelega
     var filterOptions: [Int]?
     let numberOfSection: Int = 1
     
-    // ListyearFilter
+    // MARK: - ListyearFilter
     var listYearFilter: [String]?
     var disableFilterOptions: String?
     
@@ -48,6 +52,7 @@ class ListContentPageViewModel: NSObject, ViewModelHandlerEventsControllerDelega
         }
     }
 
+    // MARK: - Actions activated by view interaction
     lazy var goToDetailContent: (Model?) -> Void = { [weak self] data in
         self?.coordinator?.goToContentDetail(with: data)
     }
@@ -72,6 +77,7 @@ class ListContentPageViewModel: NSObject, ViewModelHandlerEventsControllerDelega
         // TODO: Alert Remove from Cart
     }
     
+    // MARK: - Request configurations
     func registerFilterCancelationValue() {
         self.disableFilterOptions = "Todos"
     }
@@ -112,23 +118,7 @@ class ListContentPageViewModel: NSObject, ViewModelHandlerEventsControllerDelega
         currentPage = 0
         requestContent(params: RequestParams(identifier: (item as? ViewModelBehavior)?.identifier, layoutView: .detailContentLayoutCard))
     }
-    
-    func loadFavoritesItems() {
-        guard let items = ComicFavoriteStorage.main.listComic()  else {
-            return
-        }
-        self.items = items // items.compactMap({ $0 as Model })
-        controller?.updateView()
-    }
-    
-    func loadCartItems() {
-        guard let items = ComicCartStorage.main.listComics() else {
-            return
-        }
-        self.items = items
-        controller?.updateView()
-    }
-    
+
     func requestContent(params: RequestParams?) {
         
         guard let params = params else {
@@ -184,6 +174,24 @@ class ListContentPageViewModel: NSObject, ViewModelHandlerEventsControllerDelega
         
         return nil
     }
+    
+    // MARK: - Request content from local storage
+    func loadFavoritesItems() {
+        guard let items = ComicFavoriteStorage.main.listComic()  else {
+            return
+        }
+        self.items = items // items.compactMap({ $0 as Model })
+        controller?.updateView()
+    }
+    
+    func loadCartItems() {
+        guard let items = ComicCartStorage.main.listComics() else {
+            return
+        }
+        self.items = items
+        controller?.updateView()
+    }
+    
 
 // MARK: - ListDataHandler methods
     func numberOfItemsBy(section: Int?) -> Int {
