@@ -68,7 +68,7 @@ class TableViewAutomaticPaginate: UITableView, UITableViewDelegate, UITableViewD
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        if scrollView.contentOffset.y > (scrollView.contentSize.height - scrollView.frame.size.height) {
+        if scrollView.contentOffset.y > (scrollView.contentSize.height - (scrollView.frame.size.height + 400.0)) {
             if isPaginateEnable {
                 scrollingHasComeToEnd()
             }
