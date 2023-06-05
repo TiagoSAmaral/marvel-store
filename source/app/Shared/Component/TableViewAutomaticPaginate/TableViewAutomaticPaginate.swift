@@ -21,6 +21,16 @@ class TableViewAutomaticPaginate: UITableView, UITableViewDelegate, UITableViewD
 
     var dataHandler: ListDataHandler?
     var cardFactory: CardFactory?
+    private var isPullToRefreshEnable = false
+    private var isPaginateEnable = false
+    private var propagateEvent: (() -> Void)?
+    
+    init(isPullToRefreshEnable: Bool = false, isPaginateEnable: Bool = false) {
+        super.init(frame: .zero, style: .plain)
+        self.isPullToRefreshEnable = isPullToRefreshEnable
+        self.isPaginateEnable = isPaginateEnable
+        defaultSetup()
+    }
     
     override init(frame: CGRect, style: UITableView.Style) {
         super.init(frame: frame, style: style)
@@ -31,10 +41,7 @@ class TableViewAutomaticPaginate: UITableView, UITableViewDelegate, UITableViewD
         super.init(coder: coder)
         defaultSetup()
     }
-    
-    private var isAllowEmitScrollingHasComeToEnt: Bool = true
-    private var propagateEvent: (() -> Void)?
-    
+
     private func defaultSetup() {
         delegate = self
         dataSource = self
@@ -48,12 +55,12 @@ class TableViewAutomaticPaginate: UITableView, UITableViewDelegate, UITableViewD
     }
     
     func scrollingHasComeToEnd() {
-        isAllowEmitScrollingHasComeToEnt = false
+        isPaginateEnable = false
         propagateEvent?()
     }
     
     func allowEmitScrollingHasComeToEnd() {
-        isAllowEmitScrollingHasComeToEnt = true
+        isPaginateEnable = true
     }
     
     func register(event: (() -> Void)?) {
@@ -62,17 +69,21 @@ class TableViewAutomaticPaginate: UITableView, UITableViewDelegate, UITableViewD
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if scrollView.contentOffset.y > (scrollView.contentSize.height - scrollView.frame.size.height) {
-            if isAllowEmitScrollingHasComeToEnt {
+            if isPaginateEnable {
                 scrollingHasComeToEnd()
             }
         }
     }
     
     func makePullToRefresh() {
-        let refreshControl = UIRefreshControl()
-        refreshControl.attributedTitle = NSAttributedString(string: LocalizedText.with(tagName: .pullToRefreshText))
-        refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
-        self.refreshControl = refreshControl
+        if isPullToRefreshEnable {
+            let refreshControl = UIRefreshControl()
+            refreshControl.attributedTitle = NSAttributedString(string: LocalizedText.with(tagName: .pullToRefreshText))
+            refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
+            self.refreshControl = refreshControl
+        } else {
+         refreshControl = nil
+        }
     }
     
     @objc func refresh() {
