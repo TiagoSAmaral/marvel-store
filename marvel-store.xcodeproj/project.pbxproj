@@ -88,6 +88,7 @@
 		CFE71CEC2A2956F9009F5E12 /* URLPathBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE71CEB2A2956F9009F5E12 /* URLPathBuilder.swift */; };
 		CFE71CEE2A295719009F5E12 /* URLPathBuildable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE71CED2A295719009F5E12 /* URLPathBuildable.swift */; };
 		CFE71CF02A29913A009F5E12 /* ViewModelBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE71CEF2A29913A009F5E12 /* ViewModelBehavior.swift */; };
+		CFEFB1F42A2E42F10061EF4B /* HtmlAttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEFB1F32A2E42F10061EF4B /* HtmlAttributedString.swift */; };
 		CFF2EA112A0F259800709168 /* Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF2EA102A0F259800709168 /* Constraints.swift */; };
 /* End PBXBuildFile section */
 
@@ -187,6 +188,7 @@
 		CFE71CEB2A2956F9009F5E12 /* URLPathBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLPathBuilder.swift; sourceTree = "<group>"; };
 		CFE71CED2A295719009F5E12 /* URLPathBuildable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLPathBuildable.swift; sourceTree = "<group>"; };
 		CFE71CEF2A29913A009F5E12 /* ViewModelBehavior.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelBehavior.swift; sourceTree = "<group>"; };
+		CFEFB1F32A2E42F10061EF4B /* HtmlAttributedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HtmlAttributedString.swift; sourceTree = "<group>"; };
 		CFF2EA102A0F259800709168 /* Constraints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constraints.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -474,6 +476,7 @@
 			isa = PBXGroup;
 			children = (
 				CFB297192A26F17000CA95C3 /* Empty.swift */,
+				CFEFB1F32A2E42F10061EF4B /* HtmlAttributedString.swift */,
 			);
 			path = String;
 			sourceTree = "<group>";
@@ -819,6 +822,7 @@
 				CFDDAA4B2A2D014D00B6DAB9 /* Favorable.swift in Sources */,
 				CF2C526E2A2AE9D500ECEB24 /* TableViewAutomaticPaginate.swift in Sources */,
 				CFE71CF02A29913A009F5E12 /* ViewModelBehavior.swift in Sources */,
+				CFEFB1F42A2E42F10061EF4B /* HtmlAttributedString.swift in Sources */,
 				CF2C52752A2B031400ECEB24 /* ButtonFactoryView.swift in Sources */,
 				CFDDAA662A2D723E00B6DAB9 /* MainTabbarFactory.swift in Sources */,
 				CFC405B92A25694A00222F60 /* PaginateResponse.swift in Sources */,
