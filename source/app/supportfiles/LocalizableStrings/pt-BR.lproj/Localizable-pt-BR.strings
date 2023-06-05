@@ -10,8 +10,8 @@
 "cartTitle" = "Carrinho";
 "searchTitle" = "Buscar título";
 "makeFavorite" = "Favoritar";
-"addToCart" = "Comprar";
-"unMakeFavorite" = "Defavoritar";
-"RemoveToCart" = "Remover";
+"addToCart" = "Adicionar ao Carrinho";
+"unMakeFavorite" = "Desfavoritar";
+"removeToCart" = "Remover do Carrinho";
 "digitalPrice" = "Preço Digital";
 "printPrice" = "Peço Impresso";
