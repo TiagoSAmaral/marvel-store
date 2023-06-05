@@ -31,13 +31,6 @@ class DetailContentPageCoordinator: Coordinator, DetailContentCoordinable {
         navigationController?.pushViewController(controller, animated: true)
     }
     
-//    func goToRepos(with data: Model?) {
-////        let reposCoordinator = ListReposPageCoordinator(navigation: navigationController)
-////        reposCoordinator.parentCoordinator = self
-////        childCoordinators?.append(reposCoordinator)
-////        reposCoordinator.start(with: data)
-//    }
-    
     func back() {
         navigationController?.popViewController(animated: true)
     }
