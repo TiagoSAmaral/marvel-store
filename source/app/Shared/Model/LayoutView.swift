@@ -7,8 +7,9 @@
 //
 
 import Foundation
+import RealmSwift
 
-enum LayoutView: Codable {
+enum LayoutView: String, Codable, PersistableEnum {
     case listContentLayoutCard
     case detailContentLayoutCard
     case favoritContentLayoutCard
