@@ -16,7 +16,7 @@ struct RealmMigrationHandler {
         Realm.Configuration.defaultConfiguration = config
         
         #if DEBUG
-            print("User Realm User file location: \(RealmInstance.main.realm?.configuration.fileURL?.path ?? "")")
+            debugPrint("User Realm User file location: \(RealmInstance.main.realm?.configuration.fileURL?.path ?? "")")
         #endif
     }
 }
