@@ -14,37 +14,45 @@ final class ComicCartStorage {
     static let main = ComicCartStorage()
     
     func listComics() -> [Comic]? {
-        RealmInstance.main.realm?.objects(Comic.self).filter({$0.isPurchasable == true}).compactMap({$0})
+        RealmInstance.main.realm?.objects(Comic.self).where {
+            $0.isIntoCart == true
+        }.compactMap({$0})
+        
     }
     
     func save(comic: Model?) {
         
-        guard let comic = comic as? Comic else {
+        guard let comic = comic as? Comic, let identifier = comic.identifier else {
             return
         }
         
-        guard let cachedComic = RealmInstance.main.realm?.objects(Comic.self).first else {
-            comic.isPurchasable = true
+        guard let cachedComic = RealmInstance.main.realm?.objects(Comic.self).filter("identifier == \(identifier)").first else {
+            comic.isIntoCart = true
             try? RealmInstance.main.realm?.write {
                 RealmInstance.main.realm?.add(comic)
             }
             return
         }
         try? RealmInstance.main.realm?.write {
-            cachedComic.isPurchasable = true
+            cachedComic.isIntoCart = true
         }
     }
     
     func remove(comic: Model?) {
         
-        guard let comic = comic as? Comic else {
+        guard let comic = comic as? Comic, let identifier = comic.identifier else {
             return
         }
         
-        try? RealmInstance.main.realm?.write {
-            if let comicToDelete = RealmInstance.main.realm?.objects(Comic.self).where({ $0.identifier == comic.identifier }) {
-                RealmInstance.main.realm?.delete(comicToDelete)
+        guard let cachedComic = RealmInstance.main.realm?.objects(Comic.self).filter("identifier == \(identifier)").first else {
+            comic.isIntoCart = false
+            try? RealmInstance.main.realm?.write {
+                RealmInstance.main.realm?.add(comic)
             }
+            return
+        }
+        try? RealmInstance.main.realm?.write {
+            cachedComic.isIntoCart = false
         }
     }
     
@@ -52,7 +60,15 @@ final class ComicCartStorage {
         RealmInstance.main.realm?.objects(Comic.self).first
     }
     
-    func isPurchable(comic: Comic) -> Bool {
-        RealmInstance.main.realm?.objects(Comic.self).first?.isPurchasable ?? false
+    func isPurchable(item: Model?) {
+        guard let comic = item as? Comic, let identifier = comic.identifier else {
+            return
+        }
+        let value = RealmInstance.main.realm?.objects(Comic.self).filter("identifier == \(identifier)").first?.isIntoCart ?? false
+        try? RealmInstance.main.realm?.write {
+            comic.isIntoCart = value
+        }
+        
+//        return RealmInstance.main.realm?.objects(Comic.self).filter("identifier == \(identifier)").first?.isIntoCart ?? false
     }
 }

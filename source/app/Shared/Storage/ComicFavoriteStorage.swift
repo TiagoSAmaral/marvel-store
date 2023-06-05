@@ -13,17 +13,20 @@ final class ComicFavoriteStorage {
 
     static let main = ComicFavoriteStorage()
 
-    func listComic() -> [Comic]? {
-        RealmInstance.main.realm?.objects(Comic.self).filter({$0.isFavorable == true}).compactMap({$0})
+    func listComics() -> [Comic]? {
+        RealmInstance.main.realm?.objects(Comic.self).where {
+            $0.isFavorable == true
+        }.compactMap({$0})
+        
     }
     
     func save(comic: Model?) {
         
-        guard let comic = comic as? Comic else {
+        guard let comic = comic as? Comic, let identifier = comic.identifier else {
             return
         }
         
-        guard let cachedComic = RealmInstance.main.realm?.objects(Comic.self).first else {
+        guard let cachedComic = RealmInstance.main.realm?.objects(Comic.self).filter("identifier == \(identifier)").first else {
             comic.isFavorable = true
             try? RealmInstance.main.realm?.write {
                 RealmInstance.main.realm?.add(comic)
@@ -37,14 +40,19 @@ final class ComicFavoriteStorage {
     
     func remove(comic: Model?) {
         
-        guard let comic = comic as? Comic else {
+        guard let comic = comic as? Comic, let identifier = comic.identifier else {
             return
         }
         
-        try? RealmInstance.main.realm?.write {
-            if let comicToDelete = RealmInstance.main.realm?.objects(Comic.self).where({ $0.identifier == comic.identifier }) {
-                RealmInstance.main.realm?.delete(comicToDelete)
+        guard let cachedComic = RealmInstance.main.realm?.objects(Comic.self).filter("identifier == \(identifier)").first else {
+            comic.isFavorable = false
+            try? RealmInstance.main.realm?.write {
+                RealmInstance.main.realm?.add(comic)
             }
+            return
+        }
+        try? RealmInstance.main.realm?.write {
+            cachedComic.isFavorable = false
         }
     }
     
@@ -52,7 +60,13 @@ final class ComicFavoriteStorage {
         RealmInstance.main.realm?.objects(Comic.self).filter({ $0.isFavorable == true}).first
     }
     
-    func isFavorite(comic: Comic) -> Bool {
-        RealmInstance.main.realm?.objects(Comic.self).filter({ $0.identifier == comic.identifier}).first != nil
+    func isFavorite(item: Model?) {
+        guard let comic = item as? Comic, let identifier = comic.identifier else {
+            return
+        }
+        let value = RealmInstance.main.realm?.objects(Comic.self).filter("identifier == \(identifier)").first?.isFavorable ?? false
+        try? RealmInstance.main.realm?.write {
+            comic.isFavorable = value
+        }
     }
 }
