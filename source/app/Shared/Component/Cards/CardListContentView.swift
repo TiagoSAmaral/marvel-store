@@ -11,7 +11,6 @@ import Kingfisher
 
 class CardListContentView: UIView, Card, CardTouch {
 
-    var action: ((Model?) -> Void)?
     var model: Comic?
     
     lazy var backgrounHStackView: UIView = {
@@ -76,7 +75,6 @@ class CardListContentView: UIView, Card, CardTouch {
             let imagePath = "\(path).\(typeFile)"
             profileImageView.kf.setImage(with: URL(string: imagePath))
         }
-        action = model.action
         addAllSubviews()
         defineAction()
     }
@@ -128,9 +126,9 @@ class CardListContentView: UIView, Card, CardTouch {
     }
     
     @objc func bindAction() {
-        guard let model = model else {
+        guard let selectionAction = model?.selectAction else {
             return
         }
-        action?(model)
+        selectionAction(model)
     }
 }
