@@ -52,8 +52,24 @@ class ListContentPageViewModel: NSObject, ViewModelHandlerEventsControllerDelega
         self?.coordinator?.goToContentDetail(with: data)
     }
     
-    lazy var buyItem: (Model?) -> Void = { [weak self] data in
-        // Save local realm
+    lazy var saveToFavorite: (Model?) -> Void = { comic in
+        ComicFavoriteStorage.main.save(comic: comic)
+        // TODO: Alert Add to Favorite
+    }
+    
+    lazy var removeFavorite: (Model?) -> Void = { comic in
+        ComicFavoriteStorage.main.remove(comic: comic)
+        // TODO: Alert Remove from Favorite
+    }
+    
+    lazy var saveToCart: (Model?) -> Void = { comic in
+        ComicCartStorage.main.save(comic: comic)
+        // TODO: Alert Add to Cart
+    }
+    
+    lazy var removeFromCart: (Model?) -> Void = { comic in
+        ComicCartStorage.main.remove(comic: comic)
+        // TODO: Alert Remove from Cart
     }
     
     func registerFilterCancelationValue() {
@@ -95,6 +111,22 @@ class ListContentPageViewModel: NSObject, ViewModelHandlerEventsControllerDelega
     func requestDetail(with item: Model?) {
         currentPage = 0
         requestContent(params: RequestParams(identifier: (item as? ViewModelBehavior)?.identifier, layoutView: .detailContentLayoutCard))
+    }
+    
+    func loadFavoritesItems() {
+        guard let items = ComicFavoriteStorage.main.listComic()  else {
+            return
+        }
+        self.items = items // items.compactMap({ $0 as Model })
+        controller?.updateView()
+    }
+    
+    func loadCartItems() {
+        guard let items = ComicCartStorage.main.listComics() else {
+            return
+        }
+        self.items = items
+        controller?.updateView()
     }
     
     func requestContent(params: RequestParams?) {
@@ -166,12 +198,11 @@ class ListContentPageViewModel: NSObject, ViewModelHandlerEventsControllerDelega
         guard var item = items[indexPath.row] as? ViewModelBehavior else {
             return nil
         }
-        
-        if selectedItem == nil {
-            item.action = goToDetailContent
-        } else {
-            item.action = buyItem
-        }
+
+        item.selectAction = goToDetailContent
+        item.purchaseAction = saveToCart
+        item.favoriteAction = saveToFavorite
+
         return item
     }
     
