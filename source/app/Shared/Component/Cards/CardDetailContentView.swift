@@ -31,24 +31,22 @@ class CardDetailContentView: UIView, Card, CardTouch {
     
     lazy var addToCartButton: UIButton = {
         let button = UIButton()
-        button.setTitle(LocalizedText.with(tagName: .addToCart), for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 22, weight: .bold)
         button.backgroundColor = ColorAsset.titleColor
-        button.height(44) //.width(120)
+        button.height(44)
         button.layer.cornerRadius = 6
-        button.addTarget(self, action: #selector(addCartAction), for: .touchUpInside)
+        button.addTarget(self, action: #selector(bindAddCartAction), for: .touchUpInside)
         
         return button
     }()
     
     lazy var addToFavoriteButton: UIButton = {
         let button = UIButton()
-        button.setTitle(LocalizedText.with(tagName: .favoriteTitle), for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 22, weight: .semibold)
         button.backgroundColor = ColorAsset.ironManYellow
-        button.height(44) //.width(120)
+        button.height(44)
         button.layer.cornerRadius = 6
         button.addTarget(self, action: #selector(addFavorite), for: .touchUpInside)
         
@@ -68,12 +66,32 @@ class CardDetailContentView: UIView, Card, CardTouch {
     func makeViewLayout() {
         addSubviews([vStackView])
         vStackView.edgeToSuperView()
+        defineTopSpace()
         defineImage()
         deinfeTitle()
         defineIssue()
         definePrice()
+        defineResume()
         vStackView.addArrangedSubview(addToCartButton)
         vStackView.addArrangedSubview(addToFavoriteButton)
+    }
+    
+    func defineTopSpace() {
+        let borderTop = UIView()
+        borderTop.height(8)
+        borderTop.backgroundColor = ColorAsset.borderColor
+        
+        let topSpaceOne = UIView()
+        topSpaceOne.backgroundColor = ColorAsset.cardBackgroundColor
+        topSpaceOne.height(12)
+        
+        let topSpaceTwo = UIView()
+        topSpaceTwo.backgroundColor = ColorAsset.cardBackgroundColor
+        topSpaceTwo.height(12)
+        
+        vStackView.addArrangedSubview(topSpaceOne)
+        vStackView.addArrangedSubview(borderTop)
+        vStackView.addArrangedSubview(topSpaceTwo)
     }
     
     func defineImage() {
@@ -111,12 +129,31 @@ class CardDetailContentView: UIView, Card, CardTouch {
         }
     }
     
+    func defineResume() {
+        if let resume = makeLabel(with: model?.resume) {
+            let backgrounView = UIView()
+            vStackView.addArrangedSubview(backgrounView)
+            
+            resume.textColor = ColorAsset.titleColor
+            resume.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
+            resume.textAlignment = .center
+            resume.constraints.forEach({ $0.isActive = false})
+            
+            backgrounView.addSubviews([resume])
+            resume.centerY(of: backgrounView)
+                .centerX(of: backgrounView)
+                .width(360)
+                .topToTop(of: backgrounView)
+                .bottomToBotton(of: backgrounView)
+        }
+    }
+    
     func makeLabel(with text: String?) -> UILabel? {
         guard let text = text else {
             return nil
         }
         let label = UILabel()
-        label.text = text
+        label.attributedText = text.htmlToAttributedString
         label.font = UIFont.systemFont(ofSize: 18.0, weight: .regular)
         label.textColor = ColorAsset.descriptionColor
         label.height(20)
@@ -152,91 +189,48 @@ class CardDetailContentView: UIView, Card, CardTouch {
         self.model = model
         makeViewLayout()
         defineAction()
+        defineLabelCartButton(sender: addToCartButton)
+        defineLabelFavoriteButton(sender: addToFavoriteButton)
     }
     
-    // MARK: - Apply Constraints
-    
-//    func addAllSubviews() {
-//        makeVMainStackViewConstraint()
-//        makeHStackViewProfileImageViewWithNameLoginConstraint()
-//        makeVStackViewNameLoginConstraint()
-//        makeVStackViewNetworkLinks()
-//    }
-//
-//    func makeVMainStackViewConstraint() {
-//        addSubviews([vMainStackView])
-//        vMainStackView.edgeToSuperView(margin: 8.0)
-//        vMainStackView.addArrangedSubview(hStackViewProfileImageViewWithNameLogin)
-//
-////        if let bioText = model?.bioText, !bioText.isEmpty {
-////            vMainStackView.addArrangedSubview(bioDescription)
-////        }
-//
-//        vMainStackView.addArrangedSubview(vStackViewNetworkLinks)
-//
-//        let buttonBaseView = UIView()
-//        buttonBaseView.height(44)
-//        buttonBaseView.addSubviews([reposButton])
-//        buttonBaseView.backgroundColor = .clear
-//        reposButton.height(34)
-//        reposButton.width(180)
-//        reposButton.centerY(of: buttonBaseView)
-//        reposButton.centerX(of: buttonBaseView)
-//        vMainStackView.addArrangedSubview(buttonBaseView)
-//    }
-//
-//    func makeHStackViewProfileImageViewWithNameLoginConstraint() {
-//
-//        let baseImageView = UIView()
-//        baseImageView.addSubviews([profileImageView])
-//        profileImageView.centerX(of: baseImageView).centerY(of: baseImageView)
-//        profileImageView.height(70)
-//        profileImageView.width(70)
-//        baseImageView.width(90)
-//
-//        hStackViewProfileImageViewWithNameLogin.addArrangedSubview(baseImageView)
-//        hStackViewProfileImageViewWithNameLogin.addArrangedSubview(vStackViewNameLogin)
-//    }
-//
-//    func makeVStackViewNameLoginConstraint() {
-//        vStackViewNameLogin.addArrangedSubview(nameLabel)
-//        vStackViewNameLogin.addArrangedSubview(loginLabel)
-//    }
-//
-//    func makeVStackViewNetworkLinks() {
-        
-//        if let emailLabel = makeLabelNetwork(with: model?.email) {
-//            vStackViewNetworkLinks.addArrangedSubview(emailLabel)
-//        }
-//
-//        if let blogLabel = makeLabelNetwork(with: model?.blog) {
-//            vStackViewNetworkLinks.addArrangedSubview(blogLabel)
-//        }
-//
-//        if let twitterUsernameLabel = makeLabelNetwork(with: model?.twitterUsername) {
-//            vStackViewNetworkLinks.addArrangedSubview(twitterUsernameLabel)
-//        }
-//
-//        if let locationLabel = makeLabelNetwork(with: model?.location) {
-//            vStackViewNetworkLinks.addArrangedSubview(locationLabel)
-//        }
-//
-//        if let followsLabel = makeLabelNetwork(with: "\(model?.followers ?? 0) \(LocalizedText.with(tagName: .followers)) • \(model?.following ?? 0) \(LocalizedText.with(tagName: .following))") {
-//            vStackViewNetworkLinks.addArrangedSubview(followsLabel)
-//        }
-//    }
-
 // MARK: - Card Touch action
     
-    @objc func addCartAction(sender: UIButton) {
-        if let purchaseAction = model?.purchaseAction {
-            purchaseAction(model)
+    @objc func bindAddCartAction(sender: UIButton?) {
+        DispatchQueue.main.async { [weak self] in
+            if let isIntoCart = self?.model?.isIntoCart, isIntoCart {
+                self?.model?.removeCartAction?(self?.model)
+            } else {
+                self?.model?.addCartAction?(self?.model)
+            }
+            
+            self?.defineLabelCartButton(sender: sender)
         }
     }
     
-    @objc func addFavorite(sender: UIButton) {
-        if let favoriteAction = model?.favoriteAction {
-            favoriteAction(model)
+    func defineLabelCartButton(sender: UIButton?) {
+        if let isIntoCart = model?.isIntoCart, isIntoCart {
+            sender?.setTitle(LocalizedText.with(tagName: .removeToCart), for: .normal)
+        } else {
+            sender?.setTitle(LocalizedText.with(tagName: .addToCart), for: .normal)
+        }
+    }
+    
+    @objc func addFavorite(sender: UIButton?) {
+        DispatchQueue.main.async { [weak self] in
+            if let isFavorable = self?.model?.isFavorable, isFavorable {
+                self?.model?.removeFavoriteAction?(self?.model)
+            } else {
+                self?.model?.addFavoriteAction?(self?.model)
+            }
+            self?.defineLabelFavoriteButton(sender: sender)
+        }
+    }
+    
+    func defineLabelFavoriteButton(sender: UIButton?) {
+        if let isFavorable = model?.isFavorable, isFavorable {
+            sender?.setTitle(LocalizedText.with(tagName: .unMakeFavorite), for: .normal)
+        } else {
+            sender?.setTitle(LocalizedText.with(tagName: .makeFavorite), for: .normal)
         }
     }
 }
