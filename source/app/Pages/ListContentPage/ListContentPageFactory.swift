@@ -25,7 +25,8 @@ class ListContentPageFactory: FactoryPage {
         filterYearView.define(delegate: viewModel, displayerView: mosaicComposerView.baseView)
         mosaicComposerView.insertNew(view: filterYearView)
 
-        let listView = TableViewAutomaticPaginate(frame: .zero, style: .plain)
+        let listView = TableViewAutomaticPaginate(isPullToRefreshEnable: true,
+                                                  isPaginateEnable: true)
         listView.dataHandler = viewModel
         listView.cardFactory = CardMaker()
         mosaicComposerView.insertNew(view: listView)
@@ -33,6 +34,7 @@ class ListContentPageFactory: FactoryPage {
         
         coordinator?.rootViewControler = controller
         controller.viewModel = viewModel
+        controller.viewDidAppearEvent = viewModel.loadStorageItems
         controller.coordinator = coordinator as? ListContentCoordinable
         controller.searchController = searchBarController
         controller.searchHandlerEvents = viewModel
