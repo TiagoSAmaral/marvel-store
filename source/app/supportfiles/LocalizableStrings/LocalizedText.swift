@@ -21,6 +21,12 @@ struct LocalizedText {
         case favoriteTitle // = "favoriteTitle"
         case cartTitle
         case searchTitle
+        case makeFavorite
+        case addToCart
+        case unMakeFavorite
+        case RemoveToCart
+        case digitalPrice
+        case printPrice
     }
     
     static func with(tagName: LocalizeTags) -> String {
