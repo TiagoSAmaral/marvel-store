@@ -34,7 +34,7 @@ class ListContentPageFactory: FactoryPage {
         
         coordinator?.rootViewControler = controller
         controller.viewModel = viewModel
-        controller.viewDidAppearEvent = viewModel.loadStorageItems
+        controller.viewDidAppearEvent = viewModel.loadStoreItems
         controller.coordinator = coordinator as? ListContentCoordinable
         controller.searchController = searchBarController
         controller.searchHandlerEvents = viewModel
