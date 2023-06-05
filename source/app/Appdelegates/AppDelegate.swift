@@ -19,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         RealmMigrationHandler.setMigrationVersion()
 		self.window = UIWindow(frame: UIScreen.main.bounds)
+        RealmInstance.sanitizeRealm()
         self.window?.rootViewController = startApplication()
 		self.window?.makeKeyAndVisible()
 
