@@ -117,7 +117,6 @@ class YearSelectorView: UIView {
         }
         
         let pickerView = PDPicker(options: options, response: {[weak self]  (picker, data, _)  in
-            print(data.data)
             self?.selectedValueShowerLabel.text = data.label
             
             delegate.receive(value: data.data)
@@ -128,6 +127,5 @@ class YearSelectorView: UIView {
         })
         
         pickerView.showPicker(at: displayerView)
-//        displayerView.bringSubviewToFront(pickerView)
     }
 }
