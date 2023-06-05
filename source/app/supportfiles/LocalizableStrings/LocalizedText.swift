@@ -24,7 +24,7 @@ struct LocalizedText {
         case makeFavorite
         case addToCart
         case unMakeFavorite
-        case RemoveToCart
+        case removeToCart
         case digitalPrice
         case printPrice
     }
