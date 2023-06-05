@@ -13,4 +13,5 @@ struct ColorAsset {
     static let descriptionColor = UIColor(named: "CardDescriptionTextColor")
     static let borderColor = UIColor(named: "CardDescriptionTextColor")
     static let cardBackgroundColor = UIColor(named: "CardBackgroundColor")
+    static let ironManYellow = UIColor(named: "IronManYellow")
 }
