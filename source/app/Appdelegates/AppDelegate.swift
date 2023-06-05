@@ -18,18 +18,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         RealmMigrationHandler.setMigrationVersion()
-        appViewManager = startApplication()
-        appViewManager.start(with: nil)
 		self.window = UIWindow(frame: UIScreen.main.bounds)
-        self.window?.rootViewController = appViewManager.navigationController
+        self.window?.rootViewController = startApplication()
 		self.window?.makeKeyAndVisible()
 
         return true
     }
     
-    private func startApplication() -> Coordinator {
-        let navigation = NavigationController()
-//        navigation.navigationBar.isTranslucent = false
-        return AppCoordinator(navigation: navigation)
+    private func startApplication() -> UIViewController? {
+        MainTabbarFactory.makePage()
     }
 }
