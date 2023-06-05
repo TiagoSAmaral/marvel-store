@@ -9,7 +9,7 @@
 import UIKit
 
 class ListContentPageViewModel: NSObject,
-                                    ViewModelHandlerEventsControllerDelegate,
+                                    ViewModable,
                                     ListDataHandler,
                                     SearchHandlerEvents,
                                     YearSelectorViewDataHandlerDelegate {
@@ -39,19 +39,20 @@ class ListContentPageViewModel: NSObject,
         registerFilterCancelationValue()
     }
     
-    func viewDidAppear() {
-        
+    func loadDetailOfItem() {
         guard selectedItem == nil else {
             requestDetail(with: selectedItem)
             return
         }
-        
+    }
+    
+    func loadStorageItems() {
         guard !items.isEmpty else {
             requestContentInitialState()
             return
         }
     }
-
+    
     // MARK: - Actions activated by view interaction
     lazy var goToDetailContent: (Model?) -> Void = { [weak self] data in
         self?.coordinator?.goToContentDetail(with: data)
@@ -192,7 +193,6 @@ class ListContentPageViewModel: NSObject,
         controller?.updateView()
     }
     
-
 // MARK: - ListDataHandler methods
     func numberOfItemsBy(section: Int?) -> Int {
         items.count
