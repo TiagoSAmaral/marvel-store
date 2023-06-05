@@ -47,6 +47,10 @@ class ComicImage: Object, Codable {
 }
 
 class ComicPrice: Object, Codable {
-    @Persisted var type: String?
+    @Persisted var type: TypePrice?
     @Persisted var price: Double?
+}
+
+enum TypePrice: String, Codable, PersistableEnum {
+    case printPrice, digitalPurchasePrice
 }
