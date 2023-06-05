@@ -19,7 +19,7 @@ class DetailContentPageFactory: FactoryPage {
         viewModel.selectedItem = model
         let mosaicComposerView = ViewMosaicComposer()
         
-        let listView = TableViewAutomaticPaginate(frame: .zero, style: .plain)
+        let listView = TableViewAutomaticPaginate()
         listView.dataHandler = viewModel
         listView.cardFactory = CardMaker()
         mosaicComposerView.insertNew(view: listView)
@@ -27,6 +27,7 @@ class DetailContentPageFactory: FactoryPage {
         
         coordinator?.rootViewControler = controller
         controller.viewModel = viewModel
+        controller.viewDidAppearEvent = viewModel.loadDetailOfItem
         controller.coordinator = coordinator as? ListContentCoordinable
         controller.searchHandlerEvents = viewModel
         controller.view = mosaicComposerView.baseView
