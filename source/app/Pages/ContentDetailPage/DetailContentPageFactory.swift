@@ -17,6 +17,7 @@ class DetailContentPageFactory: FactoryPage {
                                                network: network,
                                                coordinator: coordinator)
         viewModel.selectedItem = model
+        viewModel.currentViewModelStrategy = .detail
         let mosaicComposerView = ViewMosaicComposer()
         
         let listView = TableViewAutomaticPaginate()
