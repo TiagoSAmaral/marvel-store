@@ -83,7 +83,7 @@ class CardDetailContentView: UIView, Card, CardTouch {
     }()
     
     lazy var reposButton: UIButton = {
-        let button = FactoryButton.makeDeafaultButton(with: LocalizedText.with(tagName: .showRepos))
+        let button = FactoryButton.makeDeafaultButton(with: LocalizedText.with(tagName: .clear))
         button.addTarget(self, action: #selector(bindAction), for: .touchUpInside)
         return button
     }()
