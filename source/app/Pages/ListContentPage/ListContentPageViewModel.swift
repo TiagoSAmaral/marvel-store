@@ -8,6 +8,13 @@
 
 import UIKit
 
+enum CurrentViewmModelStrategy {
+    case store
+    case favorite
+    case cart
+    case detail
+}
+
 class ListContentPageViewModel: NSObject,
                                     ViewModable,
                                     ListDataHandler,
@@ -25,12 +32,13 @@ class ListContentPageViewModel: NSObject,
     var selectedFilterOption: String?
     var filterOptions: [Int]?
     let numberOfSection: Int = 1
+    var currentViewModelStrategy: CurrentViewmModelStrategy = .store
     
     // MARK: - ListyearFilter
     var listYearFilter: [String]?
     var disableFilterOptions: String?
     
-    init(controller: ListContentController, network: NetworkContentOperation, coordinator: Coordinator?) {
+    init(controller: ListContentController, network: NetworkContentOperation?, coordinator: Coordinator?) {
         super.init()
         self.controller = controller
         self.network = network
@@ -46,7 +54,7 @@ class ListContentPageViewModel: NSObject,
         }
     }
     
-    func loadStorageItems() {
+    func loadStoreItems() {
         guard !items.isEmpty else {
             requestContentInitialState()
             return
@@ -54,28 +62,37 @@ class ListContentPageViewModel: NSObject,
     }
     
     // MARK: - Actions activated by view interaction
+    
     lazy var goToDetailContent: (Model?) -> Void = { [weak self] data in
         self?.coordinator?.goToContentDetail(with: data)
     }
     
-    lazy var saveToFavorite: (Model?) -> Void = { comic in
+    lazy var saveToFavorite: (Model?) -> Void = {[weak self] comic in
         ComicFavoriteStorage.main.save(comic: comic)
         // TODO: Alert Add to Favorite
+        self?.loadFavoritesItems()
+        self?.checkIfFavoriteAndCartList()
     }
     
-    lazy var removeFavorite: (Model?) -> Void = { comic in
+    lazy var removeFavorite: (Model?) -> Void = {[weak self] comic in
         ComicFavoriteStorage.main.remove(comic: comic)
         // TODO: Alert Remove from Favorite
+        self?.loadFavoritesItems()
+        self?.checkIfFavoriteAndCartList()
     }
     
-    lazy var saveToCart: (Model?) -> Void = { comic in
+    lazy var saveToCart: (Model?) -> Void = {[weak self] comic in
         ComicCartStorage.main.save(comic: comic)
         // TODO: Alert Add to Cart
+        self?.loadCartItems()
+        self?.checkIfFavoriteAndCartList()
     }
     
-    lazy var removeFromCart: (Model?) -> Void = { comic in
+    lazy var removeFromCart: (Model?) -> Void = { [weak self] comic in
         ComicCartStorage.main.remove(comic: comic)
         // TODO: Alert Remove from Cart
+        self?.loadCartItems()
+        self?.checkIfFavoriteAndCartList()
     }
     
     // MARK: - Request configurations
@@ -155,9 +172,19 @@ class ListContentPageViewModel: NSObject,
         } else {
             items.append(contentsOf: results)
         }
+        
+        checkIfFavoriteAndCartList()
         currentPage = lastRequestResult?.data?.offset
         lastRequestResult = value
         controller?.updateView()
+    }
+
+    func checkIfFavoriteAndCartList() {
+        // When show detail, check if item from API is saved how favorite or cart list
+        if items.count == 1, currentViewModelStrategy == .detail {
+            ComicCartStorage.main.isPurchable(item: items.first)
+            ComicFavoriteStorage.main.isFavorite(item: items.first)
+        }
     }
     
     func getNextPage() -> Int? {
@@ -168,8 +195,7 @@ class ListContentPageViewModel: NSObject,
         }
         
         let nextPage = currentOffset + limitItemPerPage
-        
-        if nextPage < totalPages {
+                if nextPage < totalPages {
             return nextPage
         }
         
@@ -178,7 +204,8 @@ class ListContentPageViewModel: NSObject,
     
     // MARK: - Request content from local storage
     func loadFavoritesItems() {
-        guard let items = ComicFavoriteStorage.main.listComic()  else {
+        guard let items = ComicFavoriteStorage.main.listComics(),
+              currentViewModelStrategy == .favorite else {
             return
         }
         self.items = items // items.compactMap({ $0 as Model })
@@ -186,7 +213,8 @@ class ListContentPageViewModel: NSObject,
     }
     
     func loadCartItems() {
-        guard let items = ComicCartStorage.main.listComics() else {
+        guard let items = ComicCartStorage.main.listComics(),
+              currentViewModelStrategy == .cart else {
             return
         }
         self.items = items
@@ -206,11 +234,14 @@ class ListContentPageViewModel: NSObject,
         guard var item = items[indexPath.row] as? ViewModelBehavior else {
             return nil
         }
-
+        
         item.selectAction = goToDetailContent
-        item.purchaseAction = saveToCart
-        item.favoriteAction = saveToFavorite
-
+        
+        item.addCartAction = saveToCart
+        item.removeCartAction = removeFromCart
+        
+        item.addFavoriteAction = saveToFavorite
+        item.removeFavoriteAction = removeFavorite
         return item
     }
     
