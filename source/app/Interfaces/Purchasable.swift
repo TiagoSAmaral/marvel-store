@@ -9,6 +9,7 @@
 import Foundation
 
 protocol Purchasable {
-    var isPurchasable: Bool { get set }
-    var purchaseAction: ((Model?) -> Void)? { get set }
+    var isIntoCart: Bool { get set }
+    var addCartAction: ((Model?) -> Void)? { get set }
+    var removeCartAction: ((Model?) -> Void)? { get set }
 }

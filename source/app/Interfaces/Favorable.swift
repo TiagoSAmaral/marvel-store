@@ -10,5 +10,6 @@ import Foundation
 
 protocol Favorable {
     var isFavorable: Bool { get set }
-    var favoriteAction: ((Model?) -> Void)? { get set }
+    var addFavoriteAction: ((Model?) -> Void)? { get set }
+    var removeFavoriteAction: ((Model?) -> Void)? { get set }
 }
