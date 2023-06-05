@@ -33,7 +33,7 @@ struct MainTabbarFactory {
     
     private static func defineStorageFlow() -> UIViewController? {
         let navigation = NavigationController()
-        let coordinator = ListContentPageCoordinator(navigation: NavigationController())
+        let coordinator = ListContentPageCoordinator(navigation: navigation)
         guard let controller = ListContentPageFactory.makePage(coordinator: coordinator, model: nil) else {
             return nil
         }
@@ -44,7 +44,7 @@ struct MainTabbarFactory {
     
     private static func defineFavoriteFlow() -> UIViewController? {
         let navigation = NavigationController()
-        let coordinator = ListFavoritePageCoordinator(navigation: NavigationController())
+        let coordinator = ListFavoritePageCoordinator(navigation: navigation)
         guard let controller = ListFavoritePageFactory.makePage(coordinator: coordinator, model: nil) else {
             return nil
         }
@@ -55,7 +55,7 @@ struct MainTabbarFactory {
     
     private static func defineCartFlow() -> UIViewController? {
         let navigation = NavigationController()
-        let coordinator = CartPageCoordinator(navigation: NavigationController())
+        let coordinator = CartPageCoordinator(navigation: navigation)
         guard let controller = CartPageFactory.makePage(coordinator: coordinator, model: nil) else {
             return nil
         }
