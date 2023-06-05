@@ -9,6 +9,7 @@
 import UIKit
 
 protocol ListContentController where Self: UIViewController {
+    var viewDidAppearEvent: (() -> Void)? { get set }
     func updateView()
     func startLoading()
     func stopLoading(onFinish: (() -> Void)?)
@@ -18,11 +19,12 @@ protocol ListContentController where Self: UIViewController {
 
 class ListContentPageController: UIViewController, ListContentController, LoadingManagers, AlertPresetable {
 
-    var viewModel: ViewModelHandlerEventsControllerDelegate?
+    var viewModel: ViewModable?
     var coordinator: ListContentCoordinable?
     var searchController: UISearchController?
     var searchHandlerEvents: UISearchBarDelegate?
     var listView: ListUpdateEvent?
+    var viewDidAppearEvent: (() -> Void)?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,7 +37,7 @@ class ListContentPageController: UIViewController, ListContentController, Loadin
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        viewModel?.viewDidAppear()
+        viewDidAppearEvent?()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
