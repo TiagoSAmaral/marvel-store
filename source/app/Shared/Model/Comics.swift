@@ -7,28 +7,38 @@
 //
 
 import Foundation
+import RealmSwift
 
-struct Comic: Codable, ViewModelBehavior, Model {
-    let identifier: Int?
-    let issueNumber: Double?
-    let thumbnail: ComicImage?
-    let images: [ComicImage]?
-    let title: String?
-    let description: String?
-    let prices: [ComicPrice]?
+class Comic: Object, Codable, ViewModelBehavior, Model {
 
-    var layout: LayoutView?
-    var action: ((Model?) -> Void)?
-
+    @Persisted(primaryKey: true) var internalId: ObjectId?
+    @Persisted var identifier: Int?
+    @Persisted var issueNumber: Double?
+    @Persisted var thumbnail: ComicImage?
+    @Persisted var title: String?
+    @Persisted var resume: String?
+    @Persisted var layout: LayoutView?
+    @Persisted var isPurchasable: Bool
+    @Persisted var isFavorable: Bool
+    @Persisted var images = List<ComicImage>()
+    @Persisted var prices = List<ComicPrice>()
+    
+    var selectAction: ((Model?) -> Void)?
+    var purchaseAction: ((Model?) -> Void)?
+    var favoriteAction: ((Model?) -> Void)?
+    
     enum CodingKeys: String, CodingKey {
-        case issueNumber, thumbnail, images, title, description, prices
+        case issueNumber, thumbnail, title
+        case prices = "prices"
+        case images = "images"
         case identifier = "id"
+        case resume = "description"
     }
 }
 
-struct ComicImage: Codable {
-    let path: String?
-    let fileExtension: String?
+class ComicImage: Object, Codable {
+    @Persisted var path: String?
+    @Persisted var fileExtension: String?
     
     enum CodingKeys: String, CodingKey {
         case path
@@ -36,7 +46,7 @@ struct ComicImage: Codable {
     }
 }
 
-struct ComicPrice: Codable {
-    let type: String?
-    let price: Double?
+class ComicPrice: Object, Codable {
+    @Persisted var type: String?
+    @Persisted var price: Double?
 }
