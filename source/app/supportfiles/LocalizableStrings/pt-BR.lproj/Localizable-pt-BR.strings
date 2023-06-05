@@ -1,13 +1,11 @@
-"message-readme" = "Verifique o arquivo Readme! \n Português Brasil";
-"twitter-logo" = "twitter";
 "networkErrorNotDefined" = "Algo deu errado, favor tentar novamente. Caso o erro persista, entre em contato com o suporte.";
 "networkOffline" = "Verifique sua conexão com a internet";
 "serverNotResponse" = "Entre em contato com suporte.";
 "pullToRefreshText" = "Atualizando...";
-"showRepos" = "Repositórios";
-"followers" = "Seguidores";
-"following" = "Seguindo";
-"openRepo" = "Abrir repositório";
 "close" = "Fechar";
 "activeFilter" = "Filtrar";
 "clear" = "Limpar";
+"storeTitle" = "Quadrinhos";
+"favoriteTitle" = "Favoritos";
+"cartTitle" = "Carrinho";
+"searchTitle" = "Buscar título";
