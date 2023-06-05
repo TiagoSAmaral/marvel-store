@@ -1,5 +1,5 @@
 //
-//  ListFavoritePageCoordinator.swift
+//  File.swift
 //  marvel-store
 //
 //  Created by Tiago Amaral on 04/06/23.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ListFavoritePageCoordinator: Coordinator {
+class CartPageCoordinator: Coordinator {
     var parentCoordinator: Coordinator?
     
     var childCoordinators: [Coordinator]?
@@ -22,7 +22,7 @@ class ListFavoritePageCoordinator: Coordinator {
     }
     
     func start(with data: Model?) {
-        guard let controller = ListFavoritePageFactory.makePage(coordinator: self, model: data) else {
+        guard let controller = CartPageFactory.makePage(coordinator: self, model: data) else {
             return
         }
         navigationController?.pushViewController(controller, animated: true)

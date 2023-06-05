@@ -1,5 +1,5 @@
 //
-//  FavoritesFactoryPage.swift
+//  ListCartPageFactory.swift
 //  marvel-store
 //
 //  Created by Tiago Amaral on 04/06/23.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ListFavoritePageFactory: FactoryPage {
+class CartPageFactory: FactoryPage {
     static func makePage(coordinator: Coordinator?, model: Model?) -> UIViewController? {
         UIViewController()
     }
