@@ -9,12 +9,17 @@
 import UIKit
 
 class NavigationController: UINavigationController, LoadingPresentable {
+    
     var loadingController: LoadingViewController?
     
     init() {
         super.init(nibName: nil, bundle: nil)
-        navigationBar.isTranslucent = false
-        fixBartintColoriOS15()
+        defineApperance()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        defineApperance()
     }
     
     private func fixBartintColoriOS15() {
@@ -26,8 +31,19 @@ class NavigationController: UINavigationController, LoadingPresentable {
             navigationBar.scrollEdgeAppearance = navigationBar.standardAppearance
         }
     }
+
+    func defineApperance() {
+        navigationBar.isTranslucent = false
+        fixBartintColoriOS15()
+        defineBackbuttonApperance()
+    }
     
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
+    func defineBackbuttonApperance() {
+        
+//          .titleTextAttributes = [.foregroundColor: ColorAsset.titleColor]
+        navigationItem.backButtonTitle = " qqq"
+        navigationBar.tintColor = ColorAsset.titleColor
+        navigationBar.backItem?.title = " ggg"
+        navigationBar.backItem?.backButtonTitle = " sss"
     }
 }
