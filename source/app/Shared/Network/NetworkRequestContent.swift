@@ -56,7 +56,7 @@ class NetworkRequestContent: NetworkContentOperation, NetworkConectable {
     
     func defineLayout(at items: [Comic], layoutView: LayoutView?) -> [Comic] {
         let itemsWithLayout: [Comic] = items.compactMap { (item: Comic) -> Comic in
-            var mutableItem = item
+            let mutableItem = item
             mutableItem.layout = layoutView
             return mutableItem
         }
