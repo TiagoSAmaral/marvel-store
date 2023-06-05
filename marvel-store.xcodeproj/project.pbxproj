@@ -69,6 +69,17 @@
 		CFD3A6DC23DA462000EB6D4D /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFD3A6DB23DA462000EB6D4D /* Launch Screen.storyboard */; };
 		CFDDAA452A2CE23100B6DAB9 /* DetailContentPageFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAB5CDA2A105A250091F1FF /* DetailContentPageFactory.swift */; };
 		CFDDAA462A2CE2FC00B6DAB9 /* DetailContentPageCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAB5CD82A105A250091F1FF /* DetailContentPageCoordinator.swift */; };
+		CFDDAA492A2CF3D700B6DAB9 /* ComicFavoriteStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDDAA482A2CF3D700B6DAB9 /* ComicFavoriteStorage.swift */; };
+		CFDDAA4B2A2D014D00B6DAB9 /* Favorable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDDAA4A2A2D014D00B6DAB9 /* Favorable.swift */; };
+		CFDDAA4D2A2D017500B6DAB9 /* Purchasable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDDAA4C2A2D017500B6DAB9 /* Purchasable.swift */; };
+		CFDDAA512A2D04D300B6DAB9 /* ListFavoritPageFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDDAA502A2D04D300B6DAB9 /* ListFavoritPageFactory.swift */; };
+		CFDDAA532A2D052600B6DAB9 /* ListFavoritePageCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDDAA522A2D052600B6DAB9 /* ListFavoritePageCoordinator.swift */; };
+		CFDDAA552A2D053900B6DAB9 /* ListCartPageCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDDAA542A2D053900B6DAB9 /* ListCartPageCoordinator.swift */; };
+		CFDDAA572A2D07A400B6DAB9 /* ListCartPageFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDDAA562A2D07A400B6DAB9 /* ListCartPageFactory.swift */; };
+		CFDDAA592A2D35B400B6DAB9 /* ComicCartStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDDAA582A2D35B400B6DAB9 /* ComicCartStorage.swift */; };
+		CFDDAA5B2A2D35F000B6DAB9 /* RealmInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDDAA5A2A2D35F000B6DAB9 /* RealmInstance.swift */; };
+		CFDDAA5D2A2D39BE00B6DAB9 /* Selectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDDAA5C2A2D39BE00B6DAB9 /* Selectable.swift */; };
+		CFDDAA5F2A2D587300B6DAB9 /* SchemeMigration.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDDAA5E2A2D587300B6DAB9 /* SchemeMigration.swift */; };
 		CFE2D5A52A0F4E02001F649F /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = CFE2D5A42A0F4E02001F649F /* Alamofire */; };
 		CFE2D5A82A0F4E17001F649F /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = CFE2D5A72A0F4E17001F649F /* Kingfisher */; };
 		CFE71CEA2A293939009F5E12 /* APISecurityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE71CE92A293939009F5E12 /* APISecurityTests.swift */; };
@@ -156,6 +167,17 @@
 		CFD3A6CE23DA3F9700EB6D4D /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable-pt-BR.strings"; sourceTree = "<group>"; };
 		CFD3A6D923DA443200EB6D4D /* LocalizedText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedText.swift; sourceTree = "<group>"; };
 		CFD3A6DB23DA462000EB6D4D /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		CFDDAA482A2CF3D700B6DAB9 /* ComicFavoriteStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicFavoriteStorage.swift; sourceTree = "<group>"; };
+		CFDDAA4A2A2D014D00B6DAB9 /* Favorable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorable.swift; sourceTree = "<group>"; };
+		CFDDAA4C2A2D017500B6DAB9 /* Purchasable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Purchasable.swift; sourceTree = "<group>"; };
+		CFDDAA502A2D04D300B6DAB9 /* ListFavoritPageFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListFavoritPageFactory.swift; sourceTree = "<group>"; };
+		CFDDAA522A2D052600B6DAB9 /* ListFavoritePageCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListFavoritePageCoordinator.swift; sourceTree = "<group>"; };
+		CFDDAA542A2D053900B6DAB9 /* ListCartPageCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCartPageCoordinator.swift; sourceTree = "<group>"; };
+		CFDDAA562A2D07A400B6DAB9 /* ListCartPageFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCartPageFactory.swift; sourceTree = "<group>"; };
+		CFDDAA582A2D35B400B6DAB9 /* ComicCartStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicCartStorage.swift; sourceTree = "<group>"; };
+		CFDDAA5A2A2D35F000B6DAB9 /* RealmInstance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmInstance.swift; sourceTree = "<group>"; };
+		CFDDAA5C2A2D39BE00B6DAB9 /* Selectable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Selectable.swift; sourceTree = "<group>"; };
+		CFDDAA5E2A2D587300B6DAB9 /* SchemeMigration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchemeMigration.swift; sourceTree = "<group>"; };
 		CFE2D5AF2A0F572C001F649F /* SwiftIconFont.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SwiftIconFont.xcframework; path = Carthage/Build/SwiftIconFont.xcframework; sourceTree = "<group>"; };
 		CFE71CE92A293939009F5E12 /* APISecurityTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APISecurityTests.swift; sourceTree = "<group>"; };
 		CFE71CEB2A2956F9009F5E12 /* URLPathBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLPathBuilder.swift; sourceTree = "<group>"; };
@@ -246,6 +268,9 @@
 				CFE71CEF2A29913A009F5E12 /* ViewModelBehavior.swift */,
 				CFAB5D1F2A127C090091F1FF /* ViewModelHandlerEventsControllerDelegate.swift */,
 				CF760DF32A2BAC8200C6D4B9 /* ViewHandlerEventUpdate.swift */,
+				CFDDAA4A2A2D014D00B6DAB9 /* Favorable.swift */,
+				CFDDAA4C2A2D017500B6DAB9 /* Purchasable.swift */,
+				CFDDAA5C2A2D39BE00B6DAB9 /* Selectable.swift */,
 			);
 			path = Interfaces;
 			sourceTree = "<group>";
@@ -314,6 +339,7 @@
 		CFAB5CB92A1003F80091F1FF /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				CFDDAA472A2CF3C300B6DAB9 /* Storage */,
 				CFAB5D212A12F2E60091F1FF /* AssetsAcessors */,
 				CF4D91462A0FFAD8000BE331 /* Network */,
 				CFAB5CF92A1120F10091F1FF /* Factories */,
@@ -347,6 +373,8 @@
 		CFAB5CD22A1056E40091F1FF /* Pages */ = {
 			isa = PBXGroup;
 			children = (
+				CFDDAA4F2A2D04BE00B6DAB9 /* Cart */,
+				CFDDAA4E2A2D04B700B6DAB9 /* Favorites */,
 				CFAB5CD32A1056F00091F1FF /* ContentDetailPage */,
 				CFAB5CD12A1056D60091F1FF /* ListContentPage */,
 			);
@@ -530,6 +558,35 @@
 				CFD3A6D923DA443200EB6D4D /* LocalizedText.swift */,
 			);
 			path = LocalizableStrings;
+			sourceTree = "<group>";
+		};
+		CFDDAA472A2CF3C300B6DAB9 /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				CFDDAA482A2CF3D700B6DAB9 /* ComicFavoriteStorage.swift */,
+				CFDDAA582A2D35B400B6DAB9 /* ComicCartStorage.swift */,
+				CFDDAA5A2A2D35F000B6DAB9 /* RealmInstance.swift */,
+				CFDDAA5E2A2D587300B6DAB9 /* SchemeMigration.swift */,
+			);
+			path = Storage;
+			sourceTree = "<group>";
+		};
+		CFDDAA4E2A2D04B700B6DAB9 /* Favorites */ = {
+			isa = PBXGroup;
+			children = (
+				CFDDAA502A2D04D300B6DAB9 /* ListFavoritPageFactory.swift */,
+				CFDDAA522A2D052600B6DAB9 /* ListFavoritePageCoordinator.swift */,
+			);
+			path = Favorites;
+			sourceTree = "<group>";
+		};
+		CFDDAA4F2A2D04BE00B6DAB9 /* Cart */ = {
+			isa = PBXGroup;
+			children = (
+				CFDDAA542A2D053900B6DAB9 /* ListCartPageCoordinator.swift */,
+				CFDDAA562A2D07A400B6DAB9 /* ListCartPageFactory.swift */,
+			);
+			path = Cart;
 			sourceTree = "<group>";
 		};
 		CFE2D5A92A0F56D8001F649F /* Frameworks */ = {
@@ -752,10 +809,12 @@
 				CFAB5CE92A105F010091F1FF /* ListContentPageController.swift in Sources */,
 				CFC405AF2A254C1600222F60 /* Comics.swift in Sources */,
 				CFAB5D162A1208D00091F1FF /* SearchBarFactory.swift in Sources */,
+				CFDDAA4B2A2D014D00B6DAB9 /* Favorable.swift in Sources */,
 				CF2C526E2A2AE9D500ECEB24 /* TableViewAutomaticPaginate.swift in Sources */,
 				CFE71CF02A29913A009F5E12 /* ViewModelBehavior.swift in Sources */,
 				CF2C52752A2B031400ECEB24 /* ButtonFactoryView.swift in Sources */,
 				CFC405B92A25694A00222F60 /* PaginateResponse.swift in Sources */,
+				CFDDAA5F2A2D587300B6DAB9 /* SchemeMigration.swift in Sources */,
 				CFAB5CFB2A1121270091F1FF /* CardFactory.swift in Sources */,
 				CFAB5D332A133C410091F1FF /* AlertPresentable.swift in Sources */,
 				CF2C526C2A2A8C3C00ECEB24 /* RequestParams.swift in Sources */,
@@ -775,13 +834,21 @@
 				CFE71CEE2A295719009F5E12 /* URLPathBuildable.swift in Sources */,
 				CFDDAA462A2CE2FC00B6DAB9 /* DetailContentPageCoordinator.swift in Sources */,
 				CFAB5D052A11DEE70091F1FF /* LayoutView.swift in Sources */,
+				CFDDAA552A2D053900B6DAB9 /* ListCartPageCoordinator.swift in Sources */,
 				CFD3A6B723DA308A00EB6D4D /* AppDelegate.swift in Sources */,
 				CF2C526A2A2A74B800ECEB24 /* NetworkRequestParameters.swift in Sources */,
+				CFDDAA512A2D04D300B6DAB9 /* ListFavoritPageFactory.swift in Sources */,
 				CFAB5CD72A1059AF0091F1FF /* AppCoordinator.swift in Sources */,
+				CFDDAA492A2CF3D700B6DAB9 /* ComicFavoriteStorage.swift in Sources */,
+				CFDDAA5D2A2D39BE00B6DAB9 /* Selectable.swift in Sources */,
 				CFAB5D262A132D330091F1FF /* LoadingViewController.swift in Sources */,
+				CFDDAA572A2D07A400B6DAB9 /* ListCartPageFactory.swift in Sources */,
 				CF760DF42A2BAC8200C6D4B9 /* ViewHandlerEventUpdate.swift in Sources */,
 				CFAB5D2E2A13342E0091F1FF /* LoadingManagers.swift in Sources */,
 				CFD3A6DA23DA443200EB6D4D /* LocalizedText.swift in Sources */,
+				CFDDAA532A2D052600B6DAB9 /* ListFavoritePageCoordinator.swift in Sources */,
+				CFDDAA5B2A2D35F000B6DAB9 /* RealmInstance.swift in Sources */,
+				CFDDAA4D2A2D017500B6DAB9 /* Purchasable.swift in Sources */,
 				CFAB5D032A11D5480091F1FF /* Model.swift in Sources */,
 				CF760DF22A2B8E7500C6D4B9 /* ViewMosaicComposer.swift in Sources */,
 				CFAB5D082A11E1940091F1FF /* CardListContentView.swift in Sources */,
@@ -789,6 +856,7 @@
 				CF2C52702A2B003900ECEB24 /* YearSelectorView.swift in Sources */,
 				CFAB5CBB2A1006160091F1FF /* NetworkHeaderFactory.swift in Sources */,
 				CFC405B12A2553EC00222F60 /* APISecurity.swift in Sources */,
+				CFDDAA592A2D35B400B6DAB9 /* ComicCartStorage.swift in Sources */,
 				CFE71CEC2A2956F9009F5E12 /* URLPathBuilder.swift in Sources */,
 				CFAB5D0E2A11EF1B0091F1FF /* CardTouch.swift in Sources */,
 				CFAB5CF72A111A840091F1FF /* CustomCell.swift in Sources */,
