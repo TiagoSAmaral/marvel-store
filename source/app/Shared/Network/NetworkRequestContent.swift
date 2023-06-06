@@ -12,10 +12,6 @@ import Foundation
 // Handler type of decode json here.
 typealias GeneralResultHandler = ((Result<GeneralResult<Comic>, NetworkError>) -> Void)
 
-protocol NetworkContentOperation {
-    func requestContentWith(param: NetworkRequestParameters, handler: GeneralResultHandler?)
-}
-
 class NetworkRequestContent: NetworkContentOperation, NetworkConectable {
     
     func requestContentWith(param: NetworkRequestParameters, handler: GeneralResultHandler?) {
