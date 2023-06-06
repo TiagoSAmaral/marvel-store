@@ -6,13 +6,6 @@
 //  Copyright © 2023 developer_organization_name. All rights reserved.
 //
 
-import Foundation
-
-//  PDPicker.swift
-//  Created by Tiago da Silva Amaral on 28/11/17.
-//  Copyright © 2017 Valid S.A. All rights reserved.
-//
-
 import UIKit
 
 typealias ResponsePicker = (_ picker: PDPicker, _ data: OptionsPickerView, _ row: Int) -> Void
@@ -25,7 +18,7 @@ final class PDPicker: UIPickerView, UIPickerViewDataSource, UIPickerViewDelegate
     
     init(options: [OptionsPickerView], response: @escaping ResponsePicker) {
         super.init(frame: CGRect(x: 0,
-                                 y: UIScreen.main.bounds.size.height - 300,
+                                 y: UIScreen.main.bounds.size.height - 450,
                                  width: UIScreen.main.bounds.size.width,
                                  height: 300))
         delegate = self
@@ -55,9 +48,9 @@ final class PDPicker: UIPickerView, UIPickerViewDataSource, UIPickerViewDelegate
     
     private func makeToolBar(at view: UIView) {
         
-        let toolBar = UIToolbar.init(frame: CGRect.init(x: 0.0, y: UIScreen.main.bounds.size.height - 300, width: UIScreen.main.bounds.size.width, height: 50))
+        let toolBar = UIToolbar.init(frame: CGRect.init(x: 0.0, y: UIScreen.main.bounds.size.height - 450, width: UIScreen.main.bounds.size.width, height: 50))
         toolBar.barStyle = .black
-        toolBar.items = [UIBarButtonItem.init(title: "Done", style: .done, target: self, action: #selector(onDoneButtonTapped))]
+        toolBar.items = [UIBarButtonItem.init(title: LocalizedText.with(tagName: .close), style: .done, target: self, action: #selector(onDoneButtonTapped))]
         self.toolBar = toolBar
         view.addSubview(toolBar)
         view.bringSubviewToFront(toolBar)
