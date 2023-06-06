@@ -14,7 +14,7 @@ class RealmInstance {
     let realm = try? Realm()
     
     static func sanitizeRealm() {
-        let items = try? main.realm?.objects(Comic.self)
+        let items = main.realm?.objects(Comic.self)
         try? main.realm?.write {
             if let itemsToRemove = items?.where({ $0.isFavorable == false && $0.isIntoCart == false }) {
                 main.realm?.delete(itemsToRemove)
