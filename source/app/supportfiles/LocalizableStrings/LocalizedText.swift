@@ -27,6 +27,7 @@ struct LocalizedText {
         case removeToCart
         case digitalPrice
         case printPrice
+        case preview
     }
     
     static func with(tagName: LocalizeTags) -> String {

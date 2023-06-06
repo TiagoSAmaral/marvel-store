@@ -27,6 +27,7 @@ class ListFavoritePageFactory: FactoryPage {
         controller.viewModel = viewModel
         controller.viewDidAppearEvent = viewModel.loadFavoritesItems
         controller.coordinator = coordinator as? ListContentCoordinable
+        controller.title = LocalizedText.with(tagName: .favoriteTitle)
         controller.view = mosaicComposerView.baseView
         return controller
     }

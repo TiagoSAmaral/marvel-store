@@ -27,6 +27,7 @@ class CartPageFactory: FactoryPage {
         controller.viewModel = viewModel
         controller.viewDidAppearEvent = viewModel.loadCartItems
         controller.coordinator = coordinator as? ListContentCoordinable
+        controller.title = LocalizedText.with(tagName: .cartTitle)
         controller.view = mosaicComposerView.baseView
         return controller
     }

@@ -1,24 +1,50 @@
 # Marvel Store
 
-ADD Descrição do projeto.
+Projeto simples para consumir a API da Marvel, e exibir algum conteúdo sobre as revistas em quadrinhos.
 
-Suporte a Darkmode
+## <b> <span style="color:red"> LEIA AQUI! </span> </b>
+Por questões de segurança as chaves da API não estão no projeto. 
+Para excutar a build no scheme de producao, será necessário providenciar a `PRIVATE_KEY` e `PUBLIC_KEY`, de acesso da API da Marvel.
 
-## Preview
+Para exicutar o projeto em `desenvolvimento` será necessário criar um arquivo plist novo, e incluir suas chavez la. 
+
+ Mais informações podem ser vistas nesse README: <a hrel="./app/supportfiles/plists/README.md">link aqui!</a>
+
+### Preview
 
 #### Light Mode
 <p float="left">
-<kbd><img src="./readmeresource/list_users_l.png" width="149"/></kbd>
+<kbd><img src="./readmeresource/cover.png" width="149"/></kbd>
+<kbd><img src="./readmeresource/white-cart.png" width="149"/></kbd>
+<kbd><img src="./readmeresource/white-fav.png" width="149"/></kbd>
+<kbd><img src="./readmeresource/white-list.png" width="149"/></kbd>
+<kbd><img src="./readmeresource/white-search-filter.png" width="149"/></kbd>
+<kbd><img src="./readmeresource/white-search.png" width="149"/></kbd>
 
 #### Dark Mode
 <p float="left">
-<kbd><img src="./readmeresource/list_users_d.png" width="149"/></kbd>
+<kbd><img src="./readmeresource/black-cart.png" width="149"/></kbd>
+<kbd><img src="./readmeresource/black-fav.png" width="149"/></kbd>
+<kbd><img src="./readmeresource/black-list.png" width="149"/></kbd>
+<kbd><img src="./readmeresource/black-preview.png" width="149"/></kbd>
+<kbd><img src="./readmeresource/black-scroll-cart.png" width="149"/></kbd>
+<kbd><img src="./readmeresource/black-search-filter.png" width="149"/></kbd>
 </p>
 
 ## Sobre o projeto: <br>
 - Xcode Version 14.3 ou superior<br>
 - Suporte mínimo ao iOS 13<br>
 - Swift 5<br>
+- Cover Coverage habilitado
+
+
+## Features exploradas
+- Tratamento de erros
+- CodeView
+- Aplicação de Testes Unitários
+- Swiftlint
+- Aplicado MVVM-C
+- DarkMode
 
 ## Preparando o Ambiente
 Para executar o projeto, siga os passos abaixo.

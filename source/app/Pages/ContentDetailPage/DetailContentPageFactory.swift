@@ -31,6 +31,7 @@ class DetailContentPageFactory: FactoryPage {
         controller.viewDidAppearEvent = viewModel.loadDetailOfItem
         controller.coordinator = coordinator as? ListContentCoordinable
         controller.searchHandlerEvents = viewModel
+        controller.title = LocalizedText.with(tagName: .preview)
         controller.view = mosaicComposerView.baseView
         return controller
     }
