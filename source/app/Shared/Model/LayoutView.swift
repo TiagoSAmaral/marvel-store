@@ -6,7 +6,6 @@
 //  Copyright © 2023 developer_organization_name. All rights reserved.
 //
 
-import Foundation
 import RealmSwift
 
 enum LayoutView: String, Codable, PersistableEnum {
