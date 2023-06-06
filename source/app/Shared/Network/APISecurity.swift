@@ -9,10 +9,6 @@
 import Foundation
 import CryptoKit
 
-/**
-  APISecurity is responsable by get the private and public API keys and generate a MD5 Hash.
- */
-
 protocol APISecurer {
     func makeCredential(with timestamp: TimeInterval?) -> APISecurityCredential?
 }
@@ -21,12 +17,6 @@ protocol APISecurityCredential {
     var publicKey: String { get }
     var timeStamp: Double { get }
     var hash: String { get }
-}
-
-struct APISecurityPayload: APISecurityCredential {
-    var publicKey: String
-    var timeStamp: Double
-    var hash: String
 }
 
 class APISecurity: APISecurer {
