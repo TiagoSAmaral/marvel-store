@@ -8,15 +8,6 @@
 
 import UIKit
 
-protocol Controller: AnyObject {
-    var view: UIView! { get set }
-    var dataHandler: ListDataHandler? { get }
-}
-
-protocol ListUpdateEvent {
-    func reloadView()
-}
-
 class TableViewAutomaticPaginate: UITableView, UITableViewDelegate, UITableViewDataSource, ListUpdateEvent {
 
     var dataHandler: ListDataHandler?
