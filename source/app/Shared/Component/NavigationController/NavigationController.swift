@@ -39,11 +39,6 @@ class NavigationController: UINavigationController, LoadingPresentable {
     }
     
     func defineBackbuttonApperance() {
-        
-//          .titleTextAttributes = [.foregroundColor: ColorAsset.titleColor]
-        navigationItem.backButtonTitle = " qqq"
         navigationBar.tintColor = ColorAsset.titleColor
-        navigationBar.backItem?.title = " ggg"
-        navigationBar.backItem?.backButtonTitle = " sss"
     }
 }
