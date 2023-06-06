@@ -8,7 +8,7 @@ Para excutar a build no scheme de producao, será necessário providenciar a `PR
 
 Para exicutar o projeto em `desenvolvimento` será necessário criar um arquivo plist novo, e incluir suas chavez la. 
 
- Mais informações podem ser vistas nesse README: [LINK AQUI!](./app/supportfiles/plists/README.m)
+ Mais informações podem ser vistas nesse README: [LINK AQUI!](./app/supportfiles/plists/README.md)
 
 ### Preview
 
