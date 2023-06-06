@@ -6,7 +6,6 @@
 //  Copyright © 2023 developer_organization_name. All rights reserved.
 //
 
-import Foundation
 import RealmSwift
 
 class Comic: Object, Codable, ViewModelBehavior, Model {
@@ -34,23 +33,4 @@ class Comic: Object, Codable, ViewModelBehavior, Model {
         case identifier = "id"
         case resume = "description"
     }
-}
-
-class ComicImage: Object, Codable {
-    @Persisted var path: String?
-    @Persisted var fileExtension: String?
-    
-    enum CodingKeys: String, CodingKey {
-        case path
-        case fileExtension = "extension"
-    }
-}
-
-class ComicPrice: Object, Codable {
-    @Persisted var type: TypePrice?
-    @Persisted var price: Double?
-}
-
-enum TypePrice: String, Codable, PersistableEnum {
-    case printPrice, digitalPurchasePrice
 }
