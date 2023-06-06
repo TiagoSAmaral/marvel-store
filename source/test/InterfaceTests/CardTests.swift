@@ -17,6 +17,20 @@ class CardViewTest: UIView, Card {
 }
 
 struct TestModel: Model, ViewModelBehavior {
+    var isIntoCart: Bool
+    
+    var addCartAction: ((Marvel_Store_Dev.Model?) -> Void)?
+    
+    var removeCartAction: ((Marvel_Store_Dev.Model?) -> Void)?
+    
+    var isFavorable: Bool
+    
+    var addFavoriteAction: ((Marvel_Store_Dev.Model?) -> Void)?
+    
+    var removeFavoriteAction: ((Marvel_Store_Dev.Model?) -> Void)?
+    
+    var selectAction: ((Marvel_Store_Dev.Model?) -> Void)?
+    
     var identifier: Int?
     
     var layout: LayoutView?
@@ -34,7 +48,7 @@ final class CardTests: XCTestCase {
     
     override func setUp() {
         cardTest = CardViewTest()
-        modelTest = TestModel()
+        modelTest = TestModel(isIntoCart: false, isFavorable: false)
         
         modelTest?.identifier = 125125125
         modelTest?.layout = .listContentLayoutCard

@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CF2C52662A2A4A7400ECEB24 /* NetworkErrorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2C52652A2A4A7400ECEB24 /* NetworkErrorTests.swift */; };
-		CF2C52682A2A508600ECEB24 /* APIRoutesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2C52672A2A508600ECEB24 /* APIRoutesTests.swift */; };
+		CF2C52682A2A508600ECEB24 /* URLPathBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2C52672A2A508600ECEB24 /* URLPathBuilderTests.swift */; };
 		CF2C526A2A2A74B800ECEB24 /* NetworkRequestParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2C52692A2A74B800ECEB24 /* NetworkRequestParameters.swift */; };
 		CF2C526C2A2A8C3C00ECEB24 /* RequestParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2C526B2A2A8C3C00ECEB24 /* RequestParams.swift */; };
 		CF2C526E2A2AE9D500ECEB24 /* TableViewAutomaticPaginate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2C526D2A2AE9D500ECEB24 /* TableViewAutomaticPaginate.swift */; };
@@ -99,6 +99,7 @@
 		CFEFB2082A2EEE390061EF4B /* NetworkContentOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEFB2072A2EEE390061EF4B /* NetworkContentOperation.swift */; };
 		CFEFB20A2A2EEE850061EF4B /* CurrentViewModelStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEFB2092A2EEE850061EF4B /* CurrentViewModelStrategy.swift */; };
 		CFEFB20F2A2EF2BD0061EF4B /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFEFB20E2A2EF2BD0061EF4B /* Launch Screen.storyboard */; };
+		CFEFB2112A2F06320061EF4B /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = CFEFB2102A2F06320061EF4B /* Realm */; };
 		CFF2EA112A0F259800709168 /* Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF2EA102A0F259800709168 /* Constraints.swift */; };
 /* End PBXBuildFile section */
 
@@ -115,7 +116,7 @@
 /* Begin PBXFileReference section */
 		CF24569923E4C55B00A1968D /* info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = info.plist; sourceTree = "<group>"; };
 		CF2C52652A2A4A7400ECEB24 /* NetworkErrorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrorTests.swift; sourceTree = "<group>"; };
-		CF2C52672A2A508600ECEB24 /* APIRoutesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRoutesTests.swift; sourceTree = "<group>"; };
+		CF2C52672A2A508600ECEB24 /* URLPathBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLPathBuilderTests.swift; sourceTree = "<group>"; };
 		CF2C52692A2A74B800ECEB24 /* NetworkRequestParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequestParameters.swift; sourceTree = "<group>"; };
 		CF2C526B2A2A8C3C00ECEB24 /* RequestParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestParams.swift; sourceTree = "<group>"; };
 		CF2C526D2A2AE9D500ECEB24 /* TableViewAutomaticPaginate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewAutomaticPaginate.swift; sourceTree = "<group>"; };
@@ -217,6 +218,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFEFB2112A2F06320061EF4B /* Realm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -657,7 +659,7 @@
 			children = (
 				CFE71CE92A293939009F5E12 /* APISecurityTests.swift */,
 				CF2C52652A2A4A7400ECEB24 /* NetworkErrorTests.swift */,
-				CF2C52672A2A508600ECEB24 /* APIRoutesTests.swift */,
+				CF2C52672A2A508600ECEB24 /* URLPathBuilderTests.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -707,6 +709,7 @@
 			);
 			name = "marvel-storeTests";
 			packageProductDependencies = (
+				CFEFB2102A2F06320061EF4B /* Realm */,
 			);
 			productName = BaseProjectTargetTests;
 			productReference = CF6414DF23E4C1CF009C7A9E /* marvel-storeTests.xctest */;
@@ -832,7 +835,7 @@
 			files = (
 				CFE71CEA2A293939009F5E12 /* APISecurityTests.swift in Sources */,
 				CF7EAAA52A27EA7A006F5D12 /* CardTests.swift in Sources */,
-				CF2C52682A2A508600ECEB24 /* APIRoutesTests.swift in Sources */,
+				CF2C52682A2A508600ECEB24 /* URLPathBuilderTests.swift in Sources */,
 				CF2C52662A2A4A7400ECEB24 /* NetworkErrorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1255,6 +1258,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = CFE2D5A62A0F4E17001F649F /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		CFEFB2102A2F06320061EF4B /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CFC2F17D2A2517AD00A25148 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
