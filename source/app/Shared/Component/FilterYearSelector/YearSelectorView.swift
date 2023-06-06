@@ -8,12 +8,6 @@
 
 import UIKit
 
-protocol YearSelectorViewDataHandlerDelegate: AnyObject {
-    var disableFilterOptions: String? { get }
-    var listYearFilter: [String]? { get }
-    func receive(value: String?)
-}
-
 class YearSelectorView: UIView {
     
     private var delegate: YearSelectorViewDataHandlerDelegate?
