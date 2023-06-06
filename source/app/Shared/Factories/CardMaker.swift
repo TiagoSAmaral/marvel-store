@@ -8,10 +8,6 @@
 
 import UIKit
 
-protocol CardFactory {
-    func makeCard(from item: ViewModelBehavior?) -> Card?
-}
-
 class CardMaker: CardFactory {
     
     func makeCard(from item: ViewModelBehavior?) -> Card? {
