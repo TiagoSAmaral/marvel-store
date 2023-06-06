@@ -174,8 +174,8 @@ class ListContentPageViewModel: NSObject,
     func checkIfFavoriteAndCartList() {
         // When show detail, check if item from API is saved how favorite or cart list
         if items.count == 1, currentViewModelStrategy == .detail {
-            ComicCartStorage.main.isPurchable(item: items.first)
-            ComicFavoriteStorage.main.isFavorite(item: items.first)
+            ComicCartStorage.main.markItemFromApiLikeIntoCart(item: items.first)
+            ComicFavoriteStorage.main.markItemFromApiLikeFavorite(item: items.first)
         }
     }
     

@@ -103,7 +103,7 @@
                 "prices": [
                     {
                         "type": "printPrice",
-                        "price": 0
+                        "price": 0.0
                     }
                 ],
                 "thumbnail": {
@@ -245,7 +245,7 @@
                 "prices": [
                     {
                         "type": "printPrice",
-                        "price": 0
+                        "price": 0.0
                     }
                 ],
                 "thumbnail": {
@@ -390,7 +390,7 @@
                 "prices": [
                     {
                         "type": "printPrice",
-                        "price": 0
+                        "price": 0.0
                     },
                     {
                         "type": "digitalPurchasePrice",
@@ -1843,7 +1843,7 @@
                 "prices": [
                     {
                         "type": "printPrice",
-                        "price": 0
+                        "price": 0.0
                     }
                 ],
                 "thumbnail": {
@@ -1936,7 +1936,7 @@
                 "prices": [
                     {
                         "type": "printPrice",
-                        "price": 0
+                        "price": 0.0
                     }
                 ],
                 "thumbnail": {

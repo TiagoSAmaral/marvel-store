@@ -45,10 +45,6 @@ final class ComicFavoriteStorage {
         }
         
         guard let cachedComic = RealmInstance.main.realm?.objects(Comic.self).filter("identifier == \(identifier)").first else {
-            comic.isFavorable = false
-            try? RealmInstance.main.realm?.write {
-                RealmInstance.main.realm?.add(comic)
-            }
             return
         }
         try? RealmInstance.main.realm?.write {
@@ -60,7 +56,7 @@ final class ComicFavoriteStorage {
         RealmInstance.main.realm?.objects(Comic.self).filter({ $0.isFavorable == true}).first
     }
     
-    func isFavorite(item: Model?) {
+    func markItemFromApiLikeFavorite(item: Model?) {
         guard let comic = item as? Comic, let identifier = comic.identifier else {
             return
         }

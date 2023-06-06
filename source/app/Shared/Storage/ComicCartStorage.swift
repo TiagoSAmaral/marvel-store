@@ -45,10 +45,6 @@ final class ComicCartStorage {
         }
         
         guard let cachedComic = RealmInstance.main.realm?.objects(Comic.self).filter("identifier == \(identifier)").first else {
-            comic.isIntoCart = false
-            try? RealmInstance.main.realm?.write {
-                RealmInstance.main.realm?.add(comic)
-            }
             return
         }
         try? RealmInstance.main.realm?.write {
@@ -60,7 +56,7 @@ final class ComicCartStorage {
         RealmInstance.main.realm?.objects(Comic.self).first
     }
     
-    func isPurchable(item: Model?) {
+    func markItemFromApiLikeIntoCart(item: Model?) {
         guard let comic = item as? Comic, let identifier = comic.identifier else {
             return
         }

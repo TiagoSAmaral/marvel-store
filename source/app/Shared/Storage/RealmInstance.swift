@@ -11,7 +11,7 @@ import RealmSwift
 
 class RealmInstance {    
     static let main = RealmInstance()
-    let realm = try? Realm()
+    var realm = try? Realm()
     
     static func sanitizeRealm() {
         let items = main.realm?.objects(Comic.self)
