@@ -7,7 +7,6 @@
 //
 
 import XCTest
-@testable import Marvel_Store_Dev
 
 final class NetworkErrorTests: XCTestCase {
     

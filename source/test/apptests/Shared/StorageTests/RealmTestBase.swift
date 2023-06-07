@@ -9,7 +9,6 @@
 import XCTest
 import Realm
 import RealmSwift
-@testable import Marvel_Store_Dev
 
 class RealmTestBase: XCTestCase {
 

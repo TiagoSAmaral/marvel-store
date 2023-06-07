@@ -11,8 +11,6 @@ import Foundation
 import XCTest
 import RealmSwift
 
-@testable import Marvel_Store_Dev
-
 final class RealmInstaceTests: RealmTestBase {
     
     override var name: String {

@@ -1,5 +1,5 @@
 //
-//  ComicCartStorage.swift
+//  ComicFavoriteStorageTests.swift
 //  marvel-store
 //
 //  Created by Tiago Amaral on 06/06/23.
@@ -9,18 +9,17 @@
 import XCTest
 import RealmSwift
 
-@testable import Marvel_Store_Dev
-
-final class ComicCartStorageTests: RealmTestBase {
+final class ComicFavoriteStorageTests: RealmTestBase {
 
     override var name: String {
-        ComicCartStorageTests.identifier
+        ComicFavoriteStorageTests.identifier
     }
     
     override func setUp() {
         super.setUp()
         
         RealmInstance.main.realm = try? Realm()
+        
         try! RealmInstance.main.realm?.write {
             RealmInstance.main.realm?.deleteAll()
         }
@@ -34,34 +33,39 @@ final class ComicCartStorageTests: RealmTestBase {
     }
     
     func testListComics() {
-        let realm = try! Realm()
-        try! realm.write {
-            guard var manyItem = manyItem else {
-                XCTFail("manyItem not defined")
-                return
-            }
-            manyItem.compactMap { $0.isIntoCart = true }
-            realm.add(manyItem)
+        
+        guard let manyItem = manyItem else {
+            XCTFail("manyItem not defined")
+            return
+        }
+    
+        try! RealmInstance.main.realm?.write {
+            manyItem.compactMap { $0.isFavorable = true }
         }
         
-        let items = ComicCartStorage.main.listComics()
+        try! RealmInstance.main.realm?.write {
+            RealmInstance.main.realm?.add(manyItem)
+        }
         
-        XCTAssertEqual(items?.count, 20, "Expect 20 items")
-        XCTAssertEqual(items?.first?.identifier, manyItem?.first?.identifier, "Expect 20 items")
+        guard let items = ComicFavoriteStorage.main.listComics() else {
+            XCTFail("Expect items")
+            return
+        }
+        
+        XCTAssertEqual(items.count, 20, "Expect 20 items")
+        XCTAssertEqual(items.first?.identifier, manyItem.first?.identifier, "Expect 20 items")
     }
     
     func testComicAddFavorite() {
      
-        ComicCartStorage.main.save(comic: oneItem)
-        
-        let realm = try! Realm()
-        
-        guard let item = realm.objects(Comic.self).first else {
+        ComicFavoriteStorage.main.save(comic: oneItem)
+
+        guard let item = RealmInstance.main.realm?.objects(Comic.self).first else {
             XCTFail("At least one is expected.")
             return
         }
-        
-        XCTAssertTrue(item.isIntoCart, "Expect take a item from local storage with property isIntoCart with value `true`")
+
+        XCTAssertTrue(item.isFavorable, "Expect take a item from local storage with property isFavorable with value `true`")
     }
     
     func testComicRemoveFavorite() {
@@ -69,25 +73,19 @@ final class ComicCartStorageTests: RealmTestBase {
             XCTFail("One item mock not found.")
             return
         }
-        
+
         // Add mock value
         let realm = try! Realm()
         try! realm.write {
-            oneItem.isIntoCart = true
+            oneItem.isFavorable = true
             realm.add(oneItem)
         }
-        
-        // Check if taget item exist
-        guard let item = ComicCartStorage.main.listComics()?.first else {
-            XCTFail("At least one is expected.")
-            return
-        }
-        
+
         // Start test
-        ComicCartStorage.main.remove(comic: item)
-        
-        let removedItem = realm.objects(Comic.self).filter({ $0.isIntoCart == true}).first
-        
+        ComicFavoriteStorage.main.remove(comic: oneItem)
+
+        let removedItem = realm.objects(Comic.self).filter({ $0.isFavorable == true}).first
+
         XCTAssertEqual(removedItem, nil, "Expect nil")
     }
     
@@ -96,16 +94,16 @@ final class ComicCartStorageTests: RealmTestBase {
             XCTFail("One item mock not found.")
             return
         }
-        
+
         // Add mock value
         let realm = try! Realm()
         try! realm.write {
-            oneItem.isIntoCart = true
+            oneItem.isFavorable = true
             realm.add(oneItem)
         }
-        
-        let item = ComicCartStorage.main.get(comic: oneItem.identifier)
-        
+
+        let item = ComicFavoriteStorage.main.get(comic: oneItem.identifier)
+
         XCTAssertEqual(item?.identifier, oneItem.identifier, "Expect get same item")
     }
     
@@ -119,13 +117,13 @@ final class ComicCartStorageTests: RealmTestBase {
         // Add mock value
         let realm = try! Realm()
         try! realm.write {
-            oneItem.isIntoCart = true
+            oneItem.isFavorable = true
             realm.add(oneItem)
         }
-    
-        XCTAssertFalse(itemFromAPI.isIntoCart)
-        
-        ComicCartStorage.main.markItemFromApiLikeIntoCart(item: itemFromAPI)
-        XCTAssertTrue(itemFromAPI.isIntoCart)
+
+        XCTAssertFalse(itemFromAPI.isFavorable)
+
+        ComicFavoriteStorage.main.markItemFromApiLikeFavorite(item: itemFromAPI)
+        XCTAssertTrue(itemFromAPI.isFavorable)
     }
 }
