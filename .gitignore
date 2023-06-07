@@ -38,6 +38,9 @@ fastlane/test_output/
 .AppleDouble
 .LSOverride
 
+### Security 
+source/app/Shared/Network/KeysAcessor.swift
+
 # Icon must end with two \r
 Icon
 
@@ -85,8 +88,7 @@ DerivedData/
 *.moved-aside
 *.xccheckout
 *.xcscmblueprint
-source/app/supportfiles/plists/dev-info.plist
-source/DevResources/*
+
 
 ## Obj-C/Swift specific
 *.hmap
@@ -106,20 +108,21 @@ playground.xcworkspace
 # Package.resolved
 .build/
 
+
 # CocoaPods
 #
 # We recommend against adding the Pods directory to your .gitignore. However
 # you should judge for yourself, the pros and cons are mentioned at:
 # https://guides.cocoapods.org/using/using-cocoapods.html#should-i-check-the-pods-directory-into-source-control
 #
-# Pods/
+Pods/
 
-# Carthage
+Carthage
 #
 # Add this line if you want to avoid checking in source code from Carthage dependencies.
 # Carthage/Checkouts
 
-# Carthage/Build
+Carthage/Build
 Carthage
 
 # fastlane
