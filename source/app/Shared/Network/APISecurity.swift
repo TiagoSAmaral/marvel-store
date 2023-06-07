@@ -23,12 +23,19 @@ class APISecurity: APISecurer {
     
     private var privateKey: String?
     private var publicKey: String?
+    private var keyadvisor: KeyAdvisor?
+    
+    init(keyadvisor: KeyAdvisor? = nil) {
+        self.keyadvisor = keyadvisor
+    }
 
     func makeCredential(with timestamp: TimeInterval?) -> APISecurityCredential? {
-        
-        takeLocalKeys()
-        guard let privateKey = privateKey,
-              let publicKey = publicKey,
+        return hashComposer(with: timestamp)
+    }
+    
+    private func hashComposer(with timestamp: TimeInterval?) -> APISecurityCredential? {
+        guard let privateKey = keyadvisor?.privateKeyApi,
+              let publicKey = keyadvisor?.publicKeyApi,
               let timestamp = timestamp,
               let dataValues = "\(timestamp)\(privateKey)\(publicKey)".data(using: .utf8) else {
             return nil
@@ -43,10 +50,5 @@ class APISecurity: APISecurer {
         let credentials = APISecurityPayload(publicKey: publicKey, timeStamp: timestamp, hash: md5hash)
         
         return credentials
-    }
-    
-    private func takeLocalKeys() {
-        privateKey = Bundle.main.object(forInfoDictionaryKey: "API_MARVEL_PRIVATE_KEY") as? String ?? ""
-        publicKey = Bundle.main.object(forInfoDictionaryKey: "API_MARVEL_PUBLIC_KEY") as? String ?? ""
     }
 }

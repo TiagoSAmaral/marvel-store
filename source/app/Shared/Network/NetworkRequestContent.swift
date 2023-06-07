@@ -17,7 +17,7 @@ class NetworkRequestContent: NetworkContentOperation, NetworkConectable {
     
     func requestContentWith(param: NetworkRequestParameters, handler: GeneralResultHandler?) {
         
-        let urlPathBuilder: URLPathBuildable = URLPathBuilder(apiSecurer: APISecurity())
+        let urlPathBuilder: URLPathBuildable = URLPathBuilder(apiSecurer: APISecurity(keyadvisor: KeysAcessor()))
         
         let apiPath = urlPathBuilder.makeUrlWith(identifier: param.identifier,
                                                  search: param.search,

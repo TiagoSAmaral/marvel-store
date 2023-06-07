@@ -17,18 +17,17 @@ final class APISecurityTests: XCTestCase {
 //    MOCK_MD5_TESTS
     var apiSecurer: APISecurer?
     override func setUp() async throws {
-        apiSecurer = APISecurity()
+        apiSecurer = APISecurity(keyadvisor: MockerContentProvider())
     }
     
     func testGenerateSecuryURI() {
         
-        let loadMockMD5 = MockerContentProvider().mockMD25Tests
         let customTimeStamp = TimeInterval(1.0)
         guard let generatedApiSecInfo = apiSecurer?.makeCredential(with: customTimeStamp) else {
             XCTFail("Not generate API security info")
             return
         }
-        XCTAssertEqual(loadMockMD5, generatedApiSecInfo.hash, "Expected equal hash")
+        XCTAssertEqual(MockerContentProvider().mockMD25Tests, generatedApiSecInfo.hash, "Expected equal hash")
         XCTAssertEqual(customTimeStamp, generatedApiSecInfo.timeStamp, "Expected equal timestamp")
     }
 }

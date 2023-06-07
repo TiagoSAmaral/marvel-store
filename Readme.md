@@ -3,12 +3,25 @@
 Projeto simples para consumir a API da Marvel, e exibir algum conteúdo sobre as revistas em quadrinhos.
 
 ## <b> <span style="color:red"> LEIA AQUI! </span> </b>
-Por questões de segurança as chaves da API não estão no projeto. 
-Para excutar a build no scheme de producao, será necessário providenciar a `PRIVATE_KEY` e `PUBLIC_KEY`, de acesso da API da Marvel.
+Por questões de segurança as chaves da API NÃO ESTÃO no projeto. 
+Para excutar a build no scheme de producao, devenvolvimento será necessário criar uma classe ou struct que conforma com a interface`KeyAdvisor`, e através dela, passar as chaves pelas propriedades. A implementação concreta que usei no projeto, pode ser copiada abaixo: 
 
-Para exicutar o projeto em `desenvolvimento` será necessário criar um arquivo plist novo, e incluir suas chavez la. 
+``` swift 
 
- Mais informações podem ser vistas nesse README: [LINK AQUI!](source/app/supportfiles/plists)
+struct KeysAcessor: KeyAdvisor {
+    
+    var publicKeyApi: String {
+        "publicApiKey aqui!"
+    }
+    var privateKeyApi: String {
+        "privateApiKey aqui!"
+    }
+}
+
+```
+<br>
+Na pasta `source/app/tests/Mocks`, a classe `MockerContentProvider` é um exemplo de como deve ser feito, para fornecer os dados da API. No arquivo `Secret` dos testes unitários, possui uma propriedade que fornece um mock de md5.
+<br>
 
 ### Preview
 

@@ -10,20 +10,19 @@ import Foundation
 
 class URLPathBuilder: URLPathBuildable {
     
-    private var product: URLComponents?
+    private var product: URLComponents? = URLComponents(string: "https://gateway.marvel.com:443")
     private var apiSecurer: APISecurer?
     private let comicsPath: String = "/v1/public/comics"
-    
     init(apiSecurer: APISecurer?) {
         self.apiSecurer = apiSecurer
-        makeUrlBase()
+        makeComicPath()
+    }
+    
+    func reset() {
+        product = URLComponents(string: "https://gateway.marvel.com:443")
     }
 
-    func makeUrlBase() {
-        guard let baseUrl = Bundle.main.object(forInfoDictionaryKey: "BASE_URL") as? String else {
-            return
-        }
-        product = URLComponents(string: baseUrl)
+    func makeComicPath() {
         product?.path = comicsPath
     }
     
@@ -50,7 +49,7 @@ class URLPathBuilder: URLPathBuildable {
         let productFinal = product?.url
         
         // Reset
-        makeUrlBase()
+        reset()
         
         return productFinal
     }

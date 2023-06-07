@@ -25,7 +25,7 @@ final class URLPathBuilderTests: XCTestCase {
     let EXPECTED_SEARCH_PARAM_TEST = "iron%20man"
     
     override func setUp() {
-        urlPathBuilder = URLPathBuilder(apiSecurer: APISecurity())
+        urlPathBuilder = URLPathBuilder(apiSecurer: APISecurity(keyadvisor: MockerContentProvider()))
     }
     
     func testListItemsWithPaginatePath() {
