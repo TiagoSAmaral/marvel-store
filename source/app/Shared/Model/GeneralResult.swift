@@ -9,7 +9,6 @@
 import Foundation
 
 struct GeneralResult<Item: Codable>: Codable, Model {
-//    let code: Int?
     let status: String?
     let etag: String?
     var data: PaginateResponse<Item>?
