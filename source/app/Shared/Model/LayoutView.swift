@@ -11,6 +11,4 @@ import RealmSwift
 enum LayoutView: String, Codable, PersistableEnum {
     case listContentLayoutCard
     case detailContentLayoutCard
-    case favoritContentLayoutCard
-    case cartContentLayoutCard
 }
