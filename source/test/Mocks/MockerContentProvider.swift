@@ -9,11 +9,19 @@
 import Foundation
 import Alamofire
 
-public final class MockerContentProvider {
+public final class MockerContentProvider: KeyAdvisor {
+    var publicKeyApi: String {
+        // Provider value to test
+//        .empty
+        "p1"
+    }
     
-    // Timestamp to generate is 1
-    public let mockMD25Tests: String = Bundle.main.object(forInfoDictionaryKey: "MOCK_MD5_TESTS") as? String ?? ""
-    
+    var privateKeyApi: String {
+        // Provider value to test
+//        .empty
+        "s2"
+    }
+
     func loadOneItem<T: Codable>(type: T.Type) -> T? {
         loadMockFrom(fileName: "oneComic")
     }
