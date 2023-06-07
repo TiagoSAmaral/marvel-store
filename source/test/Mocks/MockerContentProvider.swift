@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import Alamofire
 
 public final class MockerContentProvider: KeyAdvisor {
     var publicKeyApi: String {
