@@ -66,8 +66,8 @@ class ListContentPageViewModel: NSObject,
         self?.checkIfFavoriteAndCartList()
     }
     
-    lazy var removeFavorite: (Model?) -> Void = {[weak self] comic in
-        ComicFavoriteStorage.main.remove(comic: comic)
+    lazy var removeFavorite: (Model?) -> Void = { [weak self] comic in
+        ComicFavoriteStorage.main.remove(comic: comic as? ViewModelBehavior, collection: Comic.self)
         // TODO: Alert Remove from Favorite
         self?.loadFavoritesItems()
         self?.checkIfFavoriteAndCartList()
@@ -174,8 +174,8 @@ class ListContentPageViewModel: NSObject,
     func checkIfFavoriteAndCartList() {
         // When show detail, check if item from API is saved how favorite or cart list
         if items.count == 1, currentViewModelStrategy == .detail {
-            ComicCartStorage.main.markItemFromApiLikeIntoCart(item: items.first)
-            ComicFavoriteStorage.main.markItemFromApiLikeFavorite(item: items.first)
+            ComicCartStorage.main.markItemFromApi(item: items.first)
+            ComicFavoriteStorage.main.markItemFromApi(item: items.first)
         }
     }
     

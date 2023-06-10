@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol Favorable {
+protocol Favorable where Self: Model {
     var isFavorable: Bool { get set }
     var addFavoriteAction: ((Model?) -> Void)? { get set }
     var removeFavoriteAction: ((Model?) -> Void)? { get set }

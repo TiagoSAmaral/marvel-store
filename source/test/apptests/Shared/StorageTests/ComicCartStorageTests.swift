@@ -12,7 +12,7 @@ import RealmSwift
 final class ComicCartStorageTests: RealmTestBase {
 
     override var name: String {
-        ComicCartStorageTests.identifier
+        ComicCartStorageTests.className
     }
     
     override func setUp() {
@@ -123,7 +123,7 @@ final class ComicCartStorageTests: RealmTestBase {
     
         XCTAssertFalse(itemFromAPI.isIntoCart)
         
-        ComicCartStorage.main.markItemFromApiLikeIntoCart(item: itemFromAPI)
+        ComicCartStorage.main.markItemFromApi(item: itemFromAPI)
         XCTAssertTrue(itemFromAPI.isIntoCart)
     }
 }

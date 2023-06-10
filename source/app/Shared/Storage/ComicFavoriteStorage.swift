@@ -13,7 +13,7 @@ final class ComicFavoriteStorage {
 
     static let main = ComicFavoriteStorage()
 
-    func listComics() -> [Comic]? {
+    func listComics() -> [ViewModelBehavior]? {
         RealmInstance.main.realm?.objects(Comic.self).where {
             $0.isFavorable == true
         }.compactMap({$0})
@@ -38,13 +38,14 @@ final class ComicFavoriteStorage {
         }
     }
     
-    func remove(comic: Model?) {
+    func remove<T: Object>(comic: ViewModelBehavior?, collection: T.Type) {
         
-        guard let comic = comic as? Comic, let identifier = comic.identifier else {
+        guard let comic = comic,
+              let identifier = comic.identifier else {
             return
         }
         
-        guard let cachedComic = RealmInstance.main.realm?.objects(Comic.self).filter("identifier == \(identifier)").first else {
+        guard var cachedComic = RealmInstance.main.realm?.objects(collection.self).filter("identifier == \(identifier)").first as? ViewModelBehavior else {
             return
         }
         try? RealmInstance.main.realm?.write {
@@ -52,11 +53,14 @@ final class ComicFavoriteStorage {
         }
     }
     
-    func get(comic identifier: Int?) -> Comic? {
-        RealmInstance.main.realm?.objects(Comic.self).filter({ $0.isFavorable == true}).first
+    func get<T: Object>(item: ViewModelBehavior?, collection: T.Type) -> T? {
+        guard let identifier = item?.identifier else {
+            return nil
+        }
+        return RealmInstance.main.realm?.objects(collection.self).filter( "isFavorable == true").filter("identifier ==\(identifier)").first
     }
     
-    func markItemFromApiLikeFavorite(item: Model?) {
+    func markItemFromApi(item: Model?) {
         guard let comic = item as? Comic, let identifier = comic.identifier else {
             return
         }

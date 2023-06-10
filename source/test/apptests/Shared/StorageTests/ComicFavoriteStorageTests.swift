@@ -12,7 +12,7 @@ import RealmSwift
 final class ComicFavoriteStorageTests: RealmTestBase {
 
     override var name: String {
-        ComicFavoriteStorageTests.identifier
+        ComicFavoriteStorageTests.className
     }
     
     override func setUp() {
@@ -82,7 +82,7 @@ final class ComicFavoriteStorageTests: RealmTestBase {
         }
 
         // Start test
-        ComicFavoriteStorage.main.remove(comic: oneItem)
+        ComicFavoriteStorage.main.remove(comic: oneItem, collection: Comic.self)
 
         let removedItem = realm.objects(Comic.self).filter({ $0.isFavorable == true}).first
 
@@ -102,7 +102,8 @@ final class ComicFavoriteStorageTests: RealmTestBase {
             realm.add(oneItem)
         }
 
-        let item = ComicFavoriteStorage.main.get(comic: oneItem.identifier)
+//        let item = ComicFavoriteStorage.main.get(comic: oneItem.identifier)
+        let item = ComicFavoriteStorage.main.get(item: oneItem, collection: Comic.self)
 
         XCTAssertEqual(item?.identifier, oneItem.identifier, "Expect get same item")
     }
@@ -123,7 +124,7 @@ final class ComicFavoriteStorageTests: RealmTestBase {
 
         XCTAssertFalse(itemFromAPI.isFavorable)
 
-        ComicFavoriteStorage.main.markItemFromApiLikeFavorite(item: itemFromAPI)
+        ComicFavoriteStorage.main.markItemFromApi(item: itemFromAPI)
         XCTAssertTrue(itemFromAPI.isFavorable)
     }
 }

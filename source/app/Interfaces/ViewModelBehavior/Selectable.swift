@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol Selectable {
+protocol Selectable where Self: Model {
     var selectAction: ((Model?) -> Void)? { get set}
 }

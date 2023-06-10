@@ -82,7 +82,7 @@ class TableViewAutomaticPaginate: UITableView, UITableViewDelegate, UITableViewD
     }
     
     func registerTableViewCell() {
-        register(GenericTableViewCell.self, forCellReuseIdentifier: GenericTableViewCell.identifier)
+        register(GenericTableViewCell.self, forCellReuseIdentifier: GenericTableViewCell.className)
     }
     
     func reloadView() {
@@ -109,7 +109,7 @@ class TableViewAutomaticPaginate: UITableView, UITableViewDelegate, UITableViewD
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: GenericTableViewCell.identifier,
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: GenericTableViewCell.className,
                                                        for: indexPath) as? GenericTableViewCell,
               let model = dataHandler?.dataBy(indexPath: indexPath) else {
             return UITableViewCell()

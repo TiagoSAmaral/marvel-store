@@ -8,12 +8,12 @@
 
 import Foundation
 
-protocol Identifier {}
+protocol ClassName {}
 
-extension Identifier where Self: NSObject {
-    static var identifier: String {
+extension ClassName where Self: NSObject {
+    static var className: String {
         String(describing: self)
     }
 }
 
-extension NSObject: Identifier {}
+extension NSObject: ClassName {}

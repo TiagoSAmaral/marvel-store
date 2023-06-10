@@ -14,7 +14,7 @@ import RealmSwift
 final class RealmInstaceTests: RealmTestBase {
     
     override var name: String {
-        RealmInstaceTests.identifier
+        RealmInstaceTests.className
     }
     
     override func setUp() {

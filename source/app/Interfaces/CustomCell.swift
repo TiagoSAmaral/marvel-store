@@ -17,7 +17,7 @@ protocol GenericCell where Self: UIView {
 extension GenericCell {
     
     var reuseIdentifier: String? {
-        Self.identifier
+        Self.className
     }
         
     func customPrepareForReuse() {

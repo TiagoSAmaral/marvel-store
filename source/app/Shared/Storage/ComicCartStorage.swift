@@ -56,7 +56,7 @@ final class ComicCartStorage {
         RealmInstance.main.realm?.objects(Comic.self).first
     }
     
-    func markItemFromApiLikeIntoCart(item: Model?) {
+    func markItemFromApi(item: Model?) {
         guard let comic = item as? Comic, let identifier = comic.identifier else {
             return
         }

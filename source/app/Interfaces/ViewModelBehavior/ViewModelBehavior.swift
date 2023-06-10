@@ -8,8 +8,6 @@
 
 import Foundation
 
-protocol ViewModelBehavior: Purchasable, Favorable, Selectable where Self: Model {
-    var identifier: Int? { get }
+protocol ViewModelBehavior: Identificable, Visible, Purchasable, Favorable, Selectable where Self: Model  {
 //  Allow seter becouse not exist in API and, need adapter into CardFactory
-    var layout: LayoutView? { get set}
 }
