@@ -9,27 +9,21 @@
 import Foundation
 import RealmSwift
 
-final class ComicCartStorage {
-
-    static let main = ComicCartStorage()
+final class ComicCartStorage: StorerDelegate {
     
-    func listComics() -> [Comic]? {
-        RealmInstance.main.realm?.objects(Comic.self).where {
-            $0.isIntoCart == true
-        }.compactMap({$0})
-        
+    func listItems(from collection: ViewModelBehavior.Type) -> [ViewModelBehavior]? {
+        RealmInstance.main.realm?.objects(collection.self).filter("isIntoCart == true").compactMap({ $0 as? ViewModelBehavior})
     }
     
-    func save(comic: Model?) {
-        
-        guard let comic = comic as? Comic, let identifier = comic.identifier else {
+    func save(item: ViewModelBehavior?, into collection: ViewModelBehavior.Type) {
+        guard var item = item, let identifier = item.identifier else {
             return
         }
-        
-        guard let cachedComic = RealmInstance.main.realm?.objects(Comic.self).filter("identifier == \(identifier)").first else {
-            comic.isIntoCart = true
+        guard var cachedComic = RealmInstance.main.realm?.objects(collection.self).filter("identifier == \(identifier)").first as? ViewModelBehavior else {
+            
             try? RealmInstance.main.realm?.write {
-                RealmInstance.main.realm?.add(comic)
+                item.isIntoCart = true
+                RealmInstance.main.realm?.add(item)
             }
             return
         }
@@ -38,33 +32,29 @@ final class ComicCartStorage {
         }
     }
     
-    func remove(comic: Model?) {
-        
-        guard let comic = comic as? Comic, let identifier = comic.identifier else {
+    func remove(item: ViewModelBehavior?, from collection: ViewModelBehavior.Type) {
+        guard let identifier = item?.identifier else {
             return
         }
         
-        guard let cachedComic = RealmInstance.main.realm?.objects(Comic.self).filter("identifier == \(identifier)").first else {
+        guard var cachedItem = RealmInstance.main.realm?.objects(collection.self).filter("identifier == \(identifier)").first as? ViewModelBehavior else {
             return
         }
         try? RealmInstance.main.realm?.write {
-            cachedComic.isIntoCart = false
+            cachedItem.isIntoCart = false
         }
     }
     
-    func get(comic identifier: Int?) -> Comic? {
-        RealmInstance.main.realm?.objects(Comic.self).first
-    }
-    
-    func markItemFromApi(item: Model?) {
-        guard let comic = item as? Comic, let identifier = comic.identifier else {
+    func markItemFromApi(item: ViewModelBehavior?, from collection: ViewModelBehavior.Type) {
+        guard var item = item,
+              let identifier = item.identifier,
+              let existentItem = RealmInstance.main.realm?.objects(collection.self)
+            .filter("identifier == \(identifier) AND isIntoCart == true").first as? ViewModelBehavior else {
             return
         }
-        let value = RealmInstance.main.realm?.objects(Comic.self).filter("identifier == \(identifier)").first?.isIntoCart ?? false
-        try? RealmInstance.main.realm?.write {
-            comic.isIntoCart = value
-        }
         
-//        return RealmInstance.main.realm?.objects(Comic.self).filter("identifier == \(identifier)").first?.isIntoCart ?? false
+        try? RealmInstance.main.realm?.write {
+            item.isIntoCart = existentItem.isIntoCart
+        }
     }
 }

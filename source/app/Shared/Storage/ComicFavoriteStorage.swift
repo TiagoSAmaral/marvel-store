@@ -9,27 +9,21 @@
 import Foundation
 import RealmSwift
 
-final class ComicFavoriteStorage {
-
-    static let main = ComicFavoriteStorage()
-
-    func listComics() -> [ViewModelBehavior]? {
-        RealmInstance.main.realm?.objects(Comic.self).where {
-            $0.isFavorable == true
-        }.compactMap({$0})
-        
+final class ComicFavoriteStorage: StorerDelegate {
+    
+    func listItems(from collection: ViewModelBehavior.Type) -> [ViewModelBehavior]? {
+        RealmInstance.main.realm?.objects(collection.self).filter("isFavorable == true").compactMap({ return $0 as? ViewModelBehavior})
     }
     
-    func save(comic: Model?) {
-        
-        guard let comic = comic as? Comic, let identifier = comic.identifier else {
+    func save(item: ViewModelBehavior?, into collection: ViewModelBehavior.Type) {
+        guard var item = item, let identifier = item.identifier else {
             return
         }
-        
-        guard let cachedComic = RealmInstance.main.realm?.objects(Comic.self).filter("identifier == \(identifier)").first else {
-            comic.isFavorable = true
+        guard var cachedComic = RealmInstance.main.realm?.objects(collection.self).filter("identifier == \(identifier)").first as? ViewModelBehavior else {
+
             try? RealmInstance.main.realm?.write {
-                RealmInstance.main.realm?.add(comic)
+                item.isFavorable = true
+                RealmInstance.main.realm?.add(item)
             }
             return
         }
@@ -38,35 +32,77 @@ final class ComicFavoriteStorage {
         }
     }
     
-    func remove<T: Object>(comic: ViewModelBehavior?, collection: T.Type) {
-        
-        guard let comic = comic,
-              let identifier = comic.identifier else {
-            return
-        }
-        
-        guard var cachedComic = RealmInstance.main.realm?.objects(collection.self).filter("identifier == \(identifier)").first as? ViewModelBehavior else {
-            return
-        }
-        try? RealmInstance.main.realm?.write {
-            cachedComic.isFavorable = false
-        }
-    }
-    
-    func get<T: Object>(item: ViewModelBehavior?, collection: T.Type) -> T? {
+    func remove(item: ViewModelBehavior?, from collection: ViewModelBehavior.Type) {
         guard let identifier = item?.identifier else {
-            return nil
-        }
-        return RealmInstance.main.realm?.objects(collection.self).filter( "isFavorable == true").filter("identifier ==\(identifier)").first
-    }
-    
-    func markItemFromApi(item: Model?) {
-        guard let comic = item as? Comic, let identifier = comic.identifier else {
             return
         }
-        let value = RealmInstance.main.realm?.objects(Comic.self).filter("identifier == \(identifier)").first?.isFavorable ?? false
+
+        guard var cachedItem = RealmInstance.main.realm?.objects(collection.self).filter("identifier == \(identifier)").first as? ViewModelBehavior else {
+            return
+        }
         try? RealmInstance.main.realm?.write {
-            comic.isFavorable = value
+            cachedItem.isFavorable = false
         }
     }
+    
+    func markItemFromApi(item: ViewModelBehavior?, from collection: ViewModelBehavior.Type) {
+        guard var item = item,
+              let identifier = item.identifier,
+              let existentItem = RealmInstance.main.realm?.objects(collection.self)
+            .filter("identifier == \(identifier) AND isFavorable == true").first as? ViewModelBehavior else {
+            return
+        }
+
+        try? RealmInstance.main.realm?.write {
+            item.isFavorable = existentItem.isFavorable
+        }
+    }
+    
+//    func list(from collection: GenericT) -> [GenericT]? {
+//        RealmInstance.main.realm?.objects(collection.self).filter("isFavorable == true")
+//    }
+    
+//    func save(item: ViewModelBehavior?, from collection: T.Type) {
+//
+//        guard var item = item, let identifier = item.identifier else {
+//            return
+//        }
+//        guard var cachedComic = RealmInstance.main.realm?.objects(collection.self).filter("identifier == \(identifier)").first as? ViewModelBehavior else {
+//
+//            try? RealmInstance.main.realm?.write {
+//                item.isFavorable = true
+//                RealmInstance.main.realm?.add(item)
+//            }
+//            return
+//        }
+//        try? RealmInstance.main.realm?.write {
+//            cachedComic.isFavorable = true
+//        }
+//    }
+    
+//    func remove(item: ViewModelBehavior?, from collection: T.Type) {
+//
+//        guard let identifier = item?.identifier else {
+//            return
+//        }
+//
+//        guard var cachedItem = RealmInstance.main.realm?.objects(collection.self).filter("identifier == \(identifier)").first as? ViewModelBehavior else {
+//            return
+//        }
+//        try? RealmInstance.main.realm?.write {
+//            cachedItem.isFavorable = false
+//        }
+//    }
+  
+//    func markItemFromApi(item: ViewModelBehavior?, from collection: T.Type) {
+//        guard var item = item,
+//              let identifier = item.identifier,
+//              let existentItem = RealmInstance.main.realm?.objects(collection.self).filter("identifier == \(identifier) AND isFavorable == true").first as? ViewModelBehavior else {
+//            return
+//        }
+//
+//        try? RealmInstance.main.realm?.write {
+//            item.isFavorable = existentItem.isFavorable
+//        }
+//    }
 }
