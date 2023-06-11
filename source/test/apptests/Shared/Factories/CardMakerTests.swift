@@ -18,7 +18,9 @@ final class CardMakerTests: XCTestCase {
     
     func testMakeListContentLayoutCard() {
         
-        var model: ViewModelBehavior = TestModel(isFavorable: false, isIntoCart: false)
+        var model: ViewModelBehavior = TestModel()
+        model.isFavorable = false
+        model.isIntoCart = false
         model.layout = .listContentLayoutCard
         guard let card = cardMaker?.makeCard(from: model) as? Card else {
             XCTFail("Expect one valid instance")
@@ -29,7 +31,9 @@ final class CardMakerTests: XCTestCase {
     }
     
     func testMakeDetailContentLayoutCard() {
-        var model: ViewModelBehavior = TestModel(isFavorable: false, isIntoCart: false)
+        var model: ViewModelBehavior = TestModel()
+        model.isFavorable = false
+        model.isIntoCart = false
         model.layout = .detailContentLayoutCard
         guard let card = cardMaker?.makeCard(from: model) as? Card else {
             XCTFail("Expect one valid instance")
@@ -40,7 +44,9 @@ final class CardMakerTests: XCTestCase {
     }
     
     func testModelWithLayioutViewValueNil() {
-        var model: ViewModelBehavior = TestModel(isFavorable: false, isIntoCart: false)
+        var model: ViewModelBehavior = TestModel()
+        model.isFavorable = false
+        model.isIntoCart = false
         let card = cardMaker?.makeCard(from: model) as? Card
         XCTAssertNil(card, "Expect a nil value")
     }

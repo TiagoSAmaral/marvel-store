@@ -18,6 +18,8 @@ class ListContentPageViewModel: NSObject,
     var network: NetworkContentOperation?
     var coordinator: ListContentCoordinable?
     var lastRequestResult: GeneralResult<Comic>?
+    var localStorageCartItems: StorerDelegate?
+    var localStorageFavoriteItems: StorerDelegate?
     var selectedItem: Model?
     var items: [Model] = []
     var currentPage: Int?
@@ -60,28 +62,28 @@ class ListContentPageViewModel: NSObject,
     }
     
     lazy var saveToFavorite: (Model?) -> Void = {[weak self] comic in
-        ComicFavoriteStorage.main.save(comic: comic)
+        self?.localStorageFavoriteItems?.save(item: comic as? ViewModelBehavior, into: Comic.self)
         // TODO: Alert Add to Favorite
         self?.loadFavoritesItems()
         self?.checkIfFavoriteAndCartList()
     }
     
     lazy var removeFavorite: (Model?) -> Void = { [weak self] comic in
-        ComicFavoriteStorage.main.remove(comic: comic as? ViewModelBehavior, collection: Comic.self)
+        self?.localStorageFavoriteItems?.remove(item: comic as? ViewModelBehavior, from: Comic.self)
         // TODO: Alert Remove from Favorite
         self?.loadFavoritesItems()
         self?.checkIfFavoriteAndCartList()
     }
     
     lazy var saveToCart: (Model?) -> Void = {[weak self] comic in
-        ComicCartStorage.main.save(comic: comic)
+        self?.localStorageCartItems?.save(item: comic as? ViewModelBehavior, into: Comic.self)
         // TODO: Alert Add to Cart
         self?.loadCartItems()
         self?.checkIfFavoriteAndCartList()
     }
     
     lazy var removeFromCart: (Model?) -> Void = { [weak self] comic in
-        ComicCartStorage.main.remove(comic: comic)
+        self?.localStorageCartItems?.remove(item: comic as? ViewModelBehavior, from: Comic.self)
         // TODO: Alert Remove from Cart
         self?.loadCartItems()
         self?.checkIfFavoriteAndCartList()
@@ -174,8 +176,8 @@ class ListContentPageViewModel: NSObject,
     func checkIfFavoriteAndCartList() {
         // When show detail, check if item from API is saved how favorite or cart list
         if items.count == 1, currentViewModelStrategy == .detail {
-            ComicCartStorage.main.markItemFromApi(item: items.first)
-            ComicFavoriteStorage.main.markItemFromApi(item: items.first)
+            localStorageCartItems?.markItemFromApi(item: items.first as? ViewModelBehavior, from: Comic.self)
+            localStorageFavoriteItems?.markItemFromApi(item: items.first as? ViewModelBehavior, from: Comic.self)
         }
     }
     
@@ -196,7 +198,7 @@ class ListContentPageViewModel: NSObject,
     
     // MARK: - Request content from local storage
     func loadFavoritesItems() {
-        guard let items = ComicFavoriteStorage.main.listComics(),
+        guard let items = localStorageFavoriteItems?.listItems(from: Comic.self),
               currentViewModelStrategy == .favorite else {
             return
         }
@@ -205,8 +207,8 @@ class ListContentPageViewModel: NSObject,
     }
     
     func loadCartItems() {
-        guard let items = ComicCartStorage.main.listComics(),
-              currentViewModelStrategy == .cart else {
+        guard let items = localStorageCartItems?.listItems(from: Comic.self),
+                currentViewModelStrategy == .cart else {
             return
         }
         self.items = items

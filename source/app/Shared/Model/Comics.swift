@@ -8,7 +8,7 @@
 
 import RealmSwift
 
-class Comic: Object, Codable, ViewModelBehavior, Model {
+class Comic: Object, ViewModelBehavior, Codable, Model {
     @Persisted var identifier: Int?
     @Persisted var issueNumber: Double?
     @Persisted var thumbnail: ComicImage?

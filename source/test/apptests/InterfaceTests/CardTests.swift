@@ -7,6 +7,8 @@
 //
 
 import XCTest
+import RealmSwift
+
 
 class CardViewTest: UIView, Card {
     var exposedContent: Model?
@@ -15,7 +17,7 @@ class CardViewTest: UIView, Card {
     }
 }
 
-struct TestModel: Model, ViewModelBehavior {
+class TestModel: Object, ViewModelBehavior, Model {
     
     var addCartAction: ((Model?) -> Void)?
     
@@ -27,13 +29,13 @@ struct TestModel: Model, ViewModelBehavior {
     
     var selectAction: ((Model?) -> Void)?
     
-    var isFavorable: Bool
+    @Persisted var isFavorable: Bool = false
     
-    var isIntoCart: Bool
+    @Persisted var isIntoCart: Bool = false
     
-    var identifier: Int?
+    @Persisted var identifier: Int?
     
-    var layout: LayoutView?
+    @Persisted var layout: LayoutView?
     
     var action: ((Model?) -> Void)?
 }
@@ -48,8 +50,10 @@ final class CardTests: XCTestCase {
     
     override func setUp() {
         cardTest = CardViewTest()
-        modelTest = TestModel(isFavorable: false, isIntoCart: false)
+        modelTest = TestModel()
         
+        modelTest?.isFavorable = false
+        modelTest?.isIntoCart = false
         modelTest?.identifier = 125125125
         modelTest?.layout = .listContentLayoutCard
     }
