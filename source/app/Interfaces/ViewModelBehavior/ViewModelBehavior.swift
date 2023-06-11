@@ -7,7 +7,8 @@
 //
 
 import Foundation
+import RealmSwift
 
-protocol ViewModelBehavior: Identificable, Visible, Purchasable, Favorable, Selectable where Self: Model  {
+protocol ViewModelBehavior: Object, Identificable, Visible, Purchasable, Favorable, Selectable where Self: Model {
 //  Allow seter becouse not exist in API and, need adapter into CardFactory
 }
