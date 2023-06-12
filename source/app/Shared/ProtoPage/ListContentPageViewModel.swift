@@ -22,7 +22,6 @@ class ListContentPageViewModel: NSObject,
     
     var lastRequestResult: GeneralResult<Comic>?
     var selectedItem: Model?
-    var items: [Model] = []
     var currentPage: Int?
     var currentSearchValue: String?
     var selectedFilterOption: String?
