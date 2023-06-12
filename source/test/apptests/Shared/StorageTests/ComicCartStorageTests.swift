@@ -36,23 +36,6 @@ final class ComicCartStorageTests: RealmTestBase {
         }
     }
     
-//    func testListComics() {
-//        let realm = try! Realm()
-//        try! realm.write {
-//            guard var manyItem = manyItem else {
-//                XCTFail("manyItem not defined")
-//                return
-//            }
-//            manyItem = manyItem.compactMap { $0.isIntoCart = true; return $0 }
-//            realm.add(manyItem)
-//        }
-//
-//        let items = localStorageCart?.listItems(from: Comic.self)
-//
-//        XCTAssertEqual(items?.count, 20, "Expect 20 items")
-//        XCTAssertEqual(items?.first?.identifier, manyItem?.first?.identifier, "Expect 20 items")
-//    }
-//
     func testListComics() {
         let realm = try! Realm()
         try! realm.write {
