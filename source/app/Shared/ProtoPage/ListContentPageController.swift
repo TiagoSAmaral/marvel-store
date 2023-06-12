@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol ListContentController where Self: UIViewController {
+protocol ViewController where Self: UIViewController {
     var viewDidAppearEvent: (() -> Void)? { get set }
     func updateView()
     func startLoading()
@@ -17,7 +17,7 @@ protocol ListContentController where Self: UIViewController {
     func disableSearch()
 }
 
-class ListContentPageController: UIViewController, ListContentController, LoadingManagers, AlertPresetable {
+class ListContentPageController: UIViewController, ViewController, LoadingManagers, AlertPresetable {
 
     var viewModel: ViewModable?
     var coordinator: ListContentCoordinable?
