@@ -19,6 +19,9 @@ class ListContentPageFactory: FactoryPage {
                                                network: network,
                                                coordinator: coordinator)
         
+        viewModel.localStorageCartItems = ComicCartStorage()
+        viewModel.localStorageFavoriteItems = ComicFavoriteStorage()
+        
         let mosaicComposerView = ViewMosaicComposer()
         
         let filterYearView = YearSelectorView()
