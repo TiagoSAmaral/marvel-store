@@ -10,7 +10,7 @@ import Foundation
 
 final class LocalStorageCartItemsFake: StorerDelegate {
     func listItems(from collection: ViewModelBehavior.Type) -> [ViewModelBehavior]? {
-        MockerContentProvider().loadManyItem(type: Comic.self)?.compactMap({ $0.isFavorable = true; return $0 })
+        MockerContentProvider().loadManyItem(type: Comic.self)?.compactMap({ $0.isIntoCart = true; return $0 })
     }
     
     func save(item: ViewModelBehavior?, into collection: ViewModelBehavior.Type) {
