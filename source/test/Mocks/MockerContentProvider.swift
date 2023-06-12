@@ -20,6 +20,14 @@ public final class MockerContentProvider: KeyAdvisor {
 //        .empty
         "s2"
     }
+    
+    func loadListContent<T: Codable>(type: T.Type) -> T? {
+        loadMockFrom(fileName: "ResponselistContent")
+    }
+    
+    func loadOneContent<T: Codable>(type: T.Type) -> T? {
+        loadMockFrom(fileName: "ResponseOneContent")
+    }
 
     func loadOneItem<T: Codable>(type: T.Type) -> T? {
         loadMockFrom(fileName: "oneComic")
