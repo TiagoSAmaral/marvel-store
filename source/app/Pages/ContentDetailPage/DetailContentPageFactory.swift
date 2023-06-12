@@ -13,26 +13,31 @@ class DetailContentPageFactory: FactoryPage {
     static func makePage(coordinator: Coordinator?, model: Model?) -> UIViewController? {
         let controller = ListContentPageController()
         let network = NetworkRequestContent()
-        let viewModel = ListContentPageViewModel(controller: controller,
-                                               network: network,
-                                               coordinator: coordinator)
+        let viewModel = ListContentPageViewModel()
+        let mosaicComposerView = ViewMosaicComposer()
+        let listView = TableViewAutomaticPaginate()
+        let cardMaker = CardMaker()
+        
+        viewModel.controller = controller
+        viewModel.network = network
+        viewModel.coordinator = coordinator as? ListContentCoordinable
         viewModel.selectedItem = model
         viewModel.currentViewModelStrategy = .detail
-        let mosaicComposerView = ViewMosaicComposer()
-        
-        let listView = TableViewAutomaticPaginate()
+
         listView.dataHandler = viewModel
-        listView.cardFactory = CardMaker()
+        listView.cardFactory = cardMaker
         mosaicComposerView.insertNew(view: listView)
-        controller.listView = listView
         
         coordinator?.rootViewControler = controller
+        
+        controller.listView = listView
         controller.viewModel = viewModel
         controller.viewDidAppearEvent = viewModel.loadDetailOfItem
         controller.coordinator = coordinator as? ListContentCoordinable
         controller.searchHandlerEvents = viewModel
         controller.title = LocalizedText.with(tagName: .preview)
         controller.view = mosaicComposerView.baseView
+        
         return controller
     }
 }

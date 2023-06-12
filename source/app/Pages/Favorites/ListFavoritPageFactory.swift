@@ -9,21 +9,25 @@
 import UIKit
 
 class ListFavoritePageFactory: FactoryPage {
+   
     static func makePage(coordinator: Coordinator?, model: Model?) -> UIViewController? {
         let controller = ListContentPageController()
-        let viewModel = ListContentPageViewModel(controller: controller,
-                                               network: nil,
-                                               coordinator: coordinator)
-        viewModel.currentViewModelStrategy = .favorite
+        let viewModel = ListContentPageViewModel()
         let mosaicComposerView = ViewMosaicComposer()
-        
         let listView = TableViewAutomaticPaginate()
+        let cardMaker = CardMaker()
+        
+        viewModel.controller = controller
+        viewModel.coordinator = coordinator as? ListContentPageCoordinator
+        viewModel.currentViewModelStrategy = .favorite
+        
         listView.dataHandler = viewModel
-        listView.cardFactory = CardMaker()
+        listView.cardFactory = cardMaker
         mosaicComposerView.insertNew(view: listView)
-        controller.listView = listView
         
         coordinator?.rootViewControler = controller
+        
+        controller.listView = listView
         controller.viewModel = viewModel
         controller.viewDidAppearEvent = viewModel.loadFavoritesItems
         controller.coordinator = coordinator as? ListContentCoordinable

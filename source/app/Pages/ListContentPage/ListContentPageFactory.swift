@@ -15,27 +15,28 @@ class ListContentPageFactory: FactoryPage {
         let controller = ListContentPageController()
         let searchBarController = SearchBarFactory.makeSearch()
         let network = NetworkRequestContent()
-        let viewModel = ListContentPageViewModel(controller: controller,
-                                               network: network,
-                                               coordinator: coordinator)
+        let viewModel = ListContentPageViewModel()
+        let mosaicComposerView = ViewMosaicComposer()
+        let filterYearView = YearSelectorView()
+        let listView = TableViewAutomaticPaginate(isPullToRefreshEnable: true, isPaginateEnable: true)
+        let cardMaker = CardMaker()
         
+        viewModel.coordinator = coordinator as? ListContentPageCoordinator
+        viewModel.controller = controller
+        viewModel.network = network
         viewModel.localStorageCartItems = ComicCartStorage()
         viewModel.localStorageFavoriteItems = ComicFavoriteStorage()
         
-        let mosaicComposerView = ViewMosaicComposer()
-        
-        let filterYearView = YearSelectorView()
         filterYearView.define(delegate: viewModel, displayerView: mosaicComposerView.baseView)
         mosaicComposerView.insertNew(view: filterYearView)
-
-        let listView = TableViewAutomaticPaginate(isPullToRefreshEnable: true,
-                                                  isPaginateEnable: true)
+        
         listView.dataHandler = viewModel
-        listView.cardFactory = CardMaker()
+        listView.cardFactory = cardMaker
         mosaicComposerView.insertNew(view: listView)
-        controller.listView = listView
         
         coordinator?.rootViewControler = controller
+
+        controller.listView = listView
         controller.viewModel = viewModel
         controller.viewDidAppearEvent = viewModel.loadStoreItems
         controller.coordinator = coordinator as? ListContentCoordinable
