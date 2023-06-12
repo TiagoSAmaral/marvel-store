@@ -22,6 +22,7 @@ class ListContentPageViewModel: NSObject,
     
     var lastRequestResult: GeneralResult<Comic>?
     var selectedItem: Model?
+    var items: [Model] = []
     var currentPage: Int?
     var currentSearchValue: String?
     var selectedFilterOption: String?
@@ -61,29 +62,35 @@ class ListContentPageViewModel: NSObject,
     lazy var saveToFavorite: (Model?) -> Void = {[weak self] comic in
         self?.localStorageFavoriteItems?.save(item: comic as? ViewModelBehavior, into: Comic.self)
         // TODO: Alert Add to Favorite
-        self?.loadFavoritesItems()
-        self?.checkIfFavoriteAndCartList()
+        self?.updateViewAfterToggleItemFromFavorite()
     }
     
     lazy var removeFavorite: (Model?) -> Void = { [weak self] comic in
         self?.localStorageFavoriteItems?.remove(item: comic as? ViewModelBehavior, from: Comic.self)
         // TODO: Alert Remove from Favorite
-        self?.loadFavoritesItems()
-        self?.checkIfFavoriteAndCartList()
+        self?.updateViewAfterToggleItemFromFavorite()
+    }
+    
+    func updateViewAfterToggleItemFromFavorite() {
+        loadFavoritesItems()
+        checkIfFavoriteAndCartList()
     }
     
     lazy var saveToCart: (Model?) -> Void = {[weak self] comic in
         self?.localStorageCartItems?.save(item: comic as? ViewModelBehavior, into: Comic.self)
         // TODO: Alert Add to Cart
-        self?.loadCartItems()
-        self?.checkIfFavoriteAndCartList()
+        self?.updateViewAfterToggleItemFromCart()
     }
     
     lazy var removeFromCart: (Model?) -> Void = { [weak self] comic in
         self?.localStorageCartItems?.remove(item: comic as? ViewModelBehavior, from: Comic.self)
         // TODO: Alert Remove from Cart
-        self?.loadCartItems()
-        self?.checkIfFavoriteAndCartList()
+        self?.updateViewAfterToggleItemFromCart()
+    }
+    
+    func updateViewAfterToggleItemFromCart() {
+        loadCartItems()
+        checkIfFavoriteAndCartList()
     }
     
     // MARK: - Request configurations
