@@ -1,13 +1,13 @@
 {
-    "id": 45,
-    "digitalId": 3283,
-    "title": "Amazing Fantasy (2004) #6",
-    "issueNumber": 6,
+    "id": 291,
+    "digitalId": 0,
+    "title": "Ant-Man (2003) #1",
+    "issueNumber": 1,
     "variantDescription": "",
-    "description": "PART 6 (OF 6)\r<br>It's the end of the origin of Anya Corazon - and a new beginning.  But, first, the question on everyone's mind: what's the public identity of Marvel's newest media darling? Well, we won't tell you here, but we will tell you folks are clamoring for the inside scoop and a glimpse of this amazing spider-like teen, who's now been seen everywhere from Telemundo to Fox News to the NY Daily News - not bad for a Latina from Brooklyn! \r<br>",
+    "description": "Size does matter.  And no one knows this more than Hank Pym - a.k.a. Ant-Man. Got a problem with Galactus? Call the FF. Got a problem with, say, mind-controlled cockroaches? Then Ant-Man's your man! And needless to say, it's done a number on our diminutive hero's self-esteem.  When Ant-Man is tapped to infiltrate an international spy ring that has been siphoning secrets out of Washington, he jumps at the chance - unaware that he's being used as a pawn in a larger game of espionage.\r\n32 PGS./PARENTAL ADVISORY...$2.99",
     "modified": "-0001-11-30T00:00:00-0500",
     "isbn": "",
-    "upc": "5960605564-00611",
+    "upc": "5960605396-01811",
     "diamondCode": "",
     "ean": "",
     "issn": "",
@@ -17,52 +17,31 @@
         {
             "type": "issue_solicit_text",
             "language": "en-us",
-            "text": "PART 6 (OF 6)\r<br>It's the end of the origin of Anya Corazon - and a new beginning.  But, first, the question on everyone's mind: what's the public identity of Marvel's newest media darling? Well, we won't tell you here, but we will tell you folks are clamoring for the inside scoop and a glimpse of this amazing spider-like teen, who's now been seen everywhere from Telemundo to Fox News to the NY Daily News - not bad for a Latina from Brooklyn! \r<br>"
+            "text": "Size does matter.  And no one knows this more than Hank Pym - a.k.a. Ant-Man. Got a problem with Galactus? Call the FF. Got a problem with, say, mind-controlled cockroaches? Then Ant-Man's your man! And needless to say, it's done a number on our diminutive hero's self-esteem.  When Ant-Man is tapped to infiltrate an international spy ring that has been siphoning secrets out of Washington, he jumps at the chance - unaware that he's being used as a pawn in a larger game of espionage.\r\n32 PGS./PARENTAL ADVISORY...$2.99"
         }
     ],
-    "resourceURI": "http://gateway.marvel.com/v1/public/comics/45",
+    "resourceURI": "http://gateway.marvel.com/v1/public/comics/291",
     "urls": [
         {
             "type": "detail",
-            "url": "http://marvel.com/comics/issue/45/amazing_fantasy_2004_6?utm_campaign=apiRef&utm_source=cb5f0475a41fb872c1c13ccec85af433"
-        },
-        {
-            "type": "purchase",
-            "url": "http://comicstore.marvel.com/Amazing-Fantasy-6/digital-comic/3283?utm_campaign=apiRef&utm_source=cb5f0475a41fb872c1c13ccec85af433"
-        },
-        {
-            "type": "reader",
-            "url": "http://marvel.com/digitalcomics/view.htm?iid=3283&utm_campaign=apiRef&utm_source=cb5f0475a41fb872c1c13ccec85af433"
+            "url": "http://marvel.com/comics/issue/291/ant-man_2003_1?utm_campaign=apiRef&utm_source=cb5f0475a41fb872c1c13ccec85af433"
         }
     ],
     "series": {
-        "resourceURI": "http://gateway.marvel.com/v1/public/series/769",
-        "name": "Amazing Fantasy (2004 - 2006)"
+        "resourceURI": "http://gateway.marvel.com/v1/public/series/551",
+        "name": "Ant-Man (2003 - 2004)"
     },
     "variants": [],
-    "collections": [
-        {
-            "resourceURI": "http://gateway.marvel.com/v1/public/comics/1547",
-            "name": "ARANA VOL. 1: THE HEART OF THE SPIDER DIGEST (Digest)"
-        }
-    ],
+    "collections": [],
     "collectedIssues": [],
     "dates": [
         {
             "type": "onsaleDate",
-            "date": "2004-11-24T00:00:00-0500"
+            "date": "2029-12-31T00:00:00-0500"
         },
         {
             "type": "focDate",
             "date": "-0001-11-30T00:00:00-0500"
-        },
-        {
-            "type": "unlimitedDate",
-            "date": "2007-11-13T00:00:00-0500"
-        },
-        {
-            "type": "digitalPurchaseDate",
-            "date": "2020-08-06T13:53:00-0400"
         }
     ],
     "prices": [
@@ -72,48 +51,50 @@
         }
     ],
     "thumbnail": {
-        "path": "http://i.annihil.us/u/prod/marvel/i/mg/8/f0/6467baa9a060c",
+        "path": "http://i.annihil.us/u/prod/marvel/i/mg/6/e0/4bc6a2497684e",
         "extension": "jpg"
     },
     "images": [
         {
-            "path": "http://i.annihil.us/u/prod/marvel/i/mg/8/f0/6467baa9a060c",
-            "extension": "jpg"
-        },
-        {
-            "path": "http://i.annihil.us/u/prod/marvel/i/mg/6/80/56cb7028ce644",
+            "path": "http://i.annihil.us/u/prod/marvel/i/mg/6/e0/4bc6a2497684e",
             "extension": "jpg"
         }
     ],
     "creators": {
+        "available": 2,
+        "collectionURI": "http://gateway.marvel.com/v1/public/comics/291/creators",
+        "items": [
+            {
+                "resourceURI": "http://gateway.marvel.com/v1/public/creators/600",
+                "name": "Clayton Crain",
+                "role": "penciller (cover)"
+            },
+            {
+                "resourceURI": "http://gateway.marvel.com/v1/public/creators/344",
+                "name": "Daniel Way",
+                "role": "writer"
+            }
+        ],
+        "returned": 2
+    },
+    "characters": {
         "available": 0,
-        "collectionURI": "http://gateway.marvel.com/v1/public/comics/45/creators",
+        "collectionURI": "http://gateway.marvel.com/v1/public/comics/291/characters",
         "items": [],
         "returned": 0
     },
-    "characters": {
-        "available": 1,
-        "collectionURI": "http://gateway.marvel.com/v1/public/comics/45/characters",
-        "items": [
-            {
-                "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009157",
-                "name": "Spider-Girl (Anya Corazon)"
-            }
-        ],
-        "returned": 1
-    },
     "stories": {
         "available": 2,
-        "collectionURI": "http://gateway.marvel.com/v1/public/comics/45/stories",
+        "collectionURI": "http://gateway.marvel.com/v1/public/comics/291/stories",
         "items": [
             {
-                "resourceURI": "http://gateway.marvel.com/v1/public/stories/3628",
-                "name": "6 of 6",
+                "resourceURI": "http://gateway.marvel.com/v1/public/stories/1806",
+                "name": "Cover #1806",
                 "type": "cover"
             },
             {
-                "resourceURI": "http://gateway.marvel.com/v1/public/stories/3629",
-                "name": "6 of 6",
+                "resourceURI": "http://gateway.marvel.com/v1/public/stories/1807",
+                "name": "Interior #1807",
                 "type": "interiorStory"
             }
         ],
@@ -121,7 +102,7 @@
     },
     "events": {
         "available": 0,
-        "collectionURI": "http://gateway.marvel.com/v1/public/comics/45/events",
+        "collectionURI": "http://gateway.marvel.com/v1/public/comics/291/events",
         "items": [],
         "returned": 0
     }
