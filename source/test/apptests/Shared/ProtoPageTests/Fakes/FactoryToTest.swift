@@ -9,14 +9,14 @@
 import Foundation
 
 enum FactoryToTest {
-    static func build() -> ListContentPageViewModel {
+    static func build(networkTypeResponse: ResponseSelector = .successList) -> ListContentPageViewModel {
         
         let viewModel = ListContentPageViewModel()
         let controller = ListContentPageControllerFake()
         
         controller.viewModel = viewModel
         viewModel.controller = controller
-        viewModel.network = NetworkContentOperationFake()
+        viewModel.network = NetworkContentOperationFake(selectorResultType: networkTypeResponse)
         viewModel.coordinator = ListContentPageCoordinatorFake(navigation: NavigationController())
         viewModel.localStorageCartItems = LocalStorageCartItemsFake()
         viewModel.localStorageFavoriteItems = LocalStorageFavoritesItemsFake()
