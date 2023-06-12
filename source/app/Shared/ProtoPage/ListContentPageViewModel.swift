@@ -14,12 +14,13 @@ class ListContentPageViewModel: NSObject,
                                     SearchHandlerEvents,
                                     YearSelectorViewDataHandlerDelegate {
 
-    weak var controller: ListContentController?
+    weak var controller: ViewController?
     var network: NetworkContentOperation?
     var coordinator: ListContentCoordinable?
-    var lastRequestResult: GeneralResult<Comic>?
     var localStorageCartItems: StorerDelegate?
     var localStorageFavoriteItems: StorerDelegate?
+    
+    var lastRequestResult: GeneralResult<Comic>?
     var selectedItem: Model?
     var items: [Model] = []
     var currentPage: Int?
@@ -33,11 +34,8 @@ class ListContentPageViewModel: NSObject,
     var listYearFilter: [String]?
     var disableFilterOptions: String?
     
-    init(controller: ListContentController, network: NetworkContentOperation?, coordinator: Coordinator?) {
+    override init() {
         super.init()
-        self.controller = controller
-        self.network = network
-        self.coordinator = coordinator as? ListContentCoordinable
         generateFilterYearList()
         registerFilterCancelationValue()
     }
@@ -161,7 +159,7 @@ class ListContentPageViewModel: NSObject,
             return
         }
         
-        if currentPage == 0 {
+        if currentPage == .zero {
             items = results
         } else {
             items.append(contentsOf: results)
@@ -272,6 +270,7 @@ class ListContentPageViewModel: NSObject,
             for yearItem in (1938...currentYear) {
                 listYearFilter?.append("\(yearItem)")
             }
+            listYearFilter = listYearFilter?.reversed()
             listYearFilter?.insert("Todos", at: 0)
         }
     }
