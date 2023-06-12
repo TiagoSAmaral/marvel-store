@@ -18,8 +18,12 @@ enum ResponseSelector {
 
 final class NetworkContentOperationFake: NetworkContentOperation {
     
-    var selectorResultType: ResponseSelector = .successList
+    var selectorResultType: ResponseSelector
     var paramRequestIntercepted: NetworkRequestParameters?
+    
+    init(selectorResultType: ResponseSelector = .successList) {
+        self.selectorResultType = selectorResultType
+    }
     
     func requestContentWith(param: NetworkRequestParameters, handler: GeneralResultHandler?) {
         paramRequestIntercepted = param
