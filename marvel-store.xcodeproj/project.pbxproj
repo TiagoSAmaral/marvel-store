@@ -156,6 +156,13 @@
 		CFC405B92A25694A00222F60 /* PaginateResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC405B82A25694A00222F60 /* PaginateResponse.swift */; };
 		CFC578DF2A367CAA004649F6 /* StorerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC578DE2A367CAA004649F6 /* StorerDelegate.swift */; };
 		CFC578E02A367CAA004649F6 /* StorerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC578DE2A367CAA004649F6 /* StorerDelegate.swift */; };
+		CFC578E32A369BDB004649F6 /* ListContentPageViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC578E22A369BDB004649F6 /* ListContentPageViewModelTests.swift */; };
+		CFC578E62A36B6D0004649F6 /* ListContentPageControllerFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC578E52A36B6D0004649F6 /* ListContentPageControllerFake.swift */; };
+		CFC578E92A36B6FE004649F6 /* ListContentPageCoordinatorFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC578E72A36B6FE004649F6 /* ListContentPageCoordinatorFake.swift */; };
+		CFC578EC2A36B753004649F6 /* NetworkContentOperationFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC578EA2A36B753004649F6 /* NetworkContentOperationFake.swift */; };
+		CFC578EF2A36B768004649F6 /* LocalStorageCartItemsFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC578ED2A36B768004649F6 /* LocalStorageCartItemsFake.swift */; };
+		CFC578F22A36B778004649F6 /* LocalStorageFavoritesItemsFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC578F02A36B778004649F6 /* LocalStorageFavoritesItemsFake.swift */; };
+		CFC578F52A36B82E004649F6 /* FactoryToTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC578F32A36B82E004649F6 /* FactoryToTest.swift */; };
 		CFD3A6B723DA308A00EB6D4D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD3A6AC23DA308900EB6D4D /* AppDelegate.swift */; };
 		CFD3A6BB23DA308A00EB6D4D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFD3A6B423DA308A00EB6D4D /* Assets.xcassets */; };
 		CFD3A6D723DA41FE00EB6D4D /* Localizable-pt-BR.strings in Resources */ = {isa = PBXBuildFile; fileRef = CFD3A6CF23DA3F9700EB6D4D /* Localizable-pt-BR.strings */; };
@@ -288,6 +295,13 @@
 		CFC405B02A2553EC00222F60 /* APISecurity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APISecurity.swift; sourceTree = "<group>"; };
 		CFC405B82A25694A00222F60 /* PaginateResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaginateResponse.swift; sourceTree = "<group>"; };
 		CFC578DE2A367CAA004649F6 /* StorerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorerDelegate.swift; sourceTree = "<group>"; };
+		CFC578E22A369BDB004649F6 /* ListContentPageViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListContentPageViewModelTests.swift; sourceTree = "<group>"; };
+		CFC578E52A36B6D0004649F6 /* ListContentPageControllerFake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListContentPageControllerFake.swift; sourceTree = "<group>"; };
+		CFC578E72A36B6FE004649F6 /* ListContentPageCoordinatorFake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListContentPageCoordinatorFake.swift; sourceTree = "<group>"; };
+		CFC578EA2A36B753004649F6 /* NetworkContentOperationFake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkContentOperationFake.swift; sourceTree = "<group>"; };
+		CFC578ED2A36B768004649F6 /* LocalStorageCartItemsFake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorageCartItemsFake.swift; sourceTree = "<group>"; };
+		CFC578F02A36B778004649F6 /* LocalStorageFavoritesItemsFake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorageFavoritesItemsFake.swift; sourceTree = "<group>"; };
+		CFC578F32A36B82E004649F6 /* FactoryToTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactoryToTest.swift; sourceTree = "<group>"; };
 		CFD3A6AC23DA308900EB6D4D /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CFD3A6B223DA308A00EB6D4D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CFD3A6B423DA308A00EB6D4D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -662,6 +676,28 @@
 			path = String;
 			sourceTree = "<group>";
 		};
+		CFC578E12A369BBA004649F6 /* ProtoPageTests */ = {
+			isa = PBXGroup;
+			children = (
+				CFC578E42A36B6B7004649F6 /* Fakes */,
+				CFC578E22A369BDB004649F6 /* ListContentPageViewModelTests.swift */,
+			);
+			path = ProtoPageTests;
+			sourceTree = "<group>";
+		};
+		CFC578E42A36B6B7004649F6 /* Fakes */ = {
+			isa = PBXGroup;
+			children = (
+				CFC578E52A36B6D0004649F6 /* ListContentPageControllerFake.swift */,
+				CFC578E72A36B6FE004649F6 /* ListContentPageCoordinatorFake.swift */,
+				CFC578EA2A36B753004649F6 /* NetworkContentOperationFake.swift */,
+				CFC578ED2A36B768004649F6 /* LocalStorageCartItemsFake.swift */,
+				CFC578F02A36B778004649F6 /* LocalStorageFavoritesItemsFake.swift */,
+				CFC578F32A36B82E004649F6 /* FactoryToTest.swift */,
+			);
+			path = Fakes;
+			sourceTree = "<group>";
+		};
 		CFD3A6A323DA302E00EB6D4D /* source */ = {
 			isa = PBXGroup;
 			children = (
@@ -798,6 +834,7 @@
 		CFE71CE72A2938E5009F5E12 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				CFC578E12A369BBA004649F6 /* ProtoPageTests */,
 				CF1560FB2A312315007B8AAE /* Factories */,
 				CFE71CE82A2938F3009F5E12 /* NetworkTests */,
 				CFEFB2152A2F90AB0061EF4B /* StorageTests */,
@@ -1008,6 +1045,7 @@
 				CF1560D72A30DA5B007B8AAE /* LoadingManagers.swift in Sources */,
 				CF1560E42A30DA6B007B8AAE /* Empty.swift in Sources */,
 				CFEFB2182A2F91080061EF4B /* ComicFavoriteStorageTests.swift in Sources */,
+				CFC578F52A36B82E004649F6 /* FactoryToTest.swift in Sources */,
 				CF1560F02A30E91A007B8AAE /* Secret.swift in Sources */,
 				CF1560C82A30DA5B007B8AAE /* ListUpdateEvent.swift in Sources */,
 				CFEFB21F2A2F9A340061EF4B /* MockerContentProvider.swift in Sources */,
@@ -1042,6 +1080,7 @@
 				CF1560C22A30DA48007B8AAE /* DetailContentPageCoordinator.swift in Sources */,
 				CF1560DD2A30DA5B007B8AAE /* Selectable.swift in Sources */,
 				CF1560E22A30DA61007B8AAE /* Constraints.swift in Sources */,
+				CFC578EF2A36B768004649F6 /* LocalStorageCartItemsFake.swift in Sources */,
 				CF1560D92A30DA5B007B8AAE /* NetworkHeaderFactory.swift in Sources */,
 				CF1560B02A30D9E9007B8AAE /* SearchBarFactory.swift in Sources */,
 				CF1560E62A30DACC007B8AAE /* LocalizedText.swift in Sources */,
@@ -1073,7 +1112,9 @@
 				CF1561022A31310F007B8AAE /* FactoryButtonTests.swift in Sources */,
 				CF1560C62A30DA55007B8AAE /* CartPageFactory.swift in Sources */,
 				CF15609B2A30D9C0007B8AAE /* NetworkError.swift in Sources */,
+				CFC578E92A36B6FE004649F6 /* ListContentPageCoordinatorFake.swift in Sources */,
 				CF1560E52A30DA6B007B8AAE /* HtmlAttributedString.swift in Sources */,
+				CFC578E62A36B6D0004649F6 /* ListContentPageControllerFake.swift in Sources */,
 				CFC578E02A367CAA004649F6 /* StorerDelegate.swift in Sources */,
 				CFEFB2242A2F9A5D0061EF4B /* RealmTestBase.swift in Sources */,
 				CF1560F42A310AB7007B8AAE /* KeyAdvisor.swift in Sources */,
@@ -1082,7 +1123,9 @@
 				CF15609F2A30D9C0007B8AAE /* APISecurity.swift in Sources */,
 				CF1560A62A30D9C8007B8AAE /* Comics.swift in Sources */,
 				CF1560F82A311CBD007B8AAE /* KeysAcessor.swift in Sources */,
+				CFC578E32A369BDB004649F6 /* ListContentPageViewModelTests.swift in Sources */,
 				CF1560D02A30DA5B007B8AAE /* ViewHandlerEventUpdate.swift in Sources */,
+				CFC578F22A36B778004649F6 /* LocalStorageFavoritesItemsFake.swift in Sources */,
 				CF1560B42A30DA01007B8AAE /* ButtonFactoryView.swift in Sources */,
 				CFEFB22A2A2FB1370061EF4B /* RealmInstanceTests.swift in Sources */,
 				CF1560DF2A30DA5B007B8AAE /* Requestable.swift in Sources */,
@@ -1090,6 +1133,7 @@
 				CF1560BB2A30DA0E007B8AAE /* RealmInstance.swift in Sources */,
 				CF1560CD2A30DA5B007B8AAE /* AlertPresentable.swift in Sources */,
 				CF1560C12A30DA45007B8AAE /* DetailContentPageFactory.swift in Sources */,
+				CFC578EC2A36B753004649F6 /* NetworkContentOperationFake.swift in Sources */,
 				CF1560A82A30D9D1007B8AAE /* MainTabbarFactory.swift in Sources */,
 				CF1560AC2A30D9DC007B8AAE /* TableViewAutomaticPaginate.swift in Sources */,
 				CF1560E12A30DA5B007B8AAE /* ListDataHandler.swift in Sources */,
