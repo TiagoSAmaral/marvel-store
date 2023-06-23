@@ -1,6 +1,6 @@
 //
 //  ViewModelTests.swift
-//  marvel-storeTests
+//  list-storeTests
 //
 //  Created by Tiago Amaral on 11/06/23.
 //  Copyright © 2023 developer_organization_name. All rights reserved.
@@ -73,7 +73,7 @@ final class ListContentPageViewModelTests: XCTestCase {
     }
     
     func testSaveItemToFavoriteOnDetailView() {
-        var outInner: ListContentPageViewModel = FactoryToTest.build(networkTypeResponse: .successOne)
+        let outInner: ListContentPageViewModel = FactoryToTest.build(networkTypeResponse: .successOne)
         let oneItem = MockerContentProvider().loadOneItem(type: Comic.self)
         let requestOne = MockerContentProvider().loadOneContent(type: GeneralResult<Comic>.self)
         outInner.currentViewModelStrategy = .detail
@@ -88,8 +88,8 @@ final class ListContentPageViewModelTests: XCTestCase {
             expectRunRequest.fulfill()
             outInner.saveToFavorite(oneItem)
             
-            guard let storageFavoriteFake = outInner.localStorageFavoriteItems as? LocalStorageFavoritesItemsFake else {
-                XCTFail("Expected LocalStorageFavoritesItemsFake instance")
+            guard let storageFavoriteFake = outInner.localStorageFavoriteItems as? LocalStorageFake else {
+                XCTFail("Expected LocalStorageFake instance")
                 return
             }
             
@@ -106,14 +106,13 @@ final class ListContentPageViewModelTests: XCTestCase {
             XCTAssertEqual(savedItem.identifier, oneItem?.identifier, "Expect same identifier")
             XCTAssertEqual(outInner.items.count, 1, "Expect list of items nil")
             XCTAssertEqual(marketItem.identifier, (outInner.selectedItem as? ViewModelBehavior)?.identifier, "Expected same identifier of selected item" )
-            
         }
        
         wait(for: [expectRunRequest])
     }
     
     func testRemoveItemFromFavoriteOnDetailView() {
-        var outInner: ListContentPageViewModel = FactoryToTest.build(networkTypeResponse: .successOne)
+        let outInner: ListContentPageViewModel = FactoryToTest.build(networkTypeResponse: .successOne)
         let oneItem = MockerContentProvider().loadOneItem(type: Comic.self)
         let requestOne = MockerContentProvider().loadOneContent(type: GeneralResult<Comic>.self)
         outInner.currentViewModelStrategy = .detail
@@ -128,8 +127,8 @@ final class ListContentPageViewModelTests: XCTestCase {
             expectRunRequest.fulfill()
             outInner.removeFavorite(oneItem)
             
-            guard let storageFavoriteFake = outInner.localStorageFavoriteItems as? LocalStorageFavoritesItemsFake else {
-                XCTFail("Expected LocalStorageFavoritesItemsFake instance")
+            guard let storageFavoriteFake = outInner.localStorageFavoriteItems as? LocalStorageFake else {
+                XCTFail("Expected LocalStorageFake instance")
                 return
             }
             
