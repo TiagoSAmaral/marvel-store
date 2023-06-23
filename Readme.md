@@ -64,7 +64,7 @@ Para executar o projeto, siga os passos abaixo.
 
 #### Ferramentas de Gestão e Qualidade de Código<br>
 - Fastlane
-- Slather
+- XCov
 - Jazzy
 - Swiftlint
 
@@ -153,12 +153,11 @@ Ferramenta para documentação de código
 
 Ver mais no link: [Realm/jazzy](https://github.com/realm/jazzy)
 
-### Slather
+### [Xcov](https://github.com/fastlane-community/xcov)
 
 Ferramenta para exibir de forma mais amigável informações de cobertura de código do projeto.
 
-Ver mais no link: [Slather](https://github.com/SlatherOrg/slather)
-
+Ver mais no link: [Xcov](https://github.com/fastlane-community/xcov)
 --- 
 ### Autor
 

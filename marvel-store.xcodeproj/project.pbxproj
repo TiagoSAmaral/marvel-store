@@ -160,8 +160,7 @@
 		CFC578E62A36B6D0004649F6 /* ListContentPageControllerFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC578E52A36B6D0004649F6 /* ListContentPageControllerFake.swift */; };
 		CFC578E92A36B6FE004649F6 /* ListContentPageCoordinatorFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC578E72A36B6FE004649F6 /* ListContentPageCoordinatorFake.swift */; };
 		CFC578EC2A36B753004649F6 /* NetworkContentOperationFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC578EA2A36B753004649F6 /* NetworkContentOperationFake.swift */; };
-		CFC578EF2A36B768004649F6 /* LocalStorageCartItemsFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC578ED2A36B768004649F6 /* LocalStorageCartItemsFake.swift */; };
-		CFC578F22A36B778004649F6 /* LocalStorageFavoritesItemsFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC578F02A36B778004649F6 /* LocalStorageFavoritesItemsFake.swift */; };
+		CFC578F22A36B778004649F6 /* LocalStorageFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC578F02A36B778004649F6 /* LocalStorageFake.swift */; };
 		CFC578F52A36B82E004649F6 /* FactoryToTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC578F32A36B82E004649F6 /* FactoryToTest.swift */; };
 		CFD3A6B723DA308A00EB6D4D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD3A6AC23DA308900EB6D4D /* AppDelegate.swift */; };
 		CFD3A6BB23DA308A00EB6D4D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFD3A6B423DA308A00EB6D4D /* Assets.xcassets */; };
@@ -211,6 +210,9 @@
 		CFEFB2272A2FA9450061EF4B /* ComicCartStorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEFB2252A2FA92F0061EF4B /* ComicCartStorageTests.swift */; };
 		CFEFB22A2A2FB1370061EF4B /* RealmInstanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEFB2282A2FB12B0061EF4B /* RealmInstanceTests.swift */; };
 		CFF2EA112A0F259800709168 /* Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF2EA102A0F259800709168 /* Constraints.swift */; };
+		CFF54CC42A451D4700EAF7E0 /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = CFF54CC32A451D4700EAF7E0 /* SnapshotTesting */; };
+		CFF54CC72A45224600EAF7E0 /* URLProtocolExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF54CC52A45224600EAF7E0 /* URLProtocolExtension.swift */; };
+		CFF54CC82A45224600EAF7E0 /* URLProtocolMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF54CC62A45224600EAF7E0 /* URLProtocolMock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -242,7 +244,7 @@
 		CF2C52742A2B031400ECEB24 /* ButtonFactoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonFactoryView.swift; sourceTree = "<group>"; };
 		CF2C52772A2B131100ECEB24 /* DatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePicker.swift; sourceTree = "<group>"; };
 		CF4D914F2A0FFBAE000BE331 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
-		CF6414DF23E4C1CF009C7A9E /* marvel-storeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "marvel-storeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF6414DF23E4C1CF009C7A9E /* marvel-storetests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "marvel-storetests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF760DF12A2B8E7500C6D4B9 /* ViewMosaicComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewMosaicComposer.swift; sourceTree = "<group>"; };
 		CF760DF32A2BAC8200C6D4B9 /* ViewHandlerEventUpdate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewHandlerEventUpdate.swift; sourceTree = "<group>"; };
 		CF7DC65D2A2DA91A003F455E /* ViewModable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModable.swift; sourceTree = "<group>"; };
@@ -299,8 +301,7 @@
 		CFC578E52A36B6D0004649F6 /* ListContentPageControllerFake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListContentPageControllerFake.swift; sourceTree = "<group>"; };
 		CFC578E72A36B6FE004649F6 /* ListContentPageCoordinatorFake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListContentPageCoordinatorFake.swift; sourceTree = "<group>"; };
 		CFC578EA2A36B753004649F6 /* NetworkContentOperationFake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkContentOperationFake.swift; sourceTree = "<group>"; };
-		CFC578ED2A36B768004649F6 /* LocalStorageCartItemsFake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorageCartItemsFake.swift; sourceTree = "<group>"; };
-		CFC578F02A36B778004649F6 /* LocalStorageFavoritesItemsFake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorageFavoritesItemsFake.swift; sourceTree = "<group>"; };
+		CFC578F02A36B778004649F6 /* LocalStorageFake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorageFake.swift; sourceTree = "<group>"; };
 		CFC578F32A36B82E004649F6 /* FactoryToTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactoryToTest.swift; sourceTree = "<group>"; };
 		CFD3A6AC23DA308900EB6D4D /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CFD3A6B223DA308A00EB6D4D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -344,6 +345,8 @@
 		CFEFB2252A2FA92F0061EF4B /* ComicCartStorageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicCartStorageTests.swift; sourceTree = "<group>"; };
 		CFEFB2282A2FB12B0061EF4B /* RealmInstanceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmInstanceTests.swift; sourceTree = "<group>"; };
 		CFF2EA102A0F259800709168 /* Constraints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constraints.swift; sourceTree = "<group>"; };
+		CFF54CC52A45224600EAF7E0 /* URLProtocolExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLProtocolExtension.swift; sourceTree = "<group>"; };
+		CFF54CC62A45224600EAF7E0 /* URLProtocolMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLProtocolMock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -351,6 +354,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFF54CC42A451D4700EAF7E0 /* SnapshotTesting in Frameworks */,
 				CF1560EE2A30DB58007B8AAE /* RealmSwift in Frameworks */,
 				CF1560EC2A30DB52007B8AAE /* Kingfisher in Frameworks */,
 				CFEFB2112A2F06320061EF4B /* Realm in Frameworks */,
@@ -492,6 +496,8 @@
 		CF7EAAAD2A282744006F5D12 /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
+				CFF54CC52A45224600EAF7E0 /* URLProtocolExtension.swift */,
+				CFF54CC62A45224600EAF7E0 /* URLProtocolMock.swift */,
 				CFEFB21D2A2F997D0061EF4B /* listComic.json */,
 				CFEFB21B2A2F99720061EF4B /* oneComic.json */,
 				CF7EAAAE2A282787006F5D12 /* ResponselistContent.json */,
@@ -515,7 +521,7 @@
 			isa = PBXGroup;
 			children = (
 				CF9601AE23DA2A1E00916EF1 /* Marvel Store Dev.app */,
-				CF6414DF23E4C1CF009C7A9E /* marvel-storeTests.xctest */,
+				CF6414DF23E4C1CF009C7A9E /* marvel-storetests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -691,8 +697,7 @@
 				CFC578E52A36B6D0004649F6 /* ListContentPageControllerFake.swift */,
 				CFC578E72A36B6FE004649F6 /* ListContentPageCoordinatorFake.swift */,
 				CFC578EA2A36B753004649F6 /* NetworkContentOperationFake.swift */,
-				CFC578ED2A36B768004649F6 /* LocalStorageCartItemsFake.swift */,
-				CFC578F02A36B778004649F6 /* LocalStorageFavoritesItemsFake.swift */,
+				CFC578F02A36B778004649F6 /* LocalStorageFake.swift */,
 				CFC578F32A36B82E004649F6 /* FactoryToTest.swift */,
 			);
 			path = Fakes;
@@ -834,9 +839,10 @@
 		CFE71CE72A2938E5009F5E12 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				CFC578E12A369BBA004649F6 /* ProtoPageTests */,
+				CFF54CC92A45227800EAF7E0 /* ComponentTests */,
 				CF1560FB2A312315007B8AAE /* Factories */,
 				CFE71CE82A2938F3009F5E12 /* NetworkTests */,
+				CFC578E12A369BBA004649F6 /* ProtoPageTests */,
 				CFEFB2152A2F90AB0061EF4B /* StorageTests */,
 			);
 			path = Shared;
@@ -890,12 +896,99 @@
 			path = UIView;
 			sourceTree = "<group>";
 		};
+		CFF54CC92A45227800EAF7E0 /* ComponentTests */ = {
+			isa = PBXGroup;
+			children = (
+				CFF54CD32A4522EB00EAF7E0 /* MainTabbarControllerTests */,
+				CFF54CD22A4522E400EAF7E0 /* ViewMosaicComposerTests */,
+				CFF54CD12A4522DB00EAF7E0 /* DatePickerTests */,
+				CFF54CD02A4522D500EAF7E0 /* TableViewAutomaticPaginateTests */,
+				CFF54CCF2A4522C100EAF7E0 /* FilterYearSelectorTests */,
+				CFF54CCE2A4522B900EAF7E0 /* NavigationControllerTests */,
+				CFF54CCD2A4522B200EAF7E0 /* LoadingViewTests */,
+				CFF54CCC2A4522A900EAF7E0 /* UISearchTests */,
+				CFF54CCB2A45229E00EAF7E0 /* CardsTests */,
+				CFF54CCA2A45229800EAF7E0 /* CellTests */,
+			);
+			path = ComponentTests;
+			sourceTree = "<group>";
+		};
+		CFF54CCA2A45229800EAF7E0 /* CellTests */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CellTests;
+			sourceTree = "<group>";
+		};
+		CFF54CCB2A45229E00EAF7E0 /* CardsTests */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CardsTests;
+			sourceTree = "<group>";
+		};
+		CFF54CCC2A4522A900EAF7E0 /* UISearchTests */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UISearchTests;
+			sourceTree = "<group>";
+		};
+		CFF54CCD2A4522B200EAF7E0 /* LoadingViewTests */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = LoadingViewTests;
+			sourceTree = "<group>";
+		};
+		CFF54CCE2A4522B900EAF7E0 /* NavigationControllerTests */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = NavigationControllerTests;
+			sourceTree = "<group>";
+		};
+		CFF54CCF2A4522C100EAF7E0 /* FilterYearSelectorTests */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = FilterYearSelectorTests;
+			sourceTree = "<group>";
+		};
+		CFF54CD02A4522D500EAF7E0 /* TableViewAutomaticPaginateTests */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = TableViewAutomaticPaginateTests;
+			sourceTree = "<group>";
+		};
+		CFF54CD12A4522DB00EAF7E0 /* DatePickerTests */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DatePickerTests;
+			sourceTree = "<group>";
+		};
+		CFF54CD22A4522E400EAF7E0 /* ViewMosaicComposerTests */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewMosaicComposerTests;
+			sourceTree = "<group>";
+		};
+		CFF54CD32A4522EB00EAF7E0 /* MainTabbarControllerTests */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MainTabbarControllerTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		CF6414DE23E4C1CF009C7A9E /* marvel-storeTests */ = {
+		CF6414DE23E4C1CF009C7A9E /* marvel-storetests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CF6414E623E4C1CF009C7A9E /* Build configuration list for PBXNativeTarget "marvel-storeTests" */;
+			buildConfigurationList = CF6414E623E4C1CF009C7A9E /* Build configuration list for PBXNativeTarget "marvel-storetests" */;
 			buildPhases = (
 				CF6414DB23E4C1CF009C7A9E /* Sources */,
 				CF6414DC23E4C1CF009C7A9E /* Frameworks */,
@@ -906,15 +999,16 @@
 			dependencies = (
 				CF6414E523E4C1CF009C7A9E /* PBXTargetDependency */,
 			);
-			name = "marvel-storeTests";
+			name = "marvel-storetests";
 			packageProductDependencies = (
 				CFEFB2102A2F06320061EF4B /* Realm */,
 				CF1560E92A30DB4F007B8AAE /* Alamofire */,
 				CF1560EB2A30DB52007B8AAE /* Kingfisher */,
 				CF1560ED2A30DB58007B8AAE /* RealmSwift */,
+				CFF54CC32A451D4700EAF7E0 /* SnapshotTesting */,
 			);
 			productName = BaseProjectTargetTests;
-			productReference = CF6414DF23E4C1CF009C7A9E /* marvel-storeTests.xctest */;
+			productReference = CF6414DF23E4C1CF009C7A9E /* marvel-storetests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		CF9601AD23DA2A1E00916EF1 /* marvel-store */ = {
@@ -974,13 +1068,14 @@
 				CFE2D5A32A0F4E02001F649F /* XCRemoteSwiftPackageReference "Alamofire" */,
 				CFE2D5A62A0F4E17001F649F /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				CFC2F17D2A2517AD00A25148 /* XCRemoteSwiftPackageReference "realm-swift" */,
+				CFF54CC22A451D4700EAF7E0 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */,
 			);
 			productRefGroup = CF9601AF23DA2A1E00916EF1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				CF9601AD23DA2A1E00916EF1 /* marvel-store */,
-				CF6414DE23E4C1CF009C7A9E /* marvel-storeTests */,
+				CF6414DE23E4C1CF009C7A9E /* marvel-storetests */,
 			);
 		};
 /* End PBXProject section */
@@ -1068,6 +1163,7 @@
 				CF1560A92A30D9D1007B8AAE /* MainTabbarController.swift in Sources */,
 				CF1560B32A30D9F1007B8AAE /* GenericTableViewCell.swift in Sources */,
 				CF1560B52A30DA01007B8AAE /* CurrencyConversor.swift in Sources */,
+				CFF54CC72A45224600EAF7E0 /* URLProtocolExtension.swift in Sources */,
 				CF1560AA2A30D9D4007B8AAE /* ViewMosaicComposer.swift in Sources */,
 				CF1560A22A30D9C8007B8AAE /* ComicImage.swift in Sources */,
 				CF1560A52A30D9C8007B8AAE /* CurrentViewModelStrategy.swift in Sources */,
@@ -1080,7 +1176,6 @@
 				CF1560C22A30DA48007B8AAE /* DetailContentPageCoordinator.swift in Sources */,
 				CF1560DD2A30DA5B007B8AAE /* Selectable.swift in Sources */,
 				CF1560E22A30DA61007B8AAE /* Constraints.swift in Sources */,
-				CFC578EF2A36B768004649F6 /* LocalStorageCartItemsFake.swift in Sources */,
 				CF1560D92A30DA5B007B8AAE /* NetworkHeaderFactory.swift in Sources */,
 				CF1560B02A30D9E9007B8AAE /* SearchBarFactory.swift in Sources */,
 				CF1560E62A30DACC007B8AAE /* LocalizedText.swift in Sources */,
@@ -1117,6 +1212,7 @@
 				CFC578E62A36B6D0004649F6 /* ListContentPageControllerFake.swift in Sources */,
 				CFC578E02A367CAA004649F6 /* StorerDelegate.swift in Sources */,
 				CFEFB2242A2F9A5D0061EF4B /* RealmTestBase.swift in Sources */,
+				CFF54CC82A45224600EAF7E0 /* URLProtocolMock.swift in Sources */,
 				CF1560F42A310AB7007B8AAE /* KeyAdvisor.swift in Sources */,
 				CF1560CF2A30DA5B007B8AAE /* YearSelectorViewDataHandlerDelegate.swift in Sources */,
 				CF1560DC2A30DA5B007B8AAE /* SearchHandlerEvents.swift in Sources */,
@@ -1125,7 +1221,7 @@
 				CF1560F82A311CBD007B8AAE /* KeysAcessor.swift in Sources */,
 				CFC578E32A369BDB004649F6 /* ListContentPageViewModelTests.swift in Sources */,
 				CF1560D02A30DA5B007B8AAE /* ViewHandlerEventUpdate.swift in Sources */,
-				CFC578F22A36B778004649F6 /* LocalStorageFavoritesItemsFake.swift in Sources */,
+				CFC578F22A36B778004649F6 /* LocalStorageFake.swift in Sources */,
 				CF1560B42A30DA01007B8AAE /* ButtonFactoryView.swift in Sources */,
 				CFEFB22A2A2FB1370061EF4B /* RealmInstanceTests.swift in Sources */,
 				CF1560DF2A30DA5B007B8AAE /* Requestable.swift in Sources */,
@@ -1269,7 +1365,7 @@
 					"@loader_path/Frameworks",
 				);
 				OTHER_LDFLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.outlook.tiagofly.marvel-storetests";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.outlook.tiagofly.list-storeTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -1292,7 +1388,7 @@
 					"@loader_path/Frameworks",
 				);
 				OTHER_LDFLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.outlook.tiagofly.marvel-storetests";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.outlook.tiagofly.list-storeTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -1484,7 +1580,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		CF6414E623E4C1CF009C7A9E /* Build configuration list for PBXNativeTarget "marvel-storeTests" */ = {
+		CF6414E623E4C1CF009C7A9E /* Build configuration list for PBXNativeTarget "marvel-storetests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CF6414E723E4C1CF009C7A9E /* Debug */,
@@ -1538,6 +1634,14 @@
 				version = 7.6.2;
 			};
 		};
+		CFF54CC22A451D4700EAF7E0 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-snapshot-testing";
+			requirement = {
+				kind = exactVersion;
+				version = 1.11.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1580,6 +1684,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = CFC2F17D2A2517AD00A25148 /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = Realm;
+		};
+		CFF54CC32A451D4700EAF7E0 /* SnapshotTesting */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CFF54CC22A451D4700EAF7E0 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */;
+			productName = SnapshotTesting;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
