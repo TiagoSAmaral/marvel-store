@@ -25,7 +25,7 @@
       "target" : {
         "containerPath" : "container:marvel-store.xcodeproj",
         "identifier" : "CF6414DE23E4C1CF009C7A9E",
-        "name" : "marvel-storeTests"
+        "name" : "list-storeTests"
       }
     }
   ],

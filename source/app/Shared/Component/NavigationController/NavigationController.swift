@@ -1,6 +1,6 @@
 //
 //  NavigationController.swift
-//  marvel-store
+//  list-store
 //
 //  Created by Tiago Amaral on 16/05/23.
 //  Copyright © 2023 developer_organization_name. All rights reserved.

@@ -18,8 +18,8 @@ enum FactoryToTest {
         viewModel.controller = controller
         viewModel.network = NetworkContentOperationFake(selectorResultType: networkTypeResponse)
         viewModel.coordinator = ListContentPageCoordinatorFake(navigation: NavigationController())
-        viewModel.localStorageCartItems = LocalStorageCartItemsFake()
-        viewModel.localStorageFavoriteItems = LocalStorageFavoritesItemsFake()
+        viewModel.localStorageCartItems = LocalStorageFake()
+        viewModel.localStorageFavoriteItems = LocalStorageFake()
         return viewModel
     }
 }

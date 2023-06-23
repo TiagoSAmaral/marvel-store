@@ -1,6 +1,6 @@
 //
 //  CurrencyConversorTests.swift
-//  marvel-storeTests
+//  list-storeTests
 //
 //  Created by Tiago Amaral on 07/06/23.
 //  Copyright © 2023 developer_organization_name. All rights reserved.

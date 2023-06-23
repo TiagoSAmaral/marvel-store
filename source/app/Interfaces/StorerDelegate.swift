@@ -1,6 +1,6 @@
 //
 //  StorerDelegate.swift
-//  marvel-store
+//  list-store
 //
 //  Created by Tiago Amaral on 11/06/23.
 //  Copyright © 2023 developer_organization_name. All rights reserved.
