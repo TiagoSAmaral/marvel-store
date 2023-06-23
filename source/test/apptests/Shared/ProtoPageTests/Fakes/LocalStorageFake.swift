@@ -8,7 +8,7 @@
 
 import Foundation
 
-final class LocalStorageFavoritesItemsFake: StorerDelegate {
+final class LocalStorageFake: StorerDelegate {
     
     var savedItem: ViewModelBehavior?
     var removedItem: ViewModelBehavior?
