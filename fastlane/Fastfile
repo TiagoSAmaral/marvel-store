@@ -21,18 +21,27 @@ platform :ios do
   lane :lint_code do 
     swiftlint(
       mode: :lint,
-      config_file: ".swiftlint.yml"
+      config_file: "./.swiftlint.yml"
     )
+  end
+
+  desc "Clear XCov output folder"
+  lane :clear_xcov_report do
+    sh "cd .. && if [ -d 'code-coverage-report' ]; then rm -Rf code-coverage-report; fi"
   end
 
   desc "Create coverage report"
   lane :coverage do 
-    slather( html: true,
-            show: true,
-            output_directory: 'fastlane/codecoverage',
-            scheme: "development",
-            proj: "marvel-store.xcodeproj"
-            )
+    clear_derived_data
+    clear_xcov_report
+    run_tests(scheme: "unit-tests", devices: ["iPhone 14 Pro (16.4)"])
+    # https://docs.fastlane.tools/actions/xcov/
+    xcov(
+          project: "marvel-store.xcodeproj",
+          scheme: "unit-tests",
+          output_directory: "code-coverage-report",
+          ignore_file_path: "./.xcovignore"
+        )
   end
 
   desc "Used by Development to keep code quality. Use command: 'fastlane check_code dev:true'"

@@ -1,8 +1,8 @@
 # Remove the # in front of the line to enable the option
 
-scheme("development")
-devices(["iPhone 8 (13.3)"])
-open_report(true)
+scheme("unit-tests")
+devices(["iPhone 14 Pro (16.4)"])
+open_report(false)
 code_coverage(true)
 clean(true)
 
